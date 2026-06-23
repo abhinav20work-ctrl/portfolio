@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
+import { Blocks, GitBranch, Repeat2, ScanSearch } from "lucide-react";
 import { processSteps } from "@/data/portfolio";
-import { SpiralMark } from "./Doodles";
+
+const processIcons = [ScanSearch, GitBranch, Blocks, Repeat2];
 
 export default function ProcessSection() {
   return (
@@ -24,8 +26,19 @@ export default function ProcessSection() {
         </div>
         <div className="process-card-grid">
           {processSteps.map((step, index) => (
+            <ProcessCard key={step.id} step={step} index={index} />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function ProcessCard({ step, index }) {
+  const Icon = processIcons[index] || ScanSearch;
+
+  return (
             <motion.article
-              key={step.id}
               className="process-card"
               initial={{ opacity: 0, y: 34, rotate: index % 2 === 0 ? -1.5 : 1.5 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -37,21 +50,18 @@ export default function ProcessSection() {
               <div className="process-card-top">
                 <span className="process-number" data-testid={`process-step-number-${index + 1}`}>{step.number}</span>
                 <motion.div
-                  className="responsive-spiral"
-                  animate={{ rotate: [0, 12, -8, 0], scale: [1, 1.08, 0.96, 1] }}
+                  className="process-icon-badge"
+                  animate={{ rotate: [0, 5, -4, 0], scale: [1, 1.06, 0.98, 1] }}
                   transition={{ duration: 2.8, repeat: Infinity, ease: "easeInOut", delay: index * 0.25 }}
-                  data-testid={`process-responsive-spiral-${index + 1}`}
+                  data-testid={`process-step-icon-${index + 1}`}
+                  aria-label={`${step.label} icon`}
                 >
-                  <SpiralMark />
+                  <Icon size={30} strokeWidth={2.25} />
                 </motion.div>
               </div>
               <h3 data-testid={`process-step-title-${index + 1}`}>{step.label}</h3>
               <p data-testid={`process-step-note-${index + 1}`}>{step.note}</p>
               <span className="process-artifact" data-testid={`process-step-artifact-${index + 1}`}>{step.artifact}</span>
             </motion.article>
-          ))}
-        </div>
-      </div>
-    </section>
   );
 }

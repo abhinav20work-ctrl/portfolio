@@ -79,3 +79,9 @@ Create a portfolio for a content strategist, Abhinav Sharma with white backgroun
 - Enlarged the footer character artwork and anchored it lower so it visually reaches the bottom edge of the footer area.
 - Added a stronger layered drop shadow to the floating navbar for better depth and separation.
 - Verified footer art dimensions and navbar shadow through screenshot inspection.
+
+
+## Implemented — 2026-06-23 Process Icon Update
+- Replaced generic spiral icons in process cards with process-specific Lucide icons: scan/search, branching, blocks/system, and repeat loop.
+- Added animated icon badges while removing all old spiral marks from the process section.
+- Verified: 4 process icons render and old `.spiral-mark` count is 0.
