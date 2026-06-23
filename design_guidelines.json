@@ -1,159 +1,118 @@
 {
-  "theme": "LIGHT",
-  "archetype": "3 (Pastel & Soft) mixed with Minimalist Playful/Neo-Brutalist",
-  "brand_identity": {
-    "name": "Abhinav Sharma",
-    "role": "Content Strategist",
-    "vibe": "White background, minimal yet playful and creative feel. Hand-drawn accents.",
-    "forbidden_colors": ["#1B93A4", "#9D4CDD", "#7351B7"],
-    "forbidden_fonts": ["Inter", "Roboto", "Open Sans"]
-  },
-  "colors": {
-    "background": "#FFFFFF",
-    "foreground": "#0A0A0A",
-    "primary": "#0A0A0A",
-    "secondary": "#F3F4F6",
-    "accent_yellow": "#FEF08A",
-    "accent_red": "#FF8A8A",
-    "accent_blue": "#93C5FD",
-    "border": "#0A0A0A"
-  },
+  "theme": "light",
+  "archetype": "3 (Pastel & Soft) fused with 4 (Swiss High-Contrast)",
+  "overall_vibe": "Minimal, playful, creative, and highly professional. White background, generous whitespace, stark typography, combined with hand-drawn elements (spirals, arrows) and micro-interactions to show creativity.",
   "typography": {
-    "heading": "Outfit, sans-serif",
-    "body": "Outfit, sans-serif",
-    "handwriting": "Caveat, cursive",
-    "rules": {
-      "h1": "text-5xl md:text-6xl+ font-black tracking-tighter text-foreground",
-      "h2": "text-4xl md:text-5xl font-bold tracking-tight text-foreground",
-      "h3": "text-2xl font-semibold tracking-tight",
-      "body": "text-lg text-foreground/80 leading-relaxed",
-      "handwriting_text": "font-handwriting text-3xl md:text-4xl text-foreground -rotate-2"
-    },
-    "font_install_instructions": "Import Outfit and Caveat from Google Fonts in index.css or next layout."
+    "heading_font": "Cabinet Grotesk",
+    "body_font": "Manrope",
+    "accent_handwritten_font": "Caveat",
+    "heading_strategy": "Tight letter spacing (tracking-tight) on large headlines. Fluid scaling for hero text. No generic sans-serifs for headings.",
+    "body_strategy": "Clean, highly legible geometric sans with loose line-height (leading-relaxed) for perfect readability."
   },
-  "layout_spacing": {
-    "container": "max-w-6xl mx-auto px-6 md:px-12",
-    "section_padding": "py-24 md:py-32",
-    "gap_large": "gap-16 md:gap-24"
+  "color_palette": {
+    "primary_background": "#FFFFFF",
+    "primary_text": "#0F172A",
+    "secondary_text": "#64748B",
+    "accent_1": "#FDE047", 
+    "accent_2": "#A7F3D0",
+    "borders": "#E2E8F0",
+    "handdrawn_ink": "#1E293B",
+    "hover_state": "#F8FAFC"
+  },
+  "spacing_and_layout": {
+    "container_padding": "px-6 md:px-12 lg:px-24 py-16 lg:py-32",
+    "grid_system": "Bento-style asymmetry for Case Studies, Masonry for Projects.",
+    "border_radius": "rounded-2xl for main cards, completely custom organic paths for SVG lines."
+  },
+  "micro_interactions": {
+    "hover_effects": "Subtle -translate-y-2 on cards, shadow-xl. Custom cursor trailing effect (optional) or magnetic buttons.",
+    "scroll_animations": "SVG stroke-dashoffset drawing for the process journey line. Staggered fade-up for case studies. Animated arrows in 'Here's How' section.",
+    "general": "Smooth scrolling via lenis is mandatory."
+  },
+  "components": {
+    "buttons": "Pill-shaped (rounded-full), high contrast (bg-slate-900 text-white), slight scale-up on hover.",
+    "cards": "Minimalist borders (1px border-slate-200), white background, generous padding (p-8).",
+    "modals": "Shadcn Dialog for the video popup in Projects section. Glassmorphism backdrop (backdrop-blur-md bg-black/40)."
   },
   "sections": [
     {
-      "name": "Hero Section",
-      "description": "A 3-liner paragraph dominating the screen. Minimal, bold.",
-      "layout": "Min-height 80vh, flex items-center justify-center text-center or heavily left-aligned.",
-      "micro_interactions": "Framer motion stagger-children text reveal. Slight parallax on scroll.",
-      "elements": [
-        "Massive Typography for the 3-liner paragraph.",
-        "Include a subtle SVG hand-drawn squiggle floating near the text."
-      ]
+      "name": "Hero",
+      "description": "A striking 3-liner paragraph establishing identity. Very large typography (text-5xl to text-6xl+). Emphasizes the role 'Content Strategist'. Includes a recruiter-friendly CTA ('View Resume' or 'Let's Talk').",
+      "layout": "Left-aligned or gracefully centered. Massive negative space."
     },
     {
-      "name": "Here's How Section",
-      "description": "A dummy art with moving arrows.",
-      "layout": "Grid or flex container with plenty of whitespace.",
-      "micro_interactions": "Animated SVG arrows moving along a path (use stroke-dasharray and framer-motion pathLength).",
-      "elements": [
-        "Heading: Here's how.",
-        "Custom SVG component representing a minimal, playful flowchart. Use raw SVG with <path> elements that look hand-drawn (slight curves, imperfect lines)."
-      ]
+      "name": "Here's How",
+      "description": "Dummy abstract art with moving arrows. Uses framer-motion to animate arrows along an SVG path over a clean, abstract background.",
+      "layout": "Grid-cols-1 md:grid-cols-2 to balance text/explanation and the interactive art."
     },
     {
-      "name": "Case Study Section",
-      "description": "Three case studies cards.",
-      "layout": "grid grid-cols-1 md:grid-cols-3 gap-8",
-      "micro_interactions": "Subtle hover animation: group-hover:scale-[1.02] transition-transform duration-300, image wrapper slightly zooms, perhaps a hand-drawn underline appears on the title.",
-      "elements": [
-        "Card component: Borderless or 1px black border. Large image on top, title and minimal tags below.",
-        "Images: Use URLs provided in media_urls."
-      ]
+      "name": "Case Studies",
+      "description": "Three case study cards displaying editorial/mockup placeholders. Outcome-driven text for recruiters. Subtle hover animation to lift the card.",
+      "layout": "3-column grid (grid-cols-1 md:grid-cols-3) with gap-8."
     },
     {
-      "name": "Projects Section",
-      "description": "Showcase reels and videos in Masonry Layout with 'I experiment a lot' text in the middle. Video popup on click.",
-      "layout": "CSS columns-based masonry (columns-1 md:columns-2 lg:columns-3 gap-6). Ensure items avoid breaking across columns (break-inside-avoid).",
-      "micro_interactions": "Video cards have a playful hover state. Clicking opens a modal.",
-      "elements": [
-        "Masonry Grid of video thumbnails/players.",
-        "Middle/Prominent Element: A block with hand-written text 'I experiment a lot' (using Caveat font).",
-        "Popup/Modal: Use Shadcn Dialog. When opened, it displays the video title, description, and an HTML5 <video> player."
-      ]
+      "name": "Projects",
+      "description": "Masonry layout of placeholder videos/reels. Center text overlay 'I experiment a lot'. Clicking a video opens a Shadcn popup modal with title, description, and the video player.",
+      "layout": "CSS Columns or Masonry grid. High visual density compared to other sections."
     },
     {
-      "name": "Process Section",
-      "description": "Journey like line from one corner to another with handdrawn spirals and step markings.",
-      "layout": "Relative container, full width, tall enough to allow the journey line.",
-      "micro_interactions": "Draw the SVG line on scroll (framer-motion useScroll & pathLength).",
-      "elements": [
-        "Large SVG overlay covering the section. Path going from top-left to bottom-right.",
-        "At 3-4 points along the path, render an SVG spiral.",
-        "Absolute positioned text blocks near each spiral explaining the step."
-      ]
+      "name": "Process",
+      "description": "Journey-like line traversing the screen (corner to corner). Hand-drawn spirals mark each step. Line draws itself on scroll.",
+      "layout": "Relative container. Absolute positioning for the SVG path and spiral checkpoints."
     },
     {
-      "name": "Footer Section",
-      "description": "Dummy art in center, philosophy on left, handdrawn social links on right.",
-      "layout": "grid grid-cols-1 md:grid-cols-3 items-center py-20 border-t border-black",
-      "micro_interactions": "Links jitter or slightly rotate on hover.",
-      "elements": [
-        "Left: 'My philosophy' text (elegant body font).",
-        "Center: SVG dummy art (an abstract face, star, or geometric doodle).",
-        "Right: LinkedIn and Email links styled to look handdrawn (Caveat font, maybe wrapped in an SVG sketched box)."
-      ]
+      "name": "Footer",
+      "description": "Philosophy text on the left, dummy abstract art in the center, hand-drawn LinkedIn/Email links on the right.",
+      "layout": "Flexbox or 3-column grid. Massive padding (py-32)."
     }
   ],
-  "components": {
-    "dialog": "Use Shadcn UI Dialog for the video popup. Customize it to have a pure white background, 1px black border, and no rounded corners (or slightly rounded, max 8px).",
-    "icons": "Use lucide-react. For hand-drawn elements, write raw inline SVGs."
-  },
-  "micro_interactions_global": {
-    "cursor": "Optional custom cursor (a small black dot) or standard. Focus heavily on hover states: buttons shifting, text underlining, SVGs wiggling.",
-    "testing": "All clickable items (buttons, links, video cards) MUST have data-testid attributes."
-  },
-  "media_urls": {
-    "case_studies": [
-      {
-        "url": "https://images.pexels.com/photos/16401927/pexels-photo-16401927.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-        "title": "Minimal Architecture",
-        "description": "Case study on structure."
-      },
-      {
-        "url": "https://images.pexels.com/photos/7602914/pexels-photo-7602914.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-        "title": "Abstract Layouts",
-        "description": "Case study on space."
-      },
-      {
-        "url": "https://images.pexels.com/photos/5998739/pexels-photo-5998739.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-        "title": "Creative Workspaces",
-        "description": "Case study on environment."
-      }
-    ],
-    "projects_videos": [
-      {
-        "thumbnail": "https://images.pexels.com/photos/12318367/pexels-photo-12318367.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-        "video_url": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
-        "title": "Content Strategy Reel 1",
-        "description": "A deep dive into scalable content frameworks."
-      },
-      {
-        "thumbnail": "https://images.pexels.com/photos/7602595/pexels-photo-7602595.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-        "video_url": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
-        "title": "Micro-Interactions in Copy",
-        "description": "How words move."
-      },
-      {
-        "thumbnail": "https://images.pexels.com/photos/6177633/pexels-photo-6177633.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-        "video_url": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
-        "title": "Brand Voice Exploration",
-        "description": "Playful yet structured."
-      }
-    ]
+  "media": [
+    {
+      "category": "Hero/Avatar",
+      "url": "https://images.pexels.com/photos/34330862/pexels-photo-34330862.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "Professional creative portrait"
+    },
+    {
+      "category": "Dummy Art (Here's How & Footer)",
+      "url": "https://images.pexels.com/photos/7602914/pexels-photo-7602914.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "Abstract minimal art"
+    },
+    {
+      "category": "Case Study 1",
+      "url": "https://images.unsplash.com/photo-1549298222-1c31e8915347",
+      "alt": "Editorial magazine mockup"
+    },
+    {
+      "category": "Case Study 2",
+      "url": "https://images.unsplash.com/photo-1519764340700-3db40311f21e",
+      "alt": "Minimal white book mockup"
+    },
+    {
+      "category": "Case Study 3",
+      "url": "https://images.unsplash.com/photo-1504198322253-cfa87a0ff25f",
+      "alt": "Person reading minimalist book"
+    },
+    {
+      "category": "Project Video Placeholder",
+      "url": "https://www.w3schools.com/html/mov_bbb.mp4",
+      "alt": "Sample placeholder video"
+    }
+  ],
+  "testing_attributes": {
+    "hero_cta": "data-testid=\"hero-contact-button\"",
+    "case_study_card": "data-testid=\"case-study-card\"",
+    "project_video": "data-testid=\"project-video-item\"",
+    "project_modal": "data-testid=\"project-video-modal\"",
+    "process_step": "data-testid=\"process-step-item\"",
+    "footer_link": "data-testid=\"footer-social-link\""
   },
   "instructions_to_main_agent": [
-    "Strictly follow the LIGHT theme with a white background and minimalist playful aesthetic.",
-    "Do NOT use typical corporate SaaS layouts. Rely on ample white space.",
-    "Use framer-motion extensively to achieve the micro-interactions described.",
-    "Implement the hand-drawn elements using raw SVG paths directly in the React components (e.g. for arrows, journey line, and spirals).",
-    "Ensure the projects masonry layout does not look like a standard uniform grid; vary the aspect ratios.",
-    "Ensure all interactive elements have data-testid attributes for testing."
+    "Use Framer Motion for the animated SVG line in the Process section (animate stroke-dashoffset).",
+    "Use Shadcn Dialog component for the Video popups in the Projects section.",
+    "Use Tailwind masonry classes (columns-1 sm:columns-2 lg:columns-3) for the Projects section layout.",
+    "Ensure the Caveat font is loaded from Google Fonts for hand-drawn elements.",
+    "Ensure Cabinet Grotesk is used for headings and Manrope for body text.",
+    "Use Lucide-react for the hand-drawn spirals (e.g., using a customized icon) or inline SVGs.",
+    "Do NOT use generic placeholders like via.placeholder.com. Use the exact media URLs provided."
   ]
 }
