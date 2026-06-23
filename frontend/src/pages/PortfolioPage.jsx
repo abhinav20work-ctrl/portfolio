@@ -1,5 +1,6 @@
 import { ReactLenis } from "lenis/react";
 import HeroSection from "@/components/portfolio/HeroSection";
+import LabTicker from "@/components/portfolio/LabTicker";
 import CaseStudiesSection from "@/components/portfolio/CaseStudiesSection";
 import ProjectsSection from "@/components/portfolio/ProjectsSection";
 import ProcessSection from "@/components/portfolio/ProcessSection";
@@ -12,6 +13,7 @@ export default function PortfolioPage() {
       <main data-testid="portfolio-page">
         <StickyNav />
         <HeroSection />
+        <LabTicker />
         <CaseStudiesSection />
         <ProjectsSection />
         <ProcessSection />

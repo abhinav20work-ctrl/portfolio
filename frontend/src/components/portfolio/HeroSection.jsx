@@ -24,7 +24,7 @@ export default function HeroSection() {
     <section id="top" className="hero-section" data-testid="hero-section">
       <div className="lab-grid-lines" aria-hidden="true" />
       <motion.div className="hero-inner" style={{ y }}>
-        <div className="lab-sticker-layer" data-testid="hero-draggable-sticker-layer">
+        <div className="lab-sticker-layer" data-testid="hero-sticker-layer">
           {stickers.map((sticker, index) => (
             <motion.div
               key={sticker.label}

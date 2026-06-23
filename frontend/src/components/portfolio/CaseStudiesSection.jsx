@@ -5,6 +5,7 @@ export default function CaseStudiesSection() {
   return (
     <section id="case-studies" className="section case-section section-reveal" data-testid="case-study-section">
       <div className="section-shell">
+        <div className="lab-module-label" data-testid="proof-board-module-label">Module 01 / Evidence Bench</div>
         <div className="section-heading-row">
           <div>
             <p className="section-kicker" data-testid="case-kicker-text">01 · Proof Board</p>
@@ -31,6 +32,8 @@ export default function CaseStudiesSection() {
               transition={{ duration: 0.55, delay: index * 0.1 }}
               data-testid={`case-card-${index + 1}`}
             >
+              <span className="lab-card-pin pin-left" aria-hidden="true" />
+              <span className="lab-card-pin pin-right" aria-hidden="true" />
               <div className="case-image-wrap" data-testid={`case-image-wrap-${index + 1}`}>
                 <img src={study.image} alt={study.title} data-testid={`case-image-${index + 1}`} />
                 <span className="case-floating-label" data-testid={`case-floating-label-${index + 1}`}>{study.outcome}</span>
@@ -38,7 +41,7 @@ export default function CaseStudiesSection() {
               <div className="case-meta">
                 <span className="case-number" data-testid={`case-number-${index + 1}`}>{study.label}</span>
                 <p className="case-outcome" data-testid={`case-outcome-${index + 1}`}>{study.outcome}</p>
-                <h3 data-testid={`case-card-title-${index + 1}`}>{study.title}</h3>
+                <h3 data-testid={`case-title-${index + 1}`}>{study.title}</h3>
                 <p className="case-brief" data-testid={`case-brief-${index + 1}`}>{study.brief}</p>
                 <div className="case-tags" data-testid={`case-tags-${index + 1}`}>
                   {study.tags.map((tag) => (

@@ -16,6 +16,7 @@ export default function ProjectsSection() {
   return (
     <section id="projects" className="section projects-section section-reveal" data-testid="projects-section">
       <div className="section-shell">
+        <div className="lab-module-label" data-testid="experiment-shelf-module-label">Module 02 / Experiment Shelf</div>
         <div className="projects-topline">
           <p className="section-kicker" data-testid="projects-kicker-text">02 · Experiment Shelf</p>
           <h2 className="section-title" data-testid="projects-title-text">A shelf of strange tests.</h2>
@@ -89,6 +90,7 @@ function ProjectTile({ project, index, onOpen }) {
       data-testid={`project-video-card-${index + 1}`}
       aria-label={`Open video: ${project.title}`}
     >
+      <span className="reel-index" data-testid={`project-reel-index-${index + 1}`}>{String(index + 1).padStart(2, "0")}</span>
       <img src={project.thumbnail} alt={project.title} data-testid={`project-thumbnail-${index + 1}`} />
       <span className="project-overlay">
         <span className="project-play" data-testid={`project-play-icon-${index + 1}`}><Play size={18} fill="currentColor" /></span>

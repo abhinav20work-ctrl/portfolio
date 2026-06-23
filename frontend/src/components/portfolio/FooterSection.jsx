@@ -8,6 +8,7 @@ export default function FooterSection() {
     <footer id="contact" className="footer-section" data-testid="footer-section">
       <div className="footer-shell">
         <div className="footer-philosophy">
+          <div className="lab-module-label footer-label" data-testid="lab-notes-module-label">Module 04 / Exit Note</div>
           <p className="section-kicker" data-testid="footer-kicker-text">04 · Lab Notes</p>
           <h2 data-testid="footer-philosophy-title">Useful can still be strange.</h2>
           <p data-testid="footer-philosophy-text">

@@ -8,6 +8,7 @@ export default function ProcessSection() {
   return (
     <section id="process" className="section process-section section-reveal" data-testid="process-section">
       <div className="section-shell process-shell">
+        <div className="lab-module-label" data-testid="working-system-module-label">Module 03 / Protocol Stack</div>
         <div className="process-intro">
           <p className="section-kicker" data-testid="process-kicker-text">03 · Working System</p>
           <h2 className="section-title" data-testid="process-title-text">The lab protocol.</h2>
