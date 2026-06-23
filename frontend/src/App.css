@@ -28,7 +28,10 @@ button {
     border-radius: 28px;
     background: rgba(255, 255, 255, 0.76);
     backdrop-filter: blur(14px);
-    box-shadow: 0 12px 34px rgba(15, 23, 42, 0.12);
+    box-shadow:
+        0 18px 46px rgba(15, 23, 42, 0.18),
+        0 4px 0 rgba(15, 23, 42, 0.16),
+        inset 0 1px 0 rgba(255, 255, 255, 0.82);
     margin: 0 auto;
 }
 
@@ -859,15 +862,17 @@ button {
 
 .footer-section {
     border-top: 2px solid #0a0a0a;
-    padding: clamp(72px, 10vw, 118px) 0;
+    padding: clamp(56px, 7vw, 82px) 0 0;
     background: #ffffff;
+    overflow: hidden;
 }
 
 .footer-shell {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) 220px minmax(0, 1fr);
-    align-items: center;
+    grid-template-columns: minmax(0, 1fr) minmax(260px, 360px) minmax(0, 1fr);
+    align-items: end;
     gap: clamp(32px, 7vw, 88px);
+    min-height: clamp(420px, 48vw, 560px);
 }
 
 .footer-philosophy h2 {
@@ -889,13 +894,18 @@ button {
 
 .footer-art-wrap {
     display: grid;
-    place-items: center;
+    place-items: end center;
+    align-self: end;
+    height: 100%;
+    min-height: clamp(420px, 48vw, 560px);
 }
 
 .footer-attached-art {
-    width: min(260px, 58vw);
-    aspect-ratio: 1 / 1;
+    width: min(500px, 78vw);
+    max-height: clamp(420px, 48vw, 560px);
+    aspect-ratio: auto;
     object-fit: contain;
+    object-position: bottom center;
     border-radius: 28px;
     filter: contrast(1.04);
     transition: transform 260ms ease, filter 260ms ease;

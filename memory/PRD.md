@@ -73,3 +73,9 @@ Create a portfolio for a content strategist, Abhinav Sharma with white backgroun
 - Removed the process background line and moving yellow ball completely.
 - Kept responsive animated spirals within each process step so the spiral interaction responds to the process cards instead of the background path.
 - Verified: footer uses abhinav-footer asset, Projects has 12 cards, process path count is 0, responsive spirals visible, mobile has no horizontal overflow.
+
+
+## Implemented — 2026-06-23 Footer/Nav Refinement
+- Enlarged the footer character artwork and anchored it lower so it visually reaches the bottom edge of the footer area.
+- Added a stronger layered drop shadow to the floating navbar for better depth and separation.
+- Verified footer art dimensions and navbar shadow through screenshot inspection.
