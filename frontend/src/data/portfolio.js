@@ -49,6 +49,35 @@ export const strengths = [
   "Brand voice chemistry",
 ];
 
+export const labModules = [
+  {
+    id: "scanner",
+    code: "CL-01",
+    title: "Signal Scanner",
+    input: "messy notes, interviews, objections",
+    output: "patterns worth building around",
+    accent: "mint",
+  },
+  {
+    id: "reactor",
+    code: "CL-02",
+    title: "Voice Reactor",
+    input: "founder instinct + audience tension",
+    output: "language that sounds ownable",
+    accent: "yellow",
+  },
+  {
+    id: "synth",
+    code: "CL-03",
+    title: "Format Synth",
+    input: "one sharp idea",
+    output: "campaigns, reels, landing sections",
+    accent: "lavender",
+  },
+];
+
+export const labFormula = ["Signal", "Tension", "Voice", "Format", "Rhythm"];
+
 const labThumbs = [
   "https://images.pexels.com/photos/29579755/pexels-photo-29579755.jpeg?auto=compress&cs=tinysrgb&w=900",
   "https://images.pexels.com/photos/31622947/pexels-photo-31622947.jpeg?auto=compress&cs=tinysrgb&w=900",

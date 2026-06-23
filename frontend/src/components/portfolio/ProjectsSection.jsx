@@ -19,7 +19,7 @@ export default function ProjectsSection() {
         <div className="lab-module-label" data-testid="experiment-shelf-module-label">Module 02 / Experiment Shelf</div>
         <div className="projects-topline">
           <p className="section-kicker" data-testid="projects-kicker-text">02 · Experiment Shelf</p>
-          <h2 className="section-title" data-testid="projects-title-text">A shelf of strange tests.</h2>
+          <h2 className="section-title" data-testid="projects-title-text">Twelve strange samples, bottled.</h2>
         </div>
         <div className="shelf-control-strip" data-testid="experiment-shelf-control-strip">
           <span>12 assets loaded</span>
@@ -91,7 +91,11 @@ function ProjectTile({ project, index, onOpen }) {
       aria-label={`Open video: ${project.title}`}
     >
       <span className="reel-index" data-testid={`project-reel-index-${index + 1}`}>{String(index + 1).padStart(2, "0")}</span>
-      <img src={project.thumbnail} alt={project.title} data-testid={`project-thumbnail-${index + 1}`} />
+      <div className={`project-sample-visual sample-${(index % 6) + 1}`} data-testid={`project-sample-visual-${index + 1}`}>
+        <span className="sample-liquid" />
+        <span className="sample-wave" />
+        <span className="sample-noise" />
+      </div>
       <span className="project-overlay">
         <span className="project-play" data-testid={`project-play-icon-${index + 1}`}><Play size={18} fill="currentColor" /></span>
         <span className="project-title" data-testid={`project-card-title-${index + 1}`}>{project.title}</span>
