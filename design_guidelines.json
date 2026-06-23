@@ -1,118 +1,135 @@
 {
-  "theme": "light",
-  "archetype": "3 (Pastel & Soft) fused with 4 (Swiss High-Contrast)",
-  "overall_vibe": "Minimal, playful, creative, and highly professional. White background, generous whitespace, stark typography, combined with hand-drawn elements (spirals, arrows) and micro-interactions to show creativity.",
+  "theme": "Light",
+  "archetype": "Archetype 3 (Pastel & Soft) paired with Neo-Brutalist (Swiss) styling for a product-like lab feel",
+  "reasoning": "The 'Content Lab' concept demands an experimental and playful yet highly structured aesthetic. A stark white background with hard black borders establishes the 'lab console' identity, while pastel sticker elements, bold typography, and draggable components provide the 'creative workshop' feel.",
   "typography": {
-    "heading_font": "Cabinet Grotesk",
-    "body_font": "Manrope",
-    "accent_handwritten_font": "Caveat",
-    "heading_strategy": "Tight letter spacing (tracking-tight) on large headlines. Fluid scaling for hero text. No generic sans-serifs for headings.",
-    "body_strategy": "Clean, highly legible geometric sans with loose line-height (leading-relaxed) for perfect readability."
+    "fonts": {
+      "headings": "Cabinet Grotesk",
+      "body": "IBM Plex Mono",
+      "handwriting": "Caveat"
+    },
+    "classes": {
+      "h1": "font-heading text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-none text-black",
+      "h2": "font-heading text-4xl md:text-5xl font-bold tracking-tight text-black",
+      "h3": "font-heading text-2xl md:text-3xl font-bold text-black",
+      "body": "font-mono text-base md:text-lg text-neutral-800 leading-relaxed",
+      "labels": "font-mono text-xs uppercase tracking-[0.2em] font-bold",
+      "doodles": "font-handwriting text-2xl md:text-4xl text-black"
+    }
   },
   "color_palette": {
-    "primary_background": "#FFFFFF",
-    "primary_text": "#0F172A",
-    "secondary_text": "#64748B",
-    "accent_1": "#FDE047", 
-    "accent_2": "#A7F3D0",
-    "borders": "#E2E8F0",
-    "handdrawn_ink": "#1E293B",
-    "hover_state": "#F8FAFC"
-  },
-  "spacing_and_layout": {
-    "container_padding": "px-6 md:px-12 lg:px-24 py-16 lg:py-32",
-    "grid_system": "Bento-style asymmetry for Case Studies, Masonry for Projects.",
-    "border_radius": "rounded-2xl for main cards, completely custom organic paths for SVG lines."
-  },
-  "micro_interactions": {
-    "hover_effects": "Subtle -translate-y-2 on cards, shadow-xl. Custom cursor trailing effect (optional) or magnetic buttons.",
-    "scroll_animations": "SVG stroke-dashoffset drawing for the process journey line. Staggered fade-up for case studies. Animated arrows in 'Here's How' section.",
-    "general": "Smooth scrolling via lenis is mandatory."
-  },
-  "components": {
-    "buttons": "Pill-shaped (rounded-full), high contrast (bg-slate-900 text-white), slight scale-up on hover.",
-    "cards": "Minimalist borders (1px border-slate-200), white background, generous padding (p-8).",
-    "modals": "Shadcn Dialog for the video popup in Projects section. Glassmorphism backdrop (backdrop-blur-md bg-black/40)."
-  },
-  "sections": [
-    {
-      "name": "Hero",
-      "description": "A striking 3-liner paragraph establishing identity. Very large typography (text-5xl to text-6xl+). Emphasizes the role 'Content Strategist'. Includes a recruiter-friendly CTA ('View Resume' or 'Let's Talk').",
-      "layout": "Left-aligned or gracefully centered. Massive negative space."
+    "background": {
+      "primary": "#FFFFFF",
+      "secondary": "#FAFAFA"
     },
-    {
-      "name": "Here's How",
-      "description": "Dummy abstract art with moving arrows. Uses framer-motion to animate arrows along an SVG path over a clean, abstract background.",
-      "layout": "Grid-cols-1 md:grid-cols-2 to balance text/explanation and the interactive art."
+    "text": {
+      "primary": "#000000",
+      "secondary": "#333333"
     },
-    {
-      "name": "Case Studies",
-      "description": "Three case study cards displaying editorial/mockup placeholders. Outcome-driven text for recruiters. Subtle hover animation to lift the card.",
-      "layout": "3-column grid (grid-cols-1 md:grid-cols-3) with gap-8."
+    "borders": {
+      "main": "#000000"
     },
-    {
-      "name": "Projects",
-      "description": "Masonry layout of placeholder videos/reels. Center text overlay 'I experiment a lot'. Clicking a video opens a Shadcn popup modal with title, description, and the video player.",
-      "layout": "CSS Columns or Masonry grid. High visual density compared to other sections."
-    },
-    {
-      "name": "Process",
-      "description": "Journey-like line traversing the screen (corner to corner). Hand-drawn spirals mark each step. Line draws itself on scroll.",
-      "layout": "Relative container. Absolute positioning for the SVG path and spiral checkpoints."
-    },
-    {
-      "name": "Footer",
-      "description": "Philosophy text on the left, dummy abstract art in the center, hand-drawn LinkedIn/Email links on the right.",
-      "layout": "Flexbox or 3-column grid. Massive padding (py-32)."
+    "accents": {
+      "mint": "#E3F2CA",
+      "yellow": "#FFEBB0",
+      "lavender": "#E6D5FF"
     }
-  ],
-  "media": [
-    {
-      "category": "Hero/Avatar",
-      "url": "https://images.pexels.com/photos/34330862/pexels-photo-34330862.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-      "alt": "Professional creative portrait"
+  },
+  "layout_and_spacing": {
+    "container": "max-w-7xl mx-auto px-6 md:px-12",
+    "spacing": "Generous spacing. Use py-24 or py-32 for sections to give breathing room.",
+    "borders_and_shadows": "Neo-brutalist style: Use border-2 border-black. For shadows on cards/buttons, use shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]."
+  },
+  "components_and_sections": {
+    "navigation": {
+      "description": "Sticky header (backdrop-blur-xl bg-white/70, z-50, border-b-2 border-black). Must include 'Content Lab' logo, 3-5 branded module links ('01. LAB', '02. PROOF') in IBM Plex Mono, and a Neo-brutalist CTA."
     },
-    {
-      "category": "Dummy Art (Here's How & Footer)",
-      "url": "https://images.pexels.com/photos/7602914/pexels-photo-7602914.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-      "alt": "Abstract minimal art"
+    "hero": {
+      "description": "Product-like Lab Console. 3-liner massive paragraph (Cabinet Grotesk) describing Abhinav Sharma's unique universe. Include multiple absolute-positioned draggable 'stickers' (e.g., pill shapes with pastel backgrounds and black borders) using Framer Motion."
     },
-    {
-      "category": "Case Study 1",
-      "url": "https://images.unsplash.com/photo-1549298222-1c31e8915347",
-      "alt": "Editorial magazine mockup"
+    "heres_how": {
+      "description": "Grid layout acting as a methodology board. Use SVG shapes/dummy art connected by moving arrows (Framer Motion strokeDasharray animations) illustrating a system."
     },
-    {
-      "category": "Case Study 2",
-      "url": "https://images.unsplash.com/photo-1519764340700-3db40311f21e",
-      "alt": "Minimal white book mockup"
+    "case_studies": {
+      "description": "Three case study cards (Proof Board). White bg, black borders, hard black shadow. Images on top, clean mono typography below. Hover interaction: press down (translate-x-[2px] translate-y-[2px] and shadow reduced to 2px)."
     },
-    {
-      "category": "Case Study 3",
-      "url": "https://images.unsplash.com/photo-1504198322253-cfa87a0ff25f",
-      "alt": "Person reading minimalist book"
+    "experiment_shelf": {
+      "description": "Masonry layout (CSS columns-2 md:columns-4 gap-4) containing 12 vertical video reels. Overlay a text block in the center saying 'I experiment a lot'. Clicking any video opens a Shadcn Dialog containing the video title, description, and an embedded player (or styled placeholder)."
     },
-    {
-      "category": "Project Video Placeholder",
-      "url": "https://www.w3schools.com/html/mov_bbb.mp4",
-      "alt": "Sample placeholder video"
+    "process": {
+      "description": "A journey line winding from top-left to bottom-right across the section. Use an SVG path animated with framer-motion on scroll. Add hand-drawn spiral SVGs at key vertices, labeling each as a process step."
+    },
+    "footer": {
+      "description": "Three-column grid. Center: Abstract SVGs for 'dummy art'. Left: 'My Philosophy' typography block. Right: Hand-drawn links for LinkedIn and Email using Caveat font and wavy SVG underlines."
     }
-  ],
-  "testing_attributes": {
-    "hero_cta": "data-testid=\"hero-contact-button\"",
-    "case_study_card": "data-testid=\"case-study-card\"",
-    "project_video": "data-testid=\"project-video-item\"",
-    "project_modal": "data-testid=\"project-video-modal\"",
-    "process_step": "data-testid=\"process-step-item\"",
-    "footer_link": "data-testid=\"footer-social-link\""
+  },
+  "motion_and_interactions": {
+    "draggable": "Enable framer-motion 'drag' for stickers in the Hero section so users can play with them.",
+    "hover_effects": "All cards and buttons must use a 'press' effect rather than a 'lift' effect, matching the tactile lab aesthetic.",
+    "scroll_svg": "Use framer-motion useScroll to dynamically draw the process section's line.",
+    "data_testid": "Ensure all interactive elements (buttons, links, dialog triggers) have a valid data-testid attribute in kebab-case."
+  },
+  "image_urls": {
+    "case_studies": [
+      {
+        "url": "https://images.pexels.com/photos/29579755/pexels-photo-29579755.jpeg",
+        "description": "Colorful geometric abstract art",
+        "category": "case_study_thumbnail"
+      },
+      {
+        "url": "https://images.pexels.com/photos/31622947/pexels-photo-31622947.jpeg",
+        "description": "Dynamic colorful abstract art",
+        "category": "case_study_thumbnail"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1612180768015-56180b567352",
+        "description": "Abstract creative visual",
+        "category": "case_study_thumbnail"
+      }
+    ],
+    "video_reels": [
+      {
+        "url": "https://images.unsplash.com/photo-1604256743004-622f2a42d61e",
+        "description": "Vertical aesthetic video thumbnail",
+        "category": "video_thumbnail"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1597214488695-c1e6c00c4f10",
+        "description": "Vertical aesthetic video thumbnail",
+        "category": "video_thumbnail"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1634149720834-62ab30bbc75f",
+        "description": "Vertical aesthetic video thumbnail",
+        "category": "video_thumbnail"
+      },
+      {
+        "url": "https://images.pexels.com/photos/34220538/pexels-photo-34220538.jpeg",
+        "description": "Vertical aesthetic video thumbnail",
+        "category": "video_thumbnail"
+      },
+      {
+        "url": "https://images.pexels.com/photos/5077064/pexels-photo-5077064.jpeg",
+        "description": "Vertical aesthetic video thumbnail",
+        "category": "video_thumbnail"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1612180768015-56180b567352",
+        "description": "Vertical aesthetic video thumbnail",
+        "category": "video_thumbnail"
+      }
+    ]
   },
   "instructions_to_main_agent": [
-    "Use Framer Motion for the animated SVG line in the Process section (animate stroke-dashoffset).",
-    "Use Shadcn Dialog component for the Video popups in the Projects section.",
-    "Use Tailwind masonry classes (columns-1 sm:columns-2 lg:columns-3) for the Projects section layout.",
-    "Ensure the Caveat font is loaded from Google Fonts for hand-drawn elements.",
-    "Ensure Cabinet Grotesk is used for headings and Manrope for body text.",
-    "Use Lucide-react for the hand-drawn spirals (e.g., using a customized icon) or inline SVGs.",
-    "Do NOT use generic placeholders like via.placeholder.com. Use the exact media URLs provided."
+    "CRITICAL: Do not use placeholder images. Loop over the provided video_reels array to generate 12 total items (duplicate them to reach 12).",
+    "CRITICAL: Add @import url('https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@800,500,700,400,900&display=swap'); to your index.css to load the Cabinet Grotesk font.",
+    "CRITICAL: Ensure you create .js or .jsx files, NOT .tsx files.",
+    "Install 'framer-motion' for all drag and scroll animations.",
+    "Install 'lucide-react' for missing generic icons.",
+    "Configure Tailwind with theme extensions for 'Cabinet Grotesk', 'IBM Plex Mono', and 'Caveat' (use Google Fonts for the latter two).",
+    "For the experiment shelf, use CSS columns (columns-2 md:columns-4) instead of flex/grid to get an authentic masonry layout easily.",
+    "The footer dummy art should be implemented using native SVG shapes or lucide-react icons, arranged creatively, rather than using generic image URLs.",
+    "Use Shadcn Dialog component for the video popup functionality.",
+    "Ensure the entire app feels like an interactive tool rather than just a static page. Include 'data-testid' attributes on all interactive elements."
   ]
 }
