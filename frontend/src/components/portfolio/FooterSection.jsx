@@ -6,6 +6,10 @@ const footerArtworkUrl = "https://customer-assets.emergentagent.com/job_micro-mo
 export default function FooterSection() {
   return (
     <footer id="contact" className="footer-section" data-testid="footer-section">
+      <div className="footer-lab-header" data-testid="footer-lab-header">
+        <span>Content Lab checkout</span>
+        <strong>Ready for a messy brief?</strong>
+      </div>
       <div className="footer-shell">
         <div className="footer-philosophy">
           <div className="lab-module-label footer-label" data-testid="lab-notes-module-label">Module 04 / Exit Note</div>
@@ -16,6 +20,7 @@ export default function FooterSection() {
           </p>
         </div>
         <div className="footer-art-wrap">
+          <span className="footer-art-label" data-testid="footer-art-label">lab mascot</span>
           <img
             className="footer-attached-art"
             src={footerArtworkUrl}
@@ -24,6 +29,7 @@ export default function FooterSection() {
           />
         </div>
         <nav className="footer-links" aria-label="Contact links" data-testid="footer-contact-links">
+          <p className="footer-link-label" data-testid="footer-link-label">Open channels</p>
           <motion.a
             href="https://linkedin.com"
             target="_blank"

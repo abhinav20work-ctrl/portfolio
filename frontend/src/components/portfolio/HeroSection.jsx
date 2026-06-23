@@ -24,23 +24,6 @@ export default function HeroSection() {
     <section id="top" className="hero-section" data-testid="hero-section">
       <div className="lab-grid-lines" aria-hidden="true" />
       <motion.div className="hero-inner" style={{ y }}>
-        <div className="lab-sticker-layer" data-testid="hero-sticker-layer">
-          {stickers.map((sticker, index) => (
-            <motion.div
-              key={sticker.label}
-              className={`lab-sticker ${sticker.tone}`}
-              style={{ left: sticker.x, top: sticker.y, rotate: sticker.rotate }}
-              drag
-              dragMomentum={false}
-              whileDrag={{ scale: 1.08, zIndex: 12 }}
-              whileHover={{ y: -4 }}
-              data-testid={`hero-draggable-sticker-${index + 1}`}
-            >
-              {index === 3 ? <MousePointer2 size={15} /> : <Sparkles size={15} />}
-              {sticker.label}
-            </motion.div>
-          ))}
-        </div>
         <div className="hero-grid">
           <div className="hero-main">
             <p className="hero-kicker" data-testid="hero-role-text">Abhinav Sharma · Content Lab Operator</p>
@@ -74,6 +57,27 @@ export default function HeroSection() {
                 <Download size={17} /> Request resume
               </a>
             </motion.div>
+            <div className="lab-ingredient-tray" data-testid="hero-ingredient-tray">
+              {stickers.map((sticker, index) => (
+                <motion.div
+                  key={sticker.label}
+                  className={`lab-sticker ${sticker.tone}`}
+                  drag
+                  dragMomentum={false}
+                  whileDrag={{ scale: 1.06, zIndex: 12 }}
+                  whileHover={{ y: -4 }}
+                  data-testid={`hero-draggable-sticker-${index + 1}`}
+                >
+                  {index === 3 ? <MousePointer2 size={15} /> : <Sparkles size={15} />}
+                  {sticker.label}
+                </motion.div>
+              ))}
+            </div>
+            <div className="hero-system-strip" data-testid="hero-system-strip">
+              <span><b>Input</b> messy ideas</span>
+              <span><b>Method</b> strategic experiments</span>
+              <span><b>Output</b> shippable systems</span>
+            </div>
           </div>
           <motion.aside
             className="recruiter-panel"
@@ -106,7 +110,6 @@ export default function HeroSection() {
             </div>
           </motion.aside>
         </div>
-        <HeroSquiggle />
       </motion.div>
       <a className="scroll-cue" href="#case-studies" data-testid="hero-scroll-link" aria-label="Enter the proof board section">
         <span>enter lab</span>

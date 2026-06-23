@@ -19,11 +19,16 @@ export default function ProcessSection() {
       </div>
       <div className="process-board" data-testid="process-journey-canvas">
         <div className="process-center-piece" data-testid="process-center-piece">
-          <span>brief</span>
+          <span>signal</span>
           <strong>→</strong>
-          <span>story</span>
+          <span>voice</span>
           <strong>→</strong>
-          <span>system</span>
+          <span>rhythm</span>
+        </div>
+        <div className="protocol-readout" data-testid="process-protocol-readout">
+          <span>Protocol status</span>
+          <strong>4 modules calibrated</strong>
+          <em>Repeatable, not rigid.</em>
         </div>
         <div className="process-card-grid">
           {processSteps.map((step, index) => (
@@ -62,6 +67,11 @@ function ProcessCard({ step, index }) {
               </div>
               <h3 data-testid={`process-step-title-${index + 1}`}>{step.label}</h3>
               <p data-testid={`process-step-note-${index + 1}`}>{step.note}</p>
+              <div className="protocol-bars" data-testid={`process-protocol-bars-${index + 1}`}>
+                <span />
+                <span />
+                <span />
+              </div>
               <span className="process-artifact" data-testid={`process-step-artifact-${index + 1}`}>{step.artifact}</span>
             </motion.article>
   );
