@@ -14,30 +14,33 @@ button {
 
 .sticky-nav {
     position: fixed;
-    left: 50%;
+    left: 0;
+    right: 0;
     bottom: 22px;
     z-index: 40;
+    width: min(760px, calc(100vw - 72px));
     display: flex;
     align-items: center;
     gap: 6px;
-    padding: 7px;
+    justify-content: center;
+    padding: 8px 12px;
     border: 1.5px solid #0f172a;
-    border-radius: 999px;
+    border-radius: 28px;
     background: rgba(255, 255, 255, 0.76);
     backdrop-filter: blur(14px);
     box-shadow: 0 12px 34px rgba(15, 23, 42, 0.12);
-    transform: translateX(-50%);
+    margin: 0 auto;
 }
 
 .sticky-nav a {
     display: inline-flex;
     align-items: center;
     min-height: 35px;
-    padding: 0 13px;
+    padding: 0 clamp(18px, 2.4vw, 38px);
     border-radius: 999px;
     color: #0f172a;
     text-decoration: none;
-    font-size: 0.82rem;
+    font-size: clamp(0.86rem, 1.15vw, 1.1rem);
     font-weight: 900;
     transition: transform 180ms ease, background-color 180ms ease;
 }
@@ -110,6 +113,23 @@ button {
     gap: clamp(36px, 8vw, 88px);
     align-items: end;
     margin-bottom: 54px;
+}
+
+.case-section .section-heading-row,
+.projects-section .projects-topline,
+.process-shell {
+    text-align: center;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    align-items: center;
+    gap: 22px;
+}
+
+.case-section .section-side-note,
+.projects-section .section-kicker,
+.process-lead {
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .section-side-note,
@@ -345,12 +365,19 @@ button {
 .case-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: clamp(18px, 3vw, 32px);
+    gap: clamp(22px, 3vw, 38px);
+    perspective: 1200px;
 }
 
 .case-card {
     cursor: default;
-    transition: transform 240ms ease;
+    position: relative;
+    padding: 10px;
+    border: 1px solid rgba(15, 23, 42, 0.1);
+    border-radius: 26px;
+    background: rgba(255, 255, 255, 0.76);
+    box-shadow: 0 12px 40px rgba(15, 23, 42, 0.06);
+    transition: transform 240ms ease, box-shadow 240ms ease, border-color 240ms ease;
     will-change: transform;
 }
 
@@ -359,7 +386,9 @@ button {
 }
 
 .case-card:hover {
-    transform: translateY(-8px) rotate(-1deg);
+    transform: translateY(-10px) rotate(-0.8deg);
+    border-color: #0f172a;
+    box-shadow: 12px 12px 0 #0f172a, 0 18px 40px rgba(15, 23, 42, 0.08);
 }
 
 .case-card:hover .case-number {
@@ -371,7 +400,48 @@ button {
     overflow: hidden;
     aspect-ratio: 0.84 / 1;
     border: 2px solid #0a0a0a;
+    border-radius: 18px;
     background: #f3f4f6;
+}
+
+.case-image-wrap::before {
+    content: "";
+    position: absolute;
+    inset: 14px;
+    z-index: 1;
+    border: 1.5px dashed rgba(15, 23, 42, 0.45);
+    border-radius: 14px;
+    opacity: 0;
+    transform: scale(0.96);
+    transition: opacity 240ms ease, transform 240ms ease;
+}
+
+.case-card:hover .case-image-wrap::before {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.case-floating-label {
+    position: absolute;
+    left: 15px;
+    bottom: 15px;
+    z-index: 2;
+    max-width: calc(100% - 30px);
+    padding: 9px 12px;
+    border: 1.5px solid #0f172a;
+    border-radius: 999px;
+    background: var(--case-accent, #fde047);
+    color: #0f172a;
+    font-size: 0.82rem;
+    font-weight: 900;
+    transform: translateY(10px) rotate(-1deg);
+    opacity: 0;
+    transition: transform 240ms ease, opacity 240ms ease;
+}
+
+.case-card:hover .case-floating-label {
+    transform: translateY(0) rotate(-1deg);
+    opacity: 1;
 }
 
 .case-card:nth-child(2) .case-image-wrap {
@@ -405,7 +475,11 @@ button {
 .case-number {
     font-family: "Caveat", cursive;
     font-size: 2rem;
-    color: #ff8a8a;
+    color: #0f172a;
+    background: var(--case-accent, #ff8a8a);
+    border: 1px solid #0f172a;
+    border-radius: 999px;
+    padding: 0 10px;
 }
 
 .case-meta h3 {
@@ -421,7 +495,7 @@ button {
     margin: 0 0 11px;
     padding: 7px 10px;
     border-radius: 999px;
-    background: #a7f3d0;
+    background: var(--case-accent, #a7f3d0);
     border: 1px solid #0f172a;
     color: #0f172a;
     font-size: 0.82rem;
@@ -466,15 +540,15 @@ button {
 }
 
 .masonry {
-    columns: 3 250px;
-    column-gap: 22px;
+    columns: 4 230px;
+    column-gap: 20px;
 }
 
 .project-tile,
 .experiment-note {
     display: inline-block;
     width: 100%;
-    margin: 0 0 22px;
+    margin: 0 0 20px;
     break-inside: avoid;
 }
 
@@ -483,15 +557,41 @@ button {
     padding: 0;
     overflow: hidden;
     border: 2px solid #0a0a0a;
+    border-radius: 22px;
     background: #f3f4f6;
     cursor: pointer;
     text-align: left;
     box-shadow: 0 0 0 #0a0a0a;
-    transition: box-shadow 220ms ease;
+    transition: box-shadow 220ms ease, filter 220ms ease;
+}
+
+.project-tile::after {
+    content: "open reel";
+    position: absolute;
+    right: 14px;
+    top: 14px;
+    z-index: 2;
+    padding: 6px 9px;
+    border-radius: 999px;
+    border: 1px solid #0f172a;
+    background: #ffffff;
+    color: #0f172a;
+    font-family: "Caveat", cursive;
+    font-size: 1.05rem;
+    font-weight: 700;
+    opacity: 0;
+    transform: translateY(-8px) rotate(4deg);
+    transition: opacity 220ms ease, transform 220ms ease;
+}
+
+.project-tile:hover::after {
+    opacity: 1;
+    transform: translateY(0) rotate(4deg);
 }
 
 .project-tile:hover {
     box-shadow: 7px 7px 0 #0a0a0a;
+    filter: saturate(1.05);
 }
 
 .project-tile:hover .project-play {
@@ -524,6 +624,7 @@ button {
     padding: 10px 12px;
     background: rgba(255, 255, 255, 0.88);
     border: 1.5px solid #0a0a0a;
+    border-radius: 16px;
     backdrop-filter: blur(8px);
 }
 
@@ -551,6 +652,7 @@ button {
     place-items: center;
     padding: 30px;
     border: 2px solid #0a0a0a;
+    border-radius: 24px;
     background: #fef08a;
     font-family: "Caveat", cursive;
     font-weight: 700;
@@ -558,6 +660,7 @@ button {
     line-height: 0.92;
     text-align: center;
     box-shadow: 9px 9px 0 #0a0a0a;
+    animation: note-float 5s ease-in-out infinite;
 }
 
 .video-dialog {
@@ -595,10 +698,7 @@ button {
 }
 
 .process-shell {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(270px, 450px);
-    gap: clamp(32px, 7vw, 86px);
-    align-items: end;
+    max-width: 920px;
 }
 
 .process-intro .section-title {
@@ -608,6 +708,7 @@ button {
 
 .process-lead {
     margin: 0;
+    max-width: 640px;
     color: #64748b;
     font-size: clamp(1.05rem, 2vw, 1.28rem);
     line-height: 1.55;
@@ -615,18 +716,18 @@ button {
 
 .process-board {
     position: relative;
-    width: min(1220px, calc(100% - 32px));
-    margin: 10px auto 0;
-    padding: 22px 0 10px;
+    width: min(1120px, calc(100% - 32px));
+    margin: 42px auto 0;
+    padding: 96px 0 18px;
 }
 
 .process-path {
     position: absolute;
     left: 0;
     right: 0;
-    top: 0;
+    top: 48px;
     width: 100%;
-    height: 190px;
+    height: 210px;
     overflow: visible;
     pointer-events: none;
 }
@@ -636,16 +737,39 @@ button {
     z-index: 1;
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 18px;
+    gap: 20px;
+}
+
+.process-center-piece {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    z-index: 3;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 18px;
+    border: 1.5px solid #0f172a;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.84);
+    backdrop-filter: blur(10px);
+    box-shadow: 5px 5px 0 #0f172a;
+    transform: translateX(-50%) rotate(-1deg);
+    font-weight: 900;
+}
+
+.process-center-piece span {
+    font-family: "Caveat", cursive;
+    font-size: 1.5rem;
 }
 
 .process-card {
-    min-height: 276px;
+    min-height: 290px;
     display: flex;
     flex-direction: column;
     padding: 22px;
     border: 1.5px solid #0f172a;
-    border-radius: 22px;
+    border-radius: 26px;
     background: rgba(255, 255, 255, 0.88);
     backdrop-filter: blur(10px);
     box-shadow: 0 0 0 #0f172a;
@@ -659,8 +783,13 @@ button {
 
 .process-card:nth-child(2),
 .process-card:nth-child(4) {
-    margin-top: 54px;
+    margin-top: 44px;
 }
+
+.process-card:nth-child(1) { background: linear-gradient(180deg, rgba(253, 224, 71, 0.16), rgba(255,255,255,0.9)); }
+.process-card:nth-child(2) { background: linear-gradient(180deg, rgba(167, 243, 208, 0.18), rgba(255,255,255,0.9)); }
+.process-card:nth-child(3) { background: linear-gradient(180deg, rgba(191, 219, 254, 0.22), rgba(255,255,255,0.9)); }
+.process-card:nth-child(4) { background: linear-gradient(180deg, rgba(255, 138, 138, 0.14), rgba(255,255,255,0.9)); }
 
 .process-card-top {
     display: flex;
@@ -757,8 +886,18 @@ button {
     place-items: center;
 }
 
-.footer-face {
-    width: min(220px, 56vw);
+.footer-attached-art {
+    width: min(260px, 58vw);
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+    border-radius: 28px;
+    filter: contrast(1.04);
+    transition: transform 260ms ease, filter 260ms ease;
+}
+
+.footer-attached-art:hover {
+    transform: translateY(-6px) rotate(-2deg);
+    filter: contrast(1.08) saturate(1.04);
 }
 
 .footer-links {
@@ -813,6 +952,15 @@ button {
         margin-top: 0;
     }
 
+    .process-board {
+        padding-top: 72px;
+    }
+
+    .process-center-piece {
+        width: min(100%, 360px);
+        justify-content: center;
+    }
+
     .process-card-top {
         margin-bottom: 28px;
     }
@@ -847,6 +995,11 @@ button {
 @keyframes pulse-pop {
     0%, 100% { transform: scale(1); }
     45% { transform: scale(1.16); }
+}
+
+@keyframes note-float {
+    0%, 100% { transform: rotate(-2deg) translateY(0); }
+    50% { transform: rotate(1deg) translateY(-7px); }
 }
 
 @media (max-width: 720px) {

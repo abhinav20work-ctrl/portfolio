@@ -7,7 +7,8 @@ export const caseStudies = [
     brief: "Rebuilt the story around the buyer’s day-to-day friction instead of the product roadmap.",
     tags: ["Positioning", "Landing copy", "SaaS"],
     image:
-      "https://images.pexels.com/photos/16401927/pexels-photo-16401927.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "https://images.unsplash.com/photo-1549298222-1c31e8915347?auto=format&fit=crop&w=1100&q=80",
+    accent: "#FDE047",
   },
   {
     id: "case-02",
@@ -17,7 +18,8 @@ export const caseStudies = [
     brief: "Converted interviews, notes, and sales objections into a reusable messaging spine.",
     tags: ["Messaging", "Founder voice", "Launch"],
     image:
-      "https://images.pexels.com/photos/7602914/pexels-photo-7602914.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "https://images.unsplash.com/photo-1519764340700-3db40311f21e?auto=format&fit=crop&w=1100&q=80",
+    accent: "#A7F3D0",
   },
   {
     id: "case-03",
@@ -27,7 +29,8 @@ export const caseStudies = [
     brief: "Designed a campaign system that made subject-matter expertise easier to ship every week.",
     tags: ["Editorial", "Content ops", "Demand"],
     image:
-      "https://images.pexels.com/photos/5998739/pexels-photo-5998739.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "https://images.unsplash.com/photo-1504198322253-cfa87a0ff25f?auto=format&fit=crop&w=1100&q=80",
+    accent: "#BFDBFE",
   },
 ];
 
@@ -101,6 +104,76 @@ export const projects = [
     videoUrl:
       "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4",
     shape: "tall",
+  },
+  {
+    id: "project-06",
+    title: "Launch line stress test",
+    description: "A quick reel that tests how far one launch idea can bend before it breaks.",
+    thumbnail:
+      "https://images.pexels.com/photos/7661590/pexels-photo-7661590.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=900&w=700",
+    videoUrl:
+      "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4",
+    shape: "medium",
+  },
+  {
+    id: "project-07",
+    title: "The objection board",
+    description: "A visual experiment that turns sales objections into a content map.",
+    thumbnail:
+      "https://images.pexels.com/photos/6476250/pexels-photo-6476250.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=650",
+    videoUrl:
+      "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
+    shape: "short",
+  },
+  {
+    id: "project-08",
+    title: "Voice card shuffle",
+    description: "A playful format for comparing how the same thought sounds across brand voices.",
+    thumbnail:
+      "https://images.pexels.com/photos/7606039/pexels-photo-7606039.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=900&w=700",
+    videoUrl:
+      "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4",
+    shape: "tall",
+  },
+  {
+    id: "project-09",
+    title: "Campaign rhythm study",
+    description: "A motion sketch for showing how weekly ideas ladder into one campaign memory.",
+    thumbnail:
+      "https://images.pexels.com/photos/7947770/pexels-photo-7947770.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    videoUrl:
+      "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
+    shape: "wide",
+  },
+  {
+    id: "project-10",
+    title: "Hook laboratory",
+    description: "A tiny testing board for comparing curiosity, clarity, and contradiction.",
+    thumbnail:
+      "https://images.pexels.com/photos/6956351/pexels-photo-6956351.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=850&w=650",
+    videoUrl:
+      "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/VolkswagenGTIReview.mp4",
+    shape: "medium",
+  },
+  {
+    id: "project-11",
+    title: "Editorial mood cut",
+    description: "A soft visual edit for translating a strategy deck into content people want to watch.",
+    thumbnail:
+      "https://images.pexels.com/photos/6177567/pexels-photo-6177567.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=900&w=700",
+    videoUrl:
+      "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4",
+    shape: "tall",
+  },
+  {
+    id: "project-12",
+    title: "Signal over noise",
+    description: "A crisp visual metaphor for choosing one strong story from too many possible angles.",
+    thumbnail:
+      "https://images.pexels.com/photos/6476574/pexels-photo-6476574.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=650",
+    videoUrl:
+      "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/SubaruOutbackOnStreetAndDirt.mp4",
+    shape: "short",
   },
 ];
 

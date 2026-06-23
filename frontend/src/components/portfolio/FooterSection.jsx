@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Mail, Linkedin } from "lucide-react";
-import { FooterFace } from "./Doodles";
+
+const footerArtworkUrl = "https://customer-assets.emergentagent.com/job_micro-moments-8/artifacts/prgmvixf_image.png";
 
 export default function FooterSection() {
   return (
@@ -14,7 +15,12 @@ export default function FooterSection() {
           </p>
         </div>
         <div className="footer-art-wrap">
-          <FooterFace />
+          <img
+            className="footer-attached-art"
+            src={footerArtworkUrl}
+            alt="Hand-drawn waving character artwork"
+            data-testid="footer-attached-art"
+          />
         </div>
         <nav className="footer-links" aria-label="Contact links" data-testid="footer-contact-links">
           <motion.a

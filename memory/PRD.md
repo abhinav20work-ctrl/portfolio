@@ -56,3 +56,12 @@ Create a portfolio for a content strategist, Abhinav Sharma with white backgroun
 - Collect real portfolio videos and contact details.
 - Replace placeholder case-study metrics with verified numbers.
 - Add a real resume PDF or hosted resume page.
+
+
+## Implemented — 2026-06-23 Follow-up Refinement
+- Center-aligned the floating section navigation and verified exact viewport centering.
+- Reworked case studies with richer editorial imagery, accent colors, floating outcome labels, hover lift, dashed image overlays, and stronger card depth.
+- Expanded the experiments section to 12 project/video assets with masonry variation and hover/open-reel microinteractions.
+- Replaced footer dummy artwork with the user-provided attached waving character artwork.
+- Further refined the process section with centered heading, brief → story → system marker, animated path, and more visual card styling.
+- Verified: 12 project cards, footer attached artwork visible, no mobile horizontal overflow, centered nav.

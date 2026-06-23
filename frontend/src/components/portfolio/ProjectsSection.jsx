@@ -21,7 +21,7 @@ export default function ProjectsSection() {
           <h2 className="section-title" data-testid="projects-title-text">Projects</h2>
         </div>
         <div className="masonry" data-testid="projects-masonry-layout">
-          {projects.slice(0, 2).map((project, index) => (
+          {projects.slice(0, 4).map((project, index) => (
             <ProjectTile key={project.id} project={project} index={index} onOpen={setActiveProject} />
           ))}
           <motion.div
@@ -34,8 +34,8 @@ export default function ProjectsSection() {
           >
             I experiment a lot
           </motion.div>
-          {projects.slice(2).map((project, index) => (
-            <ProjectTile key={project.id} project={project} index={index + 2} onOpen={setActiveProject} />
+          {projects.slice(4).map((project, index) => (
+            <ProjectTile key={project.id} project={project} index={index + 4} onOpen={setActiveProject} />
           ))}
         </div>
       </div>

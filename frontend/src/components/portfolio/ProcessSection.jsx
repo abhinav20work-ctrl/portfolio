@@ -8,16 +8,16 @@ export default function ProcessSection() {
       <div className="section-shell process-shell">
         <div className="process-intro">
           <p className="section-kicker" data-testid="process-kicker-text">The working trail</p>
-          <h2 className="section-title" data-testid="process-title-text">From messy brief to repeatable momentum.</h2>
+          <h2 className="section-title" data-testid="process-title-text">How I turn chaos into content people remember.</h2>
         </div>
         <p className="process-lead" data-testid="process-lead-text">
           A recruiter should be able to see not just what I make — but how I think, decide, and leave teams with something usable.
         </p>
       </div>
       <div className="process-board" data-testid="process-journey-canvas">
-        <svg className="process-path" viewBox="0 0 1180 300" fill="none" aria-hidden="true" preserveAspectRatio="none">
+        <svg className="process-path" viewBox="0 0 1180 360" fill="none" aria-hidden="true" preserveAspectRatio="none">
           <motion.path
-            d="M36 152C178 20 304 48 391 143C470 231 591 249 681 150C784 37 916 40 1144 126"
+            d="M52 184C197 58 303 72 397 169C485 260 606 270 703 165C807 53 929 77 1127 162"
             stroke="#1E293B"
             strokeWidth="3.5"
             strokeLinecap="round"
@@ -28,16 +28,23 @@ export default function ProcessSection() {
             transition={{ duration: 1.55, ease: "easeInOut" }}
           />
           <motion.circle
-            cx="36"
-            cy="152"
+            cx="52"
+            cy="184"
             r="8"
             fill="#FDE047"
             stroke="#1E293B"
             strokeWidth="3"
-            animate={{ cx: [36, 391, 681, 1144], cy: [152, 143, 150, 126] }}
+            animate={{ cx: [52, 397, 703, 1127], cy: [184, 169, 165, 162] }}
             transition={{ duration: 7.5, repeat: Infinity, ease: "easeInOut" }}
           />
         </svg>
+        <div className="process-center-piece" data-testid="process-center-piece">
+          <span>brief</span>
+          <strong>→</strong>
+          <span>story</span>
+          <strong>→</strong>
+          <span>system</span>
+        </div>
         <div className="process-card-grid">
           {processSteps.map((step, index) => (
             <motion.article

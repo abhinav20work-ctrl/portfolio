@@ -17,14 +17,17 @@ export default function CaseStudiesSection() {
             <motion.article
               key={study.id}
               className="case-card"
+              style={{ "--case-accent": study.accent }}
               initial={{ opacity: 0, y: 36 }}
               whileInView={{ opacity: 1, y: 0 }}
+              whileHover={{ y: -12, rotate: index === 1 ? 0.8 : -0.8 }}
               viewport={{ once: true, amount: 0.25 }}
               transition={{ duration: 0.55, delay: index * 0.1 }}
               data-testid={`case-card-${index + 1}`}
             >
               <div className="case-image-wrap" data-testid={`case-image-wrap-${index + 1}`}>
                 <img src={study.image} alt={study.title} data-testid={`case-image-${index + 1}`} />
+                <span className="case-floating-label" data-testid={`case-floating-label-${index + 1}`}>{study.outcome}</span>
               </div>
               <div className="case-meta">
                 <span className="case-number" data-testid={`case-number-${index + 1}`}>{study.label}</span>
