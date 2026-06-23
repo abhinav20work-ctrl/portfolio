@@ -3,7 +3,7 @@ import { caseStudies } from "@/data/portfolio";
 
 export default function CaseStudiesSection() {
   return (
-    <section className="section case-section" data-testid="case-study-section">
+    <section id="case-studies" className="section case-section" data-testid="case-study-section">
       <div className="section-shell">
         <div className="section-heading-row">
           <div>
@@ -28,7 +28,9 @@ export default function CaseStudiesSection() {
               </div>
               <div className="case-meta">
                 <span className="case-number" data-testid={`case-number-${index + 1}`}>{study.label}</span>
+                <p className="case-outcome" data-testid={`case-outcome-${index + 1}`}>{study.outcome}</p>
                 <h3 data-testid={`case-card-title-${index + 1}`}>{study.title}</h3>
+                <p className="case-brief" data-testid={`case-brief-${index + 1}`}>{study.brief}</p>
                 <div className="case-tags" data-testid={`case-tags-${index + 1}`}>
                   {study.tags.map((tag) => (
                     <span key={tag}>{tag}</span>

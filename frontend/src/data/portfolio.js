@@ -2,27 +2,48 @@ export const caseStudies = [
   {
     id: "case-01",
     label: "01",
-    title: "Launch language for a quiet productivity brand",
-    tags: ["Positioning", "Landing copy", "Narrative"],
+    title: "Positioning a productivity brand from feature-led to outcome-led",
+    outcome: "+34% demo-page engagement",
+    brief: "Rebuilt the story around the buyer’s day-to-day friction instead of the product roadmap.",
+    tags: ["Positioning", "Landing copy", "SaaS"],
     image:
       "https://images.pexels.com/photos/16401927/pexels-photo-16401927.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
   },
   {
     id: "case-02",
     label: "02",
-    title: "Turning scattered founder notes into a repeatable story",
-    tags: ["Messaging", "Founder voice", "Systems"],
+    title: "Founder narrative system for a B2B team entering a crowded category",
+    outcome: "One voice across 6 launch channels",
+    brief: "Converted interviews, notes, and sales objections into a reusable messaging spine.",
+    tags: ["Messaging", "Founder voice", "Launch"],
     image:
       "https://images.pexels.com/photos/7602914/pexels-photo-7602914.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
   },
   {
     id: "case-03",
     label: "03",
-    title: "A campaign calendar that felt less like a calendar",
-    tags: ["Campaigns", "Editorial", "Content ops"],
+    title: "Editorial engine for turning expertise into repeatable demand moments",
+    outcome: "12-week content operating rhythm",
+    brief: "Designed a campaign system that made subject-matter expertise easier to ship every week.",
+    tags: ["Editorial", "Content ops", "Demand"],
     image:
       "https://images.pexels.com/photos/5998739/pexels-photo-5998739.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
   },
+];
+
+export const recruiterSignals = [
+  { id: "signal-01", value: "6+", label: "years shaping content strategy" },
+  { id: "signal-02", value: "B2B + consumer", label: "across product, brand, and growth" },
+  { id: "signal-03", value: "Launch-ready", label: "positioning, campaigns, editorial systems" },
+];
+
+export const strengths = [
+  "Messaging architecture",
+  "Campaign strategy",
+  "Founder-led content",
+  "Editorial systems",
+  "Conversion copy",
+  "Brand voice",
 ];
 
 export const projects = [
