@@ -7,10 +7,16 @@ export default function CaseStudiesSection() {
       <div className="section-shell">
         <div className="section-heading-row">
           <div>
-            <p className="section-kicker" data-testid="case-kicker-text">Selected decisions</p>
-            <h2 className="section-title" data-testid="case-title-text">Case studies</h2>
+            <p className="section-kicker" data-testid="case-kicker-text">01 · Proof Board</p>
+            <h2 className="section-title" data-testid="case-title-text">Strategy receipts, not case studies.</h2>
           </div>
-          <p className="section-side-note" data-testid="case-side-note-text">Three snapshots of strategy becoming something people can actually use.</p>
+          <p className="section-side-note" data-testid="case-side-note-text">A board of decisions, artifacts, and outcomes — enough proof for recruiters, enough personality for humans.</p>
+        </div>
+        <div className="proof-rail" data-testid="proof-board-rail">
+          <span>Positioning</span>
+          <span>Messaging</span>
+          <span>Editorial Systems</span>
+          <span>Launch Narrative</span>
         </div>
         <div className="case-grid">
           {caseStudies.map((study, index) => (

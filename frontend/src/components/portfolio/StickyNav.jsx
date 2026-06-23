@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
 
 const navItems = [
-  { href: "#case-studies", label: "Proof" },
-  { href: "#projects", label: "Experiments" },
-  { href: "#process", label: "Process" },
-  { href: "#contact", label: "Contact" },
+  { href: "#case-studies", label: "01 Proof", testId: "nav-link-proof" },
+  { href: "#projects", label: "02 Shelf", testId: "nav-link-experiments" },
+  { href: "#process", label: "03 System", testId: "nav-link-process" },
+  { href: "#contact", label: "04 Contact", testId: "nav-link-contact" },
 ];
 
 export default function StickyNav() {
@@ -17,8 +17,11 @@ export default function StickyNav() {
       transition={{ duration: 0.55, delay: 0.9 }}
       data-testid="sticky-section-nav"
     >
+      <a href="#top" className="nav-brand" data-testid="nav-link-content-lab">
+        Content Lab™
+      </a>
       {navItems.map((item) => (
-        <a key={item.href} href={item.href} data-testid={`nav-link-${item.label.toLowerCase()}`}>
+        <a key={item.href} href={item.href} data-testid={item.testId}>
           <span>{item.label}</span>
         </a>
       ))}

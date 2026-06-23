@@ -9,11 +9,11 @@ export default function ProcessSection() {
     <section id="process" className="section process-section section-reveal" data-testid="process-section">
       <div className="section-shell process-shell">
         <div className="process-intro">
-          <p className="section-kicker" data-testid="process-kicker-text">The working trail</p>
-          <h2 className="section-title" data-testid="process-title-text">How I turn chaos into content people remember.</h2>
+          <p className="section-kicker" data-testid="process-kicker-text">03 · Working System</p>
+          <h2 className="section-title" data-testid="process-title-text">The lab protocol.</h2>
         </div>
         <p className="process-lead" data-testid="process-lead-text">
-          A recruiter should be able to see not just what I make — but how I think, decide, and leave teams with something usable.
+          Four modules that turn raw signals into language, formats, and a repeatable content rhythm.
         </p>
       </div>
       <div className="process-board" data-testid="process-journey-canvas">

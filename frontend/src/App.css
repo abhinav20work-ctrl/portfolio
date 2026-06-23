@@ -7,6 +7,14 @@
     color: #0a0a0a;
 }
 
+:root {
+    --lab-yellow: #ffebb0;
+    --lab-mint: #e3f2ca;
+    --lab-lavender: #e6d5ff;
+    --lab-blue: #d8ecff;
+    --lab-pink: #ffd8df;
+}
+
 a,
 button {
     -webkit-tap-highlight-color: transparent;
@@ -18,15 +26,15 @@ button {
     right: 0;
     bottom: 22px;
     z-index: 40;
-    width: min(760px, calc(100vw - 72px));
+    width: min(920px, calc(100vw - 72px));
     display: flex;
     align-items: center;
     gap: 6px;
     justify-content: center;
     padding: 8px 12px;
     border: 1.5px solid #0f172a;
-    border-radius: 28px;
-    background: rgba(255, 255, 255, 0.76);
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.84);
     backdrop-filter: blur(14px);
     box-shadow:
         0 18px 46px rgba(15, 23, 42, 0.18),
@@ -39,13 +47,20 @@ button {
     display: inline-flex;
     align-items: center;
     min-height: 35px;
-    padding: 0 clamp(18px, 2.4vw, 38px);
-    border-radius: 999px;
+    padding: 0 clamp(12px, 1.7vw, 28px);
+    border-radius: 12px;
     color: #0f172a;
     text-decoration: none;
-    font-size: clamp(0.86rem, 1.15vw, 1.1rem);
+    font-family: "IBM Plex Mono", monospace;
+    font-size: clamp(0.72rem, 0.92vw, 0.9rem);
     font-weight: 900;
     transition: transform 180ms ease, background-color 180ms ease;
+}
+
+.sticky-nav .nav-brand {
+    background: #0f172a;
+    color: #ffffff;
+    border: 1px solid #0f172a;
 }
 
 .sticky-nav a:hover {
@@ -103,7 +118,7 @@ button {
     margin: 0;
     font-size: clamp(3.3rem, 8vw, 6.9rem);
     line-height: 0.9;
-    font-family: "Outfit", sans-serif;
+    font-family: "Cabinet Grotesk", "Outfit", sans-serif;
     font-weight: 900;
     letter-spacing: 0;
 }
@@ -150,12 +165,53 @@ button {
     display: flex;
     align-items: center;
     padding: 66px 0 108px;
+    isolation: isolate;
+}
+
+.lab-grid-lines {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background:
+        linear-gradient(rgba(15, 23, 42, 0.035) 1px, transparent 1px) 0 0 / 72px 72px,
+        linear-gradient(90deg, rgba(15, 23, 42, 0.035) 1px, transparent 1px) 0 0 / 72px 72px;
+    mask-image: linear-gradient(to bottom, #000 0%, transparent 82%);
 }
 
 .hero-inner {
     position: relative;
     width: min(1540px, calc(100% - 40px));
 }
+
+.lab-sticker-layer {
+    position: absolute;
+    inset: -24px 0 0;
+    pointer-events: none;
+    z-index: 4;
+}
+
+.lab-sticker {
+    position: absolute;
+    pointer-events: auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 9px 13px;
+    border: 2px solid #0f172a;
+    border-radius: 999px;
+    box-shadow: 4px 4px 0 #0f172a;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.74rem;
+    font-weight: 800;
+    cursor: grab;
+    user-select: none;
+}
+
+.lab-sticker:active { cursor: grabbing; }
+.lab-sticker.yellow { background: var(--lab-yellow); }
+.lab-sticker.mint { background: var(--lab-mint); }
+.lab-sticker.blue { background: var(--lab-blue); }
+.lab-sticker.pink { background: var(--lab-pink); }
 
 .hero-grid {
     display: grid;
@@ -177,7 +233,7 @@ button {
     font-size: clamp(3.35rem, 5vw, 5.45rem);
     line-height: 0.96;
     letter-spacing: 0;
-    font-family: "Outfit", sans-serif;
+    font-family: "Cabinet Grotesk", "Outfit", sans-serif;
     font-weight: 900;
 }
 
@@ -214,7 +270,8 @@ button {
     gap: 9px;
     min-height: 48px;
     padding: 0 20px;
-    border-radius: 999px;
+    border-radius: 14px;
+    font-family: "IBM Plex Mono", monospace;
     font-weight: 800;
     text-decoration: none;
     transition: transform 220ms ease, box-shadow 220ms ease, background-color 220ms ease;
@@ -242,8 +299,8 @@ button {
 .primary-pill:hover,
 .secondary-pill:hover,
 .text-pill:hover {
-    transform: translateY(-4px);
-    box-shadow: 5px 5px 0 #0f172a;
+    transform: translate(3px, 3px);
+    box-shadow: 1px 1px 0 #0f172a;
 }
 
 .recruiter-panel {
@@ -255,7 +312,8 @@ button {
     gap: 26px;
     padding: 24px;
     border: 1.5px solid #0f172a;
-    border-radius: 22px;
+    border: 2px solid #0f172a;
+    border-radius: 18px;
     background:
         linear-gradient(135deg, rgba(167, 243, 208, 0.55), rgba(255, 255, 255, 0) 42%),
         #ffffff;
@@ -281,6 +339,49 @@ button {
     letter-spacing: 0.09em;
     text-transform: uppercase;
     color: #64748b;
+    font-family: "IBM Plex Mono", monospace;
+}
+
+.lab-console-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.lab-live-dot {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.72rem;
+    font-weight: 800;
+}
+
+.lab-live-dot::before {
+    content: "";
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #7ed957;
+    border: 1px solid #0f172a;
+    animation: pulse-pop 1.6s ease-in-out infinite;
+}
+
+.lab-console-screen {
+    display: grid;
+    gap: 10px;
+    padding: 18px;
+    border: 2px solid #0f172a;
+    border-radius: 14px;
+    background: #0f172a;
+    color: #ffffff;
+    font-family: "IBM Plex Mono", monospace;
+}
+
+.lab-console-screen strong {
+    font-size: 1.1rem;
+    line-height: 1.2;
 }
 
 .signal-list {
@@ -331,13 +432,13 @@ button {
     display: grid;
     place-items: center;
     border: 2px solid #0a0a0a;
-    border-radius: 999px;
+    border-radius: 18px;
     font-family: "Caveat", cursive;
     font-size: 1.35rem;
     color: #0a0a0a;
     text-decoration: none;
     background: #fef08a;
-    transform: rotate(9deg);
+    transform: rotate(5deg);
     transition: transform 220ms ease, background-color 220ms ease;
 }
 
@@ -372,6 +473,33 @@ button {
     perspective: 1200px;
 }
 
+.proof-rail,
+.shelf-control-strip {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin: -26px auto 44px;
+}
+
+.proof-rail span,
+.shelf-control-strip span {
+    padding: 8px 12px;
+    border: 1.5px solid #0f172a;
+    border-radius: 999px;
+    background: #ffffff;
+    box-shadow: 3px 3px 0 rgba(15, 23, 42, 0.9);
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.76rem;
+    font-weight: 800;
+}
+
+.proof-rail span:nth-child(2),
+.shelf-control-strip span:nth-child(2) { background: var(--lab-mint); }
+.proof-rail span:nth-child(3),
+.shelf-control-strip span:nth-child(3) { background: var(--lab-lavender); }
+.proof-rail span:nth-child(4) { background: var(--lab-blue); }
+
 .case-card {
     cursor: default;
     position: relative;
@@ -389,9 +517,9 @@ button {
 }
 
 .case-card:hover {
-    transform: translateY(-10px) rotate(-0.8deg);
+    transform: translate(4px, 4px) rotate(-0.4deg);
     border-color: #0f172a;
-    box-shadow: 12px 12px 0 #0f172a, 0 18px 40px rgba(15, 23, 42, 0.08);
+    box-shadow: 4px 4px 0 #0f172a, 0 10px 24px rgba(15, 23, 42, 0.06);
 }
 
 .case-card:hover .case-number {
@@ -491,6 +619,7 @@ button {
     font-size: clamp(1.35rem, 2vw, 1.75rem);
     line-height: 1.08;
     font-weight: 800;
+    font-family: "Cabinet Grotesk", "Outfit", sans-serif;
 }
 
 .case-outcome {
@@ -592,7 +721,7 @@ button {
 }
 
 .project-tile:hover {
-    box-shadow: 7px 7px 0 #0a0a0a;
+    box-shadow: 3px 3px 0 #0a0a0a;
     filter: saturate(1.05);
 }
 
@@ -673,6 +802,16 @@ button {
     overflow-wrap: anywhere;
     box-shadow: 9px 9px 0 #0a0a0a;
     animation: note-float 5s ease-in-out infinite;
+}
+
+.experiment-note small {
+    display: block;
+    max-width: 330px;
+    margin-top: 14px;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: clamp(0.76rem, 1.1vw, 0.95rem);
+    line-height: 1.35;
+    font-weight: 700;
 }
 
 .video-dialog {
@@ -834,7 +973,7 @@ button {
 
 .process-card h3 {
     margin: 0 0 12px;
-    font-family: "Outfit", sans-serif;
+    font-family: "Cabinet Grotesk", "Outfit", sans-serif;
     font-size: clamp(1.32rem, 2vw, 1.68rem);
     line-height: 1.03;
     font-weight: 900;
@@ -880,7 +1019,7 @@ button {
     font-size: clamp(2.35rem, 5vw, 4.4rem);
     line-height: 0.95;
     font-weight: 900;
-    font-family: "Outfit", sans-serif;
+    font-family: "Cabinet Grotesk", "Outfit", sans-serif;
     letter-spacing: 0;
 }
 

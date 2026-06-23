@@ -8,7 +8,7 @@ export default function FooterSection() {
     <footer id="contact" className="footer-section" data-testid="footer-section">
       <div className="footer-shell">
         <div className="footer-philosophy">
-          <p className="section-kicker" data-testid="footer-kicker-text">My philosophy</p>
+          <p className="section-kicker" data-testid="footer-kicker-text">04 · Lab Notes</p>
           <h2 data-testid="footer-philosophy-title">Useful can still be strange.</h2>
           <p data-testid="footer-philosophy-text">
             The best content gives people a handle: something to hold, repeat, question, or send to someone else.

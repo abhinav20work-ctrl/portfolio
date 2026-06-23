@@ -35,18 +35,18 @@ export const caseStudies = [
 ];
 
 export const recruiterSignals = [
-  { id: "signal-01", value: "6+", label: "years shaping content strategy" },
-  { id: "signal-02", value: "B2B + consumer", label: "across product, brand, and growth" },
-  { id: "signal-03", value: "Launch-ready", label: "positioning, campaigns, editorial systems" },
+  { id: "signal-01", value: "6+", label: "years running narrative experiments" },
+  { id: "signal-02", value: "B2B + consumer", label: "labs across product, brand, and growth" },
+  { id: "signal-03", value: "Ship-ready", label: "positioning, campaigns, editorial systems" },
 ];
 
 export const strengths = [
   "Messaging architecture",
-  "Campaign strategy",
+  "Campaign prototypes",
   "Founder-led content",
-  "Editorial systems",
+  "Editorial operating systems",
   "Conversion copy",
-  "Brand voice",
+  "Brand voice chemistry",
 ];
 
 export const projects = [
