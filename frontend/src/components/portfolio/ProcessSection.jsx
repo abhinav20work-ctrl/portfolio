@@ -15,29 +15,6 @@ export default function ProcessSection() {
         </p>
       </div>
       <div className="process-board" data-testid="process-journey-canvas">
-        <svg className="process-path" viewBox="0 0 1180 360" fill="none" aria-hidden="true" preserveAspectRatio="none">
-          <motion.path
-            d="M52 184C197 58 303 72 397 169C485 260 606 270 703 165C807 53 929 77 1127 162"
-            stroke="#1E293B"
-            strokeWidth="3.5"
-            strokeLinecap="round"
-            strokeDasharray="10 12"
-            initial={{ pathLength: 0 }}
-            whileInView={{ pathLength: 1 }}
-            viewport={{ once: true, amount: 0.35 }}
-            transition={{ duration: 1.55, ease: "easeInOut" }}
-          />
-          <motion.circle
-            cx="52"
-            cy="184"
-            r="8"
-            fill="#FDE047"
-            stroke="#1E293B"
-            strokeWidth="3"
-            animate={{ cx: [52, 397, 703, 1127], cy: [184, 169, 165, 162] }}
-            transition={{ duration: 7.5, repeat: Infinity, ease: "easeInOut" }}
-          />
-        </svg>
         <div className="process-center-piece" data-testid="process-center-piece">
           <span>brief</span>
           <strong>→</strong>
@@ -59,7 +36,14 @@ export default function ProcessSection() {
             >
               <div className="process-card-top">
                 <span className="process-number" data-testid={`process-step-number-${index + 1}`}>{step.number}</span>
-                <SpiralMark />
+                <motion.div
+                  className="responsive-spiral"
+                  animate={{ rotate: [0, 12, -8, 0], scale: [1, 1.08, 0.96, 1] }}
+                  transition={{ duration: 2.8, repeat: Infinity, ease: "easeInOut", delay: index * 0.25 }}
+                  data-testid={`process-responsive-spiral-${index + 1}`}
+                >
+                  <SpiralMark />
+                </motion.div>
               </div>
               <h3 data-testid={`process-step-title-${index + 1}`}>{step.label}</h3>
               <p data-testid={`process-step-note-${index + 1}`}>{step.note}</p>

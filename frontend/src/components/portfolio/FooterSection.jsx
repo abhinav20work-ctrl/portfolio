@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Mail, Linkedin } from "lucide-react";
 
-const footerArtworkUrl = "https://customer-assets.emergentagent.com/job_micro-moments-8/artifacts/prgmvixf_image.png";
+const footerArtworkUrl = "https://customer-assets.emergentagent.com/job_micro-moments-8/artifacts/0jx7eeuv_abhinav-footer.png";
 
 export default function FooterSection() {
   return (

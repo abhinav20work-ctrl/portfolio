@@ -65,3 +65,11 @@ Create a portfolio for a content strategist, Abhinav Sharma with white backgroun
 - Replaced footer dummy artwork with the user-provided attached waving character artwork.
 - Further refined the process section with centered heading, brief → story → system marker, animated path, and more visual card styling.
 - Verified: 12 project cards, footer attached artwork visible, no mobile horizontal overflow, centered nav.
+
+
+## Implemented — 2026-06-23 Requested Fixes
+- Replaced footer image source with user-provided `abhinav-footer.png` asset.
+- Converted Projects from CSS columns to a dense CSS grid to reduce empty gaps and keep the “I experiment a lot” note inside its box.
+- Removed the process background line and moving yellow ball completely.
+- Kept responsive animated spirals within each process step so the spiral interaction responds to the process cards instead of the background path.
+- Verified: footer uses abhinav-footer asset, Projects has 12 cards, process path count is 0, responsive spirals visible, mobile has no horizontal overflow.
