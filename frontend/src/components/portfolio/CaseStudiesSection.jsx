@@ -8,7 +8,6 @@ export default function CaseStudiesSection() {
         <div className="lab-module-label" data-testid="proof-board-module-label">Module 01 / Evidence Bench</div>
         <div className="section-heading-row">
           <div>
-            <p className="section-kicker" data-testid="case-kicker-text">01 · Specimen Proof</p>
             <h2 className="section-title" data-testid="case-title-text">Proof samples from the lab bench.</h2>
           </div>
           <p className="section-side-note" data-testid="case-side-note-text">A board of decisions, artifacts, and outcomes — enough proof for recruiters, enough personality for humans.</p>

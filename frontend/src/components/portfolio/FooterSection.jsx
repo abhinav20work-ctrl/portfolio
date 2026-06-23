@@ -13,14 +13,12 @@ export default function FooterSection() {
       <div className="footer-shell">
         <div className="footer-philosophy">
           <div className="lab-module-label footer-label" data-testid="lab-notes-module-label">Module 04 / Exit Note</div>
-          <p className="section-kicker" data-testid="footer-kicker-text">04 · Lab Notes</p>
           <h2 data-testid="footer-philosophy-title">Useful can still be strange.</h2>
           <p data-testid="footer-philosophy-text">
             The best content gives people a handle: something to hold, repeat, question, or send to someone else.
           </p>
         </div>
         <div className="footer-art-wrap">
-          <span className="footer-art-label" data-testid="footer-art-label">lab mascot</span>
           <img
             className="footer-attached-art"
             src={footerArtworkUrl}

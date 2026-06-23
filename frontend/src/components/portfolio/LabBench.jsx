@@ -11,7 +11,6 @@ export default function LabBench() {
         <div className="lab-module-label" data-testid="lab-bench-module-label">Product Core / Content Lab OS</div>
         <div className="lab-bench-header">
           <div>
-            <p className="section-kicker" data-testid="lab-bench-kicker">Before the proof</p>
             <h2 className="section-title" data-testid="lab-bench-title">A strategy workshop disguised as a product.</h2>
           </div>
           <div className="lab-meter" data-testid="lab-bench-meter">

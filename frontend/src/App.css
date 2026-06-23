@@ -22,54 +22,6 @@ button {
     -webkit-tap-highlight-color: transparent;
 }
 
-.sticky-nav {
-    position: fixed;
-    left: 0;
-    right: 0;
-    bottom: 22px;
-    z-index: 40;
-    width: min(920px, calc(100vw - 72px));
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    justify-content: center;
-    padding: 8px 12px;
-    border: 1.5px solid #0f172a;
-    border-radius: 18px;
-    background: rgba(255, 255, 255, 0.84);
-    backdrop-filter: blur(14px);
-    box-shadow:
-        0 18px 46px rgba(15, 23, 42, 0.18),
-        0 4px 0 rgba(15, 23, 42, 0.16),
-        inset 0 1px 0 rgba(255, 255, 255, 0.82);
-    margin: 0 auto;
-}
-
-.sticky-nav a {
-    display: inline-flex;
-    align-items: center;
-    min-height: 35px;
-    padding: 0 clamp(12px, 1.7vw, 28px);
-    border-radius: 12px;
-    color: #0f172a;
-    text-decoration: none;
-    font-family: "IBM Plex Mono", monospace;
-    font-size: clamp(0.72rem, 0.92vw, 0.9rem);
-    font-weight: 900;
-    transition: transform 180ms ease, background-color 180ms ease;
-}
-
-.sticky-nav .nav-brand {
-    background: #0f172a;
-    color: #ffffff;
-    border: 1px solid #0f172a;
-}
-
-.sticky-nav a:hover {
-    transform: translateY(-3px);
-    background: #fde047;
-}
-
 .section {
     padding: clamp(88px, 12vw, 148px) 0;
 }
@@ -364,10 +316,10 @@ button {
 
 .hero-section {
     position: relative;
-    min-height: 88vh;
+    min-height: 82vh;
     display: flex;
     align-items: center;
-    padding: 58px 0 150px;
+    padding: 58px 0 96px;
     isolation: isolate;
 }
 
@@ -666,30 +618,6 @@ button {
     color: #0f172a;
     font-size: 0.8rem;
     font-weight: 800;
-}
-
-.scroll-cue {
-    position: absolute;
-    right: clamp(22px, 5vw, 70px);
-    bottom: 34px;
-    width: 96px;
-    height: 54px;
-    display: grid;
-    place-items: center;
-    border: 2px solid #0a0a0a;
-    border-radius: 18px;
-    font-family: "Caveat", cursive;
-    font-size: 1.35rem;
-    color: #0a0a0a;
-    text-decoration: none;
-    background: #fef08a;
-    transform: rotate(5deg);
-    transition: transform 220ms ease, background-color 220ms ease;
-}
-
-.scroll-cue:hover {
-    transform: rotate(-8deg) translateY(-5px);
-    background: #93c5fd;
 }
 
 .flow-art {
@@ -1448,8 +1376,11 @@ button {
 .footer-section {
     border-top: 2px solid #0a0a0a;
     padding: clamp(38px, 5vw, 64px) 0 0;
+    position: relative;
     background:
-        linear-gradient(180deg, #ffffff 0%, #ffffff 58%, rgba(227, 242, 202, 0.5) 100%);
+        linear-gradient(90deg, rgba(255, 235, 176, 0.28) 0 1px, transparent 1px 100%) 0 0 / 96px 96px,
+        linear-gradient(rgba(227, 242, 202, 0.28) 0 1px, transparent 1px 100%) 0 0 / 96px 96px,
+        linear-gradient(180deg, #ffffff 0%, #ffffff 54%, rgba(227, 242, 202, 0.42) 100%);
     overflow: hidden;
 }
 
@@ -1475,7 +1406,7 @@ button {
 
 .footer-shell {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(280px, 420px) minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr) minmax(360px, 520px) minmax(0, 1fr);
     align-items: end;
     gap: clamp(32px, 7vw, 88px);
     min-height: clamp(420px, 48vw, 560px);
@@ -1505,38 +1436,25 @@ button {
     height: 100%;
     min-height: clamp(420px, 48vw, 560px);
     position: relative;
-}
-
-.footer-art-label {
-    position: absolute;
-    left: 50%;
-    top: 8px;
-    z-index: 2;
-    padding: 7px 11px;
-    border: 2px solid #0f172a;
-    border-radius: 999px;
-    background: var(--lab-pink);
-    box-shadow: 3px 3px 0 #0f172a;
-    font-family: "IBM Plex Mono", monospace;
-    font-size: 0.72rem;
-    font-weight: 900;
-    transform: translateX(-50%) rotate(-2deg);
+    margin-bottom: -8px;
 }
 
 .footer-attached-art {
-    width: min(500px, 78vw);
-    max-height: clamp(420px, 48vw, 560px);
+    width: min(620px, 86vw);
+    max-height: clamp(460px, 54vw, 640px);
     aspect-ratio: auto;
     object-fit: contain;
     object-position: bottom center;
-    border-radius: 28px;
-    filter: contrast(1.04);
+    border-radius: 0;
+    mix-blend-mode: multiply;
+    filter: contrast(1.08) saturate(0.92);
+    opacity: 0.9;
     transition: transform 260ms ease, filter 260ms ease;
 }
 
 .footer-attached-art:hover {
-    transform: translateY(-6px) rotate(-2deg);
-    filter: contrast(1.08) saturate(1.04);
+    transform: translateY(-4px) rotate(-1deg);
+    filter: contrast(1.1) saturate(0.96);
 }
 
 .footer-links {
@@ -1760,10 +1678,6 @@ button {
     .experiment-note {
         min-height: 210px;
         font-size: clamp(2.4rem, 15vw, 4rem);
-    }
-
-    .sticky-nav {
-        display: none;
     }
 
     .footer-links a {

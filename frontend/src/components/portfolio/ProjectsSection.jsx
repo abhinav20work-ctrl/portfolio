@@ -18,7 +18,6 @@ export default function ProjectsSection() {
       <div className="section-shell">
         <div className="lab-module-label" data-testid="experiment-shelf-module-label">Module 02 / Experiment Shelf</div>
         <div className="projects-topline">
-          <p className="section-kicker" data-testid="projects-kicker-text">02 · Experiment Shelf</p>
           <h2 className="section-title" data-testid="projects-title-text">Twelve strange samples, bottled.</h2>
         </div>
         <div className="shelf-control-strip" data-testid="experiment-shelf-control-strip">

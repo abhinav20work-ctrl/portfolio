@@ -1,6 +1,5 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowDownRight, Beaker, Download, Mail, MousePointer2, Sparkles } from "lucide-react";
-import { HeroSquiggle } from "./Doodles";
 import { recruiterSignals, strengths } from "@/data/portfolio";
 
 const lines = [
@@ -111,9 +110,6 @@ export default function HeroSection() {
           </motion.aside>
         </div>
       </motion.div>
-      <a className="scroll-cue" href="#case-studies" data-testid="hero-scroll-link" aria-label="Enter the proof board section">
-        <span>enter lab</span>
-      </a>
     </section>
   );
 }
