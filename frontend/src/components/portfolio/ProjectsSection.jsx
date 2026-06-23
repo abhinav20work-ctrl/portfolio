@@ -14,7 +14,7 @@ export default function ProjectsSection() {
   const [activeProject, setActiveProject] = useState(null);
 
   return (
-    <section className="section projects-section" data-testid="projects-section">
+    <section id="projects" className="section projects-section section-reveal" data-testid="projects-section">
       <div className="section-shell">
         <div className="projects-topline">
           <p className="section-kicker" data-testid="projects-kicker-text">Reels, cuts, odd little tests</p>
@@ -41,7 +41,7 @@ export default function ProjectsSection() {
       </div>
 
       <Dialog open={Boolean(activeProject)} onOpenChange={(open) => !open && setActiveProject(null)}>
-        <DialogContent className="video-dialog" data-testid="project-video-popup">
+        <DialogContent className="video-dialog" data-testid="project-video-modal">
           {activeProject && (
             <>
               <DialogHeader>

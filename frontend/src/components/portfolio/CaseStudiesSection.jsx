@@ -3,7 +3,7 @@ import { caseStudies } from "@/data/portfolio";
 
 export default function CaseStudiesSection() {
   return (
-    <section id="case-studies" className="section case-section" data-testid="case-study-section">
+    <section id="case-studies" className="section case-section section-reveal" data-testid="case-study-section">
       <div className="section-shell">
         <div className="section-heading-row">
           <div>

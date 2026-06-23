@@ -107,22 +107,30 @@ export const projects = [
 export const processSteps = [
   {
     id: "listen",
-    label: "Listen sideways",
-    note: "Find the useful detail hiding outside the brief.",
+    number: "01",
+    label: "Decode the mess",
+    note: "Interviews, objections, notes, and market noise become one clean map of what matters.",
+    artifact: "Signal map",
   },
   {
     id: "shape",
-    label: "Shape the tension",
-    note: "Turn raw inputs into one sharp narrative problem.",
+    number: "02",
+    label: "Find the spine",
+    note: "I identify the central tension, the audience promise, and the language that can carry both.",
+    artifact: "Narrative spine",
   },
   {
     id: "prototype",
-    label: "Prototype words",
-    note: "Draft formats quickly, then keep the ones with a pulse.",
+    number: "03",
+    label: "Prototype the system",
+    note: "Hooks, landing sections, reels, campaigns, and editorial formats are tested as a connected set.",
+    artifact: "Content kit",
   },
   {
     id: "ship",
-    label: "Ship, learn, loop",
-    note: "Let response patterns improve the next story.",
+    number: "04",
+    label: "Ship the rhythm",
+    note: "The final work is easy for teams to repeat, measure, and evolve without losing the voice.",
+    artifact: "Operating rhythm",
   },
 ];

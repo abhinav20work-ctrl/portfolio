@@ -4,7 +4,7 @@ import { FooterFace } from "./Doodles";
 
 export default function FooterSection() {
   return (
-    <footer className="footer-section" data-testid="footer-section">
+    <footer id="contact" className="footer-section" data-testid="footer-section">
       <div className="footer-shell">
         <div className="footer-philosophy">
           <p className="section-kicker" data-testid="footer-kicker-text">My philosophy</p>
