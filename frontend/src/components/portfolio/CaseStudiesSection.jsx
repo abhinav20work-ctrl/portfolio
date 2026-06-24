@@ -86,9 +86,40 @@ export default function CaseStudiesSection() {
                 <h2 data-testid="case-popup-title">{activeCase.title}</h2>
                 <p className="case-popup-outcome" data-testid="case-popup-outcome">{activeCase.outcome}</p>
                 <p data-testid="case-popup-description">{activeCase.brief}</p>
+                {activeCase.problem && (
+                  <div className="case-popup-detail-block" data-testid="case-popup-problem">
+                    <b>Problem</b>
+                    <p>{activeCase.problem}</p>
+                  </div>
+                )}
+                {activeCase.strategy && (
+                  <div className="case-popup-detail-block" data-testid="case-popup-strategy">
+                    <b>Strategy</b>
+                    <p>{activeCase.strategy}</p>
+                  </div>
+                )}
+                {activeCase.execution && (
+                  <div className="case-popup-detail-block" data-testid="case-popup-execution">
+                    <b>Execution phases</b>
+                    <ul>
+                      {activeCase.execution.map((item) => <li key={item}>{item}</li>)}
+                    </ul>
+                  </div>
+                )}
                 <div className="case-popup-stack" data-testid="case-popup-stack">
                   {activeCase.tags.map((tag) => <span key={tag}>{tag}</span>)}
                 </div>
+                {activeCase.pdfUrl && (
+                  <a
+                    className="case-source-link"
+                    href={activeCase.pdfUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    data-testid="case-popup-source-pdf-link"
+                  >
+                    Open original case study PDF
+                  </a>
+                )}
               </div>
             </div>
           )}

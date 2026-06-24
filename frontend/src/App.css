@@ -715,6 +715,60 @@ button {
     line-height: 1.55;
 }
 
+.case-popup-detail-block {
+    margin-top: 14px;
+    padding: 13px 14px;
+    border: 1.5px solid #0f172a;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.72);
+}
+
+.case-popup-detail-block b {
+    display: block;
+    margin-bottom: 5px;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+}
+
+.case-popup-detail-block p,
+.case-popup-detail-block ul {
+    margin: 0;
+    color: #475569;
+    font-size: 0.94rem;
+    line-height: 1.45;
+}
+
+.case-popup-detail-block ul {
+    padding-left: 18px;
+}
+
+.case-popup-detail-block li + li {
+    margin-top: 6px;
+}
+
+.case-source-link {
+    display: inline-flex;
+    width: fit-content;
+    margin-top: 18px;
+    padding: 10px 13px;
+    border: 2px solid #0f172a;
+    border-radius: 12px;
+    background: var(--lab-yellow);
+    color: #0f172a;
+    box-shadow: 4px 4px 0 #0f172a;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    font-weight: 900;
+    text-decoration: none;
+    transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.case-source-link:hover {
+    transform: translate(3px, 3px);
+    box-shadow: 1px 1px 0 #0f172a;
+}
+
 .persona-spec-list,
 .case-popup-stack,
 .video-popup-tags {

@@ -2,13 +2,23 @@ export const caseStudies = [
   {
     id: "case-01",
     label: "01",
-    title: "Positioning a productivity brand from feature-led to outcome-led",
-    outcome: "+34% demo-page engagement",
-    brief: "Rebuilt the story around the buyer’s day-to-day friction instead of the product roadmap.",
-    tags: ["Positioning", "Landing copy", "SaaS"],
+    title: "UFO Bean: Coffee from Another Dimension",
+    outcome: "Commodity coffee → immersive discovery",
+    brief: "Positioned a coffee brand as an otherworldly discovery, using mystery, cinematic storytelling, and shareable Gen Z-first launch mechanics.",
+    problem:
+      "The coffee category is saturated with brands repeating the same promises around taste, quality, and lifestyle. UFO Bean needed a world that made people curious before they even knew it was coffee.",
+    strategy:
+      "Instead of selling coffee as a product, the brand was framed as a signal arriving from another dimension. The launch became an unexplained event: something to decode, share, and participate in.",
+    execution: [
+      "Tease: leaked footage, alien language, distorted signals, and cryptic posts to create intrigue.",
+      "Reveal: cinematic POV content and AR filters that made the audience feel like they had discovered the product.",
+      "Sustain: Spot the UFO challenges, alien transmissions, fan theories, and limited-edition flavor drops.",
+    ],
+    tags: ["Brand world", "Launch strategy", "Gen Z", "Immersive campaign"],
     image:
       "https://images.pexels.com/photos/29579755/pexels-photo-29579755.jpeg?auto=compress&cs=tinysrgb&w=1100",
     accent: "#FDE047",
+    pdfUrl: "https://customer-assets.emergentagent.com/job_micro-moments-8/artifacts/t61qfkf2_UFO%20Beans.pdf",
   },
   {
     id: "case-02",

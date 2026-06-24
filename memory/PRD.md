@@ -111,3 +111,10 @@ Create a portfolio for a content strategist, Abhinav Sharma with white backgroun
 - Redesigned project video popup into a left-video / right-title-description layout matching the Content Lab visual system.
 - Vertically aligned footer text and social links more closely while preserving center artwork.
 - Verified: persona popup opens, case detail popup opens, video is left of copy in popup, footer alignment improved, no mobile horizontal overflow.
+
+
+## Implemented — 2026-06-24 UFO Beans Case Study
+- Extracted the uploaded `UFO Beans.pdf` and converted it into the first real case study.
+- Replaced the first placeholder proof card with “UFO Bean: Coffee from Another Dimension.”
+- Added real case details: problem, strategy, execution phases, immersive launch concept, Gen Z audience angle, and PDF source link.
+- Verified: UFO Beans appears as the first case, popup opens, problem/strategy/execution blocks render, and source PDF link is visible.
