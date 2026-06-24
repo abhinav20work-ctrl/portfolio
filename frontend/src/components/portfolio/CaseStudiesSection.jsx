@@ -68,24 +68,34 @@ export default function CaseStudiesSection() {
         </div>
       </div>
       <Dialog open={Boolean(activeCase)} onOpenChange={(open) => !open && setActiveCase(null)}>
-        <DialogContent className="case-dialog lab-dialog" data-testid="case-study-detail-popup">
+        <DialogContent className="case-dialog lab-dialog case-lab-sheet" data-testid="case-study-detail-popup">
           {activeCase && (
-            <div className="case-popup-grid">
-              <div className="case-popup-visual" style={{ "--case-accent": activeCase.accent }} data-testid="case-popup-visual">
-                <div className="specimen-visual">
-                  <span className="specimen-axis x" />
-                  <span className="specimen-axis y" />
-                  <span className="specimen-dot d1" />
-                  <span className="specimen-dot d2" />
-                  <span className="specimen-dot d3" />
-                  <strong>{activeCase.label}</strong>
+            <div className="case-sheet-layout" style={{ "--case-accent": activeCase.accent }}>
+              <div className="case-sheet-hero" data-testid="case-popup-visual">
+                <div className="case-sheet-topline">
+                  <span>Specimen {activeCase.label}</span>
+                  <span>Content Lab Evidence</span>
                 </div>
-              </div>
-              <div className="case-popup-copy">
-                <span className="lab-module-label inline-label" data-testid="case-popup-module-label">Evidence specimen</span>
                 <h2 data-testid="case-popup-title">{activeCase.title}</h2>
                 <p className="case-popup-outcome" data-testid="case-popup-outcome">{activeCase.outcome}</p>
+                <div className="case-signal-map" aria-hidden="true">
+                  <span className="signal-node node-a" />
+                  <span className="signal-node node-b" />
+                  <span className="signal-node node-c" />
+                  <span className="signal-line line-a" />
+                  <span className="signal-line line-b" />
+                </div>
+              </div>
+
+              <div className="case-sheet-summary">
+                <span className="lab-module-label inline-label" data-testid="case-popup-module-label">Case file</span>
                 <p data-testid="case-popup-description">{activeCase.brief}</p>
+                <div className="case-popup-stack" data-testid="case-popup-stack">
+                  {activeCase.tags.map((tag) => <span key={tag}>{tag}</span>)}
+                </div>
+              </div>
+
+              <div className="case-detail-grid">
                 {activeCase.problem && (
                   <div className="case-popup-detail-block" data-testid="case-popup-problem">
                     <b>Problem</b>
@@ -98,17 +108,23 @@ export default function CaseStudiesSection() {
                     <p>{activeCase.strategy}</p>
                   </div>
                 )}
-                {activeCase.execution && (
-                  <div className="case-popup-detail-block" data-testid="case-popup-execution">
-                    <b>Execution phases</b>
-                    <ul>
-                      {activeCase.execution.map((item) => <li key={item}>{item}</li>)}
-                    </ul>
+              </div>
+
+              {activeCase.execution && (
+                <div className="case-phase-strip" data-testid="case-popup-execution">
+                  <b>Execution phases</b>
+                  <div>
+                    {activeCase.execution.map((item, index) => (
+                      <article key={item}>
+                        <span>{String(index + 1).padStart(2, "0")}</span>
+                        <p>{item}</p>
+                      </article>
+                    ))}
                   </div>
-                )}
-                <div className="case-popup-stack" data-testid="case-popup-stack">
-                  {activeCase.tags.map((tag) => <span key={tag}>{tag}</span>)}
                 </div>
+              )}
+
+              <div className="case-sheet-footer">
                 {activeCase.pdfUrl && (
                   <a
                     className="case-source-link"

@@ -118,3 +118,10 @@ Create a portfolio for a content strategist, Abhinav Sharma with white backgroun
 - Replaced the first placeholder proof card with “UFO Bean: Coffee from Another Dimension.”
 - Added real case details: problem, strategy, execution phases, immersive launch concept, Gen Z audience angle, and PDF source link.
 - Verified: UFO Beans appears as the first case, popup opens, problem/strategy/execution blocks render, and source PDF link is visible.
+
+
+## Implemented — 2026-06-24 Case Study Popup Redesign
+- Rebuilt the case study detail popup from a split card into a lab-style case sheet.
+- Added a large yellow evidence/specimen hero area, compact case file summary, problem/strategy blocks, execution phase strip, and PDF source CTA.
+- Reduced oversized typography and tightened spacing so the modal feels more polished and fits better in viewport.
+- Verified: redesigned case popup opens, execution phases and PDF CTA remain visible, lint checks pass.
