@@ -1,7 +1,11 @@
 import { motion } from "framer-motion";
+import { useState } from "react";
+import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { caseStudies } from "@/data/portfolio";
 
 export default function CaseStudiesSection() {
+  const [activeCase, setActiveCase] = useState(null);
+
   return (
     <section id="case-studies" className="section case-section section-reveal" data-testid="case-study-section">
       <div className="section-shell">
@@ -30,6 +34,10 @@ export default function CaseStudiesSection() {
               viewport={{ once: true, amount: 0.25 }}
               transition={{ duration: 0.55, delay: index * 0.1 }}
               data-testid={`case-card-${index + 1}`}
+              onClick={() => setActiveCase(study)}
+              role="button"
+              tabIndex={0}
+              onKeyDown={(event) => event.key === "Enter" && setActiveCase(study)}
             >
               <span className="lab-card-pin pin-left" aria-hidden="true" />
               <span className="lab-card-pin pin-right" aria-hidden="true" />
@@ -59,6 +67,33 @@ export default function CaseStudiesSection() {
           ))}
         </div>
       </div>
+      <Dialog open={Boolean(activeCase)} onOpenChange={(open) => !open && setActiveCase(null)}>
+        <DialogContent className="case-dialog lab-dialog" data-testid="case-study-detail-popup">
+          {activeCase && (
+            <div className="case-popup-grid">
+              <div className="case-popup-visual" style={{ "--case-accent": activeCase.accent }} data-testid="case-popup-visual">
+                <div className="specimen-visual">
+                  <span className="specimen-axis x" />
+                  <span className="specimen-axis y" />
+                  <span className="specimen-dot d1" />
+                  <span className="specimen-dot d2" />
+                  <span className="specimen-dot d3" />
+                  <strong>{activeCase.label}</strong>
+                </div>
+              </div>
+              <div className="case-popup-copy">
+                <span className="lab-module-label inline-label" data-testid="case-popup-module-label">Evidence specimen</span>
+                <h2 data-testid="case-popup-title">{activeCase.title}</h2>
+                <p className="case-popup-outcome" data-testid="case-popup-outcome">{activeCase.outcome}</p>
+                <p data-testid="case-popup-description">{activeCase.brief}</p>
+                <div className="case-popup-stack" data-testid="case-popup-stack">
+                  {activeCase.tags.map((tag) => <span key={tag}>{tag}</span>)}
+                </div>
+              </div>
+            </div>
+          )}
+        </DialogContent>
+      </Dialog>
     </section>
   );
 }

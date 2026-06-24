@@ -103,3 +103,11 @@ Create a portfolio for a content strategist, Abhinav Sharma with white backgroun
 - Removed the footer “lab mascot” tag.
 - Blended the footer artwork into the lab-grid background using larger scale, no card styling, multiply blending, and matching footer background grid.
 - Verified: navbar count 0, enter lab count 0, duplicate process kicker count 0, mascot tag count 0, footer art visible, no mobile horizontal overflow.
+
+
+## Implemented — 2026-06-24 Popup & Persona Refinement
+- Added hero persona interaction: clicking the right-side lab card opens an Abhinav character popup using `abhinav-hero.png`.
+- Added case study detail popup with lab-styled specimen visual, outcome, description, and tags.
+- Redesigned project video popup into a left-video / right-title-description layout matching the Content Lab visual system.
+- Vertically aligned footer text and social links more closely while preserving center artwork.
+- Verified: persona popup opens, case detail popup opens, video is left of copy in popup, footer alignment improved, no mobile horizontal overflow.

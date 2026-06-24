@@ -47,26 +47,34 @@ export default function ProjectsSection() {
       </div>
 
       <Dialog open={Boolean(activeProject)} onOpenChange={(open) => !open && setActiveProject(null)}>
-        <DialogContent className="video-dialog" data-testid="project-video-modal">
+        <DialogContent className="video-dialog lab-dialog" data-testid="project-video-modal">
           {activeProject && (
-            <>
-              <DialogHeader>
-                <DialogTitle className="video-dialog-title" data-testid="project-popup-title">
-                  {activeProject.title}
-                </DialogTitle>
-                <DialogDescription className="video-dialog-description" data-testid="project-popup-description">
-                  {activeProject.description}
-                </DialogDescription>
-              </DialogHeader>
+            <div className="video-popup-grid">
               <video
-                className="video-player"
-                src={activeProject.videoUrl}
-                poster={activeProject.thumbnail}
-                controls
-                playsInline
-                data-testid="project-popup-video-player"
-              />
-            </>
+                  className="video-player"
+                  src={activeProject.videoUrl}
+                  poster={activeProject.thumbnail}
+                  controls
+                  playsInline
+                  data-testid="project-popup-video-player"
+                />
+              <div className="video-copy-panel">
+                <DialogHeader>
+                  <span className="lab-module-label inline-label">Experiment sample</span>
+                  <DialogTitle className="video-dialog-title" data-testid="project-popup-title">
+                    {activeProject.title}
+                  </DialogTitle>
+                  <DialogDescription className="video-dialog-description" data-testid="project-popup-description">
+                    {activeProject.description}
+                  </DialogDescription>
+                </DialogHeader>
+                <div className="video-popup-tags" data-testid="project-popup-tags">
+                  <span>Motion test</span>
+                  <span>Content rhythm</span>
+                  <span>Lab sample</span>
+                </div>
+              </div>
+            </div>
           )}
         </DialogContent>
       </Dialog>

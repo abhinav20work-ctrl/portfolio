@@ -1,6 +1,10 @@
+import { useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowDownRight, Beaker, Download, Mail, MousePointer2, Sparkles } from "lucide-react";
+import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { recruiterSignals, strengths } from "@/data/portfolio";
+
+const heroPersonaUrl = "https://customer-assets.emergentagent.com/job_micro-moments-8/artifacts/d3yc6q44_abhinav-hero.png";
 
 const lines = [
   "A Content Lab for messy ideas.",
@@ -16,6 +20,7 @@ const stickers = [
 ];
 
 export default function HeroSection() {
+  const [showPersona, setShowPersona] = useState(false);
   const { scrollY } = useScroll();
   const y = useTransform(scrollY, [0, 600], [0, 70]);
 
@@ -78,10 +83,14 @@ export default function HeroSection() {
               <span><b>Output</b> shippable systems</span>
             </div>
           </div>
-          <motion.aside
-            className="recruiter-panel"
+          <motion.button
+            type="button"
+            className="recruiter-panel hero-persona-card"
+            onClick={() => setShowPersona(true)}
             initial={{ opacity: 0, x: 28, rotate: 1 }}
             animate={{ opacity: 1, x: 0, rotate: -1 }}
+            whileHover={{ y: -8, rotate: 0.5 }}
+            whileTap={{ scale: 0.98 }}
             transition={{ duration: 0.65, delay: 0.48 }}
             data-testid="hero-recruiter-snapshot"
           >
@@ -107,9 +116,34 @@ export default function HeroSection() {
                 <span key={strength}>{strength}</span>
               ))}
             </div>
-          </motion.aside>
+            <div className="hero-persona-peek" data-testid="hero-persona-peek">
+              <img src={heroPersonaUrl} alt="Abhinav Sharma illustrated persona" />
+              <span>click card</span>
+            </div>
+          </motion.button>
         </div>
       </motion.div>
+      <Dialog open={showPersona} onOpenChange={setShowPersona}>
+        <DialogContent className="persona-dialog lab-dialog" data-testid="hero-persona-popup">
+          <div className="persona-popup-grid">
+            <div className="persona-art-stage" data-testid="hero-persona-popup-art">
+              <img src={heroPersonaUrl} alt="Abhinav Sharma illustrated character" />
+            </div>
+            <div className="persona-popup-copy">
+              <span className="lab-module-label inline-label">Persona / Content Lab Operator</span>
+              <h2 data-testid="hero-persona-popup-title">Abhinav Sharma</h2>
+              <p data-testid="hero-persona-popup-description">
+                A strategist who treats content like a lab: observe the signal, test the language, bottle the system.
+              </p>
+              <div className="persona-spec-list" data-testid="hero-persona-popup-specs">
+                <span>Signal reader</span>
+                <span>Voice chemist</span>
+                <span>Launch system builder</span>
+              </div>
+            </div>
+          </div>
+        </DialogContent>
+      </Dialog>
     </section>
   );
 }
