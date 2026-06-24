@@ -5,6 +5,9 @@ export const caseStudies = [
     title: "UFO Bean: Coffee from Another Dimension",
     outcome: "Commodity coffee → immersive discovery",
     brief: "Positioned a coffee brand as an otherworldly discovery, using mystery, cinematic storytelling, and shareable Gen Z-first launch mechanics.",
+    proposition: "Coffee from Another Dimension",
+    audience: "Gen Z and young millennials who value story, aesthetics, and shareability as much as the product itself.",
+    bigIdea: "The Signal Has Arrived — launch the brand like an unexplained event, not a product announcement.",
     problem:
       "The coffee category is saturated with brands repeating the same promises around taste, quality, and lifestyle. UFO Bean needed a world that made people curious before they even knew it was coffee.",
     strategy:
@@ -13,6 +16,16 @@ export const caseStudies = [
       "Tease: leaked footage, alien language, distorted signals, and cryptic posts to create intrigue.",
       "Reveal: cinematic POV content and AR filters that made the audience feel like they had discovered the product.",
       "Sustain: Spot the UFO challenges, alien transmissions, fan theories, and limited-edition flavor drops.",
+    ],
+    originalImages: [
+      "/case-assets/ufo-beans/page-1.jpg",
+      "/case-assets/ufo-beans/page-2.jpg",
+      "/case-assets/ufo-beans/page-3.jpg",
+      "/case-assets/ufo-beans/page-4.jpg",
+      "/case-assets/ufo-beans/page-5.jpg",
+      "/case-assets/ufo-beans/page-6.jpg",
+      "/case-assets/ufo-beans/page-7.jpg",
+      "/case-assets/ufo-beans/page-8.jpg",
     ],
     tags: ["Brand world", "Launch strategy", "Gen Z", "Immersive campaign"],
     image:

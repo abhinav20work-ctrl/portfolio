@@ -125,3 +125,11 @@ Create a portfolio for a content strategist, Abhinav Sharma with white backgroun
 - Added a large yellow evidence/specimen hero area, compact case file summary, problem/strategy blocks, execution phase strip, and PDF source CTA.
 - Reduced oversized typography and tightened spacing so the modal feels more polished and fits better in viewport.
 - Verified: redesigned case popup opens, execution phases and PDF CTA remain visible, lint checks pass.
+
+
+## Implemented — 2026-06-24 Detailed UFO Beans Popup & Scroll Lock
+- Extracted all 8 pages from `UFO Beans.pdf` into real image assets under `/case-assets/ufo-beans/`.
+- Added richer UFO Beans content: proposition, audience, big idea, problem, strategy, execution phases, tags, PDF CTA, and original PDF page gallery.
+- Added original PDF cover preview inside the case file summary and an 8-image original frames gallery.
+- Implemented stronger modal background scroll locking using fixed body positioning plus wheel/touch prevention outside the popup.
+- Verified: PDF preview visible, 8 original images render, body/html locked while popup is open, lint checks pass.

@@ -1,10 +1,44 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { caseStudies } from "@/data/portfolio";
 
 export default function CaseStudiesSection() {
   const [activeCase, setActiveCase] = useState(null);
+
+  useEffect(() => {
+    if (!activeCase) return undefined;
+    const scrollY = window.scrollY;
+    const previousOverflow = document.body.style.overflow;
+    const previousHtmlOverflow = document.documentElement.style.overflow;
+    const previousPosition = document.body.style.position;
+    const previousTop = document.body.style.top;
+    const previousWidth = document.body.style.width;
+    document.body.style.overflow = "hidden";
+    document.documentElement.style.overflow = "hidden";
+    document.body.style.position = "fixed";
+    document.body.style.top = `-${scrollY}px`;
+    document.body.style.width = "100%";
+    const lockBackgroundWheel = (event) => {
+      const popup = document.querySelector('[data-testid="case-study-detail-popup"]');
+      if (!popup || !popup.contains(event.target)) {
+        event.preventDefault();
+        window.scrollTo(0, scrollY);
+      }
+    };
+    window.addEventListener("wheel", lockBackgroundWheel, { passive: false });
+    window.addEventListener("touchmove", lockBackgroundWheel, { passive: false });
+    return () => {
+      window.removeEventListener("wheel", lockBackgroundWheel);
+      window.removeEventListener("touchmove", lockBackgroundWheel);
+      document.body.style.overflow = previousOverflow;
+      document.documentElement.style.overflow = previousHtmlOverflow;
+      document.body.style.position = previousPosition;
+      document.body.style.top = previousTop;
+      document.body.style.width = previousWidth;
+      window.scrollTo(0, scrollY);
+    };
+  }, [activeCase]);
 
   return (
     <section id="case-studies" className="section case-section section-reveal" data-testid="case-study-section">
@@ -90,6 +124,18 @@ export default function CaseStudiesSection() {
               <div className="case-sheet-summary">
                 <span className="lab-module-label inline-label" data-testid="case-popup-module-label">Case file</span>
                 <p data-testid="case-popup-description">{activeCase.brief}</p>
+                {activeCase.originalImages?.[0] && (
+                  <div className="case-hero-pdf-preview" data-testid="case-popup-hero-pdf-preview">
+                    <img src={activeCase.originalImages[0]} alt={`${activeCase.title} original PDF cover`} />
+                  </div>
+                )}
+                {activeCase.proposition && (
+                  <div className="case-fact-grid" data-testid="case-popup-fact-grid">
+                    <span><b>Proposition</b>{activeCase.proposition}</span>
+                    <span><b>Audience</b>{activeCase.audience}</span>
+                    <span><b>Big idea</b>{activeCase.bigIdea}</span>
+                  </div>
+                )}
                 <div className="case-popup-stack" data-testid="case-popup-stack">
                   {activeCase.tags.map((tag) => <span key={tag}>{tag}</span>)}
                 </div>
@@ -119,6 +165,25 @@ export default function CaseStudiesSection() {
                         <span>{String(index + 1).padStart(2, "0")}</span>
                         <p>{item}</p>
                       </article>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {activeCase.originalImages && (
+                <div className="case-original-gallery" data-testid="case-popup-original-gallery">
+                  <div className="case-gallery-heading">
+                    <b>Original PDF frames</b>
+                    <span>{activeCase.originalImages.length} extracted pages</span>
+                  </div>
+                  <div className="case-gallery-strip">
+                    {activeCase.originalImages.map((src, index) => (
+                      <img
+                        key={src}
+                        src={src}
+                        alt={`UFO Beans case study PDF page ${index + 1}`}
+                        data-testid={`case-popup-original-image-${index + 1}`}
+                      />
                     ))}
                   </div>
                 </div>
