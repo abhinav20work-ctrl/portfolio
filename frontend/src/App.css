@@ -405,57 +405,64 @@ button {
 .wizard-word {
     position: relative;
     display: inline-block;
-    color: #0f172a;
-    text-decoration: underline;
-    text-decoration-thickness: 0.08em;
-    text-underline-offset: 0.12em;
+    color: transparent;
+    background: linear-gradient(90deg, #0f172a 0%, #0f172a 42%, #b88700 50%, #0f172a 58%, #0f172a 100%);
+    background-size: 240% 100%;
+    background-position: 0% 50%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    text-decoration: none;
     cursor: default;
+    transform-origin: 50% 76%;
+    transition: transform 260ms cubic-bezier(.22,1,.36,1), letter-spacing 260ms ease, background-position 620ms cubic-bezier(.22,1,.36,1), filter 260ms ease;
 }
 
-.wizard-hat {
-    position: absolute;
-    left: calc(100% - 0.1em);
-    bottom: 76%;
-    width: 0.58em;
-    height: 0.52em;
-    opacity: 0;
-    transform: translate(-50%, 14px) rotate(-14deg) scale(0.48);
-    transform-origin: 50% 100%;
-    filter: drop-shadow(0 8px 12px rgba(15, 23, 42, 0.24));
-    pointer-events: none;
-    transition: opacity 180ms ease, transform 260ms cubic-bezier(.22,1,.36,1);
-}
-
-.wizard-hat::before {
+.wizard-word::before {
     content: "";
     position: absolute;
-    left: 50%;
-    bottom: 0.16em;
-    width: 0;
-    height: 0;
-    border-left: 0.23em solid transparent;
-    border-right: 0.23em solid transparent;
-    border-bottom: 0.52em solid #243b8f;
-    transform: translateX(-50%) skewX(-8deg);
-}
-
-.wizard-hat::after {
-    content: "";
-    position: absolute;
-    left: 50%;
-    bottom: 0;
-    width: 0.7em;
-    height: 0.16em;
+    left: 0.02em;
+    right: 0.02em;
+    bottom: 0.02em;
+    height: 0.08em;
     border-radius: 999px;
-    background: #0f172a;
-    box-shadow: inset 0 0 0 0.04em #fde047;
-    transform: translateX(-50%) rotate(-4deg);
+    background: #b88700;
+    transform: scaleX(0.18);
+    transform-origin: left center;
+    opacity: 0.42;
+    pointer-events: none;
+    transition: transform 320ms cubic-bezier(.22,1,.36,1), opacity 220ms ease;
 }
 
-.wizard-word:hover .wizard-hat,
-.wizard-word:focus-visible .wizard-hat {
+.wizard-word::after {
+    content: attr(data-text);
+    position: absolute;
+    inset: 0;
+    color: rgba(184, 135, 0, 0.18);
+    transform: translateY(0.08em);
+    opacity: 0;
+    pointer-events: none;
+    filter: blur(5px);
+    transition: opacity 240ms ease, transform 260ms cubic-bezier(.22,1,.36,1);
+}
+
+.wizard-word:hover,
+.wizard-word:focus-visible {
+    transform: translateY(-0.045em) skewX(-2deg);
+    letter-spacing: 0.01em;
+    background-position: 100% 50%;
+    filter: drop-shadow(0 0.08em 0 rgba(184, 135, 0, 0.2));
+}
+
+.wizard-word:hover::before,
+.wizard-word:focus-visible::before {
+    transform: scaleX(1);
     opacity: 1;
-    transform: translate(-50%, 0) rotate(-8deg) scale(1);
+}
+
+.wizard-word:hover::after,
+.wizard-word:focus-visible::after {
+    opacity: 1;
+    transform: translateY(0.14em);
 }
 
 .hero-ellipsis {

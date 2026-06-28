@@ -266,3 +266,9 @@ Create a portfolio for a content strategist, Abhinav Sharma with white backgroun
 - Fixed Speciality/portrait overlap by aligning grid track sizes with the actual portrait block and increasing the gap; verified no overlap remains.
 - Simplified “actual engagement.” highlight into a clean rectangular dark-yellow sweep with no distorted stepped shape.
 - Verified via browser smoke test: label is above card layer, card overflow is visible, portrait/note gap is positive, and highlight is clean.
+
+
+## Implemented — 2026-06-28 Creative Wizard Hover Upgrade
+- Removed the previous wizard-hat hover animation and markup from “creative wizard.”
+- Added a polished text hover treatment: gold shimmer sweep, subtle lift/skew, refined underline expansion, and soft glow echo.
+- Verified via browser smoke test: no `.wizard-hat` remains, hover transitions apply correctly, and the hero still renders cleanly.
