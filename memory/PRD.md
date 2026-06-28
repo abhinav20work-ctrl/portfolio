@@ -158,3 +158,11 @@ Create a portfolio for a content strategist, Abhinav Sharma with white backgroun
 - Reduced footer artwork and shell height for better viewport fit.
 - Adjusted footer link block upward for improved desktop column balance.
 - Testing agent verified footer heading visibility, description visibility, neutral label, links present, and no desktop/mobile horizontal overflow; noted minor balance issue, now adjusted.
+
+
+## Implemented — 2026-06-28 Footer Three-Line Heading Fix
+- Forced “My Philosophy” label to remain on one line.
+- Reformatted footer heading into exactly three single-line spans: “Visual Quality.” / “Brand coherence.” / “Audience impact.”
+- Reduced heading font size and widened footer text column to prevent wrapping.
+- Increased spacing between the blue footer banner and “My Philosophy.”
+- Testing agent verified desktop/mobile: exact three-line heading, single-line label, visible links/description, and no horizontal overflow.
