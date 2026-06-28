@@ -1550,8 +1550,18 @@ button {
     letter-spacing: 0;
 }
 
-.case-image-wrap img {
-    display: none;
+.case-image-wrap img.case-card-cover-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 360ms ease, filter 360ms ease;
+}
+
+.case-card:hover .case-card-cover-image {
+    transform: scale(1.045);
+    filter: saturate(1.08) contrast(1.04);
 }
 
 .specimen-visual {
@@ -1661,7 +1671,7 @@ button {
     aspect-ratio: 0.92 / 1;
 }
 
-.case-image-wrap img {
+.case-image-wrap img:not(.case-card-cover-image) {
     display: none;
 }
 
@@ -2758,12 +2768,24 @@ button {
         #f4f5f7;
 }
 
-.case-section-block { padding: 0 0 76px; }
+.case-section-block { padding: 0 0 96px; }
 .case-section-block h1 { margin: 28px 0 14px; font-size: clamp(3rem, 7vw, 7rem); line-height: 0.86; letter-spacing: -0.06em; color: #053466; }
-.case-section-block h2 { margin: 0 0 22px; font-size: clamp(2rem, 4vw, 4rem); letter-spacing: -0.05em; color: #053466; }
+.case-section-block h2 { margin: 0 0 28px; font-size: clamp(2rem, 4vw, 4rem); letter-spacing: -0.05em; color: #053466; }
 .case-section-block p { max-width: 760px; color: #687789; font-size: 1.05rem; line-height: 1.55; }
 .case-hero-mockup, .wide-case-image { width: 100%; max-height: 520px; object-fit: cover; object-position: center; border-radius: 28px; border: 1px solid #cde2f7; box-shadow: 0 24px 80px rgba(5,52,102,0.16); }
-.case-hero-mockup { max-height: 560px; object-fit: contain; background: linear-gradient(145deg, #cde2f7, #ffffff); }
+.case-hero-mockup { max-height: none; aspect-ratio: 16 / 9; object-fit: cover; background: linear-gradient(145deg, #cde2f7, #ffffff); }
+.ufo-hero-spread { display: grid; gap: 22px; }
+.ufo-hero-spread p { max-width: 880px; font-size: 1.14rem; }
+.case-editorial-row { display: grid; grid-template-columns: 0.72fr 1.28fr; gap: 22px; align-items: stretch; }
+.case-editorial-row .challenge-card { display: flex; align-items: center; }
+.ufo-story-image,
+.ufo-inline-motion { width: 100%; display: block; border: 1px solid #cde2f7; border-radius: 28px; background: #053466; box-shadow: 0 24px 80px rgba(5,52,102,0.16); }
+.ufo-story-image { max-height: 620px; object-fit: cover; object-position: center; }
+.ufo-inline-motion { aspect-ratio: 16 / 9; object-fit: cover; pointer-events: none; }
+.ufo-breakout-media { margin-top: 28px; }
+.ufo-duo-media { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; margin-top: 26px; align-items: stretch; }
+.ufo-duo-media .wide-case-image,
+.ufo-duo-media .ufo-inline-motion { height: 100%; min-height: 340px; max-height: 540px; }
 .metric-row, .impact-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 14px; margin-top: 24px; }
 .impact-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .case-metric-card { padding: 18px; border-radius: 22px; background: #ffffff; border: 1px solid #e6e8eb; box-shadow: 0 12px 34px rgba(5,52,102,0.1); }
@@ -2782,16 +2804,12 @@ button {
 .big-idea { position: relative; overflow: hidden; background: radial-gradient(circle at 50% 30%, rgba(205,226,247,0.34), transparent 38%), linear-gradient(145deg, #053466, #1b4e7a 58%, #2d1a10); color: #fff; animation: idea-glow 6s ease-in-out infinite; }
 .big-idea h2 { font-size: clamp(3.5rem, 8vw, 8rem); }
 .big-idea p { color: rgba(255,255,255,0.75); }
-.big-idea img { width: 100%; margin-top: 24px; border-radius: 24px; }
+.big-idea img, .big-idea video { width: 100%; margin-top: 24px; border-radius: 24px; }
 .phase-accordion { display: grid; gap: 12px; }
 .phase-accordion button { text-align: left; padding: 20px; border: 1px solid #e6e8eb; border-radius: 22px; background: #fff; color: #053466; box-shadow: 0 10px 34px rgba(5,52,102,0.08); }
 .phase-accordion button.active { background: #053466; color: #fff; }
 .phase-accordion ul { display: grid; gap: 8px; padding-left: 0; list-style: none; }
 .phase-accordion li strong { display: block; color: #cde2f7; }
-.ufo-motion-gallery { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 16px; margin-bottom: 18px; }
-.ufo-motion-card { overflow: hidden; border: 1px solid #cde2f7; border-radius: 28px; background: #ffffff; box-shadow: 0 16px 44px rgba(5,52,102,0.12); }
-.ufo-motion-card video { display: block; width: 100%; aspect-ratio: 16 / 10; object-fit: cover; background: #053466; pointer-events: none; }
-.ufo-motion-card b { display: block; padding: 13px 16px 15px; color: #053466; font-size: 0.92rem; }
 .case-masonry { columns: 3 220px; column-gap: 14px; }
 .ufo-image-grid { margin-top: 4px; }
 .case-masonry button { width: 100%; margin: 0 0 14px; padding: 0; border: 0; border-radius: 22px; overflow: hidden; background: transparent; break-inside: avoid; }
@@ -2813,5 +2831,7 @@ button {
   .case-fullscreen-shell { grid-template-columns: 1fr; }
   .case-sidebar { display: none; }
   .case-scroll-content { padding: 34px 18px; }
-  .metric-row, .impact-grid, .audience-grid, .insight-cards, .quote-grid, .ufo-motion-gallery { grid-template-columns: 1fr; }
+  .metric-row, .impact-grid, .audience-grid, .insight-cards, .quote-grid, .case-editorial-row, .ufo-duo-media { grid-template-columns: 1fr; }
+  .ufo-duo-media .wide-case-image,
+  .ufo-duo-media .ufo-inline-motion { min-height: 240px; }
 }

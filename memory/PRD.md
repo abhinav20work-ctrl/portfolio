@@ -221,3 +221,11 @@ Create a portfolio for a content strategist, Abhinav Sharma with white backgroun
 - Optimized the 5 images into local JPG display assets and converted the 3 videos to local WebM fallbacks for reliable browser playback.
 - Updated videos to behave like GIF-style motion cards: autoplay, muted, looped, no visible controls/player chrome.
 - Verified via browser smoke test: old crop sources removed, gallery shows 5 new images, 3 videos autoplay continuously, controls are hidden, and all media loads from `/case-assets/ufo-beans-v3/`.
+
+
+## Implemented — 2026-06-28 UFO Beans Behance-Style Restructure
+- Replaced the first UFO Beans card image area with the newly provided packaging image and removed all text from that image area.
+- Reworked the UFO Beans fullscreen popup from a separate gallery section into a Behance-style case study flow where images/videos are embedded throughout Hero, Challenge, Research, Strategy, Big Idea, Execution, and Impact sections.
+- Removed the standalone Content Gallery navigation/section and improved visual hierarchy with stronger media-first section rhythm.
+- Fixed video behavior to act like GIF-style motion: autoplay, muted, looped, no controls, WebM source, and play retry on load/canplay.
+- Verified via browser smoke test: card cover loads, no text appears in card image area, no gallery section remains, all three videos are playing, muted, looping, and control-free.

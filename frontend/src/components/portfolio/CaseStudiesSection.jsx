@@ -72,10 +72,14 @@ export default function CaseStudiesSection() {
               onKeyDown={(event) => event.key === "Enter" && setActiveCase(study)}
             >
               <div className="case-image-wrap" data-testid={`case-image-wrap-${index + 1}`}>
-                <div className="case-type-visual" data-testid={`case-type-visual-${index + 1}`}>
-                  <span>{study.label}</span>
-                  <strong>{study.outcome}</strong>
-                </div>
+                {index === 0 ? (
+                  <img className="case-card-cover-image" src="/case-assets/ufo-beans-v3/ufo-card-hero.jpg" alt="UFO Beans packaging close-up" data-testid="ufo-case-card-cover-image" />
+                ) : (
+                  <div className="case-type-visual" data-testid={`case-type-visual-${index + 1}`}>
+                    <span>{study.label}</span>
+                    <strong>{study.outcome}</strong>
+                  </div>
+                )}
               </div>
               <div className="case-meta">
                 <span className="case-number" data-testid={`case-number-${index + 1}`}>{study.label}</span>
@@ -126,7 +130,7 @@ function UfoBeansFullscreenModal({ caseData, onClose }) {
 
   const sections = useMemo(() => [
     ["hero", "Hero"], ["challenge", "Challenge"], ["research", "Research"], ["strategy", "Strategy"],
-    ["idea", "Big Idea"], ["execution", "Execution"], ["gallery", "Gallery"], ["impact", "Impact"], ["process", "Process"], ["learnings", "Learnings"],
+    ["idea", "Big Idea"], ["execution", "Execution"], ["impact", "Impact"], ["process", "Process"], ["learnings", "Learnings"],
   ], []);
 
   useEffect(() => {
@@ -189,18 +193,9 @@ function UfoBeansFullscreenModal({ caseData, onClose }) {
     Launch: ["Reveal UFO Beans as the source of the signal", "Cinematic POV launch, product visuals, creator posts", "Hero film, packaging shots, reveal carousel", "Strong brand recognition and intent"],
     Sustain: ["Keep community decoding the brand world", "Spot the UFO challenges, fan theories, limited drops", "UGC prompts, transmissions, flavor drops", "Repeat engagement and community memory"],
   };
-  const ufoMotionAssets = [
-    { src: ufoAssets.motionOne, webm: ufoAssets.motionOneWebm, poster: ufoAssets.motionOnePoster, title: "Product world motion study" },
-    { src: ufoAssets.motionTwo, webm: ufoAssets.motionTwoWebm, poster: ufoAssets.motionTwoPoster, title: "Launch visual sequence" },
-    { src: "/case-assets/ufo-beans-v3/ufo-motion-03.mp4", webm: "/case-assets/ufo-beans-v3/ufo-motion-03.webm", poster: "/case-assets/ufo-beans-v3/ufo-motion-03.jpg", title: "Packaging loop animation" },
-  ];
-  const ufoImageAssets = [
-    ufoAssets.productWorld,
-    ufoAssets.productShelf,
-    ufoAssets.productDetail,
-    ufoAssets.productPack,
-    ufoAssets.productServe,
-  ];
+  const motionWorld = { src: ufoAssets.motionOne, webm: ufoAssets.motionOneWebm, poster: ufoAssets.motionOnePoster };
+  const motionReveal = { src: ufoAssets.motionTwo, webm: ufoAssets.motionTwoWebm, poster: ufoAssets.motionTwoPoster };
+  const motionLoop = { src: "/case-assets/ufo-beans-v3/ufo-motion-03.mp4", webm: "/case-assets/ufo-beans-v3/ufo-motion-03.webm", poster: "/case-assets/ufo-beans-v3/ufo-motion-03.jpg" };
 
   return (
     <div className="case-fullscreen-overlay" role="dialog" aria-modal="true" aria-labelledby="ufo-title" data-testid="case-study-detail-popup" ref={modalRef} onMouseDown={onOverlayPointerDown} data-lenis-prevent="true">
@@ -217,14 +212,13 @@ function UfoBeansFullscreenModal({ caseData, onClose }) {
         </aside>
         <main className="case-scroll-content" ref={scrollContentRef} onScroll={onScroll} data-lenis-prevent="true" data-testid="case-popup-scroll-content">
           {!loaded ? <div className="case-skeleton" data-testid="case-popup-loading-skeleton" /> : <>
-            <CaseSection id="hero"><img className="case-hero-mockup" src={ufoAssets.productWorld} alt="UFO Beans product packaging world" /><h1 id="ufo-title">UFO Bean: Coffee from Another Dimension</h1><p>A story-led coffee brand concept built around mystery, alien discovery, and packaging as the primary marketing asset.</p><div className="metric-row">{metrics.map(([icon,label,value]) => <MetricCard key={label} icon={icon} label={label} value={value} />)}</div></CaseSection>
-            <CaseSection id="challenge" title="What problem were we solving?"><div className="challenge-card"><p>Crowded coffee market. Commodity perception. Low emotional connection. Difficult to stand out.</p></div></CaseSection>
-            <CaseSection id="research" title="Research"><div className="audience-grid"><AudienceChart /><div className="insight-cards">{["74% enjoy trying new beverage brands.","61% purchase products because of packaging.","82% discover products through Instagram.","68% are likely to share visually unique products online."].map(x => <span key={x}>{x}</span>)}</div></div></CaseSection>
-            <CaseSection id="strategy" title="Strategy"><div className="process-timeline">{["Research","Insight","Brand Positioning","Creative Direction","Campaign","Launch"].map(x => <span key={x}>{x}</span>)}</div><img className="wide-case-image" src={ufoAssets.productDetail} alt="UFO Beans brand detail visual" /></CaseSection>
-            <CaseSection id="idea"><div className="big-idea"><h2>The Signal Has Arrived</h2><p>Launch UFO Beans like an unexplained event — something audiences decode, share, and participate in.</p><img src={ufoAssets.productShelf} alt="UFO Beans launch product scene" /></div></CaseSection>
-            <CaseSection id="execution" title="Campaign Execution"><div className="phase-accordion" data-testid="case-popup-phase-accordion">{Object.entries(phases).map(([phase, items]) => <button key={phase} data-testid={`case-popup-phase-${phase.toLowerCase().replace(/\s+/g, '-')}`} onClick={() => setExpandedPhase(expandedPhase === phase ? null : phase)} className={expandedPhase===phase ? "active" : ""} aria-expanded={expandedPhase===phase}><b>{phase}</b>{expandedPhase===phase && <ul>{["Goal","Content Strategy","Deliverables","Expected Impact"].map((label, i)=><li key={label}><strong>{label}</strong>{items[i]}</li>)}</ul>}</button>)}</div></CaseSection>
-            <CaseSection id="gallery" title="Content Gallery"><div className="ufo-motion-gallery" data-testid="case-popup-ufo-motion-gallery">{ufoMotionAssets.map((asset, i)=><article className="ufo-motion-card" key={asset.src} data-testid={`case-popup-ufo-motion-${i+1}`}><video autoPlay muted loop playsInline preload="metadata" poster={asset.poster} data-testid={`case-popup-ufo-motion-video-${i+1}`}><source src={asset.webm} type="video/webm" /><source src={asset.src} type="video/mp4" /></video><b>{asset.title}</b></article>)}</div><div className="case-masonry ufo-image-grid" data-testid="case-popup-gallery-grid">{ufoImageAssets.map((src,i)=><button key={src} data-testid={`case-popup-gallery-item-${i+1}`} onClick={()=>setLightboxImage(src)}><img src={src} alt={`UFO Beans visual ${i+1}`} /></button>)}</div></CaseSection>
-            <CaseSection id="impact" title="Business Impact"><p className="conceptual-note">Projected campaign outcomes / conceptual KPIs for presentation.</p><div className="impact-grid">{impact.map(([label,value])=><MetricCard key={label} label={label} value={value} />)}</div></CaseSection>
+            <CaseSection id="hero"><div className="ufo-hero-spread"><img className="case-hero-mockup" src="/case-assets/ufo-beans-v3/ufo-card-hero.jpg" alt="UFO Beans packaging close-up" /><h1 id="ufo-title">UFO Bean: Coffee from Another Dimension</h1><p>A story-led coffee brand concept built around mystery, alien discovery, and packaging as the primary marketing asset.</p></div><div className="metric-row">{metrics.map(([icon,label,value]) => <MetricCard key={label} icon={icon} label={label} value={value} />)}</div></CaseSection>
+            <CaseSection id="challenge" title="What problem were we solving?"><div className="case-editorial-row"><div className="challenge-card"><p>Crowded coffee market. Commodity perception. Low emotional connection. Difficult to stand out.</p></div><img className="ufo-story-image" src={ufoAssets.productWorld} alt="UFO Beans visual world" /></div></CaseSection>
+            <CaseSection id="research" title="Research"><div className="audience-grid"><AudienceChart /><div className="insight-cards">{["74% enjoy trying new beverage brands.","61% purchase products because of packaging.","82% discover products through Instagram.","68% are likely to share visually unique products online."].map(x => <span key={x}>{x}</span>)}</div></div><div className="ufo-breakout-media"><MotionLoop asset={motionWorld} testId="case-popup-ufo-motion-video-1" /></div></CaseSection>
+            <CaseSection id="strategy" title="Strategy"><div className="process-timeline">{["Research","Insight","Brand Positioning","Creative Direction","Campaign","Launch"].map(x => <span key={x}>{x}</span>)}</div><div className="ufo-duo-media"><img className="wide-case-image" src={ufoAssets.productDetail} alt="UFO Beans brand detail visual" /><img className="wide-case-image" src={ufoAssets.productPack} alt="UFO Beans packaging system" /></div></CaseSection>
+            <CaseSection id="idea"><div className="big-idea"><h2>The Signal Has Arrived</h2><p>Launch UFO Beans like an unexplained event — something audiences decode, share, and participate in.</p><MotionLoop asset={motionReveal} testId="case-popup-ufo-motion-video-2" /></div></CaseSection>
+            <CaseSection id="execution" title="Campaign Execution"><div className="ufo-breakout-media"><img className="ufo-story-image" src={ufoAssets.productShelf} alt="UFO Beans launch product scene" /></div><div className="phase-accordion" data-testid="case-popup-phase-accordion">{Object.entries(phases).map(([phase, items]) => <button key={phase} data-testid={`case-popup-phase-${phase.toLowerCase().replace(/\s+/g, '-')}`} onClick={() => setExpandedPhase(expandedPhase === phase ? null : phase)} className={expandedPhase===phase ? "active" : ""} aria-expanded={expandedPhase===phase}><b>{phase}</b>{expandedPhase===phase && <ul>{["Goal","Content Strategy","Deliverables","Expected Impact"].map((label, i)=><li key={label}><strong>{label}</strong>{items[i]}</li>)}</ul>}</button>)}</div></CaseSection>
+            <CaseSection id="impact" title="Business Impact"><div className="ufo-duo-media"><MotionLoop asset={motionLoop} testId="case-popup-ufo-motion-video-3" /><img className="wide-case-image" src={ufoAssets.productServe} alt="UFO Beans served product visual" /></div><p className="conceptual-note">Projected campaign outcomes / conceptual KPIs for presentation.</p><div className="impact-grid">{impact.map(([label,value])=><MetricCard key={label} label={label} value={value} />)}</div></CaseSection>
             <CaseSection id="process" title="My Design Process"><div className="process-timeline long">{["Discover","Research","Concept","Visual Language","Content System","Campaign Assets","Final Presentation"].map(x => <span key={x}>{x}</span>)}</div></CaseSection>
             <CaseSection id="learnings" title="Key Learnings"><div className="quote-grid">{["Storytelling outperformed feature-first messaging.","Packaging became the primary marketing asset.","Mystery increased user engagement.","Consistency strengthened brand recall."].map(q => <blockquote key={q}>{q}</blockquote>)}</div></CaseSection>
           </>}
@@ -237,6 +231,19 @@ function UfoBeansFullscreenModal({ caseData, onClose }) {
 }
 
 function CaseSection({ id, title, children }) { return <motion.section id={`ufo-${id}`} className="case-section-block" initial={{ opacity: 0, y: 28 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.18 }} transition={{ duration: 0.45 }}>{title && <h2>{title}</h2>}{children}</motion.section>; }
+function MotionLoop({ asset, testId }) {
+  const playLoop = (node) => {
+    if (!node) return;
+    node.muted = true;
+    node.loop = true;
+    node.play().catch(() => {});
+  };
+
+  return <video className="ufo-inline-motion" autoPlay muted loop playsInline preload="auto" poster={asset.poster} data-testid={testId} ref={playLoop} onCanPlay={(event) => playLoop(event.currentTarget)} onLoadedData={(event) => playLoop(event.currentTarget)}>
+    <source src={asset.webm} type="video/webm" />
+    <source src={asset.src} type="video/mp4" />
+  </video>;
+}
 function MetricCard({ icon, label, value }) { return <motion.article className="case-metric-card" whileHover={{ y: -5 }}>{icon && <span>{icon}</span>}<b>{value}</b><small>{label}</small></motion.article>; }
 function AudienceChart() { return <div className="audience-chart"><b>Audience</b>{["18–30","Gen Z","Young Professionals","Urban","Curious","Coffee Enthusiasts"].map((x,i)=><span key={x} style={{"--w": `${55+i*7}%`}}>{x}</span>)}</div>; }
 
