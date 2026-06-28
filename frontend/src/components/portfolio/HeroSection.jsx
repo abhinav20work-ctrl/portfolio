@@ -66,7 +66,6 @@ export default function HeroSection() {
               <span className="badge-verified" data-testid="hero-badge-verified">Content Wizard</span>
             </div>
             <p className="panel-label" data-testid="hero-snapshot-label">CONTENT STRATEGIST · BENGALURU</p>
-            <p className="hero-card-overline" data-testid="hero-card-overline">Shaping the story.</p>
             <h3 className="id-card-name" data-testid="hero-id-card-name">Abhinav Sharma</h3>
             <div className="hero-image-row" data-testid="hero-image-row">
               <div className="hero-persona-large" data-testid="hero-persona-large">
@@ -74,14 +73,14 @@ export default function HeroSection() {
               </div>
               <div className="hero-image-note" data-testid="hero-image-note">
                 <span>Speciality</span>
-                <strong>Creative Direction</strong>
-                <em>Turning ideas into visually compelling campaigns that connect with audiences and deliver meaningful results.</em>
+                <strong>Content-led storytelling</strong>
+                <em>Content designed to capture attention, spark understanding, and be remembered.</em>
               </div>
             </div>
             <div className="signal-list">
               {[
                 ["signal-01", "Current Role", "Motion Designer", "Sarla Aviation"],
-                ["signal-02", "Projects", "3 Case Studies", "and 30+ content produced"],
+                ["signal-02", "Projects", "30+ content produced", "across motion, social, and campaign formats"],
                 ["signal-03", "Location", "Bengaluru", "visual designer shaping content for impact"],
               ].map(([id, label, value, detail]) => (
                 <div className="signal-item" key={id} data-testid={`hero-signal-${id}`}>

@@ -250,3 +250,11 @@ Create a portfolio for a content strategist, Abhinav Sharma with white backgroun
 - Improved ID card Speciality box spacing so the text is less crowded on the left.
 - Updated Projects detail to “and 30+ content produced.”
 - Verified via browser smoke test: staged dots, delayed highlight sweep, dark yellow background, updated project text, and specialty spacing render correctly.
+
+
+## Implemented — 2026-06-28 Hero Badge Copy + Highlight Coverage Fix
+- Changed ID card Projects value to “30+ content produced” and removed “3 Case Studies” from that row.
+- Updated Speciality heading to “Content-led storytelling” and description to “Content designed to capture attention, spark understanding, and be remembered.”
+- Reverted “Shaping the story” from inside the ID card back to its previous external hero sticker placement.
+- Expanded the dark yellow highlight block so it covers the full “actual engagement.” text height and width.
+- Verified via browser smoke test: corrected Projects row, updated Speciality copy, restored story sticker, and full highlight coverage render correctly.
