@@ -71,9 +71,14 @@ export default function HeroSection() {
             transition={{ duration: 0.65, delay: 0.48 }}
             data-testid="hero-recruiter-snapshot"
           >
-            <div className="badge-hole" aria-hidden="true" />
-            <div className="badge-ribbon-pin" aria-hidden="true" />
+            <svg className="swirl-ribbon ribbon-left" viewBox="0 0 90 260" aria-hidden="true">
+              <path d="M46 0C18 55 78 88 43 135C16 172 31 211 62 260" />
+            </svg>
+            <svg className="swirl-ribbon ribbon-right" viewBox="0 0 90 260" aria-hidden="true">
+              <path d="M44 0C76 52 18 91 51 136C80 176 56 219 30 260" />
+            </svg>
             <p className="panel-label" data-testid="hero-snapshot-label">VISUAL DESIGNER · BENGALURU</p>
+            <h3 className="id-card-name" data-testid="hero-id-card-name">Abhinav Sharma</h3>
             <div className="hero-persona-large" data-testid="hero-persona-large">
               <img src={heroPersonaUrl} alt="Abhinav Sharma illustrated persona" />
             </div>

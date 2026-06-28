@@ -526,79 +526,43 @@ button {
     text-align: left;
     cursor: pointer;
     position: relative;
-    padding: 30px 18px 22px;
+    padding: 28px 18px 22px;
     border: 2px solid #0f172a;
     border-radius: 14px;
     background:
-        linear-gradient(90deg, rgba(15,23,42,0.035) 1px, transparent 1px) 0 0 / 42px 42px,
-        linear-gradient(rgba(15,23,42,0.035) 1px, transparent 1px) 0 0 / 42px 42px,
-        rgba(255, 255, 255, 0.94);
-    box-shadow: 14px 18px 0 rgba(15, 23, 42, 0.14), 0 18px 60px rgba(15, 23, 42, 0.12);
+        radial-gradient(circle at 16% 18%, rgba(255,255,255,0.42) 0 9%, transparent 10%),
+        linear-gradient(90deg, rgba(15,23,42,0.05) 1px, transparent 1px) 0 0 / 42px 42px,
+        linear-gradient(rgba(15,23,42,0.05) 1px, transparent 1px) 0 0 / 42px 42px,
+        linear-gradient(145deg, #ffd23f 0%, #ff8a3d 44%, #58d68d 100%);
+    box-shadow: 14px 18px 0 rgba(15, 23, 42, 0.16), 0 18px 60px rgba(15, 23, 42, 0.14);
     transform-style: preserve-3d;
 }
 
-.hero-persona-card::before,
-.hero-persona-card::after {
-    content: "";
+.swirl-ribbon {
     position: absolute;
-    top: -170px;
-    width: 42px;
-    height: 210px;
+    top: -178px;
+    width: 92px;
+    height: 270px;
     z-index: -1;
-    border: 2px solid #0f172a;
-    background: linear-gradient(180deg, #bf4c00, #e66a13 48%, #bf4c00);
-    box-shadow: 6px 6px 0 rgba(15,23,42,0.14);
+    overflow: visible;
 }
 
-.hero-persona-card::before {
-    left: 70px;
-    transform: rotate(-7deg) skewX(-4deg);
+.swirl-ribbon path {
+    fill: none;
+    stroke: #bf4c00;
+    stroke-width: 24;
+    stroke-linecap: round;
+    filter: drop-shadow(5px 5px 0 rgba(15,23,42,0.15));
 }
 
-.hero-persona-card::after {
-    right: 70px;
-    transform: rotate(7deg) skewX(4deg);
+.ribbon-left {
+    left: 52px;
+    transform: rotate(-8deg);
 }
 
-.badge-hole {
-    position: absolute;
-    left: 50%;
-    top: 12px;
-    width: 68px;
-    height: 16px;
-    border: 2px solid #0f172a;
-    border-radius: 999px;
-    background: #f7f7f3;
-    transform: translateX(-50%);
-    z-index: 2;
-}
-
-.badge-ribbon-pin {
-    position: absolute;
-    left: 50%;
-    top: -30px;
-    width: 118px;
-    height: 48px;
-    border: 2px solid #0f172a;
-    border-radius: 18px 18px 6px 6px;
-    background: #ffffff;
-    box-shadow: 5px 5px 0 rgba(15,23,42,0.16);
-    transform: translateX(-50%) rotate(-1deg);
-    z-index: 1;
-}
-
-.badge-ribbon-pin::after {
-    content: "ID";
-    position: absolute;
-    inset: 8px;
-    display: grid;
-    place-items: center;
-    border-radius: 10px;
-    background: #0f172a;
-    color: #ffffff;
-    font-family: "IBM Plex Mono", monospace;
-    font-weight: 900;
-    letter-spacing: 0.12em;
+.ribbon-right {
+    right: 46px;
+    transform: rotate(7deg);
 }
 
 .recruiter-panel::after {
@@ -609,34 +573,23 @@ button {
     position: relative;
     display: grid;
     place-items: end center;
-    min-height: 315px;
+    min-height: 250px;
     margin: 14px 0 18px;
     border: 1.5px solid rgba(15, 23, 42, 0.16);
     background:
-        radial-gradient(circle at 78% 18%, rgba(191,76,0,0.13) 0 12%, transparent 13%),
-        linear-gradient(180deg, rgba(255,255,255,0.78) 0 66%, rgba(191,76,0,0.09) 66% 100%);
+        radial-gradient(circle at 78% 18%, rgba(255,255,255,0.42) 0 12%, transparent 13%),
+        linear-gradient(180deg, rgba(255,255,255,0.26) 0 66%, rgba(15,23,42,0.06) 66% 100%);
     overflow: hidden;
-}
-
-.hero-persona-large::before {
-    content: "";
-    position: absolute;
-    width: 130px;
-    height: 130px;
-    right: 18px;
-    top: 18px;
-    border: 2px solid rgba(15,23,42,0.28);
-    border-radius: 50%;
-    animation: slow-spin 12s linear infinite;
 }
 
 .hero-persona-large img {
     position: relative;
     z-index: 2;
-    width: min(380px, 100%);
+    width: min(280px, 84%);
     object-fit: contain;
     mix-blend-mode: multiply;
-    filter: drop-shadow(0 12px 10px rgba(15,23,42,0.14));
+    opacity: 0.84;
+    filter: grayscale(1) contrast(1.05) drop-shadow(0 8px 8px rgba(15,23,42,0.1));
 }
 
 .panel-label {
@@ -645,8 +598,18 @@ button {
     font-weight: 900;
     letter-spacing: 0.09em;
     text-transform: uppercase;
-    color: #64748b;
+    color: rgba(15,23,42,0.72);
     font-family: "IBM Plex Mono", monospace;
+}
+
+.id-card-name {
+    margin: 8px 0 10px;
+    font-family: "Cabinet Grotesk", "Outfit", sans-serif;
+    font-size: clamp(2.1rem, 3.6vw, 3.5rem);
+    line-height: 0.9;
+    font-weight: 900;
+    letter-spacing: 0;
+    color: #0f172a;
 }
 
 .lab-console-header {
