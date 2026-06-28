@@ -30,7 +30,7 @@ export const caseStudies = [
     tags: ["Visual strategy", "Campaign idea", "Gen Z", "Brand world"],
     image:
       "https://images.pexels.com/photos/29579755/pexels-photo-29579755.jpeg?auto=compress&cs=tinysrgb&w=1100",
-    accent: "#FDE047",
+    accent: "#1782F3",
     pdfUrl: "https://customer-assets.emergentagent.com/job_micro-moments-8/artifacts/t61qfkf2_UFO%20Beans.pdf",
   },
   {

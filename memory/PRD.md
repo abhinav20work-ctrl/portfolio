@@ -195,3 +195,9 @@ Create a portfolio for a content strategist, Abhinav Sharma with white backgroun
 - Added 20 Sarla Aviation reels to the Reels / Motion Shelf with written titles, descriptions, tags, local video paths, and popup poster support.
 - Optimized reel shelf loading: cards now use lightweight lazy poster images (~399KB total) and tiny hover-preview WebM clips (~2.15MB total) that play only on hover/focus instead of loading full videos upfront.
 - Verified: 20 cards render, all poster previews load, hover preview plays and pauses correctly, old gradient-only/video-preload card behavior removed, UFO modal scroll/nav/outside-close pass smoke checks, lint checks pass.
+
+
+## Implemented — 2026-06-28 UFO Beans Palette Update
+- Applied the supplied UFO Beans palette to the first Selected Work card: Deep Navy, Brand Blue, Light Sky Blue, Off White, Text Gray, and coffee accents.
+- Recolored the UFO Beans fullscreen popup: navy/coffee sidebar, blue grid content area, pale blue cards, navy typography, blue progress dots, and palette-aligned CTAs.
+- Verified via browser smoke test: UFO card palette renders, popup palette renders, mouse-wheel scrolling still works, and progress navigation still activates correctly.
