@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
-import { Dialog, DialogContent } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogDescription, DialogTitle } from "@/components/ui/dialog";
 import { caseStudies } from "@/data/portfolio";
 
 export default function CaseStudiesSection() {
@@ -99,7 +99,7 @@ export default function CaseStudiesSection() {
                   <span>Specimen {activeCase.label}</span>
                   <span>Content Lab Evidence</span>
                 </div>
-                <h2 data-testid="case-popup-title">{activeCase.title}</h2>
+                <DialogTitle className="case-popup-title" data-testid="case-popup-title">{activeCase.title}</DialogTitle>
                 <p className="case-popup-outcome" data-testid="case-popup-outcome">{activeCase.outcome}</p>
                 <div className="case-signal-map" aria-hidden="true">
                   <span className="signal-node node-a" />
@@ -112,7 +112,7 @@ export default function CaseStudiesSection() {
 
               <div className="case-sheet-summary">
                 <span className="lab-module-label inline-label" data-testid="case-popup-module-label">Case file</span>
-                <p data-testid="case-popup-description">{activeCase.brief}</p>
+                <DialogDescription className="case-popup-description" data-testid="case-popup-description">{activeCase.brief}</DialogDescription>
                 {activeCase.proposition && (
                   <div className="case-fact-grid" data-testid="case-popup-fact-grid">
                     <span><b>Proposition</b>{activeCase.proposition}</span>

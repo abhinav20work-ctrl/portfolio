@@ -141,3 +141,12 @@ Create a portfolio for a content strategist, Abhinav Sharma with white backgroun
 - Added campaign pillars, proposition, audience, big idea, problem, strategy, and execution phases as recreated web content.
 - Strengthened modal scroll locking with fixed body, html/body overflow lock, Lenis prevention attribute, and wheel/touch/scroll guards.
 - Testing agent verified: no PDF frame gallery, extracted source visuals present, detailed content present, background scroll locked, popup scrollable, mobile no horizontal overflow.
+
+
+## Implemented — 2026-06-28 Resume-Based Portfolio Rewrite
+- Extracted Abhinav Sharma resume content and rewrote the site around Visual Designer / Associate Producer positioning.
+- Removed unnecessary Content Lab sections, ticker, sticker tray, and excess lab copy.
+- Updated hero, case studies, projects, process, and footer to reflect resume content and reference-image direction.
+- Updated case studies to UFO Beans, Sarla Aviation, and The Spotlight Media.
+- Updated contact links to Behance and `abhinav20.work@gmail.com`.
+- QA agent verified requested rewrite and no-overflow behavior; fixed Radix dialog accessibility warnings by adding DialogTitle/DialogDescription semantics to persona and case modals.

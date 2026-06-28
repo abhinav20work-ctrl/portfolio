@@ -965,6 +965,7 @@ button {
     mix-blend-mode: multiply;
 }
 
+.persona-popup-title,
 .persona-popup-copy h2,
 .case-popup-copy h2 {
     margin: 0 0 16px;
@@ -974,11 +975,30 @@ button {
     font-weight: 900;
 }
 
+.persona-popup-description,
 .persona-popup-copy p,
 .case-popup-copy p {
     color: #475569;
     font-size: 1.08rem;
     line-height: 1.55;
+}
+
+.case-popup-title {
+    position: relative;
+    z-index: 2;
+    max-width: 680px;
+    margin: 0 0 18px;
+    font-family: "Cabinet Grotesk", "Outfit", sans-serif;
+    font-size: clamp(2.6rem, 4.6vw, 4.7rem);
+    line-height: 0.88;
+    font-weight: 900;
+}
+
+.case-popup-description {
+    margin: 0;
+    color: #475569;
+    font-size: 1rem;
+    line-height: 1.5;
 }
 
 .case-popup-detail-block {

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowDownRight, Download, Mail } from "lucide-react";
-import { Dialog, DialogContent } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogDescription, DialogTitle } from "@/components/ui/dialog";
 import { recruiterSignals, strengths } from "@/data/portfolio";
 
 const heroPersonaUrl = "https://customer-assets.emergentagent.com/job_micro-moments-8/artifacts/d3yc6q44_abhinav-hero.png";
@@ -103,10 +103,10 @@ export default function HeroSection() {
             </div>
             <div className="persona-popup-copy">
               <span className="lab-module-label inline-label">Persona / Visual storyteller</span>
-              <h2 data-testid="hero-persona-popup-title">Abhinav Sharma</h2>
-              <p data-testid="hero-persona-popup-description">
+              <DialogTitle className="persona-popup-title" data-testid="hero-persona-popup-title">Abhinav Sharma</DialogTitle>
+              <DialogDescription className="persona-popup-description" data-testid="hero-persona-popup-description">
                 An innovative Visual Designer and Associate Producer with strong expertise in visual storytelling, motion graphics, video editing, and content production.
-              </p>
+              </DialogDescription>
               <div className="persona-spec-list" data-testid="hero-persona-popup-specs">
                 <span>Motion designer</span>
                 <span>Creative producer</span>
