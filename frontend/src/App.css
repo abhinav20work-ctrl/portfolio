@@ -1152,10 +1152,10 @@ button {
 
 .video-dialog {
     --video-aspect: 0.5625;
-    --video-copy-width: clamp(340px, 30vw, 520px);
-    --video-box-width: clamp(260px, calc((100vh - 150px) * var(--video-aspect)), min(760px, calc(100vw - var(--video-copy-width) - 92px)));
-    width: min(calc(var(--video-box-width) + var(--video-copy-width) + 50px), calc(100vw - 36px));
-    max-width: min(1420px, calc(100vw - 36px));
+    --video-copy-width: clamp(380px, 32vw, 560px);
+    --video-box-width: clamp(260px, calc((100vh - 104px) * var(--video-aspect)), min(820px, calc(100vw - var(--video-copy-width) - 78px)));
+    width: min(calc(var(--video-box-width) + var(--video-copy-width) + 42px), calc(100vw - 36px));
+    max-width: min(1460px, calc(100vw - 36px));
     overflow: visible;
     will-change: transform, opacity;
     transform-origin: center center;
@@ -1181,8 +1181,8 @@ button {
 
 .video-dialog .video-popup-grid {
     grid-template-columns: var(--video-box-width) minmax(340px, var(--video-copy-width));
-    gap: clamp(18px, 3vw, 32px);
-    align-items: center;
+    gap: clamp(16px, 2vw, 26px);
+    align-items: start;
     max-width: 100%;
     min-width: 0;
 }
@@ -2214,7 +2214,7 @@ button {
 }
 
 .video-dialog {
-    padding: clamp(18px, 2.4vw, 30px);
+    padding: clamp(16px, 2vw, 26px);
 }
 
 .video-dialog-title {
@@ -2243,7 +2243,7 @@ button {
     width: 100%;
     height: auto;
     aspect-ratio: var(--video-aspect);
-    max-height: calc(100vh - 150px);
+    max-height: calc(100vh - 104px);
     background: transparent;
     border: 2px solid #0a0a0a;
     border-radius: 18px;
@@ -2252,15 +2252,15 @@ button {
 }
 
 .video-copy-panel {
-    align-self: stretch;
+    align-self: start;
     min-width: 0;
     max-width: 100%;
-    max-height: calc(100vh - 150px);
+    max-height: calc(100vh - 104px);
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    gap: clamp(10px, 1.6vh, 18px);
-    padding: clamp(14px, 1.8vw, 20px);
+    justify-content: start;
+    gap: clamp(12px, 1.35vh, 18px);
+    padding: clamp(18px, 2vw, 28px);
     border: 2px solid #0f172a;
     border-radius: 18px;
     background: rgba(255,255,255,0.78);
@@ -2276,13 +2276,14 @@ button {
     min-width: 0;
     max-width: 100%;
     display: grid;
-    gap: clamp(8px, 1.25vh, 14px);
+    gap: clamp(10px, 1.3vh, 16px);
 }
 
 .video-analytics-panel {
     display: grid;
-    gap: 10px;
-    padding-top: clamp(10px, 1.4vh, 16px);
+    gap: clamp(10px, 1.25vh, 14px);
+    margin-top: clamp(8px, 1.2vh, 14px);
+    padding-top: clamp(12px, 1.6vh, 18px);
     border-top: 1.5px solid rgba(15, 23, 42, 0.18);
 }
 
