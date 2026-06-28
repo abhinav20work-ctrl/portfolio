@@ -279,3 +279,9 @@ Create a portfolio for a content strategist, Abhinav Sharma with white backgroun
 - Rendered all 8 PDF pages as optimized local JPG frames under `/case-assets/ufo-beans-pdf/` and used frame 01 as the selected-work card cover.
 - Kept the existing projected metrics unchanged and inserted them between PDF frame 04 and frame 05.
 - Verified via browser smoke test: all 8 frames load from the PDF, metrics remain `2.3M+`, `8.9%`, `+42%`, `6.8%`, `+31%`, modal scroll works, and progress navigation to metrics works.
+
+
+## Implemented — 2026-06-28 Magical Creative Wizard Hover
+- Enhanced “creative wizard” hover with a more magical interaction: gold shimmer, underline expansion, glow, and animated sparkles.
+- Kept the previous wizard-hat animation removed.
+- Verified via browser smoke test: sparkles animate on hover, shimmer/filter states activate, and no hat markup exists.

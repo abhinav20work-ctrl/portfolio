@@ -23,7 +23,7 @@ export default function HeroSection() {
                 From visual design to pure strategy.
               </motion.h1>
               <motion.h1 className="hero-line" initial={{ opacity: 0, y: 32 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, delay: 0.16, ease: [0.22, 1, 0.36, 1] }} data-testid="hero-line-2">
-                I&apos;m the <span className="wizard-word" data-testid="hero-creative-wizard-hover" data-text="creative wizard">creative wizard</span> who turns the endless scroll into<span className="hero-ellipsis" aria-hidden="true"><span>.</span><span>.</span><span>.</span></span>
+                I&apos;m the <span className="wizard-word" data-testid="hero-creative-wizard-hover" data-text="creative wizard">creative wizard<span className="wizard-sparkles" aria-hidden="true"><i /><i /><i /><i /></span></span> who turns the endless scroll into<span className="hero-ellipsis" aria-hidden="true"><span>.</span><span>.</span><span>.</span></span>
               </motion.h1>
               <motion.h1 className="hero-line" initial={{ opacity: 0, y: 32 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, delay: 0.32, ease: [0.22, 1, 0.36, 1] }} data-testid="hero-line-3">
                 <span className="engagement-highlight" data-testid="hero-actual-engagement-highlight"><span>actual engagement.</span></span>

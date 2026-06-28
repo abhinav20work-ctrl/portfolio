@@ -445,12 +445,52 @@ button {
     transition: opacity 240ms ease, transform 260ms cubic-bezier(.22,1,.36,1);
 }
 
+.wizard-sparkles {
+    position: absolute;
+    inset: -0.48em -0.26em -0.24em;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 160ms ease;
+}
+
+.wizard-sparkles i {
+    position: absolute;
+    width: 0.16em;
+    height: 0.16em;
+    border-radius: 999px;
+    background: #f8d44c;
+    box-shadow: 0 0 0.22em rgba(248, 212, 76, 0.9), 0 0 0.5em rgba(184, 135, 0, 0.36);
+    opacity: 0;
+    transform: translate3d(0, 0.3em, 0) scale(0.25);
+}
+
+.wizard-sparkles i::before,
+.wizard-sparkles i::after {
+    content: "";
+    position: absolute;
+    inset: 50% auto auto 50%;
+    width: 0.42em;
+    height: 0.04em;
+    border-radius: 999px;
+    background: #f8d44c;
+    transform: translate(-50%, -50%);
+}
+
+.wizard-sparkles i::after {
+    transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.wizard-sparkles i:nth-child(1) { left: 4%; top: 8%; }
+.wizard-sparkles i:nth-child(2) { left: 44%; top: -2%; }
+.wizard-sparkles i:nth-child(3) { right: 4%; top: 16%; }
+.wizard-sparkles i:nth-child(4) { right: 24%; bottom: 0%; }
+
 .wizard-word:hover,
 .wizard-word:focus-visible {
     transform: translateY(-0.045em) skewX(-2deg);
     letter-spacing: 0.01em;
     background-position: 100% 50%;
-    filter: drop-shadow(0 0.08em 0 rgba(184, 135, 0, 0.2));
+    filter: drop-shadow(0 0.08em 0 rgba(184, 135, 0, 0.2)) drop-shadow(0 0 0.18em rgba(248, 212, 76, 0.42));
 }
 
 .wizard-word:hover::before,
@@ -464,6 +504,23 @@ button {
     opacity: 1;
     transform: translateY(0.14em);
 }
+
+.wizard-word:hover .wizard-sparkles,
+.wizard-word:focus-visible .wizard-sparkles {
+    opacity: 1;
+}
+
+.wizard-word:hover .wizard-sparkles i,
+.wizard-word:focus-visible .wizard-sparkles i {
+    animation: sparkle-burst 840ms cubic-bezier(.22,1,.36,1) both;
+}
+
+.wizard-word:hover .wizard-sparkles i:nth-child(2),
+.wizard-word:focus-visible .wizard-sparkles i:nth-child(2) { animation-delay: 90ms; }
+.wizard-word:hover .wizard-sparkles i:nth-child(3),
+.wizard-word:focus-visible .wizard-sparkles i:nth-child(3) { animation-delay: 160ms; }
+.wizard-word:hover .wizard-sparkles i:nth-child(4),
+.wizard-word:focus-visible .wizard-sparkles i:nth-child(4) { animation-delay: 230ms; }
 
 .hero-ellipsis {
     display: inline-flex;
@@ -2720,6 +2777,13 @@ button {
 @keyframes highlight-sweep {
     from { transform: scaleX(0); }
     to { transform: scaleX(1); }
+}
+
+@keyframes sparkle-burst {
+    0% { opacity: 0; transform: translate3d(0, 0.28em, 0) scale(0.2) rotate(0deg); }
+    28% { opacity: 1; transform: translate3d(0, -0.08em, 0) scale(1) rotate(18deg); }
+    72% { opacity: 0.95; transform: translate3d(0, -0.18em, 0) scale(0.72) rotate(52deg); }
+    100% { opacity: 0; transform: translate3d(0, -0.34em, 0) scale(0.18) rotate(92deg); }
 }
 
 @keyframes note-float {
