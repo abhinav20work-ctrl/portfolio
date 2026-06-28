@@ -23,6 +23,7 @@ export default function CaseStudiesSection() {
     document.documentElement.setAttribute("data-modal-open", "true");
     const keepLocked = () => window.scrollTo(0, scrollY);
     const lockBackgroundWheel = (event) => {
+      if (event.target instanceof Element && event.target.closest(".case-fullscreen-shell, .case-lightbox")) return;
       event.preventDefault();
       keepLocked();
     };
@@ -115,6 +116,7 @@ const ufoAssets = {
 
 function UfoBeansFullscreenModal({ caseData, onClose }) {
   const modalRef = useRef(null);
+  const scrollContentRef = useRef(null);
   const [loaded, setLoaded] = useState(false);
   const [activeSection, setActiveSection] = useState("hero");
   const [expandedPhase, setExpandedPhase] = useState("Soft Launch");
@@ -144,13 +146,31 @@ function UfoBeansFullscreenModal({ caseData, onClose }) {
     return () => { clearTimeout(timer); window.removeEventListener("keydown", onKeyDown); };
   }, [onClose]);
 
+  const onOverlayPointerDown = (event) => {
+    if (event.target === event.currentTarget) onClose();
+  };
+
   const onScroll = (event) => {
-    const top = event.currentTarget.scrollTop;
+    const container = event.currentTarget;
+    const top = container.scrollTop;
     const current = sections.map(([id]) => id).findLast((id) => {
-      const node = event.currentTarget.querySelector(`#ufo-${id}`);
+      const node = container.querySelector(`#ufo-${id}`);
       return node && node.offsetTop - 160 <= top;
     });
     if (current) setActiveSection(current);
+  };
+
+  const scrollToSection = (event, id) => {
+    event.preventDefault();
+    const container = scrollContentRef.current;
+    const target = container?.querySelector(`#ufo-${id}`);
+    if (!container || !target) return;
+
+    container.scrollTo({
+      top: Math.max(target.offsetTop - 28, 0),
+      behavior: "smooth",
+    });
+    setActiveSection(id);
   };
 
   const metrics = [
@@ -165,10 +185,10 @@ function UfoBeansFullscreenModal({ caseData, onClose }) {
   };
 
   return (
-    <div className="case-fullscreen-overlay" role="dialog" aria-modal="true" aria-labelledby="ufo-title" data-testid="case-study-detail-popup" ref={modalRef}>
-      <motion.div className="case-fullscreen-shell" initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.4, type: "spring", stiffness: 220, damping: 24 }}>
+    <div className="case-fullscreen-overlay" role="dialog" aria-modal="true" aria-labelledby="ufo-title" data-testid="case-study-detail-popup" ref={modalRef} onMouseDown={onOverlayPointerDown} data-lenis-prevent="true">
+      <motion.div className="case-fullscreen-shell" data-testid="case-popup-shell" onMouseDown={(event) => event.stopPropagation()} data-lenis-prevent="true" initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.4, type: "spring", stiffness: 220, damping: 24 }}>
         <button className="case-modal-close" onClick={onClose} data-testid="case-popup-close-button" aria-label="Close case study"><X size={18} /></button>
-        <aside className="case-sidebar">
+        <aside className="case-sidebar" data-lenis-prevent="true">
           <div className="case-brand-logo">UFO</div>
           <h2>{caseData.title}</h2>
           <dl>
@@ -177,7 +197,7 @@ function UfoBeansFullscreenModal({ caseData, onClose }) {
           <div className="case-sidebar-stats"><b>Project Stats</b><span>Brand — UFO Beans</span><span>Industry — FMCG / Coffee</span><span>Deliverables — Identity, Social, Packaging, Motion</span></div>
           <a className="case-live-cta" href={caseData.pdfUrl} target="_blank" rel="noreferrer" data-testid="case-popup-live-campaign-link">View Live Campaign</a>
         </aside>
-        <main className="case-scroll-content" onScroll={onScroll} data-lenis-prevent="true">
+        <main className="case-scroll-content" ref={scrollContentRef} onScroll={onScroll} data-lenis-prevent="true" data-testid="case-popup-scroll-content">
           {!loaded ? <div className="case-skeleton" data-testid="case-popup-loading-skeleton" /> : <>
             <CaseSection id="hero"><img className="case-hero-mockup" src={ufoAssets.hero} alt="UFO Beans campaign mockup" /><h1 id="ufo-title">UFO Bean: Coffee from Another Dimension</h1><p>A story-led coffee brand concept built around mystery, alien discovery, and packaging as the primary marketing asset.</p><div className="metric-row">{metrics.map(([icon,label,value]) => <MetricCard key={label} icon={icon} label={label} value={value} />)}</div></CaseSection>
             <CaseSection id="challenge" title="What problem were we solving?"><div className="challenge-card"><p>Crowded coffee market. Commodity perception. Low emotional connection. Difficult to stand out.</p></div></CaseSection>
@@ -191,7 +211,7 @@ function UfoBeansFullscreenModal({ caseData, onClose }) {
             <CaseSection id="learnings" title="Key Learnings"><div className="quote-grid">{["Storytelling outperformed feature-first messaging.","Packaging became the primary marketing asset.","Mystery increased user engagement.","Consistency strengthened brand recall."].map(q => <blockquote key={q}>{q}</blockquote>)}</div></CaseSection>
           </>}
         </main>
-        <nav className="case-progress-nav" data-testid="case-popup-progress-nav">{sections.map(([id,label])=><a key={id} data-testid={`case-popup-progress-${id}`} href={`#ufo-${id}`} className={activeSection===id ? "active" : ""}>{label}</a>)}</nav>
+        <nav className="case-progress-nav" data-testid="case-popup-progress-nav">{sections.map(([id,label])=><a key={id} data-testid={`case-popup-progress-${id}`} href={`#ufo-${id}`} onClick={(event) => scrollToSection(event, id)} aria-label={`Jump to ${label}`} aria-current={activeSection===id ? "true" : undefined} className={activeSection===id ? "active" : ""}>{label}</a>)}</nav>
       </motion.div>
       {lightboxImage && <button className="case-lightbox" data-testid="case-popup-lightbox" onClick={()=>setLightboxImage(null)}><img src={lightboxImage} alt="Expanded UFO Beans visual" /></button>}
     </div>

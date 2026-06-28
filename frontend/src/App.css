@@ -2591,6 +2591,7 @@ button {
     place-items: center;
     background: rgba(5, 8, 15, 0.62);
     backdrop-filter: blur(18px);
+    overscroll-behavior: none;
 }
 
 .case-fullscreen-shell {
@@ -2655,6 +2656,8 @@ button {
 .case-scroll-content {
     height: 90vh;
     overflow-y: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
     scroll-behavior: smooth;
     padding: 48px clamp(28px, 4vw, 64px);
 }
@@ -2696,8 +2699,9 @@ button {
 .conceptual-note { padding: 10px 14px; width: fit-content; border-radius: 999px; background: #fff3d8; }
 .quote-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 14px; }
 .case-progress-nav { position: absolute; right: 14px; top: 50%; transform: translateY(-50%); display: grid; gap: 8px; z-index: 4; }
-.case-progress-nav a { width: 9px; height: 9px; overflow: hidden; border-radius: 99px; background: #c8c8c8; text-indent: -999px; }
-.case-progress-nav a.active { height: 28px; background: #111; }
+.case-progress-nav a { width: 9px; height: 9px; overflow: hidden; border-radius: 99px; background: #c8c8c8; text-indent: -999px; transition: height 180ms ease, background-color 180ms ease, transform 180ms ease; }
+.case-progress-nav a:hover { transform: scale(1.35); background: #666; }
+.case-progress-nav a.active { height: 28px; background: #111; transform: scale(1); }
 .case-skeleton { height: 70vh; background: linear-gradient(90deg,#eee,#f8f8f8,#eee); background-size: 200% 100%; animation: skeleton 1s infinite linear; }
 .case-lightbox { position: fixed; inset: 0; z-index: 1200; display: grid; place-items: center; border: 0; background: rgba(0,0,0,0.8); }
 .case-lightbox img { max-width: 86vw; max-height: 86vh; border-radius: 22px; }
