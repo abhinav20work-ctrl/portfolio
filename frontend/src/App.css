@@ -526,33 +526,79 @@ button {
     text-align: left;
     cursor: pointer;
     position: relative;
-    padding: 18px 18px 22px;
+    padding: 30px 18px 22px;
     border: 2px solid #0f172a;
     border-radius: 14px;
-    background: rgba(255, 255, 255, 0.92);
-    box-shadow: 8px 8px 0 rgba(15, 23, 42, 0.18);
+    background:
+        linear-gradient(90deg, rgba(15,23,42,0.035) 1px, transparent 1px) 0 0 / 42px 42px,
+        linear-gradient(rgba(15,23,42,0.035) 1px, transparent 1px) 0 0 / 42px 42px,
+        rgba(255, 255, 255, 0.94);
+    box-shadow: 14px 18px 0 rgba(15, 23, 42, 0.14), 0 18px 60px rgba(15, 23, 42, 0.12);
+    transform-style: preserve-3d;
 }
 
 .hero-persona-card::before,
 .hero-persona-card::after {
     content: "";
     position: absolute;
-    top: -140px;
-    width: 28px;
-    height: 160px;
+    top: -170px;
+    width: 42px;
+    height: 210px;
     z-index: -1;
     border: 2px solid #0f172a;
-    background: repeating-linear-gradient(45deg, #bf4c00 0 12px, #ffffff 12px 22px);
+    background: linear-gradient(180deg, #bf4c00, #e66a13 48%, #bf4c00);
+    box-shadow: 6px 6px 0 rgba(15,23,42,0.14);
 }
 
 .hero-persona-card::before {
-    left: 72px;
-    transform: rotate(-3deg);
+    left: 70px;
+    transform: rotate(-7deg) skewX(-4deg);
 }
 
 .hero-persona-card::after {
-    right: 72px;
-    transform: rotate(3deg);
+    right: 70px;
+    transform: rotate(7deg) skewX(4deg);
+}
+
+.badge-hole {
+    position: absolute;
+    left: 50%;
+    top: 12px;
+    width: 68px;
+    height: 16px;
+    border: 2px solid #0f172a;
+    border-radius: 999px;
+    background: #f7f7f3;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+.badge-ribbon-pin {
+    position: absolute;
+    left: 50%;
+    top: -30px;
+    width: 118px;
+    height: 48px;
+    border: 2px solid #0f172a;
+    border-radius: 18px 18px 6px 6px;
+    background: #ffffff;
+    box-shadow: 5px 5px 0 rgba(15,23,42,0.16);
+    transform: translateX(-50%) rotate(-1deg);
+    z-index: 1;
+}
+
+.badge-ribbon-pin::after {
+    content: "ID";
+    position: absolute;
+    inset: 8px;
+    display: grid;
+    place-items: center;
+    border-radius: 10px;
+    background: #0f172a;
+    color: #ffffff;
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 900;
+    letter-spacing: 0.12em;
 }
 
 .recruiter-panel::after {
@@ -560,19 +606,37 @@ button {
 }
 
 .hero-persona-large {
+    position: relative;
     display: grid;
     place-items: end center;
-    min-height: 300px;
+    min-height: 315px;
     margin: 14px 0 18px;
     border: 1.5px solid rgba(15, 23, 42, 0.16);
-    background: linear-gradient(180deg, rgba(255,255,255,0.78) 0 68%, rgba(191,76,0,0.08) 68% 100%);
+    background:
+        radial-gradient(circle at 78% 18%, rgba(191,76,0,0.13) 0 12%, transparent 13%),
+        linear-gradient(180deg, rgba(255,255,255,0.78) 0 66%, rgba(191,76,0,0.09) 66% 100%);
     overflow: hidden;
 }
 
+.hero-persona-large::before {
+    content: "";
+    position: absolute;
+    width: 130px;
+    height: 130px;
+    right: 18px;
+    top: 18px;
+    border: 2px solid rgba(15,23,42,0.28);
+    border-radius: 50%;
+    animation: slow-spin 12s linear infinite;
+}
+
 .hero-persona-large img {
-    width: min(360px, 100%);
+    position: relative;
+    z-index: 2;
+    width: min(380px, 100%);
     object-fit: contain;
     mix-blend-mode: multiply;
+    filter: drop-shadow(0 12px 10px rgba(15,23,42,0.14));
 }
 
 .panel-label {

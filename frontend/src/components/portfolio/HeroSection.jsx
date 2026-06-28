@@ -71,6 +71,8 @@ export default function HeroSection() {
             transition={{ duration: 0.65, delay: 0.48 }}
             data-testid="hero-recruiter-snapshot"
           >
+            <div className="badge-hole" aria-hidden="true" />
+            <div className="badge-ribbon-pin" aria-hidden="true" />
             <p className="panel-label" data-testid="hero-snapshot-label">VISUAL DESIGNER · BENGALURU</p>
             <div className="hero-persona-large" data-testid="hero-persona-large">
               <img src={heroPersonaUrl} alt="Abhinav Sharma illustrated persona" />
