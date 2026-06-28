@@ -2025,6 +2025,13 @@ button {
     border: 0;
     padding: 0;
     white-space: nowrap;
+    margin-left: 0;
+    margin-right: 0;
+    text-align: left;
+}
+
+.footer-philosophy .footer-label {
+    margin: 0 0 22px;
 }
 
 @media (max-width: 900px) {
