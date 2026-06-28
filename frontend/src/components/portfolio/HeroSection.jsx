@@ -71,12 +71,10 @@ export default function HeroSection() {
             transition={{ duration: 0.65, delay: 0.48 }}
             data-testid="hero-recruiter-snapshot"
           >
-            <svg className="swirl-ribbon ribbon-left" viewBox="0 0 90 260" aria-hidden="true">
-              <path d="M46 0C18 55 78 88 43 135C16 172 31 211 62 260" />
-            </svg>
-            <svg className="swirl-ribbon ribbon-right" viewBox="0 0 90 260" aria-hidden="true">
-              <path d="M44 0C76 52 18 91 51 136C80 176 56 219 30 260" />
-            </svg>
+            <div className="badge-top-row">
+              <span className="badge-company-mark" data-testid="hero-badge-company-mark">AS</span>
+              <span className="badge-verified" data-testid="hero-badge-verified">Verified Designer</span>
+            </div>
             <p className="panel-label" data-testid="hero-snapshot-label">VISUAL DESIGNER · BENGALURU</p>
             <h3 className="id-card-name" data-testid="hero-id-card-name">Abhinav Sharma</h3>
             <div className="hero-persona-large" data-testid="hero-persona-large">
@@ -85,8 +83,9 @@ export default function HeroSection() {
             <div className="signal-list">
               {recruiterSignals.map((signal) => (
                 <div className="signal-item" key={signal.id} data-testid={`hero-signal-${signal.id}`}>
-                  <strong>{signal.value}</strong>
-                  <span>{signal.label}</span>
+                  <span>{signal.id === "signal-01" ? "Current Role" : signal.id === "signal-02" ? "Projects" : "Location"}</span>
+                  <strong>{signal.id === "signal-01" ? "Motion Graphic Designer" : signal.value}</strong>
+                  <em>{signal.id === "signal-01" ? "Sarla Aviation" : signal.label}</em>
                 </div>
               ))}
             </div>
@@ -94,6 +93,12 @@ export default function HeroSection() {
               {strengths.map((strength) => (
                 <span key={strength}>{strength}</span>
               ))}
+            </div>
+            <div className="badge-footer-row" data-testid="hero-badge-footer-row">
+              <div className="tiny-qr" aria-label="Decorative QR code" data-testid="hero-badge-qr">
+                <span /><span /><span /><span /><span /><span /><span /><span /><span />
+              </div>
+              <div className="tiny-barcode" aria-hidden="true" data-testid="hero-badge-barcode" />
             </div>
           </motion.button>
         </div>
