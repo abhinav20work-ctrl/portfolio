@@ -660,9 +660,7 @@ button {
     padding: 14px;
     border: 2px solid #0a0a0a;
     border-radius: 8px;
-    background:
-        radial-gradient(circle at 50% 42%, rgba(67, 185, 0, 0.16) 0 34%, transparent 35%),
-        #f4f2ee;
+    background: #f4f2ee;
     box-shadow: none;
     overflow: hidden;
 }
@@ -844,11 +842,18 @@ button {
     border: 1px solid #E5E5E5;
     border-radius: 999px;
     background: #F6F6F6;
-    color: #525252;
+    color: #111827;
     font-size: 0.72rem;
     font-weight: 500;
     transition: transform 180ms ease, background-color 180ms ease, color 180ms ease;
 }
+
+.strength-cloud span:nth-child(1) { background: #ffe36e; }
+.strength-cloud span:nth-child(2) { background: #ffb36e; }
+.strength-cloud span:nth-child(3) { background: #9be276; }
+.strength-cloud span:nth-child(4) { background: #8fd3ff; }
+.strength-cloud span:nth-child(5) { background: #ff9ec7; }
+.strength-cloud span:nth-child(6) { background: #d8c2ff; }
 
 .strength-cloud span:hover {
     transform: translateY(-2px) scale(1.02);
@@ -878,11 +883,43 @@ button {
 }
 
 .tiny-barcode {
-    width: 128px;
-    height: 34px;
+    position: relative;
+    width: 132px;
+    height: 40px;
+    border: 1px solid #E2E2E2;
     border-radius: 6px;
-    background: repeating-linear-gradient(90deg, #111827 0 2px, transparent 2px 5px, #111827 5px 7px, transparent 7px 12px), #ffffff;
-    opacity: 0.78;
+    background:
+        linear-gradient(90deg,
+            #111827 0 2px, transparent 2px 5px,
+            #111827 5px 8px, transparent 8px 11px,
+            #111827 11px 12px, transparent 12px 16px,
+            #111827 16px 20px, transparent 20px 24px,
+            #111827 24px 26px, transparent 26px 31px,
+            #111827 31px 32px, transparent 32px 36px,
+            #111827 36px 40px, transparent 40px 44px,
+            #111827 44px 46px, transparent 46px 50px,
+            #111827 50px 51px, transparent 51px 56px,
+            #111827 56px 59px, transparent 59px 64px,
+            #111827 64px 66px, transparent 66px 70px,
+            #111827 70px 75px, transparent 75px 78px,
+            #111827 78px 80px, transparent 80px 86px,
+            #111827 86px 89px, transparent 89px 93px,
+            #111827 93px 95px, transparent 95px 100%,
+            transparent 100%),
+        #ffffff;
+    opacity: 0.92;
+}
+
+.tiny-barcode::after {
+    content: "AS2025";
+    position: absolute;
+    left: 50%;
+    bottom: -14px;
+    transform: translateX(-50%);
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.55rem;
+    letter-spacing: 0.12em;
+    color: #737373;
 }
 
 .hero-persona-peek {
