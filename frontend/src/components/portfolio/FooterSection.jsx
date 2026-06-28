@@ -32,15 +32,15 @@ export default function FooterSection() {
           />
         </div>
         <nav className="footer-links" aria-label="Contact links" data-testid="footer-contact-links">
-          <p className="footer-link-label" data-testid="footer-link-label">Open channels</p>
+          <p className="footer-link-label" data-testid="footer-link-label">Connect here</p>
           <motion.a
-            href="https://www.behance.net/abhinavsharma7585"
+            href="https://www.linkedin.com/in/abhinav-sharma-7b3930325/"
             target="_blank"
             rel="noreferrer"
             whileHover={{ rotate: -4, x: -6 }}
             data-testid="footer-linkedin-link"
           >
-            <Linkedin size={20} /> Behance
+            <Linkedin size={20} /> LinkedIn
           </motion.a>
           <motion.a
             href="mailto:abhinav20.work@gmail.com"

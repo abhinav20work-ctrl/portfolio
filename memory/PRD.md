@@ -201,3 +201,9 @@ Create a portfolio for a content strategist, Abhinav Sharma with white backgroun
 - Applied the supplied UFO Beans palette to the first Selected Work card: Deep Navy, Brand Blue, Light Sky Blue, Off White, Text Gray, and coffee accents.
 - Recolored the UFO Beans fullscreen popup: navy/coffee sidebar, blue grid content area, pale blue cards, navy typography, blue progress dots, and palette-aligned CTAs.
 - Verified via browser smoke test: UFO card palette renders, popup palette renders, mouse-wheel scrolling still works, and progress navigation still activates correctly.
+
+
+## Implemented — 2026-06-28 Footer LinkedIn Update
+- Replaced the footer Behance link with the provided LinkedIn URL: https://www.linkedin.com/in/abhinav-sharma-7b3930325/
+- Renamed the footer contact label from “Open channels” to “Connect here”.
+- Verified via browser smoke test: label, LinkedIn text, LinkedIn href, and email link render correctly.
