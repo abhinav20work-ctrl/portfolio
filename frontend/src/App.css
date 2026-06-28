@@ -527,17 +527,72 @@ button {
     cursor: pointer;
     position: relative;
     padding: 24px;
-    border: 1px solid #D9D9D9;
-    border-radius: 20px;
-    background: #FCFCFC;
-    box-shadow:
-        inset 0 1px 0 rgba(255, 255, 255, 0.95),
-        0 1px 2px rgba(15, 23, 42, 0.08),
-        0 18px 48px rgba(15, 23, 42, 0.14),
-        0 42px 90px rgba(15, 23, 42, 0.08);
+    border: 2px solid #0f172a;
+    border-radius: 8px;
+    background: #ffffff;
+    box-shadow: 6px 6px 0 rgba(15, 23, 42, 0.18), 0 12px 40px rgba(15, 23, 42, 0.04);
     transform-style: preserve-3d;
     font-family: "Inter", "Geist", "Manrope", sans-serif;
     overflow: hidden;
+}
+
+.hero-persona-card:hover {
+    transform: translateY(-10px) rotate(-0.8deg);
+    border-color: #0f172a;
+    box-shadow: 6px 6px 0 #0f172a, 0 10px 24px rgba(15, 23, 42, 0.06);
+}
+
+.hero-image-row {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 148px minmax(0, 1fr);
+    gap: 14px;
+    align-items: center;
+    margin: 22px 0 24px;
+}
+
+.hero-image-note {
+    min-height: 128px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 7px;
+    padding: 14px;
+    border: 2px solid #0a0a0a;
+    border-radius: 8px;
+    background: #bf4c00;
+    color: #0f172a;
+    transition: transform 220ms ease;
+}
+
+.hero-persona-card:hover .hero-image-note {
+    transform: translateY(-4px) rotate(0.8deg);
+}
+
+.hero-image-note span {
+    width: fit-content;
+    padding: 5px 8px;
+    border: 2px solid #0f172a;
+    background: #ffffff;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.68rem;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.hero-image-note strong {
+    font-family: "Cabinet Grotesk", "Outfit", sans-serif;
+    font-size: 1.32rem;
+    line-height: 0.95;
+    font-weight: 900;
+}
+
+.hero-image-note em {
+    color: rgba(15, 23, 42, 0.72);
+    font-size: 0.8rem;
+    line-height: 1.28;
+    font-style: normal;
 }
 
 .hero-persona-card::before {
@@ -598,17 +653,12 @@ button {
     width: 148px;
     height: 148px;
     min-height: 148px;
-    margin: 22px 0 24px;
+    margin: 0;
     padding: 14px;
-    border: 1px solid #D9D9D9;
-    border-radius: 999px;
-    background:
-        radial-gradient(circle at 34% 24%, rgba(255,255,255,0.86), transparent 34%),
-        linear-gradient(145deg, #F7F7F5 0%, #ECECEA 100%);
-    box-shadow:
-        inset 0 1px 0 rgba(255,255,255,0.9),
-        inset 0 -10px 22px rgba(15,23,42,0.06),
-        0 10px 28px rgba(15,23,42,0.08);
+    border: 2px solid #0a0a0a;
+    border-radius: 8px;
+    background: #bf4c00;
+    box-shadow: none;
     overflow: hidden;
 }
 
@@ -633,7 +683,7 @@ button {
 
 /* legacy override: keep premium badge portrait compact */
 .hero-persona-large {
-    margin: 22px 0 24px;
+    margin: 0;
 }
 
 .panel-label {

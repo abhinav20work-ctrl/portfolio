@@ -77,8 +77,15 @@ export default function HeroSection() {
             </div>
             <p className="panel-label" data-testid="hero-snapshot-label">VISUAL DESIGNER · BENGALURU</p>
             <h3 className="id-card-name" data-testid="hero-id-card-name">Abhinav Sharma</h3>
-            <div className="hero-persona-large" data-testid="hero-persona-large">
-              <img src={heroPersonaUrl} alt="Abhinav Sharma illustrated persona" />
+            <div className="hero-image-row" data-testid="hero-image-row">
+              <div className="hero-persona-large" data-testid="hero-persona-large">
+                <img src={heroPersonaUrl} alt="Abhinav Sharma profile artwork" />
+              </div>
+              <div className="hero-image-note" data-testid="hero-image-note">
+                <span>Speciality</span>
+                <strong>Motion-led storytelling</strong>
+                <em>Visual systems that make ideas easier to watch, understand, and remember.</em>
+              </div>
             </div>
             <div className="signal-list">
               {recruiterSignals.map((signal) => (
