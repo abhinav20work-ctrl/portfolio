@@ -1156,6 +1156,17 @@ button {
     width: min(calc(var(--video-box-width) + 390px), calc(100vw - 36px));
     max-width: min(1240px, calc(100vw - 36px));
     overflow: visible;
+    will-change: transform, opacity;
+    transform-origin: center center;
+    transition: width 260ms cubic-bezier(.22,1,.36,1), max-width 260ms cubic-bezier(.22,1,.36,1);
+}
+
+.video-dialog[data-state="open"] {
+    animation: reel-dialog-in 320ms cubic-bezier(.22,1,.36,1) both;
+}
+
+.video-dialog[data-state="closed"] {
+    animation: reel-dialog-out 180ms cubic-bezier(.55,.06,.68,.19) both;
 }
 
 .persona-popup-grid,
@@ -1171,6 +1182,8 @@ button {
     grid-template-columns: var(--video-box-width) minmax(280px, 340px);
     gap: clamp(18px, 3vw, 32px);
     align-items: center;
+    max-width: 100%;
+    min-width: 0;
 }
 
 .case-lab-sheet {
@@ -1546,6 +1559,12 @@ button {
     margin-top: 22px;
 }
 
+.video-popup-tags {
+    margin-top: 0;
+    max-width: 100%;
+    gap: 8px;
+}
+
 .persona-spec-list span,
 .case-popup-stack span,
 .video-popup-tags span {
@@ -1557,6 +1576,14 @@ button {
     font-family: "IBM Plex Mono", monospace;
     font-size: 0.76rem;
     font-weight: 900;
+}
+
+.video-popup-tags span {
+    max-width: 100%;
+    font-size: clamp(0.58rem, min(0.82vw, 1.35vh), 0.74rem);
+    line-height: 1.1;
+    overflow-wrap: anywhere;
+    box-shadow: 2px 2px 0 rgba(15,23,42,0.16);
 }
 
 .flow-art {
@@ -2186,22 +2213,27 @@ button {
 }
 
 .video-dialog {
-    padding: clamp(22px, 3vw, 34px);
+    padding: clamp(18px, 2.4vw, 30px);
 }
 
 .video-dialog-title {
     font-family: "Cabinet Grotesk", "Outfit", sans-serif;
-    font-size: clamp(2.5rem, 5vw, 4.8rem);
-    line-height: 0.92;
+    font-size: clamp(1.75rem, min(4.6vw, 8vh), 4rem);
+    line-height: 0.9;
     font-weight: 900;
     letter-spacing: 0;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    text-wrap: balance;
 }
 
 .video-dialog-description {
     max-width: 700px;
     color: rgba(10, 10, 10, 0.72);
-    font-size: 1.05rem;
-    line-height: 1.55;
+    font-size: clamp(0.82rem, min(1.1vw, 1.75vh), 1.02rem);
+    line-height: 1.42;
+    overflow-wrap: anywhere;
+    text-wrap: pretty;
 }
 
 .video-player {
@@ -2218,13 +2250,30 @@ button {
 
 .video-copy-panel {
     align-self: stretch;
+    min-width: 0;
+    max-width: 100%;
+    max-height: calc(100vh - 150px);
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 18px;
+    gap: clamp(10px, 1.6vh, 18px);
+    padding: clamp(14px, 1.8vw, 20px);
     border: 2px solid #0f172a;
     border-radius: 18px;
     background: rgba(255,255,255,0.78);
+    overflow: hidden;
+}
+
+.video-copy-panel .inline-label {
+    margin-bottom: 0;
+    flex-shrink: 0;
+}
+
+.video-copy-panel .dialog-header {
+    min-width: 0;
+    max-width: 100%;
+    display: grid;
+    gap: clamp(8px, 1.25vh, 14px);
 }
 
 .case-popup-visual {
@@ -2669,6 +2718,22 @@ button {
         margin: 0 auto;
     }
 
+    .video-copy-panel {
+        max-height: none;
+        padding: 14px;
+        overflow: visible;
+    }
+
+    .video-dialog-title {
+        font-size: clamp(1.75rem, 12vw, 3.2rem);
+        line-height: 0.92;
+    }
+
+    .video-dialog-description {
+        font-size: 0.92rem;
+        line-height: 1.38;
+    }
+
     .ufo-source-visuals,
     .campaign-pillars > div {
         grid-template-columns: 1fr;
@@ -2812,6 +2877,16 @@ button {
     28% { opacity: 1; transform: translate3d(0, -0.08em, 0) scale(1) rotate(18deg); }
     72% { opacity: 0.95; transform: translate3d(0, -0.18em, 0) scale(0.72) rotate(52deg); }
     100% { opacity: 0; transform: translate3d(0, -0.34em, 0) scale(0.18) rotate(92deg); }
+}
+
+@keyframes reel-dialog-in {
+    from { opacity: 0; transform: translate(-50%, -48%) scale(0.965); filter: blur(6px); }
+    to { opacity: 1; transform: translate(-50%, -50%) scale(1); filter: blur(0); }
+}
+
+@keyframes reel-dialog-out {
+    from { opacity: 1; transform: translate(-50%, -50%) scale(1); filter: blur(0); }
+    to { opacity: 0; transform: translate(-50%, -49%) scale(0.975); filter: blur(5px); }
 }
 
 @keyframes note-float {

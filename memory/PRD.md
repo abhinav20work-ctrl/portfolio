@@ -292,3 +292,10 @@ Create a portfolio for a content strategist, Abhinav Sharma with white backgroun
 - Changed the popup layout, dialog width, and video element sizing to follow `--video-aspect`, with `object-fit: cover` and transparent video background to avoid container-created black bars.
 - Applied the behavior globally for all reel videos, including portrait and landscape assets.
 - Verified via browser smoke test: portrait reel renders at ~0.563 aspect, landscape reel renders at ~1.773 aspect, popup dimensions change accordingly, and object-fit is `cover`.
+
+
+## Implemented — 2026-06-28 Reel Popup Text Fitting + Transition Optimization
+- Made reel popup title, description, and tags responsive with clamp-based sizing, balanced wrapping, and overflow-safe word breaks.
+- Constrained the copy panel to the dialog dimensions and added mobile-specific text scaling so long titles/descriptions/tags stay inside the popup.
+- Added smoother video-dialog open/close animation using custom scale/opacity/blur keyframes and width transition tied to dynamic video aspect ratio.
+- Verified via browser smoke test across portrait, landscape, desktop, and mobile: no measured text overflow, panel scroll/client heights fit, and transitions render cleanly.
