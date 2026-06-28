@@ -150,3 +150,11 @@ Create a portfolio for a content strategist, Abhinav Sharma with white backgroun
 - Updated case studies to UFO Beans, Sarla Aviation, and The Spotlight Media.
 - Updated contact links to Behance and `abhinav20.work@gmail.com`.
 - QA agent verified requested rewrite and no-overflow behavior; fixed Radix dialog accessibility warnings by adding DialogTitle/DialogDescription semantics to persona and case modals.
+
+
+## Implemented — 2026-06-28 Footer Bug Fix
+- Reduced footer headline size so “Visual quality. Brand coherence. Audience impact.” no longer runs down/off the page.
+- Removed colored background/border/shadow from the “My Philosophy” label, making it neutral/handwritten.
+- Reduced footer artwork and shell height for better viewport fit.
+- Adjusted footer link block upward for improved desktop column balance.
+- Testing agent verified footer heading visibility, description visibility, neutral label, links present, and no desktop/mobile horizontal overflow; noted minor balance issue, now adjusted.

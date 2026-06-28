@@ -1930,7 +1930,7 @@ button {
 
 .footer-philosophy,
 .footer-links {
-    transform: none;
+    transform: translateY(-42px);
 }
 
 .footer-philosophy h2 {
