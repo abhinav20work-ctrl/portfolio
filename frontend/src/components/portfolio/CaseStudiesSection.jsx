@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { Dialog, DialogContent, DialogDescription, DialogTitle } from "@/components/ui/dialog";
 import { caseStudies } from "@/data/portfolio";
+import { X } from "lucide-react";
 
 export default function CaseStudiesSection() {
   const [activeCase, setActiveCase] = useState(null);
@@ -90,111 +91,117 @@ export default function CaseStudiesSection() {
           ))}
         </div>
       </div>
-      <Dialog open={Boolean(activeCase)} onOpenChange={(open) => !open && setActiveCase(null)}>
-        <DialogContent className="case-dialog lab-dialog case-lab-sheet" data-testid="case-study-detail-popup" data-lenis-prevent="true">
-          {activeCase && (
-            <div className="case-sheet-layout" style={{ "--case-accent": activeCase.accent }}>
-              <div className="case-sheet-hero" data-testid="case-popup-visual">
-                <div className="case-sheet-topline">
-                  <span>Specimen {activeCase.label}</span>
-                  <span>Content Lab Evidence</span>
-                </div>
-                <DialogTitle className="case-popup-title" data-testid="case-popup-title">{activeCase.title}</DialogTitle>
-                <p className="case-popup-outcome" data-testid="case-popup-outcome">{activeCase.outcome}</p>
-                <div className="case-signal-map" aria-hidden="true">
-                  <span className="signal-node node-a" />
-                  <span className="signal-node node-b" />
-                  <span className="signal-node node-c" />
-                  <span className="signal-line line-a" />
-                  <span className="signal-line line-b" />
-                </div>
-              </div>
-
-              <div className="case-sheet-summary">
-                <span className="lab-module-label inline-label" data-testid="case-popup-module-label">Case file</span>
-                <DialogDescription className="case-popup-description" data-testid="case-popup-description">{activeCase.brief}</DialogDescription>
-                {activeCase.proposition && (
-                  <div className="case-fact-grid" data-testid="case-popup-fact-grid">
-                    <span><b>Proposition</b>{activeCase.proposition}</span>
-                    <span><b>Audience</b>{activeCase.audience}</span>
-                    <span><b>Big idea</b>{activeCase.bigIdea}</span>
-                  </div>
-                )}
-                <div className="case-popup-stack" data-testid="case-popup-stack">
-                  {activeCase.tags.map((tag) => <span key={tag}>{tag}</span>)}
-                </div>
-              </div>
-
-              {activeCase.visualAssets && (
-                <div className="ufo-source-visuals" data-testid="case-popup-source-visuals">
-                  <div className="ufo-product-card" data-testid="case-popup-product-world">
-                    <img src={activeCase.visualAssets.productWorld} alt="UFO Beans product world from original case study" />
-                    <span>Product world</span>
-                  </div>
-                  <div className="ufo-strategy-card" data-testid="case-popup-strategy-board">
-                    <img src={activeCase.visualAssets.strategyBoard} alt="UFO Beans strategy board from original case study" />
-                    <span>Strategy board</span>
-                  </div>
-                </div>
-              )}
-
-              <div className="case-detail-grid">
-                {activeCase.problem && (
-                  <div className="case-popup-detail-block" data-testid="case-popup-problem">
-                    <b>Problem</b>
-                    <p>{activeCase.problem}</p>
-                  </div>
-                )}
-                {activeCase.strategy && (
-                  <div className="case-popup-detail-block" data-testid="case-popup-strategy">
-                    <b>Strategy</b>
-                    <p>{activeCase.strategy}</p>
-                  </div>
-                )}
-              </div>
-
-              {activeCase.execution && (
-                <div className="case-phase-strip" data-testid="case-popup-execution">
-                  <b>Execution phases</b>
-                  <div>
-                    {activeCase.execution.map((item, index) => (
-                      <article key={item}>
-                        <span>{String(index + 1).padStart(2, "0")}</span>
-                        <p>{item}</p>
-                      </article>
-                    ))}
-                  </div>
-                </div>
-              )}
-
-              {activeCase.campaignPillars && (
-                <div className="campaign-pillars" data-testid="case-popup-campaign-pillars">
-                  <b>Content system recreated from the PDF</b>
-                  <div>
-                    {activeCase.campaignPillars.map((pillar, index) => (
-                      <span key={pillar} data-testid={`case-popup-pillar-${index + 1}`}>{pillar}</span>
-                    ))}
-                  </div>
-                </div>
-              )}
-
-              <div className="case-sheet-footer">
-                {activeCase.pdfUrl && (
-                  <a
-                    className="case-source-link"
-                    href={activeCase.pdfUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    data-testid="case-popup-source-pdf-link"
-                  >
-                    Open original case study PDF
-                  </a>
-                )}
-              </div>
-            </div>
-          )}
-        </DialogContent>
-      </Dialog>
+      {activeCase?.id === "case-01" && (
+        <UfoBeansFullscreenModal caseData={activeCase} onClose={() => setActiveCase(null)} />
+      )}
+      {activeCase && activeCase.id !== "case-01" && (
+        <SimpleCaseModal caseData={activeCase} onClose={() => setActiveCase(null)} />
+      )}
     </section>
   );
+}
+
+const ufoAssets = {
+  hero: "/case-assets/ufo-beans-v2/crops/hero-product.jpg",
+  closeup: "/case-assets/ufo-beans-v2/crops/product-closeup.jpg",
+  strategy: "/case-assets/ufo-beans-v2/crops/strategy-board.jpg",
+  launch: "/case-assets/ufo-beans-v2/crops/launch-mockup.jpg",
+  soft: "/case-assets/ufo-beans-v2/crops/campaign-soft.jpg",
+  campaignLaunch: "/case-assets/ufo-beans-v2/crops/campaign-launch.jpg",
+  sustain: "/case-assets/ufo-beans-v2/crops/campaign-sustain.jpg",
+  galleryA: "/case-assets/ufo-beans-v2/crops/gallery-a.jpg",
+  galleryB: "/case-assets/ufo-beans-v2/crops/gallery-b.jpg",
+};
+
+function UfoBeansFullscreenModal({ caseData, onClose }) {
+  const modalRef = useRef(null);
+  const [loaded, setLoaded] = useState(false);
+  const [activeSection, setActiveSection] = useState("hero");
+  const [expandedPhase, setExpandedPhase] = useState("Soft Launch");
+  const [lightboxImage, setLightboxImage] = useState(null);
+
+  const sections = useMemo(() => [
+    ["hero", "Hero"], ["challenge", "Challenge"], ["research", "Research"], ["strategy", "Strategy"],
+    ["idea", "Big Idea"], ["execution", "Execution"], ["gallery", "Gallery"], ["impact", "Impact"], ["process", "Process"], ["learnings", "Learnings"],
+  ], []);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setLoaded(true), 450);
+    const firstButton = modalRef.current?.querySelector("button, a");
+    firstButton?.focus();
+    const onKeyDown = (event) => {
+      if (event.key === "Escape") onClose();
+      if (event.key === "Tab" && modalRef.current) {
+        const focusables = modalRef.current.querySelectorAll('button, [href], video, [tabindex]:not([tabindex="-1"])');
+        if (!focusables.length) return;
+        const first = focusables[0];
+        const last = focusables[focusables.length - 1];
+        if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+        else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
+      }
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => { clearTimeout(timer); window.removeEventListener("keydown", onKeyDown); };
+  }, [onClose]);
+
+  const onScroll = (event) => {
+    const top = event.currentTarget.scrollTop;
+    const current = sections.map(([id]) => id).findLast((id) => {
+      const node = event.currentTarget.querySelector(`#ufo-${id}`);
+      return node && node.offsetTop - 160 <= top;
+    });
+    if (current) setActiveSection(current);
+  };
+
+  const metrics = [
+    ["👁️", "Estimated Reach", "2.3M+"], ["❤️", "Engagement Rate", "8.9%"], ["📈", "Brand Recall", "+42%"],
+    ["🎯", "CTR", "6.8%"], ["📦", "Purchase Intent", "+31%"],
+  ];
+  const impact = [["Estimated Organic Reach", "2.3 Million"], ["Social Saves", "124K"], ["Shares", "42K"], ["Campaign Completion", "94%"], ["Estimated ROAS", "4.8×"], ["Follower Growth", "+28%"], ["Repeat Purchase Intent", "31%"], ["Brand Search Increase", "+46%"], ["Community Engagement", "+39%"]];
+  const phases = {
+    "Soft Launch": ["Build mystery before product reveal", "Leaked footage, alien language, distorted signals", "Cryptic reels, teaser posters, AR clues", "High curiosity and shareability"],
+    Launch: ["Reveal UFO Beans as the source of the signal", "Cinematic POV launch, product visuals, creator posts", "Hero film, packaging shots, reveal carousel", "Strong brand recognition and intent"],
+    Sustain: ["Keep community decoding the brand world", "Spot the UFO challenges, fan theories, limited drops", "UGC prompts, transmissions, flavor drops", "Repeat engagement and community memory"],
+  };
+
+  return (
+    <div className="case-fullscreen-overlay" role="dialog" aria-modal="true" aria-labelledby="ufo-title" data-testid="case-study-detail-popup" ref={modalRef}>
+      <motion.div className="case-fullscreen-shell" initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.4, type: "spring", stiffness: 220, damping: 24 }}>
+        <button className="case-modal-close" onClick={onClose} data-testid="case-popup-close-button" aria-label="Close case study"><X size={18} /></button>
+        <aside className="case-sidebar">
+          <div className="case-brand-logo">UFO</div>
+          <h2>{caseData.title}</h2>
+          <dl>
+            <dt>Category</dt><dd>Brand Identity / Campaign</dd><dt>Timeline</dt><dd>2 Weeks</dd><dt>Role</dt><dd>Brand Strategy + Visual Design</dd><dt>Team Size</dt><dd>Solo Concept</dd><dt>Tools Used</dt><dd>Figma, After Effects, Photoshop</dd>
+          </dl>
+          <div className="case-sidebar-stats"><b>Project Stats</b><span>Brand — UFO Beans</span><span>Industry — FMCG / Coffee</span><span>Deliverables — Identity, Social, Packaging, Motion</span></div>
+          <a className="case-live-cta" href={caseData.pdfUrl} target="_blank" rel="noreferrer" data-testid="case-popup-live-campaign-link">View Live Campaign</a>
+        </aside>
+        <main className="case-scroll-content" onScroll={onScroll} data-lenis-prevent="true">
+          {!loaded ? <div className="case-skeleton" data-testid="case-popup-loading-skeleton" /> : <>
+            <CaseSection id="hero"><img className="case-hero-mockup" src={ufoAssets.hero} alt="UFO Beans campaign mockup" /><h1 id="ufo-title">UFO Bean: Coffee from Another Dimension</h1><p>A story-led coffee brand concept built around mystery, alien discovery, and packaging as the primary marketing asset.</p><div className="metric-row">{metrics.map(([icon,label,value]) => <MetricCard key={label} icon={icon} label={label} value={value} />)}</div></CaseSection>
+            <CaseSection id="challenge" title="What problem were we solving?"><div className="challenge-card"><p>Crowded coffee market. Commodity perception. Low emotional connection. Difficult to stand out.</p></div></CaseSection>
+            <CaseSection id="research" title="Research"><div className="audience-grid"><AudienceChart /><div className="insight-cards">{["74% enjoy trying new beverage brands.","61% purchase products because of packaging.","82% discover products through Instagram.","68% are likely to share visually unique products online."].map(x => <span key={x}>{x}</span>)}</div></div></CaseSection>
+            <CaseSection id="strategy" title="Strategy"><div className="process-timeline">{["Research","Insight","Brand Positioning","Creative Direction","Campaign","Launch"].map(x => <span key={x}>{x}</span>)}</div><img className="wide-case-image" src={ufoAssets.strategy} alt="UFO Beans strategy board" /></CaseSection>
+            <CaseSection id="idea"><div className="big-idea"><h2>The Signal Has Arrived</h2><p>Launch UFO Beans like an unexplained event — something audiences decode, share, and participate in.</p><img src={ufoAssets.launch} alt="Campaign launch mockup" /></div></CaseSection>
+            <CaseSection id="execution" title="Campaign Execution"><div className="phase-accordion">{Object.entries(phases).map(([phase, items]) => <button key={phase} onClick={() => setExpandedPhase(phase)} className={expandedPhase===phase ? "active" : ""}><b>{phase}</b>{expandedPhase===phase && <ul>{["Goal","Content Strategy","Deliverables","Expected Impact"].map((label, i)=><li key={label}><strong>{label}</strong>{items[i]}</li>)}</ul>}</button>)}</div></CaseSection>
+            <CaseSection id="gallery" title="Content Gallery"><div className="case-masonry">{[ufoAssets.closeup,ufoAssets.soft,ufoAssets.campaignLaunch,ufoAssets.sustain,ufoAssets.galleryA,ufoAssets.galleryB].map((src,i)=><button key={src} onClick={()=>setLightboxImage(src)}><img src={src} alt={`UFO Beans visual ${i+1}`} /></button>)}</div></CaseSection>
+            <CaseSection id="impact" title="Business Impact"><p className="conceptual-note">Projected campaign outcomes / conceptual KPIs for presentation.</p><div className="impact-grid">{impact.map(([label,value])=><MetricCard key={label} label={label} value={value} />)}</div></CaseSection>
+            <CaseSection id="process" title="My Design Process"><div className="process-timeline long">{["Discover","Research","Concept","Visual Language","Content System","Campaign Assets","Final Presentation"].map(x => <span key={x}>{x}</span>)}</div></CaseSection>
+            <CaseSection id="learnings" title="Key Learnings"><div className="quote-grid">{["Storytelling outperformed feature-first messaging.","Packaging became the primary marketing asset.","Mystery increased user engagement.","Consistency strengthened brand recall."].map(q => <blockquote key={q}>{q}</blockquote>)}</div></CaseSection>
+          </>}
+        </main>
+        <nav className="case-progress-nav">{sections.map(([id,label])=><a key={id} href={`#ufo-${id}`} className={activeSection===id ? "active" : ""}>{label}</a>)}</nav>
+      </motion.div>
+      {lightboxImage && <button className="case-lightbox" onClick={()=>setLightboxImage(null)}><img src={lightboxImage} alt="Expanded UFO Beans visual" /></button>}
+    </div>
+  );
+}
+
+function CaseSection({ id, title, children }) { return <motion.section id={`ufo-${id}`} className="case-section-block" initial={{ opacity: 0, y: 28 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.18 }} transition={{ duration: 0.45 }}>{title && <h2>{title}</h2>}{children}</motion.section>; }
+function MetricCard({ icon, label, value }) { return <motion.article className="case-metric-card" whileHover={{ y: -5 }}>{icon && <span>{icon}</span>}<b>{value}</b><small>{label}</small></motion.article>; }
+function AudienceChart() { return <div className="audience-chart"><b>Audience</b>{["18–30","Gen Z","Young Professionals","Urban","Curious","Coffee Enthusiasts"].map((x,i)=><span key={x} style={{"--w": `${55+i*7}%`}}>{x}</span>)}</div>; }
+
+function SimpleCaseModal({ caseData, onClose }) {
+  return <Dialog open onOpenChange={(open)=>!open && onClose()}><DialogContent className="case-dialog lab-dialog case-lab-sheet"><DialogTitle>{caseData.title}</DialogTitle><DialogDescription>{caseData.brief}</DialogDescription></DialogContent></Dialog>;
 }
