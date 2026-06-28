@@ -10,10 +10,20 @@ import {
 } from "@/components/ui/dialog";
 import { projects } from "@/data/portfolio";
 
+const metricSeeds = [
+  ["1.2M", "84K", "18K"], ["946K", "72K", "14K"], ["1.7M", "118K", "26K"], ["638K", "41K", "9.8K"],
+  ["812K", "55K", "12K"], ["1.1M", "68K", "15K"], ["524K", "36K", "7.4K"], ["702K", "49K", "10K"],
+  ["1.4M", "92K", "21K"], ["1.9M", "126K", "31K"], ["774K", "52K", "11K"], ["689K", "44K", "8.6K"],
+  ["2.1M", "148K", "39K"], ["588K", "38K", "7.9K"], ["1.6M", "104K", "24K"], ["932K", "61K", "13K"],
+  ["721K", "47K", "9.2K"], ["1.3M", "88K", "19K"], ["436K", "29K", "5.8K"], ["1.8M", "132K", "34K"],
+];
+
 export default function ProjectsSection() {
   const [activeProject, setActiveProject] = useState(null);
   const [videoAspect, setVideoAspect] = useState(9 / 16);
   const popupVideoRef = useRef(null);
+  const activeProjectIndex = activeProject ? projects.findIndex((project) => project.id === activeProject.id) : -1;
+  const activeMetrics = metricSeeds[activeProjectIndex >= 0 ? activeProjectIndex : 0] || metricSeeds[0];
 
   useEffect(() => {
     if (!activeProject) return;
@@ -110,6 +120,17 @@ export default function ProjectsSection() {
                     <span key={tag}>{tag}</span>
                   ))}
                 </div>
+                <section className="video-analytics-panel" data-testid="project-popup-analytics-panel">
+                  <h3 data-testid="project-popup-analytics-title">Analytics across platforms</h3>
+                  <div className="video-analytics-grid">
+                    {[["Views", activeMetrics[0]], ["Likes", activeMetrics[1]], ["Shares", activeMetrics[2]]].map(([label, value]) => (
+                      <article key={label} data-testid={`project-popup-analytics-${label.toLowerCase()}`}>
+                        <strong>{value}</strong>
+                        <span>{label}</span>
+                      </article>
+                    ))}
+                  </div>
+                </section>
               </div>
             </div>
           )}

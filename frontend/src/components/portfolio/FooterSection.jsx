@@ -19,8 +19,8 @@ export default function FooterSection() {
             <span>Audience impact.</span>
           </h2>
           <p className="footer-highlight-copy" data-testid="footer-philosophy-text">
-            I don’t start with content, I start with context —
-            <span>who’s the audience, what do they want to see, and how can we make them see.</span>
+            Give me your messiest brief and I&apos;ll hand you back a story that hits different.
+            <span>I do that by getting obsessed with two questions — what does the brand want to say, and how does the audience want to receive it?</span>
           </p>
         </div>
         <div className="footer-art-wrap">

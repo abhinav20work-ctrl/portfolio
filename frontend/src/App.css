@@ -1152,9 +1152,10 @@ button {
 
 .video-dialog {
     --video-aspect: 0.5625;
-    --video-box-width: clamp(260px, calc((100vh - 150px) * var(--video-aspect)), min(760px, calc(100vw - 440px)));
-    width: min(calc(var(--video-box-width) + 390px), calc(100vw - 36px));
-    max-width: min(1240px, calc(100vw - 36px));
+    --video-copy-width: clamp(340px, 30vw, 520px);
+    --video-box-width: clamp(260px, calc((100vh - 150px) * var(--video-aspect)), min(760px, calc(100vw - var(--video-copy-width) - 92px)));
+    width: min(calc(var(--video-box-width) + var(--video-copy-width) + 50px), calc(100vw - 36px));
+    max-width: min(1420px, calc(100vw - 36px));
     overflow: visible;
     will-change: transform, opacity;
     transform-origin: center center;
@@ -1179,7 +1180,7 @@ button {
 }
 
 .video-dialog .video-popup-grid {
-    grid-template-columns: var(--video-box-width) minmax(280px, 340px);
+    grid-template-columns: var(--video-box-width) minmax(340px, var(--video-copy-width));
     gap: clamp(18px, 3vw, 32px);
     align-items: center;
     max-width: 100%;
@@ -2218,21 +2219,23 @@ button {
 
 .video-dialog-title {
     font-family: "Cabinet Grotesk", "Outfit", sans-serif;
-    font-size: clamp(1.75rem, min(4.6vw, 8vh), 4rem);
-    line-height: 0.9;
+    font-size: clamp(2rem, min(3.6vw, 7vh), 4.2rem);
+    line-height: 0.92;
     font-weight: 900;
     letter-spacing: 0;
     max-width: 100%;
-    overflow-wrap: anywhere;
+    overflow-wrap: normal;
+    word-break: normal;
     text-wrap: balance;
 }
 
 .video-dialog-description {
     max-width: 700px;
     color: rgba(10, 10, 10, 0.72);
-    font-size: clamp(0.82rem, min(1.1vw, 1.75vh), 1.02rem);
-    line-height: 1.42;
-    overflow-wrap: anywhere;
+    font-size: clamp(0.9rem, min(1.05vw, 1.8vh), 1.08rem);
+    line-height: 1.48;
+    overflow-wrap: normal;
+    word-break: normal;
     text-wrap: pretty;
 }
 
@@ -2255,13 +2258,13 @@ button {
     max-height: calc(100vh - 150px);
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     gap: clamp(10px, 1.6vh, 18px);
     padding: clamp(14px, 1.8vw, 20px);
     border: 2px solid #0f172a;
     border-radius: 18px;
     background: rgba(255,255,255,0.78);
-    overflow: hidden;
+    overflow: visible;
 }
 
 .video-copy-panel .inline-label {
@@ -2274,6 +2277,55 @@ button {
     max-width: 100%;
     display: grid;
     gap: clamp(8px, 1.25vh, 14px);
+}
+
+.video-analytics-panel {
+    display: grid;
+    gap: 10px;
+    padding-top: clamp(10px, 1.4vh, 16px);
+    border-top: 1.5px solid rgba(15, 23, 42, 0.18);
+}
+
+.video-analytics-panel h3 {
+    margin: 0;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: clamp(0.58rem, min(0.85vw, 1.3vh), 0.74rem);
+    line-height: 1.15;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: rgba(15, 23, 42, 0.62);
+}
+
+.video-analytics-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+}
+
+.video-analytics-grid article {
+    min-width: 0;
+    padding: clamp(9px, 1vw, 12px);
+    border: 1.5px solid #0f172a;
+    border-radius: 14px;
+    background: #ffffff;
+    box-shadow: 2px 2px 0 rgba(15, 23, 42, 0.2);
+}
+
+.video-analytics-grid strong {
+    display: block;
+    font-family: "Cabinet Grotesk", "Outfit", sans-serif;
+    font-size: clamp(1.1rem, min(1.7vw, 2.6vh), 1.6rem);
+    line-height: 0.95;
+    color: #0f172a;
+}
+
+.video-analytics-grid span {
+    display: block;
+    margin-top: 4px;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: clamp(0.56rem, min(0.72vw, 1.15vh), 0.68rem);
+    font-weight: 900;
+    color: rgba(15, 23, 42, 0.58);
 }
 
 .case-popup-visual {
@@ -2706,6 +2758,7 @@ button {
     }
 
     .video-dialog {
+        --video-copy-width: 100%;
         width: min(92vw, calc(100vw - 28px));
     }
 
@@ -2722,6 +2775,7 @@ button {
         max-height: none;
         padding: 14px;
         overflow: visible;
+        gap: 14px;
     }
 
     .video-dialog-title {
@@ -2732,6 +2786,15 @@ button {
     .video-dialog-description {
         font-size: 0.92rem;
         line-height: 1.38;
+    }
+
+    .video-analytics-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 6px;
+    }
+
+    .video-analytics-grid article {
+        padding: 8px;
     }
 
     .ufo-source-visuals,
