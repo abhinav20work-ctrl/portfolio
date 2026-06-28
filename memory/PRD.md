@@ -242,3 +242,11 @@ Create a portfolio for a content strategist, Abhinav Sharma with white backgroun
 ## Implemented — 2026-06-28 Hero Engagement Highlight Update
 - Restyled “actual engagement.” from a yellow underline into a bold stepped green block highlight with white text, matching the provided visual reference.
 - Verified via browser smoke test: highlight text is white, background is green, and stepped block shape is applied.
+
+
+## Implemented — 2026-06-28 Hero Highlight Animation Refinement
+- Changed “actual engagement.” highlight from green to dark yellow and animated it left-to-right after the ellipsis finishes.
+- Split the ellipsis into three separately animated dots appearing one at a time before the highlight sweep begins.
+- Improved ID card Speciality box spacing so the text is less crowded on the left.
+- Updated Projects detail to “and 30+ content produced.”
+- Verified via browser smoke test: staged dots, delayed highlight sweep, dark yellow background, updated project text, and specialty spacing render correctly.

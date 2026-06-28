@@ -23,10 +23,10 @@ export default function HeroSection() {
                 From visual design to pure strategy.
               </motion.h1>
               <motion.h1 className="hero-line" initial={{ opacity: 0, y: 32 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, delay: 0.16, ease: [0.22, 1, 0.36, 1] }} data-testid="hero-line-2">
-                I&apos;m the <span className="wizard-word" data-testid="hero-creative-wizard-hover">creative wizard<span className="wizard-hat" aria-hidden="true" /></span> who turns the endless scroll into...
+                I&apos;m the <span className="wizard-word" data-testid="hero-creative-wizard-hover">creative wizard<span className="wizard-hat" aria-hidden="true" /></span> who turns the endless scroll into<span className="hero-ellipsis" aria-hidden="true"><span>.</span><span>.</span><span>.</span></span>
               </motion.h1>
               <motion.h1 className="hero-line" initial={{ opacity: 0, y: 32 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, delay: 0.32, ease: [0.22, 1, 0.36, 1] }} data-testid="hero-line-3">
-                <span className="engagement-highlight" data-testid="hero-actual-engagement-highlight">actual engagement.</span>
+                <span className="engagement-highlight" data-testid="hero-actual-engagement-highlight"><span>actual engagement.</span></span>
               </motion.h1>
             </div>
             <motion.div
@@ -81,7 +81,7 @@ export default function HeroSection() {
             <div className="signal-list">
               {[
                 ["signal-01", "Current Role", "Motion Designer", "Sarla Aviation"],
-                ["signal-02", "Projects", "3 Case Studies", "30+ contents produced"],
+                ["signal-02", "Projects", "3 Case Studies", "and 30+ content produced"],
                 ["signal-03", "Location", "Bengaluru", "visual designer shaping content for impact"],
               ].map(([id, label, value, detail]) => (
                 <div className="signal-item" key={id} data-testid={`hero-signal-${id}`}>

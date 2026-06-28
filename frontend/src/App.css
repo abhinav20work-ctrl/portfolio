@@ -477,6 +477,20 @@ button {
     transform: translate(-50%, 0) rotate(-8deg) scale(1);
 }
 
+.hero-ellipsis {
+    display: inline-flex;
+    width: 0.72em;
+}
+
+.hero-ellipsis span {
+    opacity: 0;
+    animation: dot-reveal 420ms ease forwards;
+}
+
+.hero-ellipsis span:nth-child(1) { animation-delay: 1.04s; }
+.hero-ellipsis span:nth-child(2) { animation-delay: 1.32s; }
+.hero-ellipsis span:nth-child(3) { animation-delay: 1.6s; }
+
 .engagement-highlight {
     display: inline-block;
     position: relative;
@@ -485,6 +499,12 @@ button {
     color: #ffffff;
     text-shadow: 0 1px 0 rgba(0, 0, 0, 0.12);
     isolation: isolate;
+    overflow: hidden;
+}
+
+.engagement-highlight span {
+    position: relative;
+    z-index: 1;
 }
 
 .engagement-highlight::before {
@@ -495,9 +515,12 @@ button {
     right: -0.28em;
     top: 0.1em;
     bottom: -0.08em;
-    background: #43b900;
+    background: #b88700;
     clip-path: polygon(0 22%, 64% 22%, 64% 0, 100% 0, 100% 78%, 82% 78%, 82% 100%, 0 100%);
-    box-shadow: 0 0 0 1px rgba(67, 185, 0, 0.12), 0 8px 18px rgba(67, 185, 0, 0.18);
+    box-shadow: 0 0 0 1px rgba(184, 135, 0, 0.12), 0 8px 18px rgba(184, 135, 0, 0.18);
+    transform: scaleX(0);
+    transform-origin: left center;
+    animation: highlight-sweep 780ms cubic-bezier(.22,1,.36,1) 2.08s forwards;
 }
 
 .hero-squiggle {
@@ -632,8 +655,8 @@ button {
     position: relative;
     z-index: 2;
     display: grid;
-    grid-template-columns: 118px minmax(0, 1fr);
-    gap: 10px;
+    grid-template-columns: 104px minmax(0, 1fr);
+    gap: 14px;
     align-items: center;
     margin: 8px 0 8px;
 }
@@ -643,8 +666,8 @@ button {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 5px;
-    padding: 9px;
+    gap: 6px;
+    padding: 12px 12px 12px 16px;
     border: 2px solid #0a0a0a;
     border-radius: 8px;
     background:
@@ -679,8 +702,8 @@ button {
 
 .hero-image-note em {
     color: rgba(15, 23, 42, 0.66);
-    font-size: 0.72rem;
-    line-height: 1.18;
+    font-size: 0.7rem;
+    line-height: 1.22;
     font-style: normal;
 }
 
@@ -2676,6 +2699,16 @@ button {
 @keyframes pulse-pop {
     0%, 100% { transform: scale(1); }
     45% { transform: scale(1.16); }
+}
+
+@keyframes dot-reveal {
+    from { opacity: 0; transform: translateY(0.12em); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes highlight-sweep {
+    from { transform: scaleX(0); }
+    to { transform: scaleX(1); }
 }
 
 @keyframes note-float {
