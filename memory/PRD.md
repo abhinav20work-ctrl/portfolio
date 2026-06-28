@@ -179,3 +179,12 @@ Create a portfolio for a content strategist, Abhinav Sharma with white backgroun
 - Added top ribbons extending out of the page, an ID pin, badge slot, deeper shadows, grid texture, and more dimensional card styling.
 - Removed the unnecessary “click card” prompt while keeping the card interaction available.
 - Verified visually: ID card, ribbon pin, and badge hole render correctly; lint checks pass.
+
+
+## Implemented — 2026-06-28 UFO Beans Fullscreen Case Study Modal
+- Built a custom 90vw × 90vh fullscreen interactive case study modal for UFO Beans.
+- Added dark blurred overlay, spring scale/opacity entrance, sticky 25% sidebar, scrollable 75% case study content, progress indicator, skeleton loading, Esc close, focus trap, and body scroll lock.
+- Extracted embedded images from the uploaded PDF and created cropped visual assets instead of pasting full PDF frames.
+- Added sections: Hero, metrics, challenge, research, strategy, big idea, execution accordion, gallery/lightbox, business impact, process, key learnings.
+- Testing agent verified fullscreen modal behavior, scroll lock, responsive layout, lightbox, progress nav, extracted-image usage, and no horizontal overflow.
+- Fixed QA issue: campaign execution cards now truly expand/collapse, and added test IDs to accordion, gallery, progress, and lightbox controls.
