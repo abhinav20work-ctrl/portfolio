@@ -351,3 +351,10 @@ Create a portfolio for a content strategist, Abhinav Sharma with white backgroun
 - Changed desktop reel masonry from 6 to 8 columns with tighter gaps, smaller labels, and compact overlays.
 - Kept horizontal videos wide (~1.773 aspect) and vertical videos tall (~0.563 aspect).
 - Verified via browser smoke test: first 10 tiles preserve aspect ratios and render smaller/more compactly.
+
+
+## Implemented — 2026-06-28 True Masonry Reel Grid Gap Fix
+- Replaced the CSS grid-based reel layout with true CSS masonry columns to eliminate large white gaps caused by mixed portrait/landscape tile heights.
+- Preserved each video thumbnail's aspect ratio while allowing the browser to stack tiles tightly in columns.
+- Kept compact spacing, smaller overlays, and responsive column behavior for tablet/mobile.
+- Verified via browser smoke test: masonry now uses 5 desktop columns, tiles stack tightly with preserved aspects, and visible whitespace between mixed tile heights is removed.

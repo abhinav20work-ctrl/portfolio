@@ -2063,16 +2063,18 @@ button {
 }
 
 .masonry {
-    display: grid;
-    grid-template-columns: repeat(8, minmax(0, 1fr));
-    grid-auto-flow: dense;
-    gap: clamp(10px, 1vw, 16px);
-    align-items: start;
+    display: block;
+    columns: 5 220px;
+    column-gap: clamp(10px, 1vw, 16px);
+    column-fill: balance;
 }
 
 .project-tile,
 .experiment-note {
     width: 100%;
+    display: inline-block;
+    margin: 0 0 clamp(10px, 1vw, 16px);
+    break-inside: avoid;
 }
 
 .project-tile {
@@ -2142,17 +2144,14 @@ button {
 
 .project-tile.tall {
     min-height: 0;
-    grid-column: span 2;
 }
 
 .project-tile.wide {
     min-height: 0;
-    grid-column: span 3;
 }
 
 .project-tile.medium {
     min-height: 0;
-    grid-column: span 2;
 }
 
 .project-tile.short {
@@ -2193,7 +2192,7 @@ button {
 
 .experiment-note {
     min-height: 250px;
-    grid-column: span 2;
+    display: inline-grid;
     display: grid;
     place-items: center;
     padding: clamp(24px, 4vw, 44px);
@@ -2884,12 +2883,12 @@ button {
     }
 
     .masonry {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        columns: 2 160px;
     }
 
     .project-tile.wide,
     .experiment-note {
-        grid-column: span 2;
+        width: 100%;
     }
 
     .project-tile.tall,
@@ -2897,13 +2896,6 @@ button {
     .project-tile.short,
     .project-tile.wide {
         min-height: 0;
-        grid-row: auto;
-    }
-
-    .project-tile.tall,
-    .project-tile.medium,
-    .project-tile.short {
-        grid-column: span 1;
     }
 
     .case-card:nth-child(2) {
@@ -3031,12 +3023,7 @@ button {
     }
 
     .masonry {
-        grid-template-columns: 1fr;
-    }
-
-    .project-tile.wide,
-    .experiment-note {
-        grid-column: span 1;
+        columns: 1 100%;
     }
 
     .experiment-note {
