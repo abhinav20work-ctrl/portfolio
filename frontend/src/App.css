@@ -396,6 +396,7 @@ button {
 
 .hero-line:nth-child(2) {
     text-indent: 0;
+    margin-top: clamp(18px, 2.2vw, 34px);
 }
 
 .hero-line:nth-child(3) {
@@ -3001,6 +3002,7 @@ button {
 
     .hero-line:nth-child(2) {
         text-indent: 0;
+        margin-top: 18px;
     }
 
     .hero-squiggle {

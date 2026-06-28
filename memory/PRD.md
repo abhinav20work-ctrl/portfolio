@@ -323,3 +323,9 @@ Create a portfolio for a content strategist, Abhinav Sharma with white backgroun
 - Added distinct hover colors for footer links: LinkedIn turns blue/white, Email turns yellow/black.
 - Verified via browser smoke test: no hero popup, new UFO thumbnail loads, sample video posters load, footer headings are gone, and link hover colors work.
 - Note: no manual reload/refresh calls exist in app code; preview refreshes observed during development come from the dev server hot-reload while files/assets are being edited/regenerated.
+
+
+## Implemented — 2026-06-28 UFO Thumbnail + Hero Spacing Update
+- Replaced the UFO Beans selected-work thumbnail with the newly attached blue packaging image, optimized locally as `/case-assets/ufo-beans-pdf/ufo-card-thumbnail.jpg`.
+- Increased the vertical spacing between “From visual design to pure strategy.” and “I'm the creative wizard who turns the endless scroll into...” with responsive desktop/mobile spacing.
+- Verified via browser smoke test: thumbnail loads at 1800×980 and hero line gap is now 34px on desktop.
