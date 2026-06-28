@@ -613,23 +613,18 @@ button {
 }
 
 .hero-persona-large::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: 3;
-    background: linear-gradient(to bottom, transparent 0 58%, #F2F2F0 58% 100%);
-    pointer-events: none;
+    display: none;
 }
 
 .hero-persona-large img {
     position: relative;
     z-index: 2;
-    width: 122px;
-    height: 122px;
+    width: 128px;
+    height: 128px;
     max-width: 122px;
     max-height: 122px;
-    object-fit: cover;
-    object-position: top center;
+    object-fit: contain;
+    object-position: center;
     border-radius: 50%;
     mix-blend-mode: multiply;
     opacity: 0.9;

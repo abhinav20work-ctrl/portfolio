@@ -4,7 +4,7 @@ import { ArrowDownRight, Download, Mail } from "lucide-react";
 import { Dialog, DialogContent, DialogDescription, DialogTitle } from "@/components/ui/dialog";
 import { recruiterSignals, strengths } from "@/data/portfolio";
 
-const heroPersonaUrl = "https://customer-assets.emergentagent.com/job_micro-moments-8/artifacts/d3yc6q44_abhinav-hero.png";
+const heroPersonaUrl = "https://customer-assets.emergentagent.com/job_micro-moments-8/artifacts/v412rep6_abhinav-profile.png";
 
 const lines = [
   "From visual design to pure strategy.",
