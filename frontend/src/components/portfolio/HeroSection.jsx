@@ -2,15 +2,9 @@ import { useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowDownRight, Download, Mail } from "lucide-react";
 import { Dialog, DialogContent, DialogDescription, DialogTitle } from "@/components/ui/dialog";
-import { recruiterSignals, strengths } from "@/data/portfolio";
+import { strengths } from "@/data/portfolio";
 
 const heroPersonaUrl = "https://customer-assets.emergentagent.com/job_micro-moments-8/artifacts/v412rep6_abhinav-profile.png";
-
-const lines = [
-  "From visual design to pure strategy.",
-  "I turn endless scrolling into actual engagement.",
-  "Through motion, story, and production craft.",
-];
 
 export default function HeroSection() {
   const [showPersona, setShowPersona] = useState(false);
@@ -23,20 +17,17 @@ export default function HeroSection() {
       <motion.div className="hero-inner" style={{ y }}>
         <div className="hero-grid">
           <div className="hero-main">
-            <p className="hero-kicker" data-testid="hero-role-text">Abhinav Sharma · Visual Designer & Associate Producer</p>
+            <p className="hero-kicker" data-testid="hero-role-text">ABHINAV SHARMA · VISUAL DESIGNER · CONTENT STRATEGIST · ASSOCIATE PRODUCER</p>
             <div className="hero-copy" data-testid="hero-three-line-paragraph">
-              {lines.map((line, index) => (
-                <motion.h1
-                  key={line}
-                  className="hero-line"
-                  initial={{ opacity: 0, y: 32 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.75, delay: index * 0.16, ease: [0.22, 1, 0.36, 1] }}
-                  data-testid={`hero-line-${index + 1}`}
-                >
-                  {line}
-                </motion.h1>
-              ))}
+              <motion.h1 className="hero-line" initial={{ opacity: 0, y: 32 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }} data-testid="hero-line-1">
+                From visual design to pure strategy.
+              </motion.h1>
+              <motion.h1 className="hero-line" initial={{ opacity: 0, y: 32 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, delay: 0.16, ease: [0.22, 1, 0.36, 1] }} data-testid="hero-line-2">
+                I&apos;m the <span className="wizard-word" data-testid="hero-creative-wizard-hover">creative wizard<span className="wizard-hat" aria-hidden="true" /></span> who turns the endless scroll into...
+              </motion.h1>
+              <motion.h1 className="hero-line" initial={{ opacity: 0, y: 32 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, delay: 0.32, ease: [0.22, 1, 0.36, 1] }} data-testid="hero-line-3">
+                <span className="engagement-highlight" data-testid="hero-actual-engagement-highlight">actual engagement.</span>
+              </motion.h1>
             </div>
             <motion.div
               className="hero-actions"
@@ -56,8 +47,7 @@ export default function HeroSection() {
             </motion.div>
             <div className="hero-system-strip" data-testid="hero-system-strip">
               <span><b>Current</b> Sarla Aviation</span>
-              <span><b>Experience</b> Motion + production</span>
-              <span><b>Tools</b> After Effects / Premiere Pro</span>
+              <span><b>Experience</b> Motion + Production + Content Writing</span>
             </div>
           </div>
           <motion.button
@@ -73,9 +63,10 @@ export default function HeroSection() {
           >
             <div className="badge-top-row">
               <span className="badge-company-mark" data-testid="hero-badge-company-mark">AS</span>
-              <span className="badge-verified" data-testid="hero-badge-verified">Verified Designer</span>
+              <span className="badge-verified" data-testid="hero-badge-verified">Content Wizard</span>
             </div>
-            <p className="panel-label" data-testid="hero-snapshot-label">VISUAL DESIGNER · BENGALURU</p>
+            <p className="panel-label" data-testid="hero-snapshot-label">CONTENT STRATEGIST · BENGALURU</p>
+            <p className="hero-card-overline" data-testid="hero-card-overline">Shaping the story.</p>
             <h3 className="id-card-name" data-testid="hero-id-card-name">Abhinav Sharma</h3>
             <div className="hero-image-row" data-testid="hero-image-row">
               <div className="hero-persona-large" data-testid="hero-persona-large">
@@ -83,16 +74,20 @@ export default function HeroSection() {
               </div>
               <div className="hero-image-note" data-testid="hero-image-note">
                 <span>Speciality</span>
-                <strong>Motion-led storytelling</strong>
-                <em>Visual systems that make ideas easier to watch, understand, and remember.</em>
+                <strong>Creative Direction</strong>
+                <em>Turning ideas into visually compelling campaigns that connect with audiences and deliver meaningful results.</em>
               </div>
             </div>
             <div className="signal-list">
-              {recruiterSignals.map((signal) => (
-                <div className="signal-item" key={signal.id} data-testid={`hero-signal-${signal.id}`}>
-                  <span>{signal.id === "signal-01" ? "Current Role" : signal.id === "signal-02" ? "Projects" : "Location"}</span>
-                  <strong>{signal.id === "signal-01" ? "Motion Graphic Designer" : signal.value}</strong>
-                  <em>{signal.id === "signal-01" ? "Sarla Aviation" : signal.label}</em>
+              {[
+                ["signal-01", "Current Role", "Motion Designer", "Sarla Aviation"],
+                ["signal-02", "Projects", "3 Case Studies", "30+ contents produced"],
+                ["signal-03", "Location", "Bengaluru", "visual designer shaping content for impact"],
+              ].map(([id, label, value, detail]) => (
+                <div className="signal-item" key={id} data-testid={`hero-signal-${id}`}>
+                  <span>{label}</span>
+                  <strong>{value}</strong>
+                  <em>{detail}</em>
                 </div>
               ))}
             </div>

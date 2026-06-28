@@ -229,3 +229,11 @@ Create a portfolio for a content strategist, Abhinav Sharma with white backgroun
 - Removed the standalone Content Gallery navigation/section and improved visual hierarchy with stronger media-first section rhythm.
 - Fixed video behavior to act like GIF-style motion: autoplay, muted, looped, no controls, WebM source, and play retry on load/canplay.
 - Verified via browser smoke test: card cover loads, no text appears in card image area, no gallery section remains, all three videos are playing, muted, looping, and control-free.
+
+
+## Implemented — 2026-06-28 Hero Copy + ID Badge Update
+- Replaced hero headline/kicker copy with the requested Abhinav Sharma positioning and highlighted “actual engagement.”
+- Added hover interaction on “creative wizard”: a CSS wizard hat pops above the final “d” of “wizard.”
+- Updated hero experience strip to “Motion + Production + Content Writing” and removed the Tools item.
+- Updated ID card: Content Strategist label, Motion Designer current role, 3 Case Studies + 30+ contents produced, Creative Direction specialty copy, Content Wizard badge, and “Shaping the story.” above the ID card content.
+- Verified via browser smoke test: hero copy, highlight, no Tools section, badge details, and hover hat all render correctly.
