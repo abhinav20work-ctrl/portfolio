@@ -344,3 +344,10 @@ Create a portfolio for a content strategist, Abhinav Sharma with white backgroun
 - Improved the video grid visual system using a 6-column dense masonry layout, true poster/video aspect ratios, reduced card radius, cleaner shadows, and orientation-preserving spans.
 - Applied frame-derived color palettes to case study 2 and 3 cards and fullscreen popups: Sarla uses a black/steel/cyan palette; Spotlight uses a black/warm-neutral cinematic palette.
 - Verified via browser smoke test: new videos appear as cards 1 and 2, both are wide 1.773 aspect tiles, grid samples preserve horizontal/vertical orientation, case 2/3 cards have distinct palette styling, and modal palettes render with 4 PDF frames each.
+
+
+## Implemented — 2026-06-28 Compact Reel Grid
+- Reduced reel grid tile sizes while retaining each video's real aspect ratio.
+- Changed desktop reel masonry from 6 to 8 columns with tighter gaps, smaller labels, and compact overlays.
+- Kept horizontal videos wide (~1.773 aspect) and vertical videos tall (~0.563 aspect).
+- Verified via browser smoke test: first 10 tiles preserve aspect ratios and render smaller/more compactly.

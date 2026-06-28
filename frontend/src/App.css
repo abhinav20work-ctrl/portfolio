@@ -2064,9 +2064,9 @@ button {
 
 .masonry {
     display: grid;
-    grid-template-columns: repeat(6, minmax(0, 1fr));
+    grid-template-columns: repeat(8, minmax(0, 1fr));
     grid-auto-flow: dense;
-    gap: clamp(14px, 1.55vw, 22px);
+    gap: clamp(10px, 1vw, 16px);
     align-items: start;
 }
 
@@ -2091,35 +2091,35 @@ button {
 
 .reel-index {
     position: absolute;
-    left: 12px;
-    top: 12px;
+    left: 9px;
+    top: 9px;
     z-index: 3;
     display: grid;
     place-items: center;
-    width: 42px;
-    height: 42px;
+    width: 34px;
+    height: 34px;
     border: 2px solid #0f172a;
     border-radius: 50%;
     background: var(--lab-yellow);
-    box-shadow: 3px 3px 0 #0f172a;
+    box-shadow: 2px 2px 0 #0f172a;
     font-family: "IBM Plex Mono", monospace;
-    font-size: 0.8rem;
+    font-size: 0.68rem;
     font-weight: 900;
 }
 
 .project-tile::after {
     content: "open reel";
     position: absolute;
-    right: 14px;
-    top: 14px;
+    right: 9px;
+    top: 9px;
     z-index: 2;
-    padding: 6px 9px;
+    padding: 5px 8px;
     border-radius: 999px;
     border: 1px solid #0f172a;
     background: #ffffff;
     color: #0f172a;
     font-family: "Caveat", cursive;
-    font-size: 1.05rem;
+    font-size: 0.9rem;
     font-weight: 700;
     opacity: 0;
     transform: translateY(-8px) rotate(4deg);
@@ -2142,7 +2142,6 @@ button {
 
 .project-tile.tall {
     min-height: 0;
-    grid-row: span 2;
     grid-column: span 2;
 }
 
@@ -2162,21 +2161,21 @@ button {
 
 .project-overlay {
     position: absolute;
-    inset: auto 12px 12px 12px;
+    inset: auto 9px 9px 9px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 12px;
-    padding: 10px 12px;
+    gap: 8px;
+    padding: 8px 10px;
     background: rgba(255, 255, 255, 0.88);
     border: 1.5px solid #0a0a0a;
-    border-radius: 16px;
+    border-radius: 12px;
     backdrop-filter: blur(8px);
 }
 
 .project-play {
-    width: 38px;
-    height: 38px;
+    width: 34px;
+    height: 34px;
     flex: 0 0 auto;
     display: grid;
     place-items: center;
@@ -2189,7 +2188,7 @@ button {
 .project-title {
     font-weight: 800;
     line-height: 1.08;
-    font-size: 1rem;
+    font-size: clamp(0.78rem, 0.82vw, 0.96rem);
 }
 
 .experiment-note {
