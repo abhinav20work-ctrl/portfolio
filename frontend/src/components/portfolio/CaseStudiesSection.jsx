@@ -59,7 +59,7 @@ export default function CaseStudiesSection() {
             <motion.article
               key={study.id}
               className="case-card"
-              style={{ "--case-accent": study.accent }}
+              style={{ "--case-accent": study.accent, "--case-card-border": study.palette?.cardBorder, "--case-title-color": study.palette?.text }}
               initial={{ opacity: 0, y: 36 }}
               whileInView={{ opacity: 1, y: 0 }}
               whileHover={{ y: -12, rotate: index === 1 ? 0.8 : -0.8 }}
@@ -245,7 +245,7 @@ function PdfCaseFullscreenModal({ caseData, onClose }) {
 
   return (
     <div className="case-fullscreen-overlay" role="dialog" aria-modal="true" aria-labelledby={`${caseData.id}-title`} data-testid="case-study-detail-popup" ref={modalRef} onMouseDown={onOverlayPointerDown} data-lenis-prevent="true">
-      <motion.div className="case-fullscreen-shell case-fullscreen-shell-simple" data-testid="case-popup-shell" onMouseDown={(event) => event.stopPropagation()} data-lenis-prevent="true" initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.4, type: "spring", stiffness: 220, damping: 24 }}>
+      <motion.div className="case-fullscreen-shell case-fullscreen-shell-simple" style={{ "--case-modal-sidebar": caseData.palette?.sidebar, "--case-modal-shell": caseData.palette?.shell, "--case-modal-content": caseData.palette?.content, "--case-modal-dot": caseData.palette?.dot, "--case-modal-text": caseData.palette?.text }} data-testid="case-popup-shell" onMouseDown={(event) => event.stopPropagation()} data-lenis-prevent="true" initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.4, type: "spring", stiffness: 220, damping: 24 }}>
         <button className="case-modal-close" onClick={onClose} data-testid="case-popup-close-button" aria-label="Close case study"><X size={18} /></button>
         <aside className="case-sidebar" data-lenis-prevent="true">
           <div className="case-brand-logo">{caseData.label}</div>

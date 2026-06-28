@@ -1653,6 +1653,15 @@ button {
     will-change: transform;
 }
 
+.case-card[style*="--case-card-border"] {
+    border-color: var(--case-card-border);
+    box-shadow: 7px 7px 0 color-mix(in srgb, var(--case-accent) 36%, transparent), 0 18px 48px rgba(15,23,42,0.1);
+}
+
+.case-card[style*="--case-card-border"] .case-meta h3 {
+    color: var(--case-title-color, #0f172a);
+}
+
 .case-card[role="button"] {
     cursor: pointer;
 }
@@ -2055,9 +2064,10 @@ button {
 
 .masonry {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(6, minmax(0, 1fr));
     grid-auto-flow: dense;
-    gap: 20px;
+    gap: clamp(14px, 1.55vw, 22px);
+    align-items: start;
 }
 
 .project-tile,
@@ -2069,13 +2079,13 @@ button {
     position: relative;
     padding: 0;
     overflow: hidden;
-    border: 2px solid #0a0a0a;
-    border-radius: 18px;
-    background: #f3f4f6;
+    border: 1.5px solid rgba(10, 10, 10, 0.92);
+    border-radius: 10px;
+    background: #0a0a0a;
     cursor: pointer;
     text-align: left;
-    box-shadow: 6px 6px 0 rgba(15, 23, 42, 0.18);
-    transition: box-shadow 220ms ease, filter 220ms ease;
+    box-shadow: 0 18px 42px rgba(15, 23, 42, 0.12);
+    transition: box-shadow 220ms ease, filter 220ms ease, transform 220ms ease;
     aspect-ratio: var(--project-aspect, 1);
 }
 
@@ -2122,7 +2132,7 @@ button {
 }
 
 .project-tile:hover {
-    box-shadow: 2px 2px 0 #0a0a0a;
+    box-shadow: 0 26px 54px rgba(15, 23, 42, 0.18);
     filter: saturate(1.05);
 }
 
@@ -2133,15 +2143,17 @@ button {
 .project-tile.tall {
     min-height: 0;
     grid-row: span 2;
+    grid-column: span 2;
 }
 
 .project-tile.wide {
     min-height: 0;
-    grid-column: span 2;
+    grid-column: span 3;
 }
 
 .project-tile.medium {
     min-height: 0;
+    grid-column: span 2;
 }
 
 .project-tile.short {
@@ -2885,8 +2897,14 @@ button {
     .project-tile.medium,
     .project-tile.short,
     .project-tile.wide {
-        min-height: 280px;
+        min-height: 0;
         grid-row: auto;
+    }
+
+    .project-tile.tall,
+    .project-tile.medium,
+    .project-tile.short {
+        grid-column: span 1;
     }
 
     .case-card:nth-child(2) {
@@ -3064,7 +3082,7 @@ button {
     overflow: hidden;
     border: 1px solid rgba(205, 226, 247, 0.46);
     border-radius: 28px;
-    background: #f4f5f7;
+    background: var(--case-modal-shell, #f4f5f7);
     box-shadow: 0 30px 120px rgba(5, 52, 102, 0.46);
 }
 
@@ -3091,7 +3109,7 @@ button {
     padding: 28px;
     overflow-y: auto;
     border-right: 1px solid #cde2f7;
-    background: linear-gradient(180deg, #053466 0%, #1b4e7a 58%, #2d1a10 100%);
+    background: var(--case-modal-sidebar, linear-gradient(180deg, #053466 0%, #1b4e7a 58%, #2d1a10 100%));
     color: #ffffff;
 }
 
@@ -3102,7 +3120,7 @@ button {
     place-items: center;
     margin-bottom: 20px;
     border-radius: 16px;
-    background: #1782f3;
+    background: var(--case-modal-dot, #1782f3);
     color: #ffffff;
     box-shadow: inset 0 0 0 2px rgba(255,255,255,0.18), 0 12px 26px rgba(0,0,0,0.18);
     font-weight: 900;
@@ -3125,7 +3143,7 @@ button {
     -webkit-overflow-scrolling: touch;
     scroll-behavior: smooth;
     padding: 48px clamp(28px, 4vw, 64px);
-    background: #f4f5f7;
+    background: var(--case-modal-content, #f4f5f7);
 }
 
 .case-section-block { padding: 0 0 34px; }
@@ -3180,8 +3198,8 @@ button {
 .quote-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 14px; }
 .case-progress-nav { position: absolute; right: 14px; top: 50%; transform: translateY(-50%); display: grid; gap: 8px; z-index: 4; }
 .case-progress-nav a { width: 9px; height: 9px; overflow: hidden; border-radius: 99px; background: #8ea9c7; text-indent: -999px; transition: height 180ms ease, background-color 180ms ease, transform 180ms ease; }
-.case-progress-nav a:hover { transform: scale(1.35); background: #1782f3; }
-.case-progress-nav a.active { height: 28px; background: #053466; transform: scale(1); }
+.case-progress-nav a:hover { transform: scale(1.35); background: var(--case-modal-dot, #1782f3); }
+.case-progress-nav a.active { height: 28px; background: var(--case-modal-dot, #053466); transform: scale(1); }
 .case-skeleton { height: 70vh; background: linear-gradient(90deg,#e7f0f9,#f4f5f7,#cde2f7); background-size: 200% 100%; animation: skeleton 1s infinite linear; }
 .case-lightbox { position: fixed; inset: 0; z-index: 1200; display: grid; place-items: center; border: 0; background: rgba(5,52,102,0.82); }
 .case-lightbox img { max-width: 86vw; max-height: 86vh; border-radius: 22px; }

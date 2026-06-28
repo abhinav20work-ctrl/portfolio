@@ -337,3 +337,10 @@ Create a portfolio for a content strategist, Abhinav Sharma with white backgroun
 - Reused the UFO Beans fullscreen PDF-frame modal pattern: 90vw/90vh modal, sticky sidebar, scrollable frame content, progress dots, outside-click close, and PDF link.
 - Updated Reels / Motion Shelf masonry to preserve true video/poster aspect ratios: vertical videos render tall (~0.563), horizontal videos render wide (~1.773), using per-project `aspectRatio` values.
 - Verified via browser smoke test: case 2 and case 3 each show 4 loaded PDF frames, card covers load, and first 10 reel tiles match their true orientation/aspect ratios.
+
+
+## Implemented — 2026-06-28 Featured Videos + Case Palette Matching
+- Added the two newly uploaded WhatsApp videos as the first two items in the Reels / Motion Shelf, with optimized posters, hover-preview clips, analytics seeds, and wide masonry tiles.
+- Improved the video grid visual system using a 6-column dense masonry layout, true poster/video aspect ratios, reduced card radius, cleaner shadows, and orientation-preserving spans.
+- Applied frame-derived color palettes to case study 2 and 3 cards and fullscreen popups: Sarla uses a black/steel/cyan palette; Spotlight uses a black/warm-neutral cinematic palette.
+- Verified via browser smoke test: new videos appear as cards 1 and 2, both are wide 1.773 aspect tiles, grid samples preserve horizontal/vertical orientation, case 2/3 cards have distinct palette styling, and modal palettes render with 4 PDF frames each.

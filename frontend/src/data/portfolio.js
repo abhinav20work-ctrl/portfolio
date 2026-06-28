@@ -49,7 +49,15 @@ export const caseStudies = [
     tags: ["Motion graphics", "Investor content", "Branding", "Aviation"],
     image:
       "https://images.pexels.com/photos/31622947/pexels-photo-31622947.jpeg?auto=compress&cs=tinysrgb&w=1100",
-    accent: "#A7F3D0",
+    accent: "#5EC6FF",
+    palette: {
+      sidebar: "linear-gradient(180deg, #04070C 0%, #2C2E30 56%, #5EC6FF 100%)",
+      shell: "#F2F4F7",
+      content: "#F6F8FB",
+      dot: "#5EC6FF",
+      cardBorder: "rgba(94, 198, 255, 0.38)",
+      text: "#04070C",
+    },
     pdfFrames: Array.from({ length: 4 }, (_, index) => `/case-assets/sarla-transport-pdf/frame-${String(index + 1).padStart(2, "0")}.jpg`),
     pdfUrl: "/case-assets/sarla-transport-pdf/sarla-transport.pdf",
   },
@@ -69,7 +77,15 @@ export const caseStudies = [
     tags: ["Associate producer", "Original shows", "Creative direction"],
     image:
       "https://images.unsplash.com/photo-1612180768015-56180b567352?auto=format&fit=crop&w=1100&q=80",
-    accent: "#BFDBFE",
+    accent: "#D5BFA4",
+    palette: {
+      sidebar: "linear-gradient(180deg, #04070C 0%, #2A262B 52%, #A59D92 100%)",
+      shell: "#F5F1EA",
+      content: "#FAF7F1",
+      dot: "#A59D92",
+      cardBorder: "rgba(165, 157, 146, 0.44)",
+      text: "#04070C",
+    },
     pdfFrames: Array.from({ length: 4 }, (_, index) => `/case-assets/spotlight-scifi-pdf/frame-${String(index + 1).padStart(2, "0")}.jpg`),
     pdfUrl: "/case-assets/spotlight-scifi-pdf/spotlight-scifi.pdf",
   },
@@ -120,6 +136,30 @@ export const labModules = [
 export const labFormula = ["Signal", "Tension", "Voice", "Format", "Rhythm"];
 
 export const projects = [
+  {
+    id: "featured-project-01",
+    title: "Next-gen transport in motion",
+    description: "A wide-format motion piece exploring how future mobility, aviation, and city movement can be framed as a clear social-first story.",
+    videoUrl:
+      "/reels/featured-reel-01.mp4",
+    posterUrl: "/reels/posters/featured-reel-01.jpg",
+    aspectRatio: 1.773399,
+    previewUrl: "/reels/previews/featured-reel-01-preview.webm",
+    tags: ["Future mobility", "Wide edit", "Sarla Aviation"],
+    shape: "wide",
+  },
+  {
+    id: "featured-project-02",
+    title: "Future travel visual cut",
+    description: "A second wide-format reel built around transport storytelling, using movement, pacing, and sharp visual proof to hold attention.",
+    videoUrl:
+      "/reels/featured-reel-02.mp4",
+    posterUrl: "/reels/posters/featured-reel-02.jpg",
+    aspectRatio: 1.773399,
+    previewUrl: "/reels/previews/featured-reel-02-preview.webm",
+    tags: ["Future travel", "Wide edit", "Motion story"],
+    shape: "wide",
+  },
   {
     id: "project-01",
     title: "Building flying taxis in India",
