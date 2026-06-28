@@ -207,3 +207,17 @@ Create a portfolio for a content strategist, Abhinav Sharma with white backgroun
 - Replaced the footer Behance link with the provided LinkedIn URL: https://www.linkedin.com/in/abhinav-sharma-7b3930325/
 - Renamed the footer contact label from “Open channels” to “Connect here”.
 - Verified via browser smoke test: label, LinkedIn text, LinkedIn href, and email link render correctly.
+
+
+## Implemented — 2026-06-28 UFO Beans Motion Assets Batch 1
+- Added the first 2 newly uploaded UFO Beans motion assets into the fullscreen case study Content Gallery.
+- Localized MP4 assets under `/case-assets/ufo-beans-v3/`, generated lightweight posters, and added WebM versions for reliable browser playback.
+- Verified via browser smoke test: gallery renders 2 UFO motion cards, posters display, WebM videos are playable, and existing modal navigation still works.
+- Awaiting the remaining 3 UFO Beans assets from the user for the next batch.
+
+
+## Implemented — 2026-06-28 UFO Beans Final Asset Replacement
+- Replaced existing UFO Beans case study gallery/photo/video assets with exactly the newly provided 5 image assets and 3 video assets.
+- Optimized the 5 images into local JPG display assets and converted the 3 videos to local WebM fallbacks for reliable browser playback.
+- Updated videos to behave like GIF-style motion cards: autoplay, muted, looped, no visible controls/player chrome.
+- Verified via browser smoke test: old crop sources removed, gallery shows 5 new images, 3 videos autoplay continuously, controls are hidden, and all media loads from `/case-assets/ufo-beans-v3/`.
