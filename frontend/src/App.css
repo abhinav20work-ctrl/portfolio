@@ -2,15 +2,13 @@
     min-height: 100vh;
     overflow-x: hidden;
     background:
-        linear-gradient(90deg, rgba(255, 235, 176, 0.35) 0 1px, transparent 1px 100%) 0 0 / 96px 96px,
-        linear-gradient(rgba(227, 242, 202, 0.34) 0 1px, transparent 1px 100%) 0 0 / 96px 96px,
-        radial-gradient(circle at 16px 16px, rgba(10, 10, 10, 0.055) 1px, transparent 1.5px) 0 0 / 34px 34px,
+        radial-gradient(circle at 18px 18px, rgba(10, 10, 10, 0.035) 1px, transparent 1.5px) 0 0 / 42px 42px,
         #ffffff;
     color: #0a0a0a;
 }
 
 :root {
-    --lab-yellow: #ffebb0;
+    --lab-yellow: #bf4c00;
     --lab-mint: #e3f2ca;
     --lab-lavender: #e6d5ff;
     --lab-blue: #d8ecff;
@@ -32,20 +30,29 @@ button {
     padding: 8px 12px;
     border: 2px solid #0f172a;
     border-radius: 10px;
-    background: var(--lab-lavender);
-    box-shadow: 4px 4px 0 #0f172a;
+    background: #ffffff;
+    box-shadow: 2px 2px 0 #0f172a;
     font-family: "IBM Plex Mono", monospace;
     font-size: 0.78rem;
     font-weight: 900;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    transform: rotate(-1deg);
+    transform: none;
 }
 
 .footer-label {
     margin-left: 0;
     margin-right: 0;
-    background: var(--lab-yellow);
+    background: #bf4c00;
+    color: #ffffff;
+}
+
+.section-script-label {
+    width: fit-content;
+    margin: 0 auto 22px;
+    font-family: "Caveat", cursive;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    color: rgba(10, 10, 10, 0.42);
 }
 
 .lab-ticker-section {
@@ -81,7 +88,7 @@ button {
 }
 
 .lab-bench-section {
-    padding: clamp(88px, 10vw, 132px) 0;
+    display: none;
 }
 
 .lab-bench-shell {
@@ -327,9 +334,7 @@ button {
     position: absolute;
     inset: 0;
     z-index: -1;
-    background:
-        linear-gradient(rgba(15, 23, 42, 0.035) 1px, transparent 1px) 0 0 / 72px 72px,
-        linear-gradient(90deg, rgba(15, 23, 42, 0.035) 1px, transparent 1px) 0 0 / 72px 72px;
+    background: linear-gradient(90deg, rgba(191, 76, 0, 0.08) 0 1px, transparent 1px 100%) 0 0 / 110px 110px;
     mask-image: linear-gradient(to bottom, #000 0%, transparent 82%);
 }
 
@@ -339,14 +344,15 @@ button {
 }
 
 .hero-inner::before {
-    content: "LAB ACCESS / CONTROLLED CHAOS";
+    content: "shaping the story";
     position: absolute;
     right: 24px;
     bottom: -48px;
     padding: 8px 12px;
     border: 2px solid #0f172a;
     border-radius: 10px;
-    background: var(--lab-mint);
+    background: #bf4c00;
+    color: #ffffff;
     box-shadow: 4px 4px 0 #0f172a;
     font-family: "IBM Plex Mono", monospace;
     font-size: 0.7rem;
@@ -362,7 +368,7 @@ button {
     padding: 9px 13px;
     border: 2px solid #0f172a;
     border-radius: 999px;
-    box-shadow: 4px 4px 0 #0f172a;
+    box-shadow: 2px 2px 0 #0f172a;
     font-family: "IBM Plex Mono", monospace;
     font-size: 0.74rem;
     font-weight: 800;
@@ -372,9 +378,9 @@ button {
 
 .lab-sticker:active { cursor: grabbing; }
 .lab-sticker.yellow { background: var(--lab-yellow); }
-.lab-sticker.mint { background: var(--lab-mint); }
-.lab-sticker.blue { background: var(--lab-blue); }
-.lab-sticker.pink { background: var(--lab-pink); }
+.lab-sticker.mint { background: #ffffff; }
+.lab-sticker.blue { background: #ffffff; }
+.lab-sticker.pink { background: #bf4c00; color: #ffffff; }
 
 .hero-grid {
     display: grid;
@@ -446,8 +452,8 @@ button {
     padding: 12px;
     border: 2px solid #0f172a;
     border-radius: 14px;
-    background: rgba(255, 255, 255, 0.84);
-    box-shadow: 4px 4px 0 rgba(15, 23, 42, 0.16);
+    background: #ffffff;
+    box-shadow: 2px 2px 0 rgba(15, 23, 42, 0.16);
     font-family: "IBM Plex Mono", monospace;
     font-size: 0.78rem;
     line-height: 1.25;
@@ -507,14 +513,11 @@ button {
     flex-direction: column;
     justify-content: space-between;
     gap: 20px;
-    padding: 24px;
-    border: 2px solid #0f172a;
-    border-radius: 18px;
-    background:
-        repeating-linear-gradient(0deg, rgba(15,23,42,0.03) 0 1px, transparent 1px 18px),
-        linear-gradient(135deg, rgba(167, 243, 208, 0.55), rgba(255, 255, 255, 0) 42%),
-        #ffffff;
-    box-shadow: 10px 10px 0 #0f172a;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
 }
 
 .hero-persona-card {
@@ -525,15 +528,20 @@ button {
 }
 
 .recruiter-panel::after {
-    content: "";
-    position: absolute;
-    right: 22px;
-    top: 20px;
-    width: 54px;
-    height: 54px;
-    border-radius: 50%;
-    border: 2px dashed #0f172a;
-    animation: slow-spin 12s linear infinite;
+    display: none;
+}
+
+.hero-persona-large {
+    display: grid;
+    place-items: end center;
+    min-height: 420px;
+    overflow: hidden;
+}
+
+.hero-persona-large img {
+    width: min(430px, 100%);
+    object-fit: contain;
+    mix-blend-mode: multiply;
 }
 
 .panel-label {
@@ -578,7 +586,7 @@ button {
     padding: 18px;
     border: 2px solid #0f172a;
     border-radius: 14px;
-    background: #0f172a;
+    background: #171717;
     color: #ffffff;
     font-family: "IBM Plex Mono", monospace;
 }
@@ -1072,7 +1080,7 @@ button {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: clamp(22px, 3vw, 38px);
-    perspective: 1200px;
+    perspective: none;
 }
 
 .proof-rail,
@@ -1107,11 +1115,9 @@ button {
     position: relative;
     padding: 10px;
     border: 1px solid rgba(15, 23, 42, 0.1);
-    border-radius: 26px;
-    background:
-        linear-gradient(180deg, rgba(255,255,255,0.82), rgba(255,255,255,0.96)),
-        radial-gradient(circle at top left, var(--case-accent), transparent 48%);
-    box-shadow: 8px 8px 0 rgba(15, 23, 42, 0.18), 0 12px 40px rgba(15, 23, 42, 0.06);
+    border-radius: 8px;
+    background: #ffffff;
+    box-shadow: 6px 6px 0 rgba(15, 23, 42, 0.18), 0 12px 40px rgba(15, 23, 42, 0.04);
     transition: transform 240ms ease, box-shadow 240ms ease, border-color 240ms ease;
     will-change: transform;
 }
@@ -1121,15 +1127,7 @@ button {
 }
 
 .lab-card-pin {
-    position: absolute;
-    top: -10px;
-    width: 22px;
-    height: 22px;
-    z-index: 3;
-    border: 2px solid #0f172a;
-    border-radius: 50%;
-    background: var(--case-accent, var(--lab-yellow));
-    box-shadow: 2px 2px 0 #0f172a;
+    display: none;
 }
 
 .pin-left { left: 24px; }
@@ -1142,7 +1140,7 @@ button {
 .case-card:hover {
     transform: translate(4px, 4px) rotate(-0.4deg);
     border-color: #0f172a;
-    box-shadow: 4px 4px 0 #0f172a, 0 10px 24px rgba(15, 23, 42, 0.06);
+    box-shadow: 6px 6px 0 #0f172a, 0 10px 24px rgba(15, 23, 42, 0.06);
 }
 
 .case-card:hover .case-number {
@@ -1154,8 +1152,35 @@ button {
     overflow: hidden;
     aspect-ratio: 0.84 / 1;
     border: 2px solid #0a0a0a;
-    border-radius: 18px;
+    border-radius: 8px;
     background: #f3f4f6;
+}
+
+.case-type-visual {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 22px;
+    background: var(--case-accent, #bf4c00);
+    color: #0f172a;
+}
+
+.case-type-visual span {
+    width: fit-content;
+    padding: 6px 10px;
+    border: 2px solid #0f172a;
+    background: #ffffff;
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 900;
+}
+
+.case-type-visual strong {
+    font-family: "Cabinet Grotesk", "Outfit", sans-serif;
+    font-size: clamp(1.9rem, 3vw, 3.4rem);
+    line-height: 0.95;
+    letter-spacing: 0;
 }
 
 .case-image-wrap img {

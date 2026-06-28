@@ -7,15 +7,15 @@ export default function FooterSection() {
   return (
     <footer id="contact" className="footer-section" data-testid="footer-section">
       <div className="footer-lab-header" data-testid="footer-lab-header">
-        <span>Content Lab checkout</span>
-        <strong>Ready for a messy brief?</strong>
+        <span>Available for visual storytelling work</span>
+        <strong>Let’s shape the story.</strong>
       </div>
       <div className="footer-shell">
         <div className="footer-philosophy">
-          <div className="lab-module-label footer-label" data-testid="lab-notes-module-label">Module 04 / Exit Note</div>
-          <h2 data-testid="footer-philosophy-title">Useful can still be strange.</h2>
+          <div className="section-script-label footer-label" data-testid="lab-notes-module-label">My Philosophy</div>
+          <h2 data-testid="footer-philosophy-title">Visual quality. Brand coherence. Audience impact.</h2>
           <p data-testid="footer-philosophy-text">
-            The best content gives people a handle: something to hold, repeat, question, or send to someone else.
+            I work across motion graphics, video editing, creative direction, and production to make content feel clear, engaging, and finished.
           </p>
         </div>
         <div className="footer-art-wrap">
@@ -29,16 +29,16 @@ export default function FooterSection() {
         <nav className="footer-links" aria-label="Contact links" data-testid="footer-contact-links">
           <p className="footer-link-label" data-testid="footer-link-label">Open channels</p>
           <motion.a
-            href="https://linkedin.com"
+            href="https://www.behance.net/abhinavsharma7585"
             target="_blank"
             rel="noreferrer"
             whileHover={{ rotate: -4, x: -6 }}
             data-testid="footer-linkedin-link"
           >
-            <Linkedin size={20} /> LinkedIn
+            <Linkedin size={20} /> Behance
           </motion.a>
           <motion.a
-            href="mailto:hello@example.com"
+            href="mailto:abhinav20.work@gmail.com"
             whileHover={{ rotate: 4, x: 6 }}
             data-testid="footer-email-link"
           >

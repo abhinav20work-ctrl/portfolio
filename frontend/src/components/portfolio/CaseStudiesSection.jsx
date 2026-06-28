@@ -45,18 +45,12 @@ export default function CaseStudiesSection() {
   return (
     <section id="case-studies" className="section case-section section-reveal" data-testid="case-study-section">
       <div className="section-shell">
-        <div className="lab-module-label" data-testid="proof-board-module-label">Module 01 / Evidence Bench</div>
+        <div className="section-script-label" data-testid="proof-board-module-label">Selected Work</div>
         <div className="section-heading-row">
           <div>
-            <h2 className="section-title" data-testid="case-title-text">Proof samples from the lab bench.</h2>
+            <h2 className="section-title" data-testid="case-title-text">Shaping the story.</h2>
           </div>
-          <p className="section-side-note" data-testid="case-side-note-text">A board of decisions, artifacts, and outcomes — enough proof for recruiters, enough personality for humans.</p>
-        </div>
-        <div className="proof-rail" data-testid="proof-board-rail">
-          <span>Positioning</span>
-          <span>Messaging</span>
-          <span>Editorial Systems</span>
-          <span>Launch Narrative</span>
+          <p className="section-side-note" data-testid="case-side-note-text">From brand worlds to investor updates and original shows — selected work built around visual quality, clarity, and audience impact.</p>
         </div>
         <div className="case-grid">
           {caseStudies.map((study, index) => (
@@ -75,18 +69,11 @@ export default function CaseStudiesSection() {
               tabIndex={0}
               onKeyDown={(event) => event.key === "Enter" && setActiveCase(study)}
             >
-              <span className="lab-card-pin pin-left" aria-hidden="true" />
-              <span className="lab-card-pin pin-right" aria-hidden="true" />
               <div className="case-image-wrap" data-testid={`case-image-wrap-${index + 1}`}>
-                <div className={`specimen-visual specimen-${index + 1}`} data-testid={`case-specimen-visual-${index + 1}`}>
-                  <span className="specimen-axis x" />
-                  <span className="specimen-axis y" />
-                  <span className="specimen-dot d1" />
-                  <span className="specimen-dot d2" />
-                  <span className="specimen-dot d3" />
-                  <strong>{study.label}</strong>
+                <div className="case-type-visual" data-testid={`case-type-visual-${index + 1}`}>
+                  <span>{study.label}</span>
+                  <strong>{study.outcome}</strong>
                 </div>
-                <span className="case-floating-label" data-testid={`case-floating-label-${index + 1}`}>{study.outcome}</span>
               </div>
               <div className="case-meta">
                 <span className="case-number" data-testid={`case-number-${index + 1}`}>{study.label}</span>

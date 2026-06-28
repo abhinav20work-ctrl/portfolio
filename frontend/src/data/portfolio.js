@@ -3,7 +3,7 @@ export const caseStudies = [
     id: "case-01",
     label: "01",
     title: "UFO Bean: Coffee from Another Dimension",
-    outcome: "Commodity coffee → immersive discovery",
+    outcome: "Coffee launch → story-led engagement",
     brief: "Positioned a coffee brand as an otherworldly discovery, using mystery, cinematic storytelling, and shareable Gen Z-first launch mechanics.",
     proposition: "Coffee from Another Dimension",
     audience: "Gen Z and young millennials who value story, aesthetics, and shareability as much as the product itself.",
@@ -27,7 +27,7 @@ export const caseStudies = [
       productWorld: "/case-assets/ufo-beans/extracted/image-p1-1.jpeg",
       strategyBoard: "/case-assets/ufo-beans/extracted/image-p2-1.png",
     },
-    tags: ["Brand world", "Launch strategy", "Gen Z", "Immersive campaign"],
+    tags: ["Visual strategy", "Campaign idea", "Gen Z", "Brand world"],
     image:
       "https://images.pexels.com/photos/29579755/pexels-photo-29579755.jpeg?auto=compress&cs=tinysrgb&w=1100",
     accent: "#FDE047",
@@ -36,10 +36,17 @@ export const caseStudies = [
   {
     id: "case-02",
     label: "02",
-    title: "Founder narrative system for a B2B team entering a crowded category",
-    outcome: "One voice across 6 launch channels",
-    brief: "Converted interviews, notes, and sales objections into a reusable messaging spine.",
-    tags: ["Messaging", "Founder voice", "Launch"],
+    title: "Sarla Aviation: Progress update and investor storytelling",
+    outcome: "Complex progress → clear internal narrative",
+    brief: "Created marketing, branding, annual progress update, and analytical video content with the founders’ team for internal and investor communication.",
+    problem: "A high-context aviation team needed progress, data, and technical work shaped into content that felt clear, credible, and watchable.",
+    strategy: "Turn technical progress into a visual story: simplify the message, sequence the proof, and use motion to make the update easier to understand.",
+    execution: [
+      "Built motion-led marketing and branding content.",
+      "Worked with the founders’ team on annual progress update video.",
+      "Created short-form informative content for Futurama media page.",
+    ],
+    tags: ["Motion graphics", "Investor content", "Branding", "Aviation"],
     image:
       "https://images.pexels.com/photos/31622947/pexels-photo-31622947.jpeg?auto=compress&cs=tinysrgb&w=1100",
     accent: "#A7F3D0",
@@ -47,10 +54,17 @@ export const caseStudies = [
   {
     id: "case-03",
     label: "03",
-    title: "Editorial engine for turning expertise into repeatable demand moments",
-    outcome: "12-week content operating rhythm",
-    brief: "Designed a campaign system that made subject-matter expertise easier to ship every week.",
-    tags: ["Editorial", "Content ops", "Demand"],
+    title: "The Spotlight Media: Four original shows from scratch",
+    outcome: "Concept → scripting → final production",
+    brief: "Oversaw concept development, scripting, design quality, brand coherence, and final production for original media shows built to engage audiences.",
+    problem: "Original shows needed more than execution — they needed a repeatable production approach from idea to final audience-facing content.",
+    strategy: "Build every show around a strong visual language, clean scripting flow, and production system that protects both quality and audience impact.",
+    execution: [
+      "Produced four original shows from scratch.",
+      "Oversaw concept development and scripting.",
+      "Managed design process from concept to execution.",
+    ],
+    tags: ["Associate producer", "Original shows", "Creative direction"],
     image:
       "https://images.unsplash.com/photo-1612180768015-56180b567352?auto=format&fit=crop&w=1100&q=80",
     accent: "#BFDBFE",
@@ -58,18 +72,18 @@ export const caseStudies = [
 ];
 
 export const recruiterSignals = [
-  { id: "signal-01", value: "6+", label: "years running narrative experiments" },
-  { id: "signal-02", value: "B2B + consumer", label: "labs across product, brand, and growth" },
-  { id: "signal-03", value: "Ship-ready", label: "positioning, campaigns, editorial systems" },
+  { id: "signal-01", value: "2025", label: "Motion Graphic Designer at Sarla Aviation" },
+  { id: "signal-02", value: "4 shows", label: "produced from concept to final production" },
+  { id: "signal-03", value: "Bengaluru", label: "visual designer shaping content for impact" },
 ];
 
 export const strengths = [
-  "Messaging architecture",
-  "Campaign prototypes",
-  "Founder-led content",
-  "Editorial operating systems",
-  "Conversion copy",
-  "Brand voice chemistry",
+  "Motion graphics",
+  "Video production",
+  "Creative direction",
+  "Script visualization",
+  "Production management",
+  "Brand films",
 ];
 
 export const labModules = [
@@ -240,29 +254,29 @@ export const processSteps = [
   {
     id: "listen",
     number: "01",
-    label: "Decode the mess",
-    note: "Interviews, objections, notes, and market noise become one clean map of what matters.",
-    artifact: "Signal map",
+    label: "Shape the story",
+    note: "Find the core message, audience tension, and visual hook before opening the timeline.",
+    artifact: "Concept spine",
   },
   {
     id: "shape",
     number: "02",
-    label: "Find the spine",
-    note: "I identify the central tension, the audience promise, and the language that can carry both.",
-    artifact: "Narrative spine",
+    label: "Design the rhythm",
+    note: "Turn scripts, references, and brand intent into frames that feel clear and alive.",
+    artifact: "Visual flow",
   },
   {
     id: "prototype",
     number: "03",
-    label: "Prototype the system",
-    note: "Hooks, landing sections, reels, campaigns, and editorial formats are tested as a connected set.",
-    artifact: "Content kit",
+    label: "Animate the impact",
+    note: "Use motion, timing, pacing, and editing to make the message easier to feel and remember.",
+    artifact: "Motion cut",
   },
   {
     id: "ship",
     number: "04",
-    label: "Ship the rhythm",
-    note: "The final work is easy for teams to repeat, measure, and evolve without losing the voice.",
-    artifact: "Operating rhythm",
+    label: "Produce to finish",
+    note: "Move from concept to polished delivery while protecting visual quality and brand coherence.",
+    artifact: "Final film",
   },
 ];

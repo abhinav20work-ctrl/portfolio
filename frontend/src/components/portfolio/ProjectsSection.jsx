@@ -16,14 +16,9 @@ export default function ProjectsSection() {
   return (
     <section id="projects" className="section projects-section section-reveal" data-testid="projects-section">
       <div className="section-shell">
-        <div className="lab-module-label" data-testid="experiment-shelf-module-label">Module 02 / Experiment Shelf</div>
+        <div className="section-script-label" data-testid="experiment-shelf-module-label">Reels / Motion Shelf</div>
         <div className="projects-topline">
-          <h2 className="section-title" data-testid="projects-title-text">Twelve strange samples, bottled.</h2>
-        </div>
-        <div className="shelf-control-strip" data-testid="experiment-shelf-control-strip">
-          <span>12 assets loaded</span>
-          <span>Click any reel</span>
-          <span>Mode: playful proof</span>
+          <h2 className="section-title" data-testid="projects-title-text">Motion tests, edits, and visual experiments.</h2>
         </div>
         <div className="masonry" data-testid="projects-masonry-layout">
           {projects.slice(0, 4).map((project, index) => (
@@ -38,7 +33,7 @@ export default function ProjectsSection() {
             data-testid="projects-experiment-note"
           >
             I experiment a lot
-            <small>because strategy gets sharper when it’s allowed to play.</small>
+            <small>because motion makes strategy easier to feel.</small>
           </motion.div>
           {projects.slice(4).map((project, index) => (
             <ProjectTile key={project.id} project={project} index={index + 4} onOpen={setActiveProject} />

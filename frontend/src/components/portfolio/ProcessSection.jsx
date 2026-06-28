@@ -8,27 +8,15 @@ export default function ProcessSection() {
   return (
     <section id="process" className="section process-section section-reveal" data-testid="process-section">
       <div className="section-shell process-shell">
-        <div className="lab-module-label" data-testid="working-system-module-label">Module 03 / Protocol Stack</div>
+        <div className="section-script-label" data-testid="working-system-module-label">Process</div>
         <div className="process-intro">
-          <h2 className="section-title" data-testid="process-title-text">The lab protocol.</h2>
+          <h2 className="section-title" data-testid="process-title-text">From brief to finished film.</h2>
         </div>
         <p className="process-lead" data-testid="process-lead-text">
-          Four modules that turn raw signals into language, formats, and a repeatable content rhythm.
+          A simple production flow for turning ideas, scripts, and references into polished visual communication.
         </p>
       </div>
       <div className="process-board" data-testid="process-journey-canvas">
-        <div className="process-center-piece" data-testid="process-center-piece">
-          <span>signal</span>
-          <strong>→</strong>
-          <span>voice</span>
-          <strong>→</strong>
-          <span>rhythm</span>
-        </div>
-        <div className="protocol-readout" data-testid="process-protocol-readout">
-          <span>Protocol status</span>
-          <strong>4 modules calibrated</strong>
-          <em>Repeatable, not rigid.</em>
-        </div>
         <div className="process-card-grid">
           {processSteps.map((step, index) => (
             <ProcessCard key={step.id} step={step} index={index} />

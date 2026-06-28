@@ -1,22 +1,15 @@
 import { useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { ArrowDownRight, Beaker, Download, Mail, MousePointer2, Sparkles } from "lucide-react";
+import { ArrowDownRight, Download, Mail } from "lucide-react";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { recruiterSignals, strengths } from "@/data/portfolio";
 
 const heroPersonaUrl = "https://customer-assets.emergentagent.com/job_micro-moments-8/artifacts/d3yc6q44_abhinav-hero.png";
 
 const lines = [
-  "A Content Lab for messy ideas.",
-  "I test language until it behaves like strategy.",
-  "Then I package it into systems teams can ship.",
-];
-
-const stickers = [
-  { label: "hook distiller", tone: "yellow", x: "8%", y: "14%", rotate: -7 },
-  { label: "voice serum", tone: "mint", x: "58%", y: "9%", rotate: 5 },
-  { label: "mess → meaning", tone: "blue", x: "40%", y: "74%", rotate: -4 },
-  { label: "drag the lab notes", tone: "pink", x: "72%", y: "62%", rotate: 8 },
+  "From visual design to pure strategy.",
+  "I turn endless scrolling into actual engagement.",
+  "Through motion, story, and production craft.",
 ];
 
 export default function HeroSection() {
@@ -30,7 +23,7 @@ export default function HeroSection() {
       <motion.div className="hero-inner" style={{ y }}>
         <div className="hero-grid">
           <div className="hero-main">
-            <p className="hero-kicker" data-testid="hero-role-text">Abhinav Sharma · Content Lab Operator</p>
+            <p className="hero-kicker" data-testid="hero-role-text">Abhinav Sharma · Visual Designer & Associate Producer</p>
             <div className="hero-copy" data-testid="hero-three-line-paragraph">
               {lines.map((line, index) => (
                 <motion.h1
@@ -52,35 +45,19 @@ export default function HeroSection() {
               transition={{ duration: 0.55, delay: 0.65 }}
             >
               <a href="mailto:hello@example.com" className="primary-pill" data-testid="hero-contact-button">
-                <Mail size={18} /> Open a brief
+                <Mail size={18} /> Start a project
               </a>
               <a href="#case-studies" className="secondary-pill" data-testid="hero-work-button">
-                Enter proof board <ArrowDownRight size={18} />
+                See selected work <ArrowDownRight size={18} />
               </a>
               <a href="mailto:hello@example.com?subject=Resume%20request%20for%20Abhinav%20Sharma" className="text-pill" data-testid="hero-resume-link">
                 <Download size={17} /> Request resume
               </a>
             </motion.div>
-            <div className="lab-ingredient-tray" data-testid="hero-ingredient-tray">
-              {stickers.map((sticker, index) => (
-                <motion.div
-                  key={sticker.label}
-                  className={`lab-sticker ${sticker.tone}`}
-                  drag
-                  dragMomentum={false}
-                  whileDrag={{ scale: 1.06, zIndex: 12 }}
-                  whileHover={{ y: -4 }}
-                  data-testid={`hero-draggable-sticker-${index + 1}`}
-                >
-                  {index === 3 ? <MousePointer2 size={15} /> : <Sparkles size={15} />}
-                  {sticker.label}
-                </motion.div>
-              ))}
-            </div>
             <div className="hero-system-strip" data-testid="hero-system-strip">
-              <span><b>Input</b> messy ideas</span>
-              <span><b>Method</b> strategic experiments</span>
-              <span><b>Output</b> shippable systems</span>
+              <span><b>Current</b> Sarla Aviation</span>
+              <span><b>Experience</b> Motion + production</span>
+              <span><b>Tools</b> After Effects / Premiere Pro</span>
             </div>
           </div>
           <motion.button
@@ -94,14 +71,9 @@ export default function HeroSection() {
             transition={{ duration: 0.65, delay: 0.48 }}
             data-testid="hero-recruiter-snapshot"
           >
-            <div className="lab-console-header">
-              <p className="panel-label" data-testid="hero-snapshot-label">ABHINAV.CONTENT-LAB</p>
-              <span className="lab-live-dot" data-testid="hero-lab-status">online</span>
-            </div>
-            <div className="lab-console-screen" data-testid="hero-lab-console-screen">
-              <Beaker size={34} />
-              <span>Input: scattered ideas</span>
-              <strong>Output: usable narrative systems</strong>
+            <p className="panel-label" data-testid="hero-snapshot-label">VISUAL DESIGNER · BENGALURU</p>
+            <div className="hero-persona-large" data-testid="hero-persona-large">
+              <img src={heroPersonaUrl} alt="Abhinav Sharma illustrated persona" />
             </div>
             <div className="signal-list">
               {recruiterSignals.map((signal) => (
@@ -130,15 +102,15 @@ export default function HeroSection() {
               <img src={heroPersonaUrl} alt="Abhinav Sharma illustrated character" />
             </div>
             <div className="persona-popup-copy">
-              <span className="lab-module-label inline-label">Persona / Content Lab Operator</span>
+              <span className="lab-module-label inline-label">Persona / Visual storyteller</span>
               <h2 data-testid="hero-persona-popup-title">Abhinav Sharma</h2>
               <p data-testid="hero-persona-popup-description">
-                A strategist who treats content like a lab: observe the signal, test the language, bottle the system.
+                An innovative Visual Designer and Associate Producer with strong expertise in visual storytelling, motion graphics, video editing, and content production.
               </p>
               <div className="persona-spec-list" data-testid="hero-persona-popup-specs">
-                <span>Signal reader</span>
-                <span>Voice chemist</span>
-                <span>Launch system builder</span>
+                <span>Motion designer</span>
+                <span>Creative producer</span>
+                <span>Script visualizer</span>
               </div>
             </div>
           </div>
