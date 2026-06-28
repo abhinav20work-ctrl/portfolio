@@ -19,6 +19,16 @@ html {
     background: #ffffff;
 }
 
+html[data-modal-open="true"],
+html[data-modal-open="true"] body {
+    overflow: hidden !important;
+    overscroll-behavior: none !important;
+}
+
+html[data-modal-open="true"] [data-lenis-prevent="true"] {
+    overscroll-behavior: contain;
+}
+
 * {
     box-sizing: border-box;
 }

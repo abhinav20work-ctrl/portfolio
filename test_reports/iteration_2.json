@@ -1,0 +1,34 @@
+{
+  "summary": "Completed frontend-only validation for UFO Beans popup on preview URL. Verified extracted PDF-driven content/assets, removed pasted-frame gallery elements, modal-only scrolling, and mobile overflow behavior.",
+  "backend_issues": {
+    "critical": [],
+    "minor": []
+  },
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [],
+    "design_issues": []
+  },
+  "test_report_links": [
+    "Playwright run via mcp_browser_automation (no persisted test script file)"
+  ],
+  "action_items": [
+    "No functional action required for requested UFO Beans popup scope.",
+    "Optional maintainability: split /app/frontend/src/App.css (>700 lines) into focused modules."
+  ],
+  "critical_code_review_comments": [
+    "App.css is very large (~2200+ lines); exceeds maintainability guideline and should be modularized."
+  ],
+  "updated_files": [
+    "/app/test_reports/iteration_2.json"
+  ],
+  "success_rate": {
+    "backend": "N/A (frontend-only request)",
+    "frontend": "100% for requested checks"
+  },
+  "seed_data_creation": "",
+  "retest_needed": false,
+  "should_main_agent_self_test": true,
+  "context_for_next_testing_agent": "Validated on https://micro-moments-8.preview.emergentagent.com. UFO Beans popup now uses extracted assets (/case-assets/ufo-beans/extracted/image-p1-1.jpeg and image-p2-1.png), contains campaign pillars + detailed proposition/audience/big idea/problem/strategy/execution content, has zero case-popup-original-image-* elements, background scroll stays locked while popup open, popup content scrolls, and mobile viewport (390x844) has no horizontal overflow.",
+  "rca of the issue": "Prior mismatch likely came from legacy originalImages/PDF-frame gallery rendering and insufficient background scroll lock. Current implementation resolves by removing old frame nodes, introducing extracted visual assets + structured content blocks, and enforcing modal-open scroll lock with html/body overflow hidden, fixed body positioning, and lock listeners."
+}

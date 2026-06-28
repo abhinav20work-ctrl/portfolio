@@ -17,16 +17,16 @@ export const caseStudies = [
       "Reveal: cinematic POV content and AR filters that made the audience feel like they had discovered the product.",
       "Sustain: Spot the UFO challenges, alien transmissions, fan theories, and limited-edition flavor drops.",
     ],
-    originalImages: [
-      "/case-assets/ufo-beans/page-1.jpg",
-      "/case-assets/ufo-beans/page-2.jpg",
-      "/case-assets/ufo-beans/page-3.jpg",
-      "/case-assets/ufo-beans/page-4.jpg",
-      "/case-assets/ufo-beans/page-5.jpg",
-      "/case-assets/ufo-beans/page-6.jpg",
-      "/case-assets/ufo-beans/page-7.jpg",
-      "/case-assets/ufo-beans/page-8.jpg",
+    campaignPillars: [
+      "A mysterious discovery, not a manufactured product",
+      "UFO-shaped packaging as the story anchor",
+      "Cryptic teaser content built for Gen Z sharing",
+      "AR filters, POV reels, alien transmissions, and UGC loops",
     ],
+    visualAssets: {
+      productWorld: "/case-assets/ufo-beans/extracted/image-p1-1.jpeg",
+      strategyBoard: "/case-assets/ufo-beans/extracted/image-p2-1.png",
+    },
     tags: ["Brand world", "Launch strategy", "Gen Z", "Immersive campaign"],
     image:
       "https://images.pexels.com/photos/29579755/pexels-photo-29579755.jpeg?auto=compress&cs=tinysrgb&w=1100",

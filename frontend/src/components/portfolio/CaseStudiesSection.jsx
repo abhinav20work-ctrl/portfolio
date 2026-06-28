@@ -19,18 +19,20 @@ export default function CaseStudiesSection() {
     document.body.style.position = "fixed";
     document.body.style.top = `-${scrollY}px`;
     document.body.style.width = "100%";
+    document.documentElement.setAttribute("data-modal-open", "true");
+    const keepLocked = () => window.scrollTo(0, scrollY);
     const lockBackgroundWheel = (event) => {
-      const popup = document.querySelector('[data-testid="case-study-detail-popup"]');
-      if (!popup || !popup.contains(event.target)) {
-        event.preventDefault();
-        window.scrollTo(0, scrollY);
-      }
+      event.preventDefault();
+      keepLocked();
     };
     window.addEventListener("wheel", lockBackgroundWheel, { passive: false });
     window.addEventListener("touchmove", lockBackgroundWheel, { passive: false });
+    window.addEventListener("scroll", keepLocked, { passive: false });
     return () => {
       window.removeEventListener("wheel", lockBackgroundWheel);
       window.removeEventListener("touchmove", lockBackgroundWheel);
+      window.removeEventListener("scroll", keepLocked);
+      document.documentElement.removeAttribute("data-modal-open");
       document.body.style.overflow = previousOverflow;
       document.documentElement.style.overflow = previousHtmlOverflow;
       document.body.style.position = previousPosition;
@@ -102,7 +104,7 @@ export default function CaseStudiesSection() {
         </div>
       </div>
       <Dialog open={Boolean(activeCase)} onOpenChange={(open) => !open && setActiveCase(null)}>
-        <DialogContent className="case-dialog lab-dialog case-lab-sheet" data-testid="case-study-detail-popup">
+        <DialogContent className="case-dialog lab-dialog case-lab-sheet" data-testid="case-study-detail-popup" data-lenis-prevent="true">
           {activeCase && (
             <div className="case-sheet-layout" style={{ "--case-accent": activeCase.accent }}>
               <div className="case-sheet-hero" data-testid="case-popup-visual">
@@ -124,11 +126,6 @@ export default function CaseStudiesSection() {
               <div className="case-sheet-summary">
                 <span className="lab-module-label inline-label" data-testid="case-popup-module-label">Case file</span>
                 <p data-testid="case-popup-description">{activeCase.brief}</p>
-                {activeCase.originalImages?.[0] && (
-                  <div className="case-hero-pdf-preview" data-testid="case-popup-hero-pdf-preview">
-                    <img src={activeCase.originalImages[0]} alt={`${activeCase.title} original PDF cover`} />
-                  </div>
-                )}
                 {activeCase.proposition && (
                   <div className="case-fact-grid" data-testid="case-popup-fact-grid">
                     <span><b>Proposition</b>{activeCase.proposition}</span>
@@ -140,6 +137,19 @@ export default function CaseStudiesSection() {
                   {activeCase.tags.map((tag) => <span key={tag}>{tag}</span>)}
                 </div>
               </div>
+
+              {activeCase.visualAssets && (
+                <div className="ufo-source-visuals" data-testid="case-popup-source-visuals">
+                  <div className="ufo-product-card" data-testid="case-popup-product-world">
+                    <img src={activeCase.visualAssets.productWorld} alt="UFO Beans product world from original case study" />
+                    <span>Product world</span>
+                  </div>
+                  <div className="ufo-strategy-card" data-testid="case-popup-strategy-board">
+                    <img src={activeCase.visualAssets.strategyBoard} alt="UFO Beans strategy board from original case study" />
+                    <span>Strategy board</span>
+                  </div>
+                </div>
+              )}
 
               <div className="case-detail-grid">
                 {activeCase.problem && (
@@ -170,20 +180,12 @@ export default function CaseStudiesSection() {
                 </div>
               )}
 
-              {activeCase.originalImages && (
-                <div className="case-original-gallery" data-testid="case-popup-original-gallery">
-                  <div className="case-gallery-heading">
-                    <b>Original PDF frames</b>
-                    <span>{activeCase.originalImages.length} extracted pages</span>
-                  </div>
-                  <div className="case-gallery-strip">
-                    {activeCase.originalImages.map((src, index) => (
-                      <img
-                        key={src}
-                        src={src}
-                        alt={`UFO Beans case study PDF page ${index + 1}`}
-                        data-testid={`case-popup-original-image-${index + 1}`}
-                      />
+              {activeCase.campaignPillars && (
+                <div className="campaign-pillars" data-testid="case-popup-campaign-pillars">
+                  <b>Content system recreated from the PDF</b>
+                  <div>
+                    {activeCase.campaignPillars.map((pillar, index) => (
+                      <span key={pillar} data-testid={`case-popup-pillar-${index + 1}`}>{pillar}</span>
                     ))}
                   </div>
                 </div>
