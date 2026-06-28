@@ -88,10 +88,6 @@ export default function HeroSection() {
                 <span key={strength}>{strength}</span>
               ))}
             </div>
-            <div className="hero-persona-peek" data-testid="hero-persona-peek">
-              <img src={heroPersonaUrl} alt="Abhinav Sharma illustrated persona" />
-              <span>click card</span>
-            </div>
           </motion.button>
         </div>
       </motion.div>

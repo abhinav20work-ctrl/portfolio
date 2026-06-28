@@ -525,6 +525,34 @@ button {
     color: inherit;
     text-align: left;
     cursor: pointer;
+    position: relative;
+    padding: 18px 18px 22px;
+    border: 2px solid #0f172a;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.92);
+    box-shadow: 8px 8px 0 rgba(15, 23, 42, 0.18);
+}
+
+.hero-persona-card::before,
+.hero-persona-card::after {
+    content: "";
+    position: absolute;
+    top: -140px;
+    width: 28px;
+    height: 160px;
+    z-index: -1;
+    border: 2px solid #0f172a;
+    background: repeating-linear-gradient(45deg, #bf4c00 0 12px, #ffffff 12px 22px);
+}
+
+.hero-persona-card::before {
+    left: 72px;
+    transform: rotate(-3deg);
+}
+
+.hero-persona-card::after {
+    right: 72px;
+    transform: rotate(3deg);
 }
 
 .recruiter-panel::after {
@@ -534,12 +562,15 @@ button {
 .hero-persona-large {
     display: grid;
     place-items: end center;
-    min-height: 420px;
+    min-height: 300px;
+    margin: 14px 0 18px;
+    border: 1.5px solid rgba(15, 23, 42, 0.16);
+    background: linear-gradient(180deg, rgba(255,255,255,0.78) 0 68%, rgba(191,76,0,0.08) 68% 100%);
     overflow: hidden;
 }
 
 .hero-persona-large img {
-    width: min(430px, 100%);
+    width: min(360px, 100%);
     object-fit: contain;
     mix-blend-mode: multiply;
 }
@@ -636,7 +667,7 @@ button {
 }
 
 .hero-persona-peek {
-    display: grid;
+    display: none;
     grid-template-columns: 76px 1fr;
     align-items: center;
     gap: 12px;
