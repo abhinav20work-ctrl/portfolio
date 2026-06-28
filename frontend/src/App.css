@@ -1955,6 +1955,22 @@ button {
     line-height: 1.45;
 }
 
+.footer-highlight-copy {
+    max-width: 390px !important;
+    font-size: clamp(1.1rem, 1.45vw, 1.55rem) !important;
+    line-height: 1.28 !important;
+    color: rgba(10, 10, 10, 0.72) !important;
+}
+
+.footer-highlight-copy span {
+    display: inline;
+    padding: 0.05em 0.16em 0.12em;
+    background: #43b900;
+    color: #ffffff;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+}
+
 .footer-art-wrap {
     display: grid;
     place-items: end center;

@@ -18,8 +18,9 @@ export default function FooterSection() {
             <span>Brand coherence.</span>
             <span>Audience impact.</span>
           </h2>
-          <p data-testid="footer-philosophy-text">
-            I work across motion graphics, video editing, creative direction, and production to make content feel clear, engaging, and finished.
+          <p className="footer-highlight-copy" data-testid="footer-philosophy-text">
+            I don’t start with content, I start with context —
+            <span>who’s the audience, what do they want to see, and how can we make them see.</span>
           </p>
         </div>
         <div className="footer-art-wrap">
