@@ -1942,6 +1942,10 @@ button {
     letter-spacing: 0;
 }
 
+.footer-philosophy h2 span {
+    display: block;
+}
+
 .footer-philosophy p:last-child {
     margin: 0;
     max-width: 320px;
@@ -2019,6 +2023,7 @@ button {
     box-shadow: none;
     border: 0;
     padding: 0;
+    white-space: nowrap;
 }
 
 @media (max-width: 900px) {

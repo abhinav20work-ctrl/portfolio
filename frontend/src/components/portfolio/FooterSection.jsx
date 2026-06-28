@@ -13,7 +13,11 @@ export default function FooterSection() {
       <div className="footer-shell">
         <div className="footer-philosophy">
           <div className="section-script-label footer-label" data-testid="lab-notes-module-label">My Philosophy</div>
-          <h2 data-testid="footer-philosophy-title">Visual quality. Brand coherence. Audience impact.</h2>
+          <h2 data-testid="footer-philosophy-title">
+            <span>Visual Quality.</span>
+            <span>Brand coherence.</span>
+            <span>Audience impact.</span>
+          </h2>
           <p data-testid="footer-philosophy-text">
             I work across motion graphics, video editing, creative direction, and production to make content feel clear, engaging, and finished.
           </p>
