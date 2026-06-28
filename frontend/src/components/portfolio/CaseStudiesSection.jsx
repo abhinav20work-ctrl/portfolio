@@ -72,8 +72,10 @@ export default function CaseStudiesSection() {
               onKeyDown={(event) => event.key === "Enter" && setActiveCase(study)}
             >
               <div className="case-image-wrap" data-testid={`case-image-wrap-${index + 1}`}>
-                {index === 0 ? (
+                {study.id === "case-01" ? (
                   <img className="case-card-cover-image" src="/case-assets/ufo-beans-pdf/ufo-card-thumbnail.jpg" alt="UFO Beans thumbnail artwork" data-testid="ufo-case-card-cover-image" />
+                ) : study.pdfFrames?.[0] ? (
+                  <img className="case-card-cover-image" src={study.pdfFrames[0]} alt={`${study.title} case study cover`} data-testid={`case-card-cover-image-${index + 1}`} />
                 ) : (
                   <div className="case-type-visual" data-testid={`case-type-visual-${index + 1}`}>
                     <span>{study.label}</span>
@@ -99,7 +101,10 @@ export default function CaseStudiesSection() {
       {activeCase?.id === "case-01" && (
         <UfoBeansFullscreenModal caseData={activeCase} onClose={() => setActiveCase(null)} />
       )}
-      {activeCase && activeCase.id !== "case-01" && (
+      {activeCase && activeCase.id !== "case-01" && activeCase.pdfFrames && (
+        <PdfCaseFullscreenModal caseData={activeCase} onClose={() => setActiveCase(null)} />
+      )}
+      {activeCase && activeCase.id !== "case-01" && !activeCase.pdfFrames && (
         <SimpleCaseModal caseData={activeCase} onClose={() => setActiveCase(null)} />
       )}
     </section>
@@ -205,6 +210,62 @@ function UfoBeansFullscreenModal({ caseData, onClose }) {
 function CaseSection({ id, title, children }) { return <motion.section id={`ufo-${id}`} className="case-section-block" initial={{ opacity: 0, y: 28 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.18 }} transition={{ duration: 0.45 }}>{title && <h2>{title}</h2>}{children}</motion.section>; }
 function PdfFrameSection({ id, src, index }) { return <CaseSection id={id}><figure className="ufo-pdf-frame" data-testid={`case-popup-pdf-frame-${index}`}><img src={src} alt={`UFO Beans PDF frame ${index}`} loading={index <= 2 ? "eager" : "lazy"} /></figure></CaseSection>; }
 function MetricCard({ icon, label, value }) { return <motion.article className="case-metric-card" whileHover={{ y: -5 }}>{icon && <span>{icon}</span>}<b>{value}</b><small>{label}</small></motion.article>; }
+function PdfCaseFullscreenModal({ caseData, onClose }) {
+  const modalRef = useRef(null);
+  const scrollContentRef = useRef(null);
+  const [loaded, setLoaded] = useState(false);
+  const [activeSection, setActiveSection] = useState("frame-1");
+  const sections = useMemo(() => caseData.pdfFrames.map((_, index) => [`frame-${index + 1}`, `Frame ${index + 1}`]), [caseData.pdfFrames]);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setLoaded(true), 350);
+    const onKeyDown = (event) => { if (event.key === "Escape") onClose(); };
+    window.addEventListener("keydown", onKeyDown);
+    return () => { clearTimeout(timer); window.removeEventListener("keydown", onKeyDown); };
+  }, [onClose]);
+
+  const onOverlayPointerDown = (event) => { if (event.target === event.currentTarget) onClose(); };
+  const onScroll = (event) => {
+    const container = event.currentTarget;
+    const top = container.scrollTop;
+    const current = sections.findLast(([id]) => {
+      const node = container.querySelector(`#case-${caseData.id}-${id}`);
+      return node && node.offsetTop <= top + container.clientHeight * 0.36;
+    });
+    if (current) setActiveSection(current[0]);
+  };
+  const scrollToSection = (event, id) => {
+    event.preventDefault();
+    const container = scrollContentRef.current;
+    const target = container?.querySelector(`#case-${caseData.id}-${id}`);
+    if (!container || !target) return;
+    container.scrollTo({ top: Math.max(target.offsetTop - 28, 0), behavior: "smooth" });
+    setActiveSection(id);
+  };
+
+  return (
+    <div className="case-fullscreen-overlay" role="dialog" aria-modal="true" aria-labelledby={`${caseData.id}-title`} data-testid="case-study-detail-popup" ref={modalRef} onMouseDown={onOverlayPointerDown} data-lenis-prevent="true">
+      <motion.div className="case-fullscreen-shell case-fullscreen-shell-simple" data-testid="case-popup-shell" onMouseDown={(event) => event.stopPropagation()} data-lenis-prevent="true" initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.4, type: "spring", stiffness: 220, damping: 24 }}>
+        <button className="case-modal-close" onClick={onClose} data-testid="case-popup-close-button" aria-label="Close case study"><X size={18} /></button>
+        <aside className="case-sidebar" data-lenis-prevent="true">
+          <div className="case-brand-logo">{caseData.label}</div>
+          <h2 id={`${caseData.id}-title`}>{caseData.title}</h2>
+          <dl><dt>Format</dt><dd>PDF Case Study</dd><dt>Role</dt><dd>Content Strategy + Production</dd><dt>Source</dt><dd>Direct PDF frames</dd></dl>
+          <div className="case-sidebar-stats"><b>Case Snapshot</b><span>{caseData.outcome}</span><span>{caseData.tags.join(" / ")}</span></div>
+          {caseData.pdfUrl && <a className="case-live-cta" href={caseData.pdfUrl} target="_blank" rel="noreferrer" data-testid="case-popup-live-campaign-link">View PDF</a>}
+        </aside>
+        <main className="case-scroll-content" ref={scrollContentRef} onScroll={onScroll} data-lenis-prevent="true" data-testid="case-popup-scroll-content">
+          {!loaded ? <div className="case-skeleton" data-testid="case-popup-loading-skeleton" /> : caseData.pdfFrames.map((src, index) => (
+            <motion.section key={src} id={`case-${caseData.id}-frame-${index + 1}`} className="case-section-block" initial={{ opacity: 0, y: 28 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.18 }} transition={{ duration: 0.45 }}>
+              <figure className="ufo-pdf-frame" data-testid={`case-popup-pdf-frame-${index + 1}`}><img src={src} alt={`${caseData.title} PDF frame ${index + 1}`} loading={index <= 1 ? "eager" : "lazy"} /></figure>
+            </motion.section>
+          ))}
+        </main>
+        <nav className="case-progress-nav" data-testid="case-popup-progress-nav">{sections.map(([id,label])=><a key={id} data-testid={`case-popup-progress-${id}`} href={`#case-${caseData.id}-${id}`} onClick={(event) => scrollToSection(event, id)} aria-label={`Jump to ${label}`} aria-current={activeSection===id ? "true" : undefined} className={activeSection===id ? "active" : ""}>{label}</a>)}</nav>
+      </motion.div>
+    </div>
+  );
+}
 function SimpleCaseModal({ caseData, onClose }) {
   return <Dialog open onOpenChange={(open)=>!open && onClose()}><DialogContent className="case-dialog lab-dialog case-lab-sheet"><DialogTitle>{caseData.title}</DialogTitle><DialogDescription>{caseData.brief}</DialogDescription></DialogContent></Dialog>;
 }

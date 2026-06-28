@@ -329,3 +329,11 @@ Create a portfolio for a content strategist, Abhinav Sharma with white backgroun
 - Replaced the UFO Beans selected-work thumbnail with the newly attached blue packaging image, optimized locally as `/case-assets/ufo-beans-pdf/ufo-card-thumbnail.jpg`.
 - Increased the vertical spacing between “From visual design to pure strategy.” and “I'm the creative wizard who turns the endless scroll into...” with responsive desktop/mobile spacing.
 - Verified via browser smoke test: thumbnail loads at 1800×980 and hero line gap is now 34px on desktop.
+
+
+## Implemented — 2026-06-28 Additional PDF Case Studies + True-Aspect Reel Masonry
+- Added fullscreen PDF-frame case study modals for Sarla Aviation and The Spotlight Media using the two newly uploaded PDFs.
+- Rendered each new PDF into 4 optimized local JPG frames and used frame 01 as each selected-work card cover.
+- Reused the UFO Beans fullscreen PDF-frame modal pattern: 90vw/90vh modal, sticky sidebar, scrollable frame content, progress dots, outside-click close, and PDF link.
+- Updated Reels / Motion Shelf masonry to preserve true video/poster aspect ratios: vertical videos render tall (~0.563), horizontal videos render wide (~1.773), using per-project `aspectRatio` values.
+- Verified via browser smoke test: case 2 and case 3 each show 4 loaded PDF frames, card covers load, and first 10 reel tiles match their true orientation/aspect ratios.

@@ -158,6 +158,7 @@ function ProjectTile({ project, index, onOpen }) {
     <motion.button
       type="button"
       className={`project-tile ${project.shape}`}
+      style={{ "--project-aspect": project.aspectRatio || (project.shape === "wide" ? 16 / 9 : project.shape === "tall" ? 9 / 16 : 1) }}
       onClick={() => onOpen(project)}
       onMouseEnter={playPreview}
       onMouseLeave={pausePreview}

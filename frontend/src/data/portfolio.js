@@ -50,6 +50,8 @@ export const caseStudies = [
     image:
       "https://images.pexels.com/photos/31622947/pexels-photo-31622947.jpeg?auto=compress&cs=tinysrgb&w=1100",
     accent: "#A7F3D0",
+    pdfFrames: Array.from({ length: 4 }, (_, index) => `/case-assets/sarla-transport-pdf/frame-${String(index + 1).padStart(2, "0")}.jpg`),
+    pdfUrl: "/case-assets/sarla-transport-pdf/sarla-transport.pdf",
   },
   {
     id: "case-03",
@@ -68,6 +70,8 @@ export const caseStudies = [
     image:
       "https://images.unsplash.com/photo-1612180768015-56180b567352?auto=format&fit=crop&w=1100&q=80",
     accent: "#BFDBFE",
+    pdfFrames: Array.from({ length: 4 }, (_, index) => `/case-assets/spotlight-scifi-pdf/frame-${String(index + 1).padStart(2, "0")}.jpg`),
+    pdfUrl: "/case-assets/spotlight-scifi-pdf/spotlight-scifi.pdf",
   },
 ];
 
@@ -124,6 +128,7 @@ export const projects = [
     videoUrl:
       "/reels/sarla-reel-01.mp4",
     posterUrl: "/reels/posters/sarla-reel-01.jpg",
+    aspectRatio: 0.562500,
     previewUrl: "/reels/previews/sarla-reel-01-preview.webm",
     tags: ["Founder story", "Mobility", "Interview reel"],
     shape: "tall",
@@ -136,6 +141,7 @@ export const projects = [
     videoUrl:
       "/reels/sarla-reel-02.mp4",
     posterUrl: "/reels/posters/sarla-reel-02.jpg",
+    aspectRatio: 1.773399,
     previewUrl: "/reels/previews/sarla-reel-02-preview.webm",
     tags: ["Build update", "Proof of work", "Launch rhythm"],
     shape: "wide",
@@ -148,9 +154,10 @@ export const projects = [
     videoUrl:
       "/reels/sarla-reel-03.mp4",
     posterUrl: "/reels/posters/sarla-reel-03.jpg",
+    aspectRatio: 0.562500,
     previewUrl: "/reels/previews/sarla-reel-03-preview.webm",
     tags: ["Progress story", "Real-world proof", "Sarla Aviation"],
-    shape: "medium",
+    shape: "tall",
   },
   {
     id: "project-04",
@@ -160,9 +167,10 @@ export const projects = [
     videoUrl:
       "/reels/sarla-reel-04.mp4",
     posterUrl: "/reels/posters/sarla-reel-04.jpg",
+    aspectRatio: 0.562500,
     previewUrl: "/reels/previews/sarla-reel-04-preview.webm",
     tags: ["Event content", "Sustainable mobility", "Speaker edit"],
-    shape: "short",
+    shape: "tall",
   },
   {
     id: "project-05",
@@ -172,9 +180,10 @@ export const projects = [
     videoUrl:
       "/reels/sarla-reel-05.mp4",
     posterUrl: "/reels/posters/sarla-reel-05.jpg",
+    aspectRatio: 1.773399,
     previewUrl: "/reels/previews/sarla-reel-05-preview.webm",
     tags: ["Team story", "Emotional beat", "Progress reel"],
-    shape: "tall",
+    shape: "wide",
   },
   {
     id: "project-06",
@@ -183,9 +192,10 @@ export const projects = [
     videoUrl:
       "/reels/sarla-reel-06.mp4",
     posterUrl: "/reels/posters/sarla-reel-06.jpg",
+    aspectRatio: 1.773399,
     previewUrl: "/reels/previews/sarla-reel-06-preview.webm",
     tags: ["Aviation future", "Brand voice", "Sarla reel"],
-    shape: "medium",
+    shape: "wide",
   },
   {
     id: "project-07",
@@ -194,9 +204,10 @@ export const projects = [
     videoUrl:
       "/reels/sarla-reel-07.mp4",
     posterUrl: "/reels/posters/sarla-reel-07.jpg",
+    aspectRatio: 0.562500,
     previewUrl: "/reels/previews/sarla-reel-07-preview.webm",
     tags: ["Event reel", "Wings India", "Milestone"],
-    shape: "short",
+    shape: "tall",
   },
   {
     id: "project-08",
@@ -205,9 +216,10 @@ export const projects = [
     videoUrl:
       "/reels/sarla-reel-08.mp4",
     posterUrl: "/reels/posters/sarla-reel-08.jpg",
+    aspectRatio: 1.773399,
     previewUrl: "/reels/previews/sarla-reel-08-preview.webm",
     tags: ["Culture content", "Team story", "Anniversary reel"],
-    shape: "tall",
+    shape: "wide",
   },
   {
     id: "project-09",
@@ -216,9 +228,10 @@ export const projects = [
     videoUrl:
       "/reels/sarla-reel-09.mp4",
     posterUrl: "/reels/posters/sarla-reel-09.jpg",
+    aspectRatio: 0.562500,
     previewUrl: "/reels/previews/sarla-reel-09-preview.webm",
     tags: ["Merch launch", "Product drop", "Brand content"],
-    shape: "wide",
+    shape: "tall",
   },
   {
     id: "project-10",
@@ -227,9 +240,10 @@ export const projects = [
     videoUrl:
       "/reels/sarla-reel-10.mp4",
     posterUrl: "/reels/posters/sarla-reel-10.jpg",
+    aspectRatio: 1.773399,
     previewUrl: "/reels/previews/sarla-reel-10-preview.webm",
     tags: ["Announcement", "SkyFactory", "eVTOL"],
-    shape: "medium",
+    shape: "wide",
   },
   {
     id: "project-11",
@@ -238,6 +252,7 @@ export const projects = [
     videoUrl:
       "/reels/sarla-reel-11.mp4",
     posterUrl: "/reels/posters/sarla-reel-11.jpg",
+    aspectRatio: 0.562500,
     previewUrl: "/reels/previews/sarla-reel-11-preview.webm",
     tags: ["Dubai Airshow", "Event recap", "Brand momentum"],
     shape: "tall",
@@ -249,9 +264,10 @@ export const projects = [
     videoUrl:
       "/reels/sarla-reel-12.mp4",
     posterUrl: "/reels/posters/sarla-reel-12.jpg",
+    aspectRatio: 1.773399,
     previewUrl: "/reels/previews/sarla-reel-12-preview.webm",
     tags: ["Origin story", "Build journey", "Sarla Aviation"],
-    shape: "short",
+    shape: "wide",
   },
   {
     id: "project-13",
@@ -260,6 +276,7 @@ export const projects = [
     videoUrl:
       "/reels/sarla-reel-13.mp4",
     posterUrl: "/reels/posters/sarla-reel-13.jpg",
+    aspectRatio: 1.773399,
     previewUrl: "/reels/previews/sarla-reel-13-preview.webm",
     tags: ["India story", "Self-reliance", "Aviation ambition"],
     shape: "wide",
@@ -271,9 +288,10 @@ export const projects = [
     videoUrl:
       "/reels/sarla-reel-14.mp4",
     posterUrl: "/reels/posters/sarla-reel-14.jpg",
+    aspectRatio: 1.773399,
     previewUrl: "/reels/previews/sarla-reel-14-preview.webm",
     tags: ["Global mobility", "Opportunity", "Travel reel"],
-    shape: "medium",
+    shape: "wide",
   },
   {
     id: "project-15",
@@ -282,9 +300,10 @@ export const projects = [
     videoUrl:
       "/reels/sarla-reel-15.mp4",
     posterUrl: "/reels/posters/sarla-reel-15.jpg",
+    aspectRatio: 1.773399,
     previewUrl: "/reels/previews/sarla-reel-15-preview.webm",
     tags: ["Ground testing", "SYLLA SYL-X1", "Technical milestone"],
-    shape: "tall",
+    shape: "wide",
   },
   {
     id: "project-16",
@@ -293,9 +312,10 @@ export const projects = [
     videoUrl:
       "/reels/sarla-reel-16.mp4",
     posterUrl: "/reels/posters/sarla-reel-16.jpg",
+    aspectRatio: 0.562500,
     previewUrl: "/reels/previews/sarla-reel-16-preview.webm",
     tags: ["Podcast launch", "Founder voice", "Accel India"],
-    shape: "medium",
+    shape: "tall",
   },
   {
     id: "project-17",
@@ -304,6 +324,7 @@ export const projects = [
     videoUrl:
       "/reels/sarla-reel-17.mp4",
     posterUrl: "/reels/posters/sarla-reel-17.jpg",
+    aspectRatio: 1.773399,
     previewUrl: "/reels/previews/sarla-reel-17-preview.webm",
     tags: ["Culture reel", "Office move", "Team memory"],
     shape: "wide",
@@ -315,9 +336,10 @@ export const projects = [
     videoUrl:
       "/reels/sarla-reel-18.mp4",
     posterUrl: "/reels/posters/sarla-reel-18.jpg",
+    aspectRatio: 1.773399,
     previewUrl: "/reels/previews/sarla-reel-18-preview.webm",
     tags: ["Ground test", "Made in India", "eVTOL"],
-    shape: "tall",
+    shape: "wide",
   },
   {
     id: "project-19",
@@ -326,9 +348,10 @@ export const projects = [
     videoUrl:
       "/reels/sarla-reel-19.mp4",
     posterUrl: "/reels/posters/sarla-reel-19.jpg",
+    aspectRatio: 1.773399,
     previewUrl: "/reels/previews/sarla-reel-19-preview.webm",
     tags: ["Test footage", "Technical reel", "Sarla Aviation"],
-    shape: "short",
+    shape: "wide",
   },
   {
     id: "project-20",
@@ -337,9 +360,10 @@ export const projects = [
     videoUrl:
       "/reels/sarla-reel-20.mp4",
     posterUrl: "/reels/posters/sarla-reel-20.jpg",
+    aspectRatio: 1.773399,
     previewUrl: "/reels/previews/sarla-reel-20-preview.webm",
     tags: ["Wing testing", "Data looks good", "Made in India"],
-    shape: "medium",
+    shape: "wide",
   },
 ];
 

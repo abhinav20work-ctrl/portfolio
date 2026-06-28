@@ -2076,6 +2076,7 @@ button {
     text-align: left;
     box-shadow: 6px 6px 0 rgba(15, 23, 42, 0.18);
     transition: box-shadow 220ms ease, filter 220ms ease;
+    aspect-ratio: var(--project-aspect, 1);
 }
 
 .reel-index {
@@ -2130,25 +2131,21 @@ button {
 }
 
 .project-tile.tall {
-    aspect-ratio: auto;
-    min-height: 430px;
+    min-height: 0;
     grid-row: span 2;
 }
 
 .project-tile.wide {
-    aspect-ratio: auto;
-    min-height: 250px;
+    min-height: 0;
     grid-column: span 2;
 }
 
 .project-tile.medium {
-    aspect-ratio: auto;
-    min-height: 330px;
+    min-height: 0;
 }
 
 .project-tile.short {
-    aspect-ratio: auto;
-    min-height: 230px;
+    min-height: 0;
 }
 
 .project-overlay {
