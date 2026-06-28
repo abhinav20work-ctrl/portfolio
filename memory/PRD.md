@@ -272,3 +272,10 @@ Create a portfolio for a content strategist, Abhinav Sharma with white backgroun
 - Removed the previous wizard-hat hover animation and markup from “creative wizard.”
 - Added a polished text hover treatment: gold shimmer sweep, subtle lift/skew, refined underline expansion, and soft glow echo.
 - Verified via browser smoke test: no `.wizard-hat` remains, hover transitions apply correctly, and the hero still renders cleanly.
+
+
+## Implemented — 2026-06-28 UFO Beans PDF Frame Replacement
+- Replaced the custom UFO Beans case-study flow with direct rendered frames from the newly uploaded `UFO Beans.pdf`.
+- Rendered all 8 PDF pages as optimized local JPG frames under `/case-assets/ufo-beans-pdf/` and used frame 01 as the selected-work card cover.
+- Kept the existing projected metrics unchanged and inserted them between PDF frame 04 and frame 05.
+- Verified via browser smoke test: all 8 frames load from the PDF, metrics remain `2.3M+`, `8.9%`, `+42%`, `6.8%`, `+31%`, modal scroll works, and progress navigation to metrics works.

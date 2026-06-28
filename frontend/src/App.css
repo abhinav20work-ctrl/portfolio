@@ -2892,18 +2892,17 @@ button {
     -webkit-overflow-scrolling: touch;
     scroll-behavior: smooth;
     padding: 48px clamp(28px, 4vw, 64px);
-    background:
-        linear-gradient(90deg, rgba(205, 226, 247, 0.42) 1px, transparent 1px) 0 0 / 42px 42px,
-        linear-gradient(rgba(205, 226, 247, 0.42) 1px, transparent 1px) 0 0 / 42px 42px,
-        #f4f5f7;
+    background: #f4f5f7;
 }
 
-.case-section-block { padding: 0 0 96px; }
+.case-section-block { padding: 0 0 34px; }
 .case-section-block h1 { margin: 28px 0 14px; font-size: clamp(3rem, 7vw, 7rem); line-height: 0.86; letter-spacing: -0.06em; color: #053466; }
 .case-section-block h2 { margin: 0 0 28px; font-size: clamp(2rem, 4vw, 4rem); letter-spacing: -0.05em; color: #053466; }
 .case-section-block p { max-width: 760px; color: #687789; font-size: 1.05rem; line-height: 1.55; }
 .case-hero-mockup, .wide-case-image { width: 100%; max-height: 520px; object-fit: cover; object-position: center; border-radius: 28px; border: 1px solid #cde2f7; box-shadow: 0 24px 80px rgba(5,52,102,0.16); }
 .case-hero-mockup { max-height: none; aspect-ratio: 16 / 9; object-fit: cover; background: linear-gradient(145deg, #cde2f7, #ffffff); }
+.ufo-pdf-frame { margin: 0; width: 100%; }
+.ufo-pdf-frame img { display: block; width: 100%; height: auto; border-radius: 18px; border: 1px solid rgba(5,52,102,0.12); box-shadow: 0 24px 80px rgba(5,52,102,0.12); background: #ffffff; }
 .ufo-hero-spread { display: grid; gap: 22px; }
 .ufo-hero-spread p { max-width: 880px; font-size: 1.14rem; }
 .case-editorial-row { display: grid; grid-template-columns: 0.72fr 1.28fr; gap: 22px; align-items: stretch; }
@@ -2941,7 +2940,6 @@ button {
 .phase-accordion ul { display: grid; gap: 8px; padding-left: 0; list-style: none; }
 .phase-accordion li strong { display: block; color: #cde2f7; }
 .case-masonry { columns: 3 220px; column-gap: 14px; }
-.ufo-image-grid { margin-top: 4px; }
 .case-masonry button { width: 100%; margin: 0 0 14px; padding: 0; border: 0; border-radius: 22px; overflow: hidden; background: transparent; break-inside: avoid; }
 .case-masonry img { width: 100%; display: block; transition: transform 260ms ease; }
 .case-masonry button:hover img { transform: scale(1.04); }
