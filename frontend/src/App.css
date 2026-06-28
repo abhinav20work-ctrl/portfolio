@@ -528,13 +528,9 @@ button {
     position: relative;
     padding: 28px 18px 22px;
     border: 2px solid #0f172a;
-    border-radius: 14px;
-    background:
-        radial-gradient(circle at 16% 18%, rgba(255,255,255,0.42) 0 9%, transparent 10%),
-        linear-gradient(90deg, rgba(15,23,42,0.05) 1px, transparent 1px) 0 0 / 42px 42px,
-        linear-gradient(rgba(15,23,42,0.05) 1px, transparent 1px) 0 0 / 42px 42px,
-        linear-gradient(145deg, #ffd23f 0%, #ff8a3d 44%, #58d68d 100%);
-    box-shadow: 14px 18px 0 rgba(15, 23, 42, 0.16), 0 18px 60px rgba(15, 23, 42, 0.14);
+    border-radius: 8px;
+    background: #ffffff;
+    box-shadow: 6px 6px 0 rgba(15, 23, 42, 0.18), 0 12px 40px rgba(15, 23, 42, 0.04);
     transform-style: preserve-3d;
 }
 
@@ -549,7 +545,7 @@ button {
 
 .swirl-ribbon path {
     fill: none;
-    stroke: #bf4c00;
+    stroke: #0f172a;
     stroke-width: 24;
     stroke-linecap: round;
     filter: drop-shadow(5px 5px 0 rgba(15,23,42,0.15));
@@ -575,10 +571,9 @@ button {
     place-items: end center;
     min-height: 250px;
     margin: 14px 0 18px;
-    border: 1.5px solid rgba(15, 23, 42, 0.16);
-    background:
-        radial-gradient(circle at 78% 18%, rgba(255,255,255,0.42) 0 12%, transparent 13%),
-        linear-gradient(180deg, rgba(255,255,255,0.26) 0 66%, rgba(15,23,42,0.06) 66% 100%);
+    border: 2px solid #0a0a0a;
+    border-radius: 8px;
+    background: #bf4c00;
     overflow: hidden;
 }
 
@@ -588,8 +583,8 @@ button {
     width: min(280px, 84%);
     object-fit: contain;
     mix-blend-mode: multiply;
-    opacity: 0.84;
-    filter: grayscale(1) contrast(1.05) drop-shadow(0 8px 8px rgba(15,23,42,0.1));
+    opacity: 0.9;
+    filter: grayscale(1) contrast(1.08);
 }
 
 .panel-label {
@@ -598,14 +593,14 @@ button {
     font-weight: 900;
     letter-spacing: 0.09em;
     text-transform: uppercase;
-    color: rgba(15,23,42,0.72);
+    color: #0f172a;
     font-family: "IBM Plex Mono", monospace;
 }
 
 .id-card-name {
     margin: 8px 0 10px;
     font-family: "Cabinet Grotesk", "Outfit", sans-serif;
-    font-size: clamp(2.1rem, 3.6vw, 3.5rem);
+    font-size: clamp(1.8rem, 3vw, 2.7rem);
     line-height: 0.9;
     font-weight: 900;
     letter-spacing: 0;
