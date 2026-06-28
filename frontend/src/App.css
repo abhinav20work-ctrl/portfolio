@@ -1150,12 +1150,26 @@ button {
     max-width: 1080px;
 }
 
+.video-dialog {
+    --video-aspect: 0.5625;
+    --video-box-width: clamp(260px, calc((100vh - 150px) * var(--video-aspect)), min(760px, calc(100vw - 440px)));
+    width: min(calc(var(--video-box-width) + 390px), calc(100vw - 36px));
+    max-width: min(1240px, calc(100vw - 36px));
+    overflow: visible;
+}
+
 .persona-popup-grid,
 .case-popup-grid,
 .video-popup-grid {
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(300px, 0.82fr);
     gap: clamp(24px, 4vw, 44px);
+    align-items: center;
+}
+
+.video-dialog .video-popup-grid {
+    grid-template-columns: var(--video-box-width) minmax(280px, 340px);
+    gap: clamp(18px, 3vw, 32px);
     align-items: center;
 }
 
@@ -2192,13 +2206,14 @@ button {
 
 .video-player {
     width: 100%;
-    aspect-ratio: 9 / 16;
-    max-height: min(72vh, 760px);
-    background: #0a0a0a;
+    height: auto;
+    aspect-ratio: var(--video-aspect);
+    max-height: calc(100vh - 150px);
+    background: transparent;
     border: 2px solid #0a0a0a;
     border-radius: 18px;
     box-shadow: 7px 7px 0 rgba(15,23,42,0.22);
-    object-fit: contain;
+    object-fit: cover;
 }
 
 .video-copy-panel {
@@ -2639,6 +2654,19 @@ button {
     .case-sheet-layout,
     .case-phase-strip > div {
         grid-template-columns: 1fr;
+    }
+
+    .video-dialog {
+        width: min(92vw, calc(100vw - 28px));
+    }
+
+    .video-dialog .video-popup-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .video-player {
+        max-height: 68vh;
+        margin: 0 auto;
     }
 
     .ufo-source-visuals,

@@ -12,13 +12,23 @@ import { projects } from "@/data/portfolio";
 
 export default function ProjectsSection() {
   const [activeProject, setActiveProject] = useState(null);
+  const [videoAspect, setVideoAspect] = useState(9 / 16);
   const popupVideoRef = useRef(null);
 
   useEffect(() => {
     if (!activeProject) return;
+    setVideoAspect(9 / 16);
+    const posterImage = new Image();
+    posterImage.onload = () => {
+      if (posterImage.naturalWidth && posterImage.naturalHeight) {
+        setVideoAspect(posterImage.naturalWidth / posterImage.naturalHeight);
+      }
+    };
+    posterImage.src = activeProject.posterUrl;
     const playActiveVideo = () => {
       const video = popupVideoRef.current;
       if (!video) return;
+      if (video.videoWidth && video.videoHeight) setVideoAspect(video.videoWidth / video.videoHeight);
       video.muted = true;
       video.setAttribute("muted", "");
       video.play().catch(() => {});
@@ -66,7 +76,7 @@ export default function ProjectsSection() {
       </div>
 
       <Dialog open={Boolean(activeProject)} onOpenChange={(open) => !open && setActiveProject(null)}>
-        <DialogContent className="video-dialog lab-dialog" data-testid="project-video-modal">
+        <DialogContent className="video-dialog lab-dialog" style={{ "--video-aspect": videoAspect }} data-testid="project-video-modal">
           {activeProject && (
             <div className="video-popup-grid">
               <video
@@ -79,6 +89,10 @@ export default function ProjectsSection() {
                   muted
                   playsInline
                   preload="auto"
+                  onLoadedMetadata={(event) => {
+                    const video = event.currentTarget;
+                    if (video.videoWidth && video.videoHeight) setVideoAspect(video.videoWidth / video.videoHeight);
+                  }}
                   data-testid="project-popup-video-player"
                 />
               <div className="video-copy-panel">

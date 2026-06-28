@@ -285,3 +285,10 @@ Create a portfolio for a content strategist, Abhinav Sharma with white backgroun
 - Enhanced “creative wizard” hover with a more magical interaction: gold shimmer, underline expansion, glow, and animated sparkles.
 - Kept the previous wizard-hat animation removed.
 - Verified via browser smoke test: sparkles animate on hover, shimmer/filter states activate, and no hat markup exists.
+
+
+## Implemented — 2026-06-28 Dynamic Reel Popup Video Sizing
+- Updated the Reels / Motion Shelf popup to size dynamically from each video/poster aspect ratio instead of forcing a fixed 9:16 frame.
+- Changed the popup layout, dialog width, and video element sizing to follow `--video-aspect`, with `object-fit: cover` and transparent video background to avoid container-created black bars.
+- Applied the behavior globally for all reel videos, including portrait and landscape assets.
+- Verified via browser smoke test: portrait reel renders at ~0.563 aspect, landscape reel renders at ~1.773 aspect, popup dimensions change accordingly, and object-fit is `cover`.
