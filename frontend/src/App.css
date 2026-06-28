@@ -561,7 +561,9 @@ button {
     padding: 14px;
     border: 2px solid #0a0a0a;
     border-radius: 8px;
-    background: #bf4c00;
+    background:
+        linear-gradient(90deg, #43b900 0 6px, transparent 6px 100%),
+        #f7f7f4;
     color: #0f172a;
     transition: transform 220ms ease;
 }
@@ -573,8 +575,9 @@ button {
 .hero-image-note span {
     width: fit-content;
     padding: 5px 8px;
-    border: 2px solid #0f172a;
-    background: #ffffff;
+    border: 1.5px solid #0f172a;
+    background: #0f172a;
+    color: #ffffff;
     font-family: "IBM Plex Mono", monospace;
     font-size: 0.68rem;
     font-weight: 900;
@@ -583,13 +586,13 @@ button {
 
 .hero-image-note strong {
     font-family: "Cabinet Grotesk", "Outfit", sans-serif;
-    font-size: 1.32rem;
-    line-height: 0.95;
+    font-size: 1.22rem;
+    line-height: 1;
     font-weight: 900;
 }
 
 .hero-image-note em {
-    color: rgba(15, 23, 42, 0.72);
+    color: rgba(15, 23, 42, 0.66);
     font-size: 0.8rem;
     line-height: 1.28;
     font-style: normal;
@@ -657,7 +660,9 @@ button {
     padding: 14px;
     border: 2px solid #0a0a0a;
     border-radius: 8px;
-    background: #bf4c00;
+    background:
+        radial-gradient(circle at 50% 42%, rgba(67, 185, 0, 0.16) 0 34%, transparent 35%),
+        #f4f2ee;
     box-shadow: none;
     overflow: hidden;
 }
