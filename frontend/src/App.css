@@ -1897,7 +1897,7 @@ button {
 
 .footer-lab-header {
     width: min(1120px, calc(100% - 40px));
-    margin: 0 auto 24px;
+    margin: 0 auto clamp(44px, 6vw, 72px);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -1917,7 +1917,7 @@ button {
 
 .footer-shell {
     display: grid;
-    grid-template-columns: minmax(240px, 0.8fr) minmax(360px, 520px) minmax(220px, 0.7fr);
+    grid-template-columns: minmax(330px, 0.9fr) minmax(300px, 440px) minmax(220px, 0.7fr);
     align-items: center;
     gap: clamp(32px, 7vw, 88px);
     min-height: clamp(360px, 42vw, 500px);
@@ -1935,7 +1935,7 @@ button {
 
 .footer-philosophy h2 {
     margin: 0 0 14px;
-    font-size: clamp(2rem, 3.15vw, 3.05rem);
+    font-size: clamp(1.7rem, 2.45vw, 2.45rem);
     line-height: 1;
     font-weight: 900;
     font-family: "Cabinet Grotesk", "Outfit", sans-serif;
@@ -1944,6 +1944,7 @@ button {
 
 .footer-philosophy h2 span {
     display: block;
+    white-space: nowrap;
 }
 
 .footer-philosophy p:last-child {
@@ -2157,6 +2158,10 @@ button {
     .footer-lab-header {
         align-items: flex-start;
         flex-direction: column;
+    }
+
+    .footer-philosophy h2 {
+        font-size: clamp(1.55rem, 8vw, 2.35rem);
     }
 }
 
