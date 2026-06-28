@@ -237,3 +237,8 @@ Create a portfolio for a content strategist, Abhinav Sharma with white backgroun
 - Updated hero experience strip to “Motion + Production + Content Writing” and removed the Tools item.
 - Updated ID card: Content Strategist label, Motion Designer current role, 3 Case Studies + 30+ contents produced, Creative Direction specialty copy, Content Wizard badge, and “Shaping the story.” above the ID card content.
 - Verified via browser smoke test: hero copy, highlight, no Tools section, badge details, and hover hat all render correctly.
+
+
+## Implemented — 2026-06-28 Hero Engagement Highlight Update
+- Restyled “actual engagement.” from a yellow underline into a bold stepped green block highlight with white text, matching the provided visual reference.
+- Verified via browser smoke test: highlight text is white, background is green, and stepped block shape is applied.
