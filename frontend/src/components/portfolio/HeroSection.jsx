@@ -1,13 +1,10 @@
-import { useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowDownRight, Download, Mail } from "lucide-react";
-import { Dialog, DialogContent, DialogDescription, DialogTitle } from "@/components/ui/dialog";
 import { strengths } from "@/data/portfolio";
 
 const heroPersonaUrl = "https://customer-assets.emergentagent.com/job_micro-moments-8/artifacts/v412rep6_abhinav-profile.png";
 
 export default function HeroSection() {
-  const [showPersona, setShowPersona] = useState(false);
   const { scrollY } = useScroll();
   const y = useTransform(scrollY, [0, 600], [0, 70]);
 
@@ -50,14 +47,11 @@ export default function HeroSection() {
               <span><b>Experience</b> Motion + Production + Content Writing</span>
             </div>
           </div>
-          <motion.button
-            type="button"
+          <motion.article
             className="recruiter-panel hero-persona-card"
-            onClick={() => setShowPersona(true)}
             initial={{ opacity: 0, x: 28, rotate: 1 }}
             animate={{ opacity: 1, x: 0, rotate: -1 }}
             whileHover={{ y: -8, rotate: 0.5 }}
-            whileTap={{ scale: 0.98 }}
             transition={{ duration: 0.65, delay: 0.48 }}
             data-testid="hero-recruiter-snapshot"
           >
@@ -102,30 +96,9 @@ export default function HeroSection() {
               </div>
               <div className="tiny-barcode" aria-hidden="true" data-testid="hero-badge-barcode" />
             </div>
-          </motion.button>
+          </motion.article>
         </div>
       </motion.div>
-      <Dialog open={showPersona} onOpenChange={setShowPersona}>
-        <DialogContent className="persona-dialog lab-dialog" data-testid="hero-persona-popup">
-          <div className="persona-popup-grid">
-            <div className="persona-art-stage" data-testid="hero-persona-popup-art">
-              <img src={heroPersonaUrl} alt="Abhinav Sharma illustrated character" />
-            </div>
-            <div className="persona-popup-copy">
-              <span className="lab-module-label inline-label">Persona / Visual storyteller</span>
-              <DialogTitle className="persona-popup-title" data-testid="hero-persona-popup-title">Abhinav Sharma</DialogTitle>
-              <DialogDescription className="persona-popup-description" data-testid="hero-persona-popup-description">
-                An innovative Visual Designer and Associate Producer with strong expertise in visual storytelling, motion graphics, video editing, and content production.
-              </DialogDescription>
-              <div className="persona-spec-list" data-testid="hero-persona-popup-specs">
-                <span>Motion designer</span>
-                <span>Creative producer</span>
-                <span>Script visualizer</span>
-              </div>
-            </div>
-          </div>
-        </DialogContent>
-      </Dialog>
     </section>
   );
 }

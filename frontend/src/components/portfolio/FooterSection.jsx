@@ -13,14 +13,9 @@ export default function FooterSection() {
       <div className="footer-shell">
         <div className="footer-philosophy">
           <div className="section-script-label footer-label" data-testid="lab-notes-module-label">My Philosophy</div>
-          <h2 data-testid="footer-philosophy-title">
-            <span>Visual Quality.</span>
-            <span>Brand coherence.</span>
-            <span>Audience impact.</span>
-          </h2>
           <p className="footer-highlight-copy" data-testid="footer-philosophy-text">
             Give me your messiest brief and I&apos;ll hand you back a story that hits different.
-            <span>I do that by getting obsessed with two questions — what does the brand want to say, and how does the audience want to receive it?</span>
+            <span> I do that by getting obsessed with two questions — what does the brand want to say, and how does the audience want to receive it?</span>
           </p>
         </div>
         <div className="footer-art-wrap">

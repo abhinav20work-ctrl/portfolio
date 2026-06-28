@@ -313,3 +313,13 @@ Create a portfolio for a content strategist, Abhinav Sharma with white backgroun
 - Kept analytics directly below tags with a compact, natural gap while preserving the dynamic video sizing.
 - Updated Process steps to: Audience first, AI workflow, Creative craft, and Final delivery with the exact user-provided descriptions.
 - Verified via browser smoke test: right panel no longer stretches to video height, analytics spacing is compact, and all updated Process copy renders correctly.
+
+
+## Implemented — 2026-06-28 Hero Popup Removal + Thumbnail/Footer Refinements
+- Removed the clickable hero ID-card/persona popup completely; the hero card is now a non-clickable article and no persona dialog opens.
+- Replaced the UFO Beans selected-work card thumbnail with the newly attached image, optimized locally as `/case-assets/ufo-beans-pdf/ufo-card-thumbnail.jpg`.
+- Regenerated all 20 reel poster thumbnails by sampling multiple frames from each local video and selecting the highest-scoring frame for brightness/detail.
+- Removed footer heading lines: “Visual Quality.”, “Brand coherence.”, and “Audience impact.”
+- Added distinct hover colors for footer links: LinkedIn turns blue/white, Email turns yellow/black.
+- Verified via browser smoke test: no hero popup, new UFO thumbnail loads, sample video posters load, footer headings are gone, and link hover colors work.
+- Note: no manual reload/refresh calls exist in app code; preview refreshes observed during development come from the dev server hot-reload while files/assets are being edited/regenerated.

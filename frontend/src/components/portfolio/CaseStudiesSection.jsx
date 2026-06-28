@@ -73,7 +73,7 @@ export default function CaseStudiesSection() {
             >
               <div className="case-image-wrap" data-testid={`case-image-wrap-${index + 1}`}>
                 {index === 0 ? (
-                  <img className="case-card-cover-image" src="/case-assets/ufo-beans-pdf/frame-01.jpg" alt="UFO Beans PDF cover frame" data-testid="ufo-case-card-cover-image" />
+                  <img className="case-card-cover-image" src="/case-assets/ufo-beans-pdf/ufo-card-thumbnail.jpg" alt="UFO Beans thumbnail artwork" data-testid="ufo-case-card-cover-image" />
                 ) : (
                   <div className="case-type-visual" data-testid={`case-type-visual-${index + 1}`}>
                     <span>{study.label}</span>

@@ -679,7 +679,7 @@ button {
     width: 100%;
     color: inherit;
     text-align: left;
-    cursor: pointer;
+    cursor: default;
     position: relative;
     padding: 14px;
     border: 2px solid #0f172a;
@@ -2712,10 +2712,13 @@ button {
     border: 2px solid #0a0a0a;
     background: #ffffff;
     box-shadow: 5px 5px 0 #0a0a0a;
+    transition: transform 220ms ease, background-color 220ms ease, color 220ms ease, box-shadow 220ms ease;
 }
 
 .footer-links a:nth-child(2) { background: #ffffff; transform: rotate(-2deg); }
 .footer-links a:nth-child(3) { background: #ffffff; transform: rotate(2deg); }
+.footer-links a:nth-child(2):hover { background: #0a66c2; color: #ffffff; box-shadow: 5px 5px 0 #06345f; }
+.footer-links a:nth-child(3):hover { background: #f4c430; color: #0a0a0a; box-shadow: 5px 5px 0 #8a6400; }
 
 .footer-label {
     background: transparent;
