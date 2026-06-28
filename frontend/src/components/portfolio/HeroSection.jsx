@@ -61,6 +61,7 @@ export default function HeroSection() {
             transition={{ duration: 0.65, delay: 0.48 }}
             data-testid="hero-recruiter-snapshot"
           >
+            <span className="story-layer-label" data-testid="hero-story-layer-label">shaping the story</span>
             <div className="badge-top-row">
               <span className="badge-company-mark" data-testid="hero-badge-company-mark">AS</span>
               <span className="badge-verified" data-testid="hero-badge-verified">Content Wizard</span>

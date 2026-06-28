@@ -258,3 +258,11 @@ Create a portfolio for a content strategist, Abhinav Sharma with white backgroun
 - Reverted “Shaping the story” from inside the ID card back to its previous external hero sticker placement.
 - Expanded the dark yellow highlight block so it covers the full “actual engagement.” text height and width.
 - Verified via browser smoke test: corrected Projects row, updated Speciality copy, restored story sticker, and full highlight coverage render correctly.
+
+
+## Implemented — 2026-06-28 Hero Layering + Highlight Cleanup
+- Moved “shaping the story” onto the ID card layer with visible overflow and higher z-index, preserving its same visual position while keeping it above the card.
+- Removed the old pseudo-label from the hero wrapper to avoid layering conflicts.
+- Fixed Speciality/portrait overlap by aligning grid track sizes with the actual portrait block and increasing the gap; verified no overlap remains.
+- Simplified “actual engagement.” highlight into a clean rectangular dark-yellow sweep with no distorted stepped shape.
+- Verified via browser smoke test: label is above card layer, card overflow is visible, portrait/note gap is positive, and highlight is clean.
