@@ -358,3 +358,9 @@ Create a portfolio for a content strategist, Abhinav Sharma with white backgroun
 - Preserved each video thumbnail's aspect ratio while allowing the browser to stack tiles tightly in columns.
 - Kept compact spacing, smaller overlays, and responsive column behavior for tablet/mobile.
 - Verified via browser smoke test: masonry now uses 5 desktop columns, tiles stack tightly with preserved aspects, and visible whitespace between mixed tile heights is removed.
+
+
+## Implemented — 2026-06-28 Experiment Note One-Line Fit
+- Reduced the “I experiment a lot” experiment-note font size and wrapped the main phrase in a nowrap span.
+- Adjusted mobile and desktop font clamps so the phrase fits on one line inside the masonry note tile without clipping.
+- Verified via browser smoke test: desktop text width 223px within 272px parent, `white-space: nowrap`, and no clipping.

@@ -2192,29 +2192,33 @@ button {
 
 .experiment-note {
     min-height: 250px;
-    display: inline-grid;
     display: grid;
     place-items: center;
-    padding: clamp(24px, 4vw, 44px);
+    padding: clamp(20px, 2.6vw, 34px);
     border: 2px solid #0a0a0a;
     border-radius: 24px;
     background: #fef08a;
     font-family: "Caveat", cursive;
     font-weight: 700;
-    font-size: clamp(2.65rem, 5vw, 4.9rem);
+    font-size: clamp(1.45rem, 1.95vw, 2.32rem);
     line-height: 0.98;
     text-align: center;
     overflow: hidden;
     word-break: normal;
-    overflow-wrap: anywhere;
+    overflow-wrap: normal;
     box-shadow: 9px 9px 0 #0a0a0a;
     animation: note-float 5s ease-in-out infinite;
+}
+
+.experiment-note > span {
+    display: block;
+    white-space: nowrap;
 }
 
 .experiment-note small {
     display: block;
     max-width: 330px;
-    margin-top: 14px;
+    margin-top: 10px;
     font-family: "IBM Plex Mono", monospace;
     font-size: clamp(0.76rem, 1.1vw, 0.95rem);
     line-height: 1.35;
@@ -3028,7 +3032,7 @@ button {
 
     .experiment-note {
         min-height: 210px;
-        font-size: clamp(2.4rem, 15vw, 4rem);
+        font-size: clamp(1.45rem, 6.4vw, 1.8rem);
     }
 
     .footer-links a {

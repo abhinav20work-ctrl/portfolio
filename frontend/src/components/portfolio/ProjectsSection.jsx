@@ -77,7 +77,7 @@ export default function ProjectsSection() {
             transition={{ duration: 0.5 }}
             data-testid="projects-experiment-note"
           >
-            I experiment a lot
+            <span>I experiment a lot</span>
             <small>because motion makes strategy easier to feel.</small>
           </motion.div>
           {projects.slice(4).map((project, index) => (
