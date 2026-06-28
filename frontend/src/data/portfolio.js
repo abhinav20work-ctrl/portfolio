@@ -115,138 +115,231 @@ export const labModules = [
 
 export const labFormula = ["Signal", "Tension", "Voice", "Format", "Rhythm"];
 
-const labThumbs = [
-  "https://images.pexels.com/photos/29579755/pexels-photo-29579755.jpeg?auto=compress&cs=tinysrgb&w=900",
-  "https://images.pexels.com/photos/31622947/pexels-photo-31622947.jpeg?auto=compress&cs=tinysrgb&w=900",
-  "https://images.unsplash.com/photo-1612180768015-56180b567352?auto=format&fit=crop&w=900&q=80",
-  "https://images.unsplash.com/photo-1604256743004-622f2a42d61e?auto=format&fit=crop&w=900&q=80",
-];
-
 export const projects = [
   {
     id: "project-01",
-    title: "Tiny hooks, big memory",
+    title: "Building flying taxis in India",
     description:
-      "A short-form experiment on making utility-led content feel oddly memorable without shouting.",
-    thumbnail:
-      labThumbs[0],
+      "Founder-led short-form content for Sarla Aviation, framing India’s urban traffic problem as a bold product mission with a direct, memorable hook.",
     videoUrl:
-      "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+      "/reels/sarla-reel-01.mp4",
+    posterUrl: "/reels/posters/sarla-reel-01.jpg",
+    previewUrl: "/reels/previews/sarla-reel-01-preview.webm",
+    tags: ["Founder story", "Mobility", "Interview reel"],
     shape: "tall",
   },
   {
     id: "project-02",
-    title: "The pause before the point",
+    title: "Built here. Built for real.",
     description:
-      "A pacing study for explainer reels: where copy, cut, and silence do equal work.",
-    thumbnail:
-      labThumbs[1],
+      "A proof-led build update that turns engineering progress into a confident launch beat: grounded, tactile, and designed to feel real rather than speculative.",
     videoUrl:
-      "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
+      "/reels/sarla-reel-02.mp4",
+    posterUrl: "/reels/posters/sarla-reel-02.jpg",
+    previewUrl: "/reels/previews/sarla-reel-02-preview.webm",
+    tags: ["Build update", "Proof of work", "Launch rhythm"],
     shape: "wide",
   },
   {
     id: "project-03",
-    title: "Brand voice rehearsal",
+    title: "From decks to highways",
     description:
-      "A playful reel format for stress-testing whether a voice can survive multiple contexts.",
-    thumbnail:
-      labThumbs[2],
+      "A progress reel about watching a concept move from renders and decks into real-world road movement — built around the emotional shift from plan to proof.",
     videoUrl:
-      "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
+      "/reels/sarla-reel-03.mp4",
+    posterUrl: "/reels/posters/sarla-reel-03.jpg",
+    previewUrl: "/reels/previews/sarla-reel-03-preview.webm",
+    tags: ["Progress story", "Real-world proof", "Sarla Aviation"],
     shape: "medium",
   },
   {
     id: "project-04",
-    title: "Contrarian carousel cutdown",
+    title: "Sustainable mobility at ICT",
     description:
-      "A video-first rewrite of a carousel idea, built around one clean disagreement.",
-    thumbnail:
-      labThumbs[3],
+      "Event-led content featuring Payal Satish on sustainable mobility and the future of cities, edited to keep a technical theme clear and social-first.",
     videoUrl:
-      "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+      "/reels/sarla-reel-04.mp4",
+    posterUrl: "/reels/posters/sarla-reel-04.jpg",
+    previewUrl: "/reels/previews/sarla-reel-04-preview.webm",
+    tags: ["Event content", "Sustainable mobility", "Speaker edit"],
     shape: "short",
   },
   {
     id: "project-05",
-    title: "Notebook to narrative",
+    title: "Little wins, steady steps",
     description:
-      "A behind-the-scenes reel about transforming rough observations into a campaignable idea.",
-    thumbnail:
-      labThumbs[0],
+      "A warmer people-and-progress reel built around the line, ‘Imagining what we’re doing is a dream, basically’ — capturing momentum without over-explaining it.",
     videoUrl:
-      "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4",
+      "/reels/sarla-reel-05.mp4",
+    posterUrl: "/reels/posters/sarla-reel-05.jpg",
+    previewUrl: "/reels/previews/sarla-reel-05-preview.webm",
+    tags: ["Team story", "Emotional beat", "Progress reel"],
     shape: "tall",
   },
   {
     id: "project-06",
-    title: "Launch line stress test",
-    description: "A quick reel that tests how far one launch idea can bend before it breaks.",
-    thumbnail:
-      labThumbs[1],
+    title: "Vintage footage for future pilots",
+    description: "A future-facing Sarla reel with a playful archival lens — positioning today’s test moments as the footage tomorrow’s pilots will look back on.",
     videoUrl:
-      "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4",
+      "/reels/sarla-reel-06.mp4",
+    posterUrl: "/reels/posters/sarla-reel-06.jpg",
+    previewUrl: "/reels/previews/sarla-reel-06-preview.webm",
+    tags: ["Aviation future", "Brand voice", "Sarla reel"],
     shape: "medium",
   },
   {
     id: "project-07",
-    title: "The objection board",
-    description: "A visual experiment that turns sales objections into a content map.",
-    thumbnail:
-      labThumbs[2],
+    title: "Wings India felt real",
+    description: "A crisp event-memory reel from Wings India 2026, shaped to make a milestone feel immediate, credible, and worth sharing.",
     videoUrl:
-      "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
+      "/reels/sarla-reel-07.mp4",
+    posterUrl: "/reels/posters/sarla-reel-07.jpg",
+    previewUrl: "/reels/previews/sarla-reel-07-preview.webm",
+    tags: ["Event reel", "Wings India", "Milestone"],
     shape: "short",
   },
   {
     id: "project-08",
-    title: "Voice card shuffle",
-    description: "A playful format for comparing how the same thought sounds across brand voices.",
-    thumbnail:
-      labThumbs[3],
+    title: "Sanchan’s first year",
+    description: "A people-first anniversary piece celebrating one year at Sarla Aviation with warmth, personality, and a clear internal culture signal.",
     videoUrl:
-      "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4",
+      "/reels/sarla-reel-08.mp4",
+    posterUrl: "/reels/posters/sarla-reel-08.jpg",
+    previewUrl: "/reels/previews/sarla-reel-08-preview.webm",
+    tags: ["Culture content", "Team story", "Anniversary reel"],
     shape: "tall",
   },
   {
     id: "project-09",
-    title: "Campaign rhythm study",
-    description: "A motion sketch for showing how weekly ideas ladder into one campaign memory.",
-    thumbnail:
-      labThumbs[0],
+    title: "Sarla merch, now live",
+    description: "A product-drop reel for Sarla merch, turning a shop announcement into a clean branded moment with national pride and launch clarity.",
     videoUrl:
-      "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
+      "/reels/sarla-reel-09.mp4",
+    posterUrl: "/reels/posters/sarla-reel-09.jpg",
+    previewUrl: "/reels/previews/sarla-reel-09-preview.webm",
+    tags: ["Merch launch", "Product drop", "Brand content"],
     shape: "wide",
   },
   {
     id: "project-10",
-    title: "Hook laboratory",
-    description: "A tiny testing board for comparing curiosity, clarity, and contradiction.",
-    thumbnail:
-      labThumbs[1],
+    title: "MoU to breaking the internet",
+    description: "A high-stakes announcement reel translating the SkyFactory MoU into a strong public milestone for Sarla Aviation and eVTOL visibility.",
     videoUrl:
-      "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/VolkswagenGTIReview.mp4",
+      "/reels/sarla-reel-10.mp4",
+    posterUrl: "/reels/posters/sarla-reel-10.jpg",
+    previewUrl: "/reels/previews/sarla-reel-10-preview.webm",
+    tags: ["Announcement", "SkyFactory", "eVTOL"],
     shape: "medium",
   },
   {
     id: "project-11",
-    title: "Editorial mood cut",
-    description: "A soft visual edit for translating a strategy deck into content people want to watch.",
-    thumbnail:
-      labThumbs[2],
+    title: "Dubai Airshow energy",
+    description: "A high-energy event recap shaped around big ideas, bold conversations, and the momentum of Sarla’s presence at Dubai Airshow.",
     videoUrl:
-      "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4",
+      "/reels/sarla-reel-11.mp4",
+    posterUrl: "/reels/posters/sarla-reel-11.jpg",
+    previewUrl: "/reels/previews/sarla-reel-11-preview.webm",
+    tags: ["Dubai Airshow", "Event recap", "Brand momentum"],
     shape: "tall",
   },
   {
     id: "project-12",
-    title: "Signal over noise",
-    description: "A crisp visual metaphor for choosing one strong story from too many possible angles.",
-    thumbnail:
-      labThumbs[3],
+    title: "Built before the scale",
+    description: "A reflective build-history reel that frames early work as the foundation for something much larger than the team initially imagined.",
     videoUrl:
-      "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/SubaruOutbackOnStreetAndDirt.mp4",
+      "/reels/sarla-reel-12.mp4",
+    posterUrl: "/reels/posters/sarla-reel-12.jpg",
+    previewUrl: "/reels/previews/sarla-reel-12-preview.webm",
+    tags: ["Origin story", "Build journey", "Sarla Aviation"],
     shape: "short",
+  },
+  {
+    id: "project-13",
+    title: "India will grow wings",
+    description: "A conviction-led national mobility reel, turning self-reliance and aviation ambition into a clear emotional statement for public audiences.",
+    videoUrl:
+      "/reels/sarla-reel-13.mp4",
+    posterUrl: "/reels/posters/sarla-reel-13.jpg",
+    previewUrl: "/reels/previews/sarla-reel-13-preview.webm",
+    tags: ["India story", "Self-reliance", "Aviation ambition"],
+    shape: "wide",
+  },
+  {
+    id: "project-14",
+    title: "Crossing borders for opportunity",
+    description: "A travel-and-opportunity reel built around global aviation conversations, keeping the tone personal while preserving the brand’s ambition.",
+    videoUrl:
+      "/reels/sarla-reel-14.mp4",
+    posterUrl: "/reels/posters/sarla-reel-14.jpg",
+    previewUrl: "/reels/previews/sarla-reel-14-preview.webm",
+    tags: ["Global mobility", "Opportunity", "Travel reel"],
+    shape: "medium",
+  },
+  {
+    id: "project-15",
+    title: "SYLLA SYL-X1 ground testing",
+    description: "A technical milestone reel announcing ground testing for Sarla Aviation’s half-scale eVTOL demonstrator with clarity, confidence, and launch weight.",
+    videoUrl:
+      "/reels/sarla-reel-15.mp4",
+    posterUrl: "/reels/posters/sarla-reel-15.jpg",
+    previewUrl: "/reels/previews/sarla-reel-15-preview.webm",
+    tags: ["Ground testing", "SYLLA SYL-X1", "Technical milestone"],
+    shape: "tall",
+  },
+  {
+    id: "project-16",
+    title: "Inflection Point is out",
+    description: "A release announcement for Adrien Schmidt’s Inflection Point episode with Accel India, built to drive attention toward the full conversation.",
+    videoUrl:
+      "/reels/sarla-reel-16.mp4",
+    posterUrl: "/reels/posters/sarla-reel-16.jpg",
+    previewUrl: "/reels/previews/sarla-reel-16-preview.webm",
+    tags: ["Podcast launch", "Founder voice", "Accel India"],
+    shape: "medium",
+  },
+  {
+    id: "project-17",
+    title: "Goodbye, Indiranagar office",
+    description: "A sentimental team-memory reel marking the move from Sarla’s Indiranagar office, balancing nostalgia with the promise of a bigger chapter.",
+    videoUrl:
+      "/reels/sarla-reel-17.mp4",
+    posterUrl: "/reels/posters/sarla-reel-17.jpg",
+    previewUrl: "/reels/previews/sarla-reel-17-preview.webm",
+    tags: ["Culture reel", "Office move", "Team memory"],
+    shape: "wide",
+  },
+  {
+    id: "project-18",
+    title: "Ground test season continues",
+    description: "A momentum reel from Sarla’s continued ground testing cycle, connecting eVTOL progress, Bengaluru, flying taxis, and made-in-India energy.",
+    videoUrl:
+      "/reels/sarla-reel-18.mp4",
+    posterUrl: "/reels/posters/sarla-reel-18.jpg",
+    previewUrl: "/reels/previews/sarla-reel-18-preview.webm",
+    tags: ["Ground test", "Made in India", "eVTOL"],
+    shape: "tall",
+  },
+  {
+    id: "project-19",
+    title: "Flight-test cutdown",
+    description: "A compact technical reel packaged as a clean visual update, giving Sarla’s test footage a sharp social-first rhythm.",
+    videoUrl:
+      "/reels/sarla-reel-19.mp4",
+    posterUrl: "/reels/posters/sarla-reel-19.jpg",
+    previewUrl: "/reels/previews/sarla-reel-19-preview.webm",
+    tags: ["Test footage", "Technical reel", "Sarla Aviation"],
+    shape: "short",
+  },
+  {
+    id: "project-20",
+    title: "Wing workout day",
+    description: "A ground-test update turning wing data and engineering progress into a confident made-in-India eVTOL content moment.",
+    videoUrl:
+      "/reels/sarla-reel-20.mp4",
+    posterUrl: "/reels/posters/sarla-reel-20.jpg",
+    previewUrl: "/reels/previews/sarla-reel-20-preview.webm",
+    tags: ["Wing testing", "Data looks good", "Made in India"],
+    shape: "medium",
   },
 ];
 

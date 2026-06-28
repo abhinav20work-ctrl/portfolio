@@ -153,10 +153,14 @@ function UfoBeansFullscreenModal({ caseData, onClose }) {
   const onScroll = (event) => {
     const container = event.currentTarget;
     const top = container.scrollTop;
-    const current = sections.map(([id]) => id).findLast((id) => {
-      const node = container.querySelector(`#ufo-${id}`);
-      return node && node.offsetTop - 160 <= top;
-    });
+    const maxScroll = container.scrollHeight - container.clientHeight;
+    const sectionIds = sections.map(([id]) => id);
+    const current = maxScroll - top < container.clientHeight * 0.5
+      ? sectionIds[sectionIds.length - 1]
+      : sectionIds.findLast((id) => {
+        const node = container.querySelector(`#ufo-${id}`);
+        return node && node.offsetTop <= top + container.clientHeight * 0.36;
+      });
     if (current) setActiveSection(current);
   };
 
@@ -166,10 +170,10 @@ function UfoBeansFullscreenModal({ caseData, onClose }) {
     const target = container?.querySelector(`#ufo-${id}`);
     if (!container || !target) return;
 
-    container.scrollTo({
-      top: Math.max(target.offsetTop - 28, 0),
-      behavior: "smooth",
-    });
+    const maxScroll = container.scrollHeight - container.clientHeight;
+    const sectionIds = sections.map(([sectionId]) => sectionId);
+    const isLastSection = id === sectionIds[sectionIds.length - 1];
+    container.scrollTo({ top: isLastSection ? maxScroll : Math.min(Math.max(target.offsetTop - 28, 0), maxScroll), behavior: "smooth" });
     setActiveSection(id);
   };
 

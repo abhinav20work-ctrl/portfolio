@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { Play } from "lucide-react";
 import {
@@ -12,6 +12,30 @@ import { projects } from "@/data/portfolio";
 
 export default function ProjectsSection() {
   const [activeProject, setActiveProject] = useState(null);
+  const popupVideoRef = useRef(null);
+
+  useEffect(() => {
+    if (!activeProject) return;
+    const playActiveVideo = () => {
+      const video = popupVideoRef.current;
+      if (!video) return;
+      video.muted = true;
+      video.setAttribute("muted", "");
+      video.play().catch(() => {});
+    };
+    const firstTimer = window.setTimeout(playActiveVideo, 260);
+    const secondTimer = window.setTimeout(playActiveVideo, 1400);
+    const video = popupVideoRef.current;
+    video?.load();
+    video?.addEventListener("loadeddata", playActiveVideo, { once: true });
+    video?.addEventListener("canplay", playActiveVideo, { once: true });
+    return () => {
+      window.clearTimeout(firstTimer);
+      window.clearTimeout(secondTimer);
+      video?.removeEventListener("loadeddata", playActiveVideo);
+      video?.removeEventListener("canplay", playActiveVideo);
+    };
+  }, [activeProject]);
 
   return (
     <section id="projects" className="section projects-section section-reveal" data-testid="projects-section">
@@ -46,11 +70,15 @@ export default function ProjectsSection() {
           {activeProject && (
             <div className="video-popup-grid">
               <video
+                  ref={popupVideoRef}
                   className="video-player"
                   src={activeProject.videoUrl}
-                  poster={activeProject.thumbnail}
+                  poster={activeProject.posterUrl}
                   controls
+                  autoPlay
+                  muted
                   playsInline
+                  preload="auto"
                   data-testid="project-popup-video-player"
                 />
               <div className="video-copy-panel">
@@ -64,9 +92,9 @@ export default function ProjectsSection() {
                   </DialogDescription>
                 </DialogHeader>
                 <div className="video-popup-tags" data-testid="project-popup-tags">
-                  <span>Motion test</span>
-                  <span>Content rhythm</span>
-                  <span>Lab sample</span>
+                  {(activeProject.tags || ["Motion test", "Content rhythm", "Lab sample"]).map((tag) => (
+                    <span key={tag}>{tag}</span>
+                  ))}
                 </div>
               </div>
             </div>
@@ -78,11 +106,28 @@ export default function ProjectsSection() {
 }
 
 function ProjectTile({ project, index, onOpen }) {
+  const playPreview = (event) => {
+    const video = event.currentTarget.querySelector("video");
+    if (!video) return;
+    video.play().catch(() => {});
+  };
+
+  const pausePreview = (event) => {
+    const video = event.currentTarget.querySelector("video");
+    if (!video) return;
+    video.pause();
+    video.currentTime = 0;
+  };
+
   return (
     <motion.button
       type="button"
       className={`project-tile ${project.shape}`}
       onClick={() => onOpen(project)}
+      onMouseEnter={playPreview}
+      onMouseLeave={pausePreview}
+      onFocus={playPreview}
+      onBlur={pausePreview}
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.25 }}
@@ -94,9 +139,16 @@ function ProjectTile({ project, index, onOpen }) {
     >
       <span className="reel-index" data-testid={`project-reel-index-${index + 1}`}>{String(index + 1).padStart(2, "0")}</span>
       <div className={`project-sample-visual sample-${(index % 6) + 1}`} data-testid={`project-sample-visual-${index + 1}`}>
-        <span className="sample-liquid" />
-        <span className="sample-wave" />
-        <span className="sample-noise" />
+        <img src={project.posterUrl} loading="lazy" decoding="async" alt="" aria-hidden="true" data-testid={`project-card-poster-preview-${index + 1}`} />
+        <video
+          src={project.previewUrl}
+          muted
+          loop
+          playsInline
+          preload="none"
+          aria-hidden="true"
+          data-testid={`project-card-hover-preview-${index + 1}`}
+        />
       </div>
       <span className="project-overlay">
         <span className="project-play" data-testid={`project-play-icon-${index + 1}`}><Play size={18} fill="currentColor" /></span>

@@ -188,3 +188,10 @@ Create a portfolio for a content strategist, Abhinav Sharma with white backgroun
 - Added sections: Hero, metrics, challenge, research, strategy, big idea, execution accordion, gallery/lightbox, business impact, process, key learnings.
 - Testing agent verified fullscreen modal behavior, scroll lock, responsive layout, lightbox, progress nav, extracted-image usage, and no horizontal overflow.
 - Fixed QA issue: campaign execution cards now truly expand/collapse, and added test IDs to accordion, gallery, progress, and lightbox controls.
+
+
+## Implemented — 2026-06-28 UFO Popup + Motion Shelf Optimization
+- Fixed UFO Beans fullscreen modal interactions: mouse-wheel scrolling works inside the modal, right-side progress navigation scrolls to the correct sections including Learnings, and outside overlay click closes the popup while inside clicks remain safe.
+- Added 20 Sarla Aviation reels to the Reels / Motion Shelf with written titles, descriptions, tags, local video paths, and popup poster support.
+- Optimized reel shelf loading: cards now use lightweight lazy poster images (~399KB total) and tiny hover-preview WebM clips (~2.15MB total) that play only on hover/focus instead of loading full videos upfront.
+- Verified: 20 cards render, all poster previews load, hover preview plays and pauses correctly, old gradient-only/video-preload card behavior removed, UFO modal scroll/nav/outside-close pass smoke checks, lint checks pass.
