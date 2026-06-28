@@ -133,3 +133,11 @@ Create a portfolio for a content strategist, Abhinav Sharma with white backgroun
 - Added original PDF cover preview inside the case file summary and an 8-image original frames gallery.
 - Implemented stronger modal background scroll locking using fixed body positioning plus wheel/touch prevention outside the popup.
 - Verified: PDF preview visible, 8 original images render, body/html locked while popup is open, lint checks pass.
+
+
+## Implemented — 2026-06-28 UFO Beans Popup Bug Fix
+- Removed the pasted PDF frame gallery from the UFO Beans popup.
+- Rebuilt the popup using extracted PDF information and selected embedded visual assets: product world and strategy board.
+- Added campaign pillars, proposition, audience, big idea, problem, strategy, and execution phases as recreated web content.
+- Strengthened modal scroll locking with fixed body, html/body overflow lock, Lenis prevention attribute, and wheel/touch/scroll guards.
+- Testing agent verified: no PDF frame gallery, extracted source visuals present, detailed content present, background scroll locked, popup scrollable, mobile no horizontal overflow.
