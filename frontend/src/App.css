@@ -3164,8 +3164,8 @@ button {
 .case-sidebar dd { margin: -6px 0 3px; font-weight: 700; color: #ffffff; }
 .case-sidebar-stats { display: grid; gap: 8px; padding: 14px; border-radius: 18px; background: rgba(231, 240, 249, 0.12); border: 1px solid rgba(205,226,247,0.24); }
 .case-sidebar-stats span { font-size: 0.82rem; color: #e7f0f9; }
-.case-live-cta { display: inline-flex; margin-top: 18px; padding: 12px 18px; border-radius: 999px; background: #ffffff; color: #053466; text-decoration: none; font-weight: 800; box-shadow: 0 10px 24px rgba(0,0,0,0.16); transition: transform 180ms ease, background-color 180ms ease; }
-.case-live-cta:hover { background: #cde2f7; }
+.case-live-cta { display: inline-flex; margin-top: 18px; padding: 12px 18px; border-radius: 999px; background: #ffffff; color: var(--case-modal-cta-text, #053466); text-decoration: none; font-weight: 800; box-shadow: 0 10px 24px rgba(0,0,0,0.16); transition: transform 180ms ease, background-color 180ms ease; }
+.case-live-cta:hover { background: var(--case-modal-cta-hover, #cde2f7); }
 .case-live-cta:hover { transform: translateY(-3px) scale(1.02); }
 
 .case-scroll-content {
@@ -3229,7 +3229,7 @@ button {
 .conceptual-note { padding: 10px 14px; width: fit-content; border-radius: 999px; background: #e7f0f9; color: #053466; border: 1px solid #cde2f7; }
 .quote-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 14px; }
 .case-progress-nav { position: absolute; right: 14px; top: 50%; transform: translateY(-50%); display: grid; gap: 8px; z-index: 4; }
-.case-progress-nav a { width: 9px; height: 9px; overflow: hidden; border-radius: 99px; background: #8ea9c7; text-indent: -999px; transition: height 180ms ease, background-color 180ms ease, transform 180ms ease; }
+.case-progress-nav a { width: 9px; height: 9px; overflow: hidden; border-radius: 99px; background: var(--case-modal-muted-dot, #8ea9c7); text-indent: -999px; transition: height 180ms ease, background-color 180ms ease, transform 180ms ease; }
 .case-progress-nav a:hover { transform: scale(1.35); background: var(--case-modal-dot, #1782f3); }
 .case-progress-nav a.active { height: 28px; background: var(--case-modal-dot, #053466); transform: scale(1); }
 .case-skeleton { height: 70vh; background: linear-gradient(90deg,#e7f0f9,#f4f5f7,#cde2f7); background-size: 200% 100%; animation: skeleton 1s infinite linear; }
