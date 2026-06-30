@@ -468,3 +468,9 @@ Create a portfolio for a content strategist, Abhinav Sharma with white backgroun
 - Added a right-side stack using the next two visible reels to fill the remaining horizontal space beside the featured video.
 - Preserved the featured reel's two-column width and 1.773 aspect ratio while keeping the right edge aligned with the reel grid.
 - Verified via browser smoke test: featured reel starts at x=0, side stack fills the right column, rightGap is 0, and aspect remains 1.773.
+
+
+## Implemented — 2026-06-30 Reels Featured Row Whitespace Bug Fix
+- Fixed the large blank whitespace under the featured reel by changing the right-side featured stack to use compact wide videos only.
+- Prevented tall portrait reels from being placed beside the featured wide reel, which was causing a large vertical gap.
+- Mandatory testing_agent verification completed: `/app/test_reports/iteration_9.json` confirms whitespace materially resolved, featured-to-masonry gap is normal (~34px), side stack uses wide cards, aspect ratios remain intact, hidden reels remain hidden, sequential numbering remains 01–15, and reel popup still opens.
