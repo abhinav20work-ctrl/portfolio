@@ -137,17 +137,19 @@ export default function ProjectsSection() {
                 <DialogHeader>
                   <span className="lab-module-label inline-label">Experiment sample</span>
                   <DialogTitle className="video-dialog-title" data-testid="project-popup-title">
-                    {activeProject.title}
+                    {activeProject.popupTitle || activeProject.title}
                   </DialogTitle>
                   <DialogDescription className="video-dialog-description" data-testid="project-popup-description">
-                    {activeProject.description}
+                    {(activeProject.popupDescription || activeProject.description).split("\n").map((line, index) => line ? <span key={`${activeProject.id}-line-${index}`} className={line === "Project Brief" || line === "Process" ? "video-description-heading" : "video-description-line"}>{line}</span> : <span key={`${activeProject.id}-space-${index}`} className="video-description-space" />)}
                   </DialogDescription>
                 </DialogHeader>
-                <div className="video-popup-tags" data-testid="project-popup-tags">
-                  {(activeProject.tags || ["Motion test", "Content rhythm", "Lab sample"]).map((tag) => (
-                    <span key={tag}>{tag}</span>
-                  ))}
-                </div>
+                {activeProject.id !== "featured-project-02" && (
+                  <div className="video-popup-tags" data-testid="project-popup-tags">
+                    {(activeProject.tags || ["Motion test", "Content rhythm", "Lab sample"]).map((tag) => (
+                      <span key={tag}>{tag}</span>
+                    ))}
+                  </div>
+                )}
                 <section className="video-analytics-panel" data-testid="project-popup-analytics-panel">
                   <h3 data-testid="project-popup-analytics-title">Analytics across platforms</h3>
                   <div className="video-analytics-grid">

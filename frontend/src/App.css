@@ -2295,6 +2295,34 @@ button {
     text-wrap: pretty;
 }
 
+.video-description-heading,
+.video-description-line,
+.video-description-space {
+    display: block;
+}
+
+.video-description-heading {
+    margin-top: 0.55em;
+    color: #0f172a;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78em;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.video-description-heading:first-child {
+    margin-top: 0;
+}
+
+.video-description-line {
+    margin-top: 0.28em;
+}
+
+.video-description-space {
+    height: 0.35em;
+}
+
 .video-player {
     width: 100%;
     height: auto;

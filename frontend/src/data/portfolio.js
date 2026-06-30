@@ -158,8 +158,8 @@ export const labFormula = ["Signal", "Tension", "Voice", "Format", "Rhythm"];
 export const projects = [
   {
     id: "featured-project-01",
-    title: "Future travel visual cut",
-    description: "Motion graphics intro for Sarla Aviation’s Viksit Bharat Launch Event livestream, designed as the opening visual for YouTube Live and crafted to set the tone for Future India in 2047.",
+    title: "VIKSIT 2047 Live Intro",
+    description: "Project Brief\nCreate a motion graphics intro for the Sarla Aviation – Viksit Bharat Launch Event. This intro was designed to be used as the opening visual for their YouTube live stream, introducing the event and setting the tone for the vision of Future India in 2047. The visuals were crafted to reflect innovation, progress, and the aspirations of a developed India.\n\nProcess\nPre-production: Conducted research on the event theme, explored visual references and art styles, developed the creative concept, and created a detailed storyboard to define the animation flow.\nProduction: Designed and refined the visuals, animated the complete sequence in Adobe After Effects, and finalized the intro with sound design and audio synchronization to deliver a polished, broadcast-ready asset.",
     videoUrl:
       "/reels/featured-reel-01.mp4",
     posterUrl: "/reels/posters/featured-reel-01.jpg",
@@ -172,6 +172,8 @@ export const projects = [
     id: "featured-project-02",
     title: "Future travel visual cut",
     description: "Motion graphics intro for Sarla Aviation’s Viksit Bharat Launch Event livestream, designed as the opening visual for YouTube Live and crafted to set the tone for Future India in 2047.",
+    popupTitle: "VIKSIT 2047 Live Intro",
+    popupDescription: "Project Brief\nCreate a motion graphics intro for the Sarla Aviation – Viksit Bharat Launch Event. This intro was designed to be used as the opening visual for their YouTube live stream, introducing the event and setting the tone for the vision of Future India in 2047. The visuals were crafted to reflect innovation, progress, and the aspirations of a developed India.\n\nProcess\nPre-production: Conducted research on the event theme, explored visual references and art styles, developed the creative concept, and created a detailed storyboard to define the animation flow.\nProduction: Designed and refined the visuals, animated the complete sequence in Adobe After Effects, and finalized the intro with sound design and audio synchronization to deliver a polished, broadcast-ready asset.",
     videoUrl:
       "/reels/featured-reel-02.mp4",
     posterUrl: "/reels/posters/featured-reel-02.jpg",
