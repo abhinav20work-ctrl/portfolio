@@ -456,3 +456,8 @@ Create a portfolio for a content strategist, Abhinav Sharma with white backgroun
 - Made regular reel videos larger by changing the balanced reel grid from 4 to 3 columns while preserving each video’s aspect ratio.
 - Reduced the featured first visible video from 980px to 780px wide, so it remains bigger than the rest but no longer dominates the section.
 - Verified via browser smoke test: no experiment note exists, reel grid has 3 columns, featured video is 780×440 and bigger than the regular cards, and no monospace fonts are detected in the reel section.
+
+
+## Implemented — 2026-06-30 Featured Reel Two-Column Width
+- Adjusted the first featured reel width to exactly match two columns of the reel grid while preserving its 1.773 aspect ratio.
+- Verified via browser smoke test: featured width 739px equals two-column target 739px, diff 0, aspect remains 1.773.

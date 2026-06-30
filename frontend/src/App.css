@@ -2085,7 +2085,7 @@ button {
 }
 
 .featured-reel-row {
-    width: min(780px, 86%);
+    width: calc((100% - (clamp(16px, 1.5vw, 24px) * 2)) * 2 / 3 + clamp(16px, 1.5vw, 24px));
     margin: 0 auto clamp(16px, 1.5vw, 24px);
 }
 
