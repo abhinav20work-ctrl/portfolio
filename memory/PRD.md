@@ -378,3 +378,10 @@ Create a portfolio for a content strategist, Abhinav Sharma with white backgroun
 - Fixed displayed reel numbering so visible videos are renumbered sequentially from 01 through 15.
 - Preserved internal test IDs based on original reel numbers for reliable targeting while showing clean sequential labels to users.
 - Verified via browser smoke test: hidden reel cards count is 0 for 01/09/14/15/18/21/22, and visible labels now run 01–15 without gaps.
+
+
+## Implemented — 2026-06-28 Balanced Editorial Reel Grid
+- Replaced browser column masonry with an explicit balanced-column layout in React for a more intentional editorial reel grid.
+- Distributed remaining reel cards and the experiment note across four balanced columns based on estimated visual height, reducing awkward layout jumps and improving visual rhythm.
+- Preserved featured reel 02 as the large hero tile and retained true aspect ratios for all reel cards.
+- Verified via browser smoke test: grid renders as 4 balanced columns, height spread is reduced, visible reel cards preserve portrait/wide aspects, and the layout looks more structured.

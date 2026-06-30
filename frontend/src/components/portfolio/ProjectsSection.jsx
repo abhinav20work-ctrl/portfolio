@@ -32,6 +32,18 @@ export default function ProjectsSection() {
   const featuredReel = visibleProjects.find(({ originalNumber }) => originalNumber === 2);
   const masonryProjects = visibleProjects.filter(({ originalNumber }) => originalNumber !== 2);
   const displayNumberByOriginal = new Map(visibleProjects.map(({ originalNumber }, index) => [originalNumber, index + 1]));
+  const masonryItems = [
+    ...masonryProjects.slice(0, 3).map((item) => ({ type: "project", ...item })),
+    { type: "note", key: "experiment-note" },
+    ...masonryProjects.slice(3).map((item) => ({ type: "project", ...item })),
+  ];
+  const masonryColumns = masonryItems.reduce((columns, item, index) => {
+    const targetIndex = columns.heights.indexOf(Math.min(...columns.heights));
+    const weight = item.type === "note" ? 0.72 : Math.max(0.55, Math.min(1.95, 1 / (item.project.aspectRatio || 1)));
+    columns.items[targetIndex].push({ ...item, visualIndex: index });
+    columns.heights[targetIndex] += weight;
+    return columns;
+  }, { items: [[], [], [], []], heights: [0, 0, 0, 0] }).items;
 
   useEffect(() => {
     if (!activeProject) return;
@@ -77,23 +89,26 @@ export default function ProjectsSection() {
             <ProjectTile project={featuredReel.project} index={0} testIndex={featuredReel.originalNumber} displayIndex={displayNumberByOriginal.get(featuredReel.originalNumber)} isFeatured onOpen={setActiveProject} />
           </div>
         )}
-        <div className="masonry" data-testid="projects-masonry-layout">
-          {masonryProjects.slice(0, 3).map(({ project, originalNumber }, index) => (
-            <ProjectTile key={project.id} project={project} index={index} testIndex={originalNumber} displayIndex={displayNumberByOriginal.get(originalNumber)} onOpen={setActiveProject} />
-          ))}
-          <motion.div
-            className="experiment-note"
-            initial={{ opacity: 0, rotate: -5, scale: 0.92 }}
-            whileInView={{ opacity: 1, rotate: -2, scale: 1 }}
-            viewport={{ once: true, amount: 0.4 }}
-            transition={{ duration: 0.5 }}
-            data-testid="projects-experiment-note"
-          >
-            <span>I experiment a lot</span>
-            <small>because motion makes strategy easier to feel.</small>
-          </motion.div>
-          {masonryProjects.slice(3).map(({ project, originalNumber }, index) => (
-            <ProjectTile key={project.id} project={project} index={index + 3} testIndex={originalNumber} displayIndex={displayNumberByOriginal.get(originalNumber)} onOpen={setActiveProject} />
+        <div className="masonry masonry-balanced" data-testid="projects-masonry-layout">
+          {masonryColumns.map((column, columnIndex) => (
+            <div className="masonry-column" key={`column-${columnIndex}`} data-testid={`projects-masonry-column-${columnIndex + 1}`}>
+              {column.map((item) => item.type === "note" ? (
+                <motion.div
+                  key={item.key}
+                  className="experiment-note"
+                  initial={{ opacity: 0, rotate: -5, scale: 0.92 }}
+                  whileInView={{ opacity: 1, rotate: -2, scale: 1 }}
+                  viewport={{ once: true, amount: 0.4 }}
+                  transition={{ duration: 0.5 }}
+                  data-testid="projects-experiment-note"
+                >
+                  <span>I experiment a lot</span>
+                  <small>because motion makes strategy easier to feel.</small>
+                </motion.div>
+              ) : (
+                <ProjectTile key={item.project.id} project={item.project} index={item.visualIndex} testIndex={item.originalNumber} displayIndex={displayNumberByOriginal.get(item.originalNumber)} onOpen={setActiveProject} />
+              ))}
+            </div>
           ))}
         </div>
       </div>

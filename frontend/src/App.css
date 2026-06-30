@@ -2063,10 +2063,17 @@ button {
 }
 
 .masonry {
-    display: block;
-    columns: 5 220px;
-    column-gap: clamp(10px, 1vw, 16px);
-    column-fill: balance;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: clamp(12px, 1.1vw, 18px);
+    align-items: start;
+}
+
+.masonry-column {
+    display: grid;
+    gap: clamp(12px, 1.1vw, 18px);
+    align-content: start;
+    min-width: 0;
 }
 
 .featured-reel-row {
@@ -2100,9 +2107,8 @@ button {
 .project-tile,
 .experiment-note {
     width: 100%;
-    display: inline-block;
-    margin: 0 0 clamp(10px, 1vw, 16px);
-    break-inside: avoid;
+    display: block;
+    margin: 0;
 }
 
 .project-tile {
@@ -2915,7 +2921,7 @@ button {
     }
 
     .masonry {
-        columns: 2 160px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     .project-tile.wide,
@@ -3055,7 +3061,7 @@ button {
     }
 
     .masonry {
-        columns: 1 100%;
+        grid-template-columns: 1fr;
     }
 
     .experiment-note {
