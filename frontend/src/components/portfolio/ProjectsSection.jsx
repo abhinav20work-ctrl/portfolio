@@ -34,7 +34,6 @@ export default function ProjectsSection() {
   const displayNumberByOriginal = new Map(visibleProjects.map(({ originalNumber }, index) => [originalNumber, index + 1]));
   const masonryItems = [
     ...masonryProjects.slice(0, 3).map((item) => ({ type: "project", ...item })),
-    { type: "note", key: "experiment-note" },
     ...masonryProjects.slice(3).map((item) => ({ type: "project", ...item })),
   ];
   const masonryColumns = masonryItems.reduce((columns, item, index) => {
@@ -43,7 +42,7 @@ export default function ProjectsSection() {
     columns.items[targetIndex].push({ ...item, visualIndex: index });
     columns.heights[targetIndex] += weight;
     return columns;
-  }, { items: [[], [], [], []], heights: [0, 0, 0, 0] }).items;
+  }, { items: [[], [], []], heights: [0, 0, 0] }).items;
 
   useEffect(() => {
     if (!activeProject) return;
@@ -92,20 +91,7 @@ export default function ProjectsSection() {
         <div className="masonry masonry-balanced" data-testid="projects-masonry-layout">
           {masonryColumns.map((column, columnIndex) => (
             <div className="masonry-column" key={`column-${columnIndex}`} data-testid={`projects-masonry-column-${columnIndex + 1}`}>
-              {column.map((item) => item.type === "note" ? (
-                <motion.div
-                  key={item.key}
-                  className="experiment-note"
-                  initial={{ opacity: 0, rotate: -5, scale: 0.92 }}
-                  whileInView={{ opacity: 1, rotate: -2, scale: 1 }}
-                  viewport={{ once: true, amount: 0.4 }}
-                  transition={{ duration: 0.5 }}
-                  data-testid="projects-experiment-note"
-                >
-                  <span>I experiment a lot</span>
-                  <small>because motion makes strategy easier to feel.</small>
-                </motion.div>
-              ) : (
+              {column.map((item) => (
                 <ProjectTile key={item.project.id} project={item.project} index={item.visualIndex} testIndex={item.originalNumber} displayIndex={displayNumberByOriginal.get(item.originalNumber)} onOpen={setActiveProject} />
               ))}
             </div>

@@ -32,7 +32,7 @@ button {
     border-radius: 10px;
     background: #ffffff;
     box-shadow: 2px 2px 0 #0f172a;
-    font-family: "IBM Plex Mono", monospace;
+    font-family: "Outfit", "Manrope", sans-serif;
     font-size: 0.78rem;
     font-weight: 900;
     letter-spacing: 0.08em;
@@ -75,7 +75,7 @@ button {
     display: inline-flex;
     align-items: center;
     gap: 12px;
-    font-family: "IBM Plex Mono", monospace;
+    font-family: "Outfit", "Manrope", sans-serif;
     font-size: 0.82rem;
     font-weight: 900;
     letter-spacing: 0.06em;
@@ -143,7 +143,7 @@ button {
     border-radius: 18px;
     background: #ffffff;
     box-shadow: 7px 7px 0 #0f172a;
-    font-family: "IBM Plex Mono", monospace;
+    font-family: "Outfit", "Manrope", sans-serif;
 }
 
 .lab-meter strong {
@@ -165,7 +165,7 @@ button {
     border-radius: 999px;
     background: #ffffff;
     box-shadow: 3px 3px 0 #0f172a;
-    font-family: "IBM Plex Mono", monospace;
+    font-family: "Outfit", "Manrope", sans-serif;
     font-size: 0.78rem;
     font-weight: 900;
 }
@@ -202,7 +202,7 @@ button {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    font-family: "IBM Plex Mono", monospace;
+    font-family: "Outfit", "Manrope", sans-serif;
     font-weight: 900;
     margin-bottom: 48px;
 }
@@ -229,7 +229,7 @@ button {
 }
 
 .machine-flow b {
-    font-family: "IBM Plex Mono", monospace;
+    font-family: "Outfit", "Manrope", sans-serif;
     font-size: 0.72rem;
     text-transform: uppercase;
 }
@@ -357,7 +357,7 @@ button {
     border: 2px solid #0f172a;
     border-radius: 999px;
     box-shadow: 2px 2px 0 #0f172a;
-    font-family: "IBM Plex Mono", monospace;
+    font-family: "Outfit", "Manrope", sans-serif;
     font-size: 0.74rem;
     font-weight: 800;
     cursor: grab;
@@ -610,7 +610,7 @@ button {
     border-radius: 14px;
     background: #ffffff;
     box-shadow: 2px 2px 0 rgba(15, 23, 42, 0.16);
-    font-family: "IBM Plex Mono", monospace;
+    font-family: "Outfit", "Manrope", sans-serif;
     font-size: 0.78rem;
     line-height: 1.25;
 }
@@ -630,7 +630,7 @@ button {
     min-height: 42px;
     padding: 0 16px;
     border-radius: 14px;
-    font-family: "IBM Plex Mono", monospace;
+    font-family: "Outfit", "Manrope", sans-serif;
     font-weight: 800;
     text-decoration: none;
     transition: transform 220ms ease, box-shadow 220ms ease, background-color 220ms ease;
@@ -734,7 +734,7 @@ button {
     border: 1.5px solid #0f172a;
     background: #0f172a;
     color: #ffffff;
-    font-family: "IBM Plex Mono", monospace;
+    font-family: "Outfit", "Manrope", sans-serif;
     font-size: 0.6rem;
     font-weight: 900;
     text-transform: uppercase;
@@ -793,7 +793,7 @@ button {
     background: #bf4c00;
     color: #ffffff;
     box-shadow: 4px 4px 0 #0f172a;
-    font-family: "IBM Plex Mono", monospace;
+    font-family: "Outfit", "Manrope", sans-serif;
     font-size: 0.7rem;
     font-weight: 900;
     line-height: 1;
@@ -934,7 +934,7 @@ button {
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    font-family: "IBM Plex Mono", monospace;
+    font-family: "Outfit", "Manrope", sans-serif;
     font-size: 0.72rem;
     font-weight: 800;
 }
@@ -957,7 +957,7 @@ button {
     border-radius: 14px;
     background: #171717;
     color: #ffffff;
-    font-family: "IBM Plex Mono", monospace;
+    font-family: "Outfit", "Manrope", sans-serif;
 }
 
 .lab-console-screen strong {
@@ -1098,7 +1098,7 @@ button {
     left: 50%;
     bottom: -14px;
     transform: translateX(-50%);
-    font-family: "IBM Plex Mono", monospace;
+    font-family: "Outfit", "Manrope", sans-serif;
     font-size: 0.55rem;
     letter-spacing: 0.12em;
     color: #737373;
@@ -1114,7 +1114,7 @@ button {
     border-radius: 16px;
     background: var(--lab-yellow);
     box-shadow: 4px 4px 0 rgba(15,23,42,0.2);
-    font-family: "IBM Plex Mono", monospace;
+    font-family: "Outfit", "Manrope", sans-serif;
     font-size: 0.78rem;
     font-weight: 900;
     text-transform: uppercase;
@@ -1227,7 +1227,7 @@ button {
     justify-content: space-between;
     gap: 10px;
     margin-bottom: 18px;
-    font-family: "IBM Plex Mono", monospace;
+    font-family: "Outfit", "Manrope", sans-serif;
     font-size: 0.74rem;
     font-weight: 900;
     text-transform: uppercase;
@@ -1310,7 +1310,7 @@ button {
 
 .case-fact-grid b {
     color: #0f172a;
-    font-family: "IBM Plex Mono", monospace;
+    font-family: "Outfit", "Manrope", sans-serif;
     font-size: 0.68rem;
     text-transform: uppercase;
 }
@@ -1332,7 +1332,7 @@ button {
 .case-phase-strip > b {
     display: block;
     margin-bottom: 9px;
-    font-family: "IBM Plex Mono", monospace;
+    font-family: "Outfit", "Manrope", sans-serif;
     font-size: 0.74rem;
     text-transform: uppercase;
 }
@@ -1353,7 +1353,7 @@ button {
 .case-phase-strip span {
     display: inline-flex;
     margin-bottom: 10px;
-    font-family: "IBM Plex Mono", monospace;
+    font-family: "Outfit", "Manrope", sans-serif;
     font-weight: 900;
     color: var(--lab-yellow);
 }
@@ -1403,7 +1403,7 @@ button {
     border-radius: 999px;
     background: var(--lab-yellow);
     box-shadow: 2px 2px 0 #0f172a;
-    font-family: "IBM Plex Mono", monospace;
+    font-family: "Outfit", "Manrope", sans-serif;
     font-size: 0.68rem;
     font-weight: 900;
     text-transform: uppercase;
@@ -1424,7 +1424,7 @@ button {
     justify-content: space-between;
     gap: 12px;
     margin-bottom: 12px;
-    font-family: "IBM Plex Mono", monospace;
+    font-family: "Outfit", "Manrope", sans-serif;
     font-size: 0.74rem;
     text-transform: uppercase;
 }
@@ -1509,7 +1509,7 @@ button {
 .case-popup-detail-block b {
     display: block;
     margin-bottom: 5px;
-    font-family: "IBM Plex Mono", monospace;
+    font-family: "Outfit", "Manrope", sans-serif;
     font-size: 0.72rem;
     text-transform: uppercase;
 }
@@ -1540,7 +1540,7 @@ button {
     background: var(--lab-yellow);
     color: #0f172a;
     box-shadow: 4px 4px 0 #0f172a;
-    font-family: "IBM Plex Mono", monospace;
+    font-family: "Outfit", "Manrope", sans-serif;
     font-size: 0.78rem;
     font-weight: 900;
     text-decoration: none;
@@ -1575,7 +1575,7 @@ button {
     border-radius: 999px;
     background: #ffffff;
     box-shadow: 3px 3px 0 rgba(15,23,42,0.18);
-    font-family: "IBM Plex Mono", monospace;
+    font-family: "Outfit", "Manrope", sans-serif;
     font-size: 0.76rem;
     font-weight: 900;
 }
@@ -1630,7 +1630,7 @@ button {
     border-radius: 999px;
     background: #ffffff;
     box-shadow: 3px 3px 0 rgba(15, 23, 42, 0.9);
-    font-family: "IBM Plex Mono", monospace;
+    font-family: "Outfit", "Manrope", sans-serif;
     font-size: 0.76rem;
     font-weight: 800;
 }
@@ -1776,7 +1776,7 @@ button {
     padding: 6px 10px;
     border: 2px solid #0f172a;
     background: #ffffff;
-    font-family: "IBM Plex Mono", monospace;
+    font-family: "Outfit", "Manrope", sans-serif;
     font-weight: 900;
 }
 
@@ -1827,7 +1827,7 @@ button {
     left: 18px;
     top: 18px;
     z-index: 2;
-    font-family: "IBM Plex Mono", monospace;
+    font-family: "Outfit", "Manrope", sans-serif;
     font-size: 1.2rem;
     padding: 7px 10px;
     border: 2px solid #0f172a;
@@ -2072,21 +2072,21 @@ button {
 
 .masonry {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: clamp(12px, 1.1vw, 18px);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(16px, 1.5vw, 24px);
     align-items: start;
 }
 
 .masonry-column {
     display: grid;
-    gap: clamp(12px, 1.1vw, 18px);
+    gap: clamp(16px, 1.5vw, 24px);
     align-content: start;
     min-width: 0;
 }
 
 .featured-reel-row {
-    width: min(980px, 100%);
-    margin: 0 auto clamp(12px, 1.2vw, 18px);
+    width: min(780px, 86%);
+    margin: 0 auto clamp(16px, 1.5vw, 24px);
 }
 
 .project-tile.featured-reel {
@@ -2146,7 +2146,7 @@ button {
     border-radius: 50%;
     background: var(--lab-yellow);
     box-shadow: 2px 2px 0 #0f172a;
-    font-family: "IBM Plex Mono", monospace;
+    font-family: "Outfit", "Manrope", sans-serif;
     font-size: 0.68rem;
     font-weight: 900;
 }
@@ -2304,7 +2304,7 @@ button {
 .video-description-heading {
     margin-top: 0.55em;
     color: #0f172a;
-    font-family: "IBM Plex Mono", monospace;
+    font-family: "Outfit", "Manrope", sans-serif;
     font-size: 0.78em;
     font-weight: 900;
     text-transform: uppercase;
@@ -2373,7 +2373,7 @@ button {
 
 .video-analytics-panel h3 {
     margin: 0;
-    font-family: "IBM Plex Mono", monospace;
+    font-family: "Outfit", "Manrope", sans-serif;
     font-size: clamp(0.58rem, min(0.85vw, 1.3vh), 0.74rem);
     line-height: 1.15;
     text-transform: uppercase;
@@ -2407,7 +2407,7 @@ button {
 .video-analytics-grid span {
     display: block;
     margin-top: 4px;
-    font-family: "IBM Plex Mono", monospace;
+    font-family: "Outfit", "Manrope", sans-serif;
     font-size: clamp(0.56rem, min(0.72vw, 1.15vh), 0.68rem);
     font-weight: 900;
     color: rgba(15, 23, 42, 0.58);
@@ -2433,7 +2433,7 @@ button {
     border-radius: 999px;
     background: var(--lab-yellow);
     color: #0f172a !important;
-    font-family: "IBM Plex Mono", monospace;
+    font-family: "Outfit", "Manrope", sans-serif;
     font-weight: 900;
 }
 
@@ -2520,7 +2520,7 @@ button {
     border-radius: 16px;
     background: #0f172a;
     color: #ffffff;
-    font-family: "IBM Plex Mono", monospace;
+    font-family: "Outfit", "Manrope", sans-serif;
     transform: rotate(1.5deg);
 }
 
@@ -2674,7 +2674,7 @@ button {
     border-radius: 18px;
     background: #0f172a;
     color: #ffffff;
-    font-family: "IBM Plex Mono", monospace;
+    font-family: "Outfit", "Manrope", sans-serif;
 }
 
 .footer-lab-header strong {
@@ -2776,7 +2776,7 @@ button {
 
 .footer-link-label {
     margin: 0;
-    font-family: "IBM Plex Mono", monospace;
+    font-family: "Outfit", "Manrope", sans-serif;
     font-size: 0.76rem;
     font-weight: 900;
     text-transform: uppercase;
@@ -2962,8 +2962,7 @@ button {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    .project-tile.wide,
-    .experiment-note {
+    .project-tile.wide {
         width: 100%;
     }
 
@@ -3100,11 +3099,6 @@ button {
 
     .masonry {
         grid-template-columns: 1fr;
-    }
-
-    .experiment-note {
-        min-height: 210px;
-        font-size: clamp(1.45rem, 6.4vw, 1.8rem);
     }
 
     .footer-links a {

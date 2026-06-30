@@ -448,3 +448,11 @@ Create a portfolio for a content strategist, Abhinav Sharma with white backgroun
 - Added the full Project Brief and Process copy to the first visible reel popup only.
 - Removed tags from this popup so the content area includes only the requested brief/process text plus the existing Analytics across platforms section.
 - Verified via browser smoke test: popup title, brief/process headings, full copy, no tags, and analytics counters render correctly.
+
+
+## Implemented — 2026-06-30 Reel Section Font + Sizing Cleanup
+- Removed all remaining typewriter/monospace font usage from the website CSS and Google font imports, replacing it with the normal Outfit/Manrope sans-serif stack.
+- Removed the “I experiment a lot” note tile from the Reels / Motion Shelf.
+- Made regular reel videos larger by changing the balanced reel grid from 4 to 3 columns while preserving each video’s aspect ratio.
+- Reduced the featured first visible video from 980px to 780px wide, so it remains bigger than the rest but no longer dominates the section.
+- Verified via browser smoke test: no experiment note exists, reel grid has 3 columns, featured video is 780×440 and bigger than the regular cards, and no monospace fonts are detected in the reel section.
