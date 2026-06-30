@@ -31,8 +31,9 @@ export default function ProjectsSection() {
     .filter(({ originalNumber }) => !hiddenReelNumbers.has(originalNumber));
   const featuredReel = visibleProjects.find(({ originalNumber }) => originalNumber === 2);
   const masonryProjects = visibleProjects.filter(({ originalNumber }) => originalNumber !== 2);
-  const sideStackProjects = masonryProjects.slice(0, 2);
-  const remainingMasonryProjects = masonryProjects.slice(2);
+  const sideStackProjects = masonryProjects.filter(({ project }) => (project.aspectRatio || 1) > 1.2).slice(0, 2);
+  const sideStackIds = new Set(sideStackProjects.map(({ project }) => project.id));
+  const remainingMasonryProjects = masonryProjects.filter(({ project }) => !sideStackIds.has(project.id));
   const displayNumberByOriginal = new Map(visibleProjects.map(({ originalNumber }, index) => [originalNumber, index + 1]));
   const masonryItems = [
     ...remainingMasonryProjects.map((item) => ({ type: "project", ...item })),
