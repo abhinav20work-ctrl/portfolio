@@ -385,3 +385,11 @@ Create a portfolio for a content strategist, Abhinav Sharma with white backgroun
 - Distributed remaining reel cards and the experiment note across four balanced columns based on estimated visual height, reducing awkward layout jumps and improving visual rhythm.
 - Preserved featured reel 02 as the large hero tile and retained true aspect ratios for all reel cards.
 - Verified via browser smoke test: grid renders as 4 balanced columns, height spread is reduced, visible reel cards preserve portrait/wide aspects, and the layout looks more structured.
+
+
+## Implemented — 2026-06-28 Case Study 2 Feedback Update
+- Updated case study 2 title to “Next Gen Transportation Content Idea for FUTURAMA.”
+- Updated case study 2 outcome/snapshot/source copy to match the provided visual notes: multiple news articles, Reddit, YouTube, and info-ent content positioning.
+- Adjusted the case 2 card and popup palette to better match the PDF frame: black/dark steel base with blue-cyan accent and soft blue shell/content colors.
+- Updated the fullscreen sidebar to use dynamic per-case Format, Role, Source, and snapshot lines.
+- Verified via browser smoke test: case 2 card title/outcome, sidebar title/source/snapshot, shell/content colors, and gradient sidebar render correctly.

@@ -1662,6 +1662,14 @@ button {
     color: var(--case-title-color, #0f172a);
 }
 
+.case-card[style*="--case-card-border"] .case-number,
+.case-card[style*="--case-card-border"] .case-outcome,
+.case-card[style*="--case-card-border"] .case-tags span {
+    border-color: var(--case-card-border);
+    background: color-mix(in srgb, var(--case-accent) 16%, #ffffff);
+    color: var(--case-title-color, #0f172a);
+}
+
 .case-card[role="button"] {
     cursor: pointer;
 }

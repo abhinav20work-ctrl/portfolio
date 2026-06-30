@@ -250,8 +250,8 @@ function PdfCaseFullscreenModal({ caseData, onClose }) {
         <aside className="case-sidebar" data-lenis-prevent="true">
           <div className="case-brand-logo">{caseData.label}</div>
           <h2 id={`${caseData.id}-title`}>{caseData.title}</h2>
-          <dl><dt>Format</dt><dd>PDF Case Study</dd><dt>Role</dt><dd>Content Strategy + Production</dd><dt>Source</dt><dd>Direct PDF frames</dd></dl>
-          <div className="case-sidebar-stats"><b>Case Snapshot</b><span>{caseData.outcome}</span><span>{caseData.tags.join(" / ")}</span></div>
+          <dl><dt>Format</dt><dd>{caseData.modalMeta?.format || "PDF Case Study"}</dd><dt>Role</dt><dd>{caseData.modalMeta?.role || "Content Strategy + Production"}</dd><dt>Source</dt><dd>{caseData.modalMeta?.source || "Direct PDF frames"}</dd></dl>
+          <div className="case-sidebar-stats"><b>{caseData.modalMeta?.snapshotTitle || "Case Snapshot"}</b>{(caseData.modalMeta?.snapshotLines || [caseData.outcome, caseData.tags.join(" / ")]).map((line) => <span key={line}>{line}</span>)}</div>
           {caseData.pdfUrl && <a className="case-live-cta" href={caseData.pdfUrl} target="_blank" rel="noreferrer" data-testid="case-popup-live-campaign-link">View PDF</a>}
         </aside>
         <main className="case-scroll-content" ref={scrollContentRef} onScroll={onScroll} data-lenis-prevent="true" data-testid="case-popup-scroll-content">
