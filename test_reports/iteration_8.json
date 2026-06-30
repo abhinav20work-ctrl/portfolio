@@ -1,0 +1,52 @@
+{
+  "summary": "Frontend-only regression verification completed for Case Study 2 visual/theme update and popup metadata update on preview URL.",
+  "backend_issues": {
+    "critical": [],
+    "minor": []
+  },
+  "frontend_issues": {
+    "ui_bugs": [
+      {
+        "component": "Case Study 2 popup CTA",
+        "issue": "CTA still uses blue text color (rgb(5, 52, 102)) instead of strict black/gray monochrome in Case Study 2 popup theme.",
+        "selector": "[data-testid='case-popup-live-campaign-link']",
+        "priority": "HIGH"
+      },
+      {
+        "component": "Case Study 2 popup progress dots",
+        "issue": "Inactive progress dots still render with blue-tinted color (#8ea9c7) from shared modal CSS instead of black/gray-only palette.",
+        "selector": "[data-testid='case-popup-progress-nav'] a",
+        "priority": "HIGH"
+      }
+    ],
+    "integration_issues": [],
+    "design_issues": []
+  },
+  "test_report_links": [
+    "/app/frontend/src/data/portfolio.js",
+    "/app/frontend/src/components/portfolio/CaseStudiesSection.jsx",
+    "/app/frontend/src/App.css",
+    "Playwright run via mcp_browser_automation"
+  ],
+  "action_items": [
+    "Override Case Study 2 popup CTA color styling to black/gray theme (remove blue text token from shared .case-live-cta styling for this variant).",
+    "Override Case Study 2 popup progress dot inactive color to neutral gray/black instead of #8ea9c7.",
+    "Re-run frontend regression for Case Study 2 after styling override to confirm no visible blue/cyan remains in popup controls."
+  ],
+  "critical_code_review_comments": [
+    "Case modal CSS is heavily shared across themed variants; case-specific theming should avoid hardcoded blue defaults in global selectors (.case-live-cta, .case-progress-nav a).",
+    "App.css remains very large (>3000 lines), increasing risk of cross-theme regressions due to shared selectors and cascading overrides."
+  ],
+  "updated_files": [
+    "/app/test_reports/iteration_8.json"
+  ],
+  "success_rate": {
+    "backend": "N/A (frontend-only request)",
+    "frontend": "78%"
+  },
+  "seed_data_creation": "None",
+  "retest_needed": true,
+  "should_main_agent_self_test": true,
+  "context_for_next_testing_agent": "Validated on https://micro-moments-8.preview.emergentagent.com. Confirmed pass: Case 2 card accent/border tokens are monochrome, popup sidebar gradient is black/gray, shell is #F3F3F3, logo dot is #111111, Format shows exactly 'Case Study', all 4 PDF frames load, progress nav click/scroll still works, Case 1 and Case 3 popups open/close successfully. Remaining failures are blue-themed shared CSS still visible in Case 2 popup controls (CTA text and inactive progress dots).",
+  "rca of the issue": "The data-level theme fix in portfolio.js is correct, but popup controls still inherit hardcoded blue defaults from shared App.css modal styles: .case-live-cta { color: #053466 } and .case-progress-nav a { background: #8ea9c7 }. Since these are not fully driven by case-specific CSS variables, Case Study 2 cannot remain strictly monochrome in all popup UI elements."
+}
