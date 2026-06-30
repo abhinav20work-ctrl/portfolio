@@ -74,9 +74,9 @@ export const caseStudies = [
   {
     id: "case-03",
     label: "03",
-    title: "The Spotlight Media: Four original shows from scratch",
+    title: "I rewatched Classic Sci-Fi & ‘that tech’ Video idea for FUTURAMA",
     outcome: "Concept → scripting → final production",
-    brief: "Oversaw concept development, scripting, design quality, brand coherence, and final production for original media shows built to engage audiences.",
+    brief: "Content which will carry nostalgia & curiosity of the audience where audience will recall all the memory and relate to the current tech.",
     problem: "Original shows needed more than execution — they needed a repeatable production approach from idea to final audience-facing content.",
     strategy: "Build every show around a strong visual language, clean scripting flow, and production system that protects both quality and audience impact.",
     execution: [

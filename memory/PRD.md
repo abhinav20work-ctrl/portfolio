@@ -414,3 +414,9 @@ Create a portfolio for a content strategist, Abhinav Sharma with white backgroun
 - Updated Case Study 3 tags to: Nostalgic Content, Script Writing, Motion Graphics, Creative Direction.
 - Updated Case Study 3 popup metadata to Format: Case Study and a monochrome sidebar/content treatment.
 - Verified via browser smoke test: tags render correctly, card styling is monochrome, popup sidebar is black/gray, content is white, and Format shows Case Study.
+
+
+## Implemented — 2026-06-28 Case Study 3 Card Copy Update
+- Updated Case Study 3 card title to “I rewatched Classic Sci-Fi & ‘that tech’ Video idea for FUTURAMA.”
+- Updated Case Study 3 card brief to focus on nostalgia, curiosity, audience memory, and relating classic sci-fi to current tech.
+- Verified via browser smoke test: Case Study 3 card title, brief, and tags render correctly.
