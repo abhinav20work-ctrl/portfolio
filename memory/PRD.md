@@ -420,3 +420,9 @@ Create a portfolio for a content strategist, Abhinav Sharma with white backgroun
 - Updated Case Study 3 card title to “I rewatched Classic Sci-Fi & ‘that tech’ Video idea for FUTURAMA.”
 - Updated Case Study 3 card brief to focus on nostalgia, curiosity, audience memory, and relating classic sci-fi to current tech.
 - Verified via browser smoke test: Case Study 3 card title, brief, and tags render correctly.
+
+
+## Implemented — 2026-06-28 Experiment Note Font Cleanup
+- Replaced the handwritten Caveat font on the yellow “I experiment a lot” note with the cleaner Cabinet Grotesk / Outfit stack.
+- Removed forced uppercase and reduced sizing so the phrase fits on one line without clipping.
+- Verified via browser smoke test: font is Cabinet Grotesk, text fits within card width, and the note looks cleaner.
