@@ -18,7 +18,7 @@ const metricSeeds = [
   ["2.1M", "148K", "39K"], ["588K", "38K", "7.9K"], ["1.6M", "104K", "24K"], ["932K", "61K", "13K"],
   ["721K", "47K", "9.2K"], ["1.3M", "88K", "19K"], ["436K", "29K", "5.8K"], ["1.8M", "132K", "34K"],
 ];
-const hiddenReelNumbers = new Set([1, 9, 14, 15, 22]);
+const hiddenReelNumbers = new Set([1, 9, 14, 15, 18, 21, 22]);
 
 export default function ProjectsSection() {
   const [activeProject, setActiveProject] = useState(null);
@@ -31,6 +31,7 @@ export default function ProjectsSection() {
     .filter(({ originalNumber }) => !hiddenReelNumbers.has(originalNumber));
   const featuredReel = visibleProjects.find(({ originalNumber }) => originalNumber === 2);
   const masonryProjects = visibleProjects.filter(({ originalNumber }) => originalNumber !== 2);
+  const displayNumberByOriginal = new Map(visibleProjects.map(({ originalNumber }, index) => [originalNumber, index + 1]));
 
   useEffect(() => {
     if (!activeProject) return;
@@ -73,12 +74,12 @@ export default function ProjectsSection() {
         </div>
         {featuredReel && (
           <div className="featured-reel-row" data-testid="projects-featured-reel-row">
-            <ProjectTile project={featuredReel.project} index={0} displayIndex={featuredReel.originalNumber} isFeatured onOpen={setActiveProject} />
+            <ProjectTile project={featuredReel.project} index={0} testIndex={featuredReel.originalNumber} displayIndex={displayNumberByOriginal.get(featuredReel.originalNumber)} isFeatured onOpen={setActiveProject} />
           </div>
         )}
         <div className="masonry" data-testid="projects-masonry-layout">
           {masonryProjects.slice(0, 3).map(({ project, originalNumber }, index) => (
-            <ProjectTile key={project.id} project={project} index={index} displayIndex={originalNumber} onOpen={setActiveProject} />
+            <ProjectTile key={project.id} project={project} index={index} testIndex={originalNumber} displayIndex={displayNumberByOriginal.get(originalNumber)} onOpen={setActiveProject} />
           ))}
           <motion.div
             className="experiment-note"
@@ -92,7 +93,7 @@ export default function ProjectsSection() {
             <small>because motion makes strategy easier to feel.</small>
           </motion.div>
           {masonryProjects.slice(3).map(({ project, originalNumber }, index) => (
-            <ProjectTile key={project.id} project={project} index={index + 3} displayIndex={originalNumber} onOpen={setActiveProject} />
+            <ProjectTile key={project.id} project={project} index={index + 3} testIndex={originalNumber} displayIndex={displayNumberByOriginal.get(originalNumber)} onOpen={setActiveProject} />
           ))}
         </div>
       </div>
@@ -152,7 +153,7 @@ export default function ProjectsSection() {
   );
 }
 
-function ProjectTile({ project, index, displayIndex, isFeatured = false, onOpen }) {
+function ProjectTile({ project, index, testIndex, displayIndex, isFeatured = false, onOpen }) {
   const playPreview = (event) => {
     const video = event.currentTarget.querySelector("video");
     if (!video) return;
@@ -182,12 +183,12 @@ function ProjectTile({ project, index, displayIndex, isFeatured = false, onOpen 
       whileHover={{ y: -7, rotate: index % 2 === 0 ? -1.5 : 1.5 }}
       whileTap={{ scale: 0.98 }}
       transition={{ duration: 0.45, delay: index * 0.06 }}
-      data-testid={`project-video-card-${displayIndex}`}
+      data-testid={`project-video-card-${testIndex}`}
       aria-label={`Open video: ${project.title}`}
     >
-      <span className="reel-index" data-testid={`project-reel-index-${displayIndex}`}>{String(displayIndex).padStart(2, "0")}</span>
-      <div className={`project-sample-visual sample-${(index % 6) + 1}`} data-testid={`project-sample-visual-${displayIndex}`}>
-        <img src={project.posterUrl} loading="lazy" decoding="async" alt="" aria-hidden="true" data-testid={`project-card-poster-preview-${displayIndex}`} />
+      <span className="reel-index" data-testid={`project-reel-index-${testIndex}`}>{String(displayIndex).padStart(2, "0")}</span>
+      <div className={`project-sample-visual sample-${(index % 6) + 1}`} data-testid={`project-sample-visual-${testIndex}`}>
+        <img src={project.posterUrl} loading="lazy" decoding="async" alt="" aria-hidden="true" data-testid={`project-card-poster-preview-${testIndex}`} />
         <video
           src={project.previewUrl}
           muted
@@ -195,12 +196,12 @@ function ProjectTile({ project, index, displayIndex, isFeatured = false, onOpen 
           playsInline
           preload="none"
           aria-hidden="true"
-          data-testid={`project-card-hover-preview-${displayIndex}`}
+          data-testid={`project-card-hover-preview-${testIndex}`}
         />
       </div>
       <span className="project-overlay">
-        <span className="project-play" data-testid={`project-play-icon-${index + 1}`}><Play size={18} fill="currentColor" /></span>
-        <span className="project-title" data-testid={`project-card-title-${index + 1}`}>{project.title}</span>
+        <span className="project-play" data-testid={`project-play-icon-${testIndex}`}><Play size={18} fill="currentColor" /></span>
+        <span className="project-title" data-testid={`project-card-title-${testIndex}`}>{project.title}</span>
       </span>
     </motion.button>
   );

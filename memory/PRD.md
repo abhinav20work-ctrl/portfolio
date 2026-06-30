@@ -371,3 +371,10 @@ Create a portfolio for a content strategist, Abhinav Sharma with white backgroun
 - Promoted reel number 02 into a larger featured tile above the masonry grid while retaining its original 1.773 wide aspect ratio.
 - Preserved original numbering for visible tiles so remaining reels keep their prior reel-number labels.
 - Verified via browser smoke test: hidden reel cards count is 0 for 01/09/14/15/22, reel 02 is a 980×553 featured tile, and masonry items retain true portrait/wide aspect ratios.
+
+
+## Implemented — 2026-06-28 Reel Removal 18/21 + Sequential Renumbering
+- Removed reel numbers 18 and 21 from the visible Reels / Motion Shelf, in addition to the previously hidden reels 01, 09, 14, 15, and 22.
+- Fixed displayed reel numbering so visible videos are renumbered sequentially from 01 through 15.
+- Preserved internal test IDs based on original reel numbers for reliable targeting while showing clean sequential labels to users.
+- Verified via browser smoke test: hidden reel cards count is 0 for 01/09/14/15/18/21/22, and visible labels now run 01–15 without gaps.
