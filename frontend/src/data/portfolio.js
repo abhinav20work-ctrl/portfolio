@@ -246,19 +246,22 @@ export const projects = [
   },
   {
     id: "project-05",
-    title: "Little wins, steady steps",
+    categoryTag: "Founder led-content",
+    title: "In talks with companies Founder & CTO",
     description:
-      "A warmer people-and-progress reel built around the line, ‘Imagining what we’re doing is a dream, basically’ — capturing momentum without over-explaining it.",
+      "Created an interview-led brand film featuring Rakesh Gaonkar, Co-founder & CTO of Sarla Aviation, reflecting on the company's journey and progress throughout 2025. Narrated from his perspective, the film captures the challenges, milestones, team growth, and vision behind building India's future of aviation. Through an emotional and authentic narrative, the video highlights the people, passion, and engineering excellence driving Sarla Aviation's mission, reinforcing the company's culture and long-term vision.",
     videoUrl:
       "/reels/sarla-reel-05.mp4",
     posterUrl: "/reels/posters/sarla-reel-05.jpg",
     aspectRatio: 1.773399,
     previewUrl: "/reels/previews/sarla-reel-05-preview.webm",
     tags: ["Team story", "Emotional beat", "Progress reel"],
+    analytics: { views: "17K", likes: "2.3K", shares: "200" },
     shape: "wide",
   },
   {
     id: "project-06",
+    categoryTag: "Social Content",
     title: "Vintage footage for future pilots",
     description: "A future-facing Sarla reel with a playful archival lens — positioning today’s test moments as the footage tomorrow’s pilots will look back on.",
     videoUrl:
@@ -267,6 +270,7 @@ export const projects = [
     aspectRatio: 1.773399,
     previewUrl: "/reels/previews/sarla-reel-06-preview.webm",
     tags: ["Aviation future", "Brand voice", "Sarla reel"],
+    analytics: { views: "12K", likes: "1.2K", shares: "210" },
     shape: "wide",
   },
   {
@@ -283,31 +287,36 @@ export const projects = [
   },
   {
     id: "project-08",
-    title: "Sanchan’s first year",
-    description: "A people-first anniversary piece celebrating one year at Sarla Aviation with warmth, personality, and a clear internal culture signal.",
+    categoryTag: "Content IP",
+    title: "The Next Seat Ft. Sanchan",
+    description: "Created and developed \"The Next Seat,\" a video IP for Sarla Aviation that highlights the people shaping the future of urban air mobility. The series features team members, their personal journeys, expertise, and contributions, offering an authentic look into the minds behind the innovation. Through engaging storytelling, the content strengthens employer branding while humanizing the company's vision and culture.",
     videoUrl:
       "/reels/sarla-reel-08.mp4",
     posterUrl: "/reels/posters/sarla-reel-08.jpg",
     aspectRatio: 1.773399,
     previewUrl: "/reels/previews/sarla-reel-08-preview.webm",
     tags: ["Culture content", "Team story", "Anniversary reel"],
+    analytics: { views: "20K", likes: "750", shares: "85" },
     shape: "wide",
   },
   {
     id: "project-09",
+    categoryTag: "Merch Drop Reel",
     title: "Sarla merch, now live",
-    description: "A product-drop reel for Sarla merch, turning a shop announcement into a clean branded moment with national pride and launch clarity.",
+    description: "Created and developed \"The Next Seat,\" a video IP for Sarla Aviation that highlights the people shaping the future of urban air mobility. The series features team members, their personal journeys, expertise, and contributions, offering an authentic look into the minds behind the innovation. Through engaging storytelling, the content strengthens employer branding while humanizing the company's vision and culture.",
     videoUrl:
       "/reels/sarla-reel-09.mp4",
     posterUrl: "/reels/posters/sarla-reel-09.jpg",
     aspectRatio: 0.562500,
     previewUrl: "/reels/previews/sarla-reel-09-preview.webm",
     tags: ["Merch launch", "Product drop", "Brand content"],
+    analytics: { views: "70K", likes: "10K", shares: "2K" },
     shape: "tall",
   },
   {
     id: "project-10",
-    title: "MoU to breaking the internet",
+    categoryTag: "Announcement Reel",
+    title: "Sky Factory Reveal Video",
     description: "A high-stakes announcement reel translating the SkyFactory MoU into a strong public milestone for Sarla Aviation and eVTOL visibility.",
     videoUrl:
       "/reels/sarla-reel-10.mp4",
@@ -315,6 +324,7 @@ export const projects = [
     aspectRatio: 1.773399,
     previewUrl: "/reels/previews/sarla-reel-10-preview.webm",
     tags: ["Announcement", "SkyFactory", "eVTOL"],
+    analytics: { views: "13K", likes: "5K", shares: "1.2K" },
     shape: "wide",
   },
   {
