@@ -158,26 +158,26 @@ export const labFormula = ["Signal", "Tension", "Voice", "Format", "Rhythm"];
 export const projects = [
   {
     id: "featured-project-01",
-    title: "Next-gen transport in motion",
-    description: "A wide-format motion piece exploring how future mobility, aviation, and city movement can be framed as a clear social-first story.",
+    title: "Future travel visual cut",
+    description: "Motion graphics intro for Sarla Aviation’s Viksit Bharat Launch Event livestream, designed as the opening visual for YouTube Live and crafted to set the tone for Future India in 2047.",
     videoUrl:
       "/reels/featured-reel-01.mp4",
     posterUrl: "/reels/posters/featured-reel-01.jpg",
     aspectRatio: 1.773399,
     previewUrl: "/reels/previews/featured-reel-01-preview.webm",
-    tags: ["Future mobility", "Wide edit", "Sarla Aviation"],
+    tags: ["Motion Graphic", "Visual Storytelling", "Live Intro", "Viksit 2047"],
     shape: "wide",
   },
   {
     id: "featured-project-02",
     title: "Future travel visual cut",
-    description: "A second wide-format reel built around transport storytelling, using movement, pacing, and sharp visual proof to hold attention.",
+    description: "Motion graphics intro for Sarla Aviation’s Viksit Bharat Launch Event livestream, designed as the opening visual for YouTube Live and crafted to set the tone for Future India in 2047.",
     videoUrl:
       "/reels/featured-reel-02.mp4",
     posterUrl: "/reels/posters/featured-reel-02.jpg",
     aspectRatio: 1.773399,
     previewUrl: "/reels/previews/featured-reel-02-preview.webm",
-    tags: ["Future travel", "Wide edit", "Motion story"],
+    tags: ["Motion Graphic", "Visual Storytelling", "Live Intro", "Viksit 2047"],
     shape: "wide",
   },
   {
