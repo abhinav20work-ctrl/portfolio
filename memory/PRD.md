@@ -461,3 +461,10 @@ Create a portfolio for a content strategist, Abhinav Sharma with white backgroun
 ## Implemented — 2026-06-30 Featured Reel Two-Column Width
 - Adjusted the first featured reel width to exactly match two columns of the reel grid while preserving its 1.773 aspect ratio.
 - Verified via browser smoke test: featured width 739px equals two-column target 739px, diff 0, aspect remains 1.773.
+
+
+## Implemented — 2026-06-30 Featured Reel Left Alignment + Side Stack
+- Moved the featured first reel to the left side of the reel section instead of centering it with empty side whitespace.
+- Added a right-side stack using the next two visible reels to fill the remaining horizontal space beside the featured video.
+- Preserved the featured reel's two-column width and 1.773 aspect ratio while keeping the right edge aligned with the reel grid.
+- Verified via browser smoke test: featured reel starts at x=0, side stack fills the right column, rightGap is 0, and aspect remains 1.773.

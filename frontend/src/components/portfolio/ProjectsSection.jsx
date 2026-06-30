@@ -31,10 +31,11 @@ export default function ProjectsSection() {
     .filter(({ originalNumber }) => !hiddenReelNumbers.has(originalNumber));
   const featuredReel = visibleProjects.find(({ originalNumber }) => originalNumber === 2);
   const masonryProjects = visibleProjects.filter(({ originalNumber }) => originalNumber !== 2);
+  const sideStackProjects = masonryProjects.slice(0, 2);
+  const remainingMasonryProjects = masonryProjects.slice(2);
   const displayNumberByOriginal = new Map(visibleProjects.map(({ originalNumber }, index) => [originalNumber, index + 1]));
   const masonryItems = [
-    ...masonryProjects.slice(0, 3).map((item) => ({ type: "project", ...item })),
-    ...masonryProjects.slice(3).map((item) => ({ type: "project", ...item })),
+    ...remainingMasonryProjects.map((item) => ({ type: "project", ...item })),
   ];
   const masonryColumns = masonryItems.reduce((columns, item, index) => {
     const targetIndex = columns.heights.indexOf(Math.min(...columns.heights));
@@ -86,6 +87,11 @@ export default function ProjectsSection() {
         {featuredReel && (
           <div className="featured-reel-row" data-testid="projects-featured-reel-row">
             <ProjectTile project={featuredReel.project} index={0} testIndex={featuredReel.originalNumber} displayIndex={displayNumberByOriginal.get(featuredReel.originalNumber)} isFeatured onOpen={setActiveProject} />
+            <div className="featured-side-stack" data-testid="projects-featured-side-stack">
+              {sideStackProjects.map(({ project, originalNumber }, index) => (
+                <ProjectTile key={project.id} project={project} index={index + 1} testIndex={originalNumber} displayIndex={displayNumberByOriginal.get(originalNumber)} onOpen={setActiveProject} />
+              ))}
+            </div>
           </div>
         )}
         <div className="masonry masonry-balanced" data-testid="projects-masonry-layout">

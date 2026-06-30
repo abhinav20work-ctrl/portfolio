@@ -2085,8 +2085,17 @@ button {
 }
 
 .featured-reel-row {
-    width: calc((100% - (clamp(16px, 1.5vw, 24px) * 2)) * 2 / 3 + clamp(16px, 1.5vw, 24px));
-    margin: 0 auto clamp(16px, 1.5vw, 24px);
+    width: 100%;
+    display: grid;
+    grid-template-columns: calc((100% - (clamp(16px, 1.5vw, 24px) * 2)) * 2 / 3 + clamp(16px, 1.5vw, 24px)) minmax(0, 1fr);
+    gap: clamp(16px, 1.5vw, 24px);
+    align-items: start;
+    margin: 0 0 clamp(16px, 1.5vw, 24px);
+}
+
+.featured-side-stack {
+    display: grid;
+    gap: clamp(16px, 1.5vw, 24px);
 }
 
 .project-tile.featured-reel {
@@ -2962,6 +2971,14 @@ button {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
+    .featured-reel-row {
+        grid-template-columns: 1fr;
+    }
+
+    .featured-side-stack {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
     .project-tile.wide {
         width: 100%;
     }
@@ -3098,6 +3115,10 @@ button {
     }
 
     .masonry {
+        grid-template-columns: 1fr;
+    }
+
+    .featured-side-stack {
         grid-template-columns: 1fr;
     }
 
