@@ -186,7 +186,7 @@ function UfoBeansFullscreenModal({ caseData, onClose }) {
       <motion.div className="case-fullscreen-shell" data-testid="case-popup-shell" onMouseDown={(event) => event.stopPropagation()} data-lenis-prevent="true" initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.4, type: "spring", stiffness: 220, damping: 24 }}>
         <button className="case-modal-close" onClick={onClose} data-testid="case-popup-close-button" aria-label="Close case study"><X size={18} /></button>
         <aside className="case-sidebar" data-lenis-prevent="true">
-          <div className="case-brand-logo">UFO</div>
+          <div className="case-brand-logo" data-testid="ufo-case-brand-logo">1</div>
           <h2>{caseData.title}</h2>
           <dl>
             <dt>Category</dt><dd>Brand Identity / Campaign</dd><dt>Timeline</dt><dd>2 Weeks</dd><dt>Role</dt><dd>Brand Strategy + Visual Design</dd><dt>Team Size</dt><dd>Solo Concept</dd><dt>Tools Used</dt><dd>Figma, After Effects, Photoshop</dd>

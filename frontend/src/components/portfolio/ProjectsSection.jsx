@@ -18,7 +18,7 @@ const metricSeeds = [
   ["2.1M", "148K", "39K"], ["588K", "38K", "7.9K"], ["1.6M", "104K", "24K"], ["932K", "61K", "13K"],
   ["721K", "47K", "9.2K"], ["1.3M", "88K", "19K"], ["436K", "29K", "5.8K"], ["1.8M", "132K", "34K"],
 ];
-const hiddenReelNumbers = new Set([1, 9, 14, 15, 18, 21, 22]);
+const hiddenReelNumbers = new Set([1, 9, 13, 14, 15, 18, 21, 22]);
 
 export default function ProjectsSection() {
   const [activeProject, setActiveProject] = useState(null);
@@ -37,7 +37,6 @@ export default function ProjectsSection() {
   const sideStackProjects = masonryProjects.filter(({ project }) => (project.aspectRatio || 1) > 1.2).slice(0, 2);
   const sideStackIds = new Set(sideStackProjects.map(({ project }) => project.id));
   const remainingMasonryProjects = masonryProjects.filter(({ project }) => !sideStackIds.has(project.id));
-  const displayNumberByOriginal = new Map(visibleProjects.map(({ originalNumber }, index) => [originalNumber, index + 1]));
   const masonryItems = [
     ...remainingMasonryProjects.map((item) => ({ type: "project", ...item })),
   ];
@@ -48,6 +47,7 @@ export default function ProjectsSection() {
     columns.heights[targetIndex] += weight;
     return columns;
   }, { items: [[], [], []], heights: [0, 0, 0] }).items;
+  const displayNumberByOriginal = new Map(visibleProjects.map(({ originalNumber }, index) => [originalNumber, index + 1]));
 
   useEffect(() => {
     if (!activeProject) return;

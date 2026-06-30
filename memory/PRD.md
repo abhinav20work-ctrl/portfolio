@@ -487,3 +487,10 @@ Create a portfolio for a content strategist, Abhinav Sharma with white backgroun
 - Updated visible reels 6–10 with the supplied category tags, titles where requested, paragraph copy where requested, and analytics.
 - Preserved unchanged titles, paragraphs, and bottom tags exactly where the user specified “remains the same.”
 - Verified via frontend smoke test: visible reels 6–10 show the requested category labels, popup titles/descriptions, display numbers, and analytics values.
+
+
+## Implemented — 2026-06-30 Reels 12/13/15 + UFO Popup Update
+- Updated the requested reel assets for Video 12, Video 13, and Video 15 with supplied category tags, titles/paragraphs, bottom tags, and analytics.
+- Removed the Dubai Airshow video from the visible Reels / Motion Shelf and corrected visible reel numbering so the remaining labels are gap-free 01–14.
+- Updated the UFO Beans fullscreen popup top-left mark from “UFO” to “1”.
+- Verified via frontend smoke test: requested reel popup content/analytics render correctly, Dubai Airshow card is hidden, reel labels are gap-free, and UFO popup mark shows “1”.
