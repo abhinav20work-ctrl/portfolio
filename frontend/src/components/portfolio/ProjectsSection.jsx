@@ -25,7 +25,10 @@ export default function ProjectsSection() {
   const [videoAspect, setVideoAspect] = useState(9 / 16);
   const popupVideoRef = useRef(null);
   const activeProjectIndex = activeProject ? projects.findIndex((project) => project.id === activeProject.id) : -1;
-  const activeMetrics = metricSeeds[activeProjectIndex >= 0 ? activeProjectIndex : 0] || metricSeeds[0];
+  const activeMetricsFromProject = activeProject?.analytics
+    ? [activeProject.analytics.views, activeProject.analytics.likes, activeProject.analytics.shares]
+    : null;
+  const activeMetrics = activeMetricsFromProject || metricSeeds[activeProjectIndex >= 0 ? activeProjectIndex : 0] || metricSeeds[0];
   const visibleProjects = projects
     .map((project, index) => ({ project, originalNumber: index + 1 }))
     .filter(({ originalNumber }) => !hiddenReelNumbers.has(originalNumber));
@@ -128,7 +131,9 @@ export default function ProjectsSection() {
                 />
               <div className="video-copy-panel">
                 <DialogHeader>
-                  <span className="lab-module-label inline-label">Experiment sample</span>
+                  <span className="lab-module-label inline-label" data-testid="project-popup-category-tag">
+                    {activeProject.categoryTag || "Experiment sample"}
+                  </span>
                   <DialogTitle className="video-dialog-title" data-testid="project-popup-title">
                     {activeProject.popupTitle || activeProject.title}
                   </DialogTitle>
@@ -136,20 +141,18 @@ export default function ProjectsSection() {
                     {(activeProject.popupDescription || activeProject.description).split("\n").map((line, index) => line ? <span key={`${activeProject.id}-line-${index}`} className={line === "Project Brief" || line === "Process" ? "video-description-heading" : "video-description-line"}>{line}</span> : <span key={`${activeProject.id}-space-${index}`} className="video-description-space" />)}
                   </DialogDescription>
                 </DialogHeader>
-                {activeProject.id !== "featured-project-02" && (
-                  <div className="video-popup-tags" data-testid="project-popup-tags">
-                    {(activeProject.tags || ["Motion test", "Content rhythm", "Lab sample"]).map((tag) => (
-                      <span key={tag}>{tag}</span>
+                <div className="video-popup-tags" data-testid="project-popup-tags">
+                    {(activeProject.tags || ["Motion test", "Content rhythm", "Lab sample"]).map((tag, index) => (
+                      <span key={tag} data-testid={`project-popup-tag-${index + 1}`}>{tag}</span>
                     ))}
                   </div>
-                )}
                 <section className="video-analytics-panel" data-testid="project-popup-analytics-panel">
                   <h3 data-testid="project-popup-analytics-title">Analytics across platforms</h3>
                   <div className="video-analytics-grid">
                     {[["Views", activeMetrics[0]], ["Likes", activeMetrics[1]], ["Shares", activeMetrics[2]]].map(([label, value]) => (
                       <article key={label} data-testid={`project-popup-analytics-${label.toLowerCase()}`}>
-                        <strong>{value}</strong>
-                        <span>{label}</span>
+                        <strong data-testid={`project-popup-analytics-${label.toLowerCase()}-value`}>{value}</strong>
+                        <span data-testid={`project-popup-analytics-${label.toLowerCase()}-label`}>{label}</span>
                       </article>
                     ))}
                   </div>

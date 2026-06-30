@@ -170,8 +170,9 @@ export const projects = [
   },
   {
     id: "featured-project-02",
-    title: "Future travel visual cut",
-    description: "Motion graphics intro for Sarla Aviation’s Viksit Bharat Launch Event livestream, designed as the opening visual for YouTube Live and crafted to set the tone for Future India in 2047.",
+    categoryTag: "Motion Graphic",
+    title: "VIKSIT 2047 Live Intro",
+    description: "Project Brief\nCreate a motion graphics intro for the Sarla Aviation – Viksit Bharat Launch Event. This intro was designed to be used as the opening visual for their YouTube live stream, introducing the event and setting the tone for the vision of Future India in 2047. The visuals were crafted to reflect innovation, progress, and the aspirations of a developed India.\n\nProcess\nPre-production: Conducted research on the event theme, explored visual references and art styles, developed the creative concept, and created a detailed storyboard to define the animation flow.\nProduction: Designed and refined the visuals, animated the complete sequence in Adobe After Effects, and finalized the intro with sound design and audio synchronization to deliver a polished, broadcast-ready asset.",
     popupTitle: "VIKSIT 2047 Live Intro",
     popupDescription: "Project Brief\nCreate a motion graphics intro for the Sarla Aviation – Viksit Bharat Launch Event. This intro was designed to be used as the opening visual for their YouTube live stream, introducing the event and setting the tone for the vision of Future India in 2047. The visuals were crafted to reflect innovation, progress, and the aspirations of a developed India.\n\nProcess\nPre-production: Conducted research on the event theme, explored visual references and art styles, developed the creative concept, and created a detailed storyboard to define the animation flow.\nProduction: Designed and refined the visuals, animated the complete sequence in Adobe After Effects, and finalized the intro with sound design and audio synchronization to deliver a polished, broadcast-ready asset.",
     videoUrl:
@@ -179,24 +180,28 @@ export const projects = [
     posterUrl: "/reels/posters/featured-reel-02.jpg",
     aspectRatio: 1.773399,
     previewUrl: "/reels/previews/featured-reel-02-preview.webm",
-    tags: ["Motion Graphic", "Visual Storytelling", "Live Intro", "Viksit 2047"],
+    tags: ["Motion graphic", "Visual Storytelling", "Live Motion Graphic Setup"],
+    analytics: { views: "30K", likes: "5K", shares: "100" },
     shape: "wide",
   },
   {
     id: "project-01",
-    title: "Building flying taxis in India",
+    categoryTag: "Founder-led Content",
+    title: "Accel Ventures Inflection Point ft. Adrian",
     description:
-      "Founder-led short-form content for Sarla Aviation, framing India’s urban traffic problem as a bold product mission with a direct, memorable hook.",
+      "Created a founder-led interview featuring Adrian Schmidt, Founder and CEO of Sarla Aviation, in conversation with Accel, one of the world's leading venture capital firms and an early investor in Sarla Aviation. The interview explores Sarla Aviation's vision for building safe, efficient, and affordable electric air mobility in India, Adrian's entrepreneurial journey, the company's engineering-first approach, and the roadmap toward making eVTOL transportation a reality. The content was designed to strengthen the company's thought leadership, share its long-term vision, and provide audiences with an authentic perspective from the founder.",
     videoUrl:
       "/reels/sarla-reel-01.mp4",
     posterUrl: "/reels/posters/sarla-reel-01.jpg",
     aspectRatio: 0.562500,
     previewUrl: "/reels/previews/sarla-reel-01-preview.webm",
     tags: ["Founder story", "Mobility", "Interview reel"],
+    analytics: { views: "60K", likes: "5K", shares: "700" },
     shape: "tall",
   },
   {
     id: "project-02",
+    categoryTag: "Brand Progress Video",
     title: "Built here. Built for real.",
     description:
       "A proof-led build update that turns engineering progress into a confident launch beat: grounded, tactile, and designed to feel real rather than speculative.",
@@ -206,23 +211,27 @@ export const projects = [
     aspectRatio: 1.773399,
     previewUrl: "/reels/previews/sarla-reel-02-preview.webm",
     tags: ["Build update", "Proof of work", "Launch rhythm"],
+    analytics: { views: "12K", likes: "800", shares: "55" },
     shape: "wide",
   },
   {
     id: "project-03",
+    categoryTag: "Social Content",
     title: "From decks to highways",
     description:
-      "A progress reel about watching a concept move from renders and decks into real-world road movement — built around the emotional shift from plan to proof.",
+      "Project Brief\nCreate a social media video showcasing the journey of Sarla Aviation's first prototype as it returned to the company's headquarters. The video was crafted to capture the excitement of this milestone, using cinematic storytelling to build anticipation and highlight the significance of the moment.\n\nProcess\nHandled the complete production process, from reviewing and selecting the most impactful footage to organizing the edit into a clear and engaging narrative. Built the entire timeline with a focus on pacing, meaningful storytelling, and suspense, ensuring each sequence maintained viewer interest. Refined transitions, synchronized visuals with music and sound, and polished the final edit to create a compelling social media video that effectively captured the prototype's journey.",
     videoUrl:
       "/reels/sarla-reel-03.mp4",
     posterUrl: "/reels/posters/sarla-reel-03.jpg",
     aspectRatio: 0.562500,
     previewUrl: "/reels/previews/sarla-reel-03-preview.webm",
     tags: ["Progress story", "Real-world proof", "Sarla Aviation"],
+    analytics: { views: "40K", likes: "2K", shares: "80" },
     shape: "tall",
   },
   {
     id: "project-04",
+    categoryTag: "Speaker Reel",
     title: "Sustainable mobility at ICT",
     description:
       "Event-led content featuring Payal Satish on sustainable mobility and the future of cities, edited to keep a technical theme clear and social-first.",
@@ -232,6 +241,7 @@ export const projects = [
     aspectRatio: 0.562500,
     previewUrl: "/reels/previews/sarla-reel-04-preview.webm",
     tags: ["Event content", "Sustainable mobility", "Speaker edit"],
+    analytics: { views: "10K", likes: "512", shares: "76" },
     shape: "tall",
   },
   {
