@@ -393,3 +393,11 @@ Create a portfolio for a content strategist, Abhinav Sharma with white backgroun
 - Adjusted the case 2 card and popup palette to better match the PDF frame: black/dark steel base with blue-cyan accent and soft blue shell/content colors.
 - Updated the fullscreen sidebar to use dynamic per-case Format, Role, Source, and snapshot lines.
 - Verified via browser smoke test: case 2 card title/outcome, sidebar title/source/snapshot, shell/content colors, and gradient sidebar render correctly.
+
+
+## Implemented — 2026-06-28 Case Study 2 Snapshot/Card Copy Update
+- Updated Case Study 2 card outcome to “Info-Ent Content - Indirect Brand promotion.”
+- Updated Case Study 2 card brief to describe the info-entertainment video and indirect eVTOL/Sarla Aviation promotion.
+- Updated Case Study 2 tags to Motion graphics, Info-ent content, Branding, and Aviation.
+- Updated Case Study 2 popup Case Snapshot to only show “Info-Ent Content - Indirect Brand promotion.”
+- Verified via browser smoke test: card outcome/title/brief/tags and modal snapshot text render correctly.

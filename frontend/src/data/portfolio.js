@@ -37,8 +37,8 @@ export const caseStudies = [
     id: "case-02",
     label: "02",
     title: "Next Gen Transportation Content Idea for FUTURAMA",
-    outcome: "Multiple news articles, Reddit, YouTube → info-ent content",
-    brief: "Created marketing, branding, annual progress update, and analytical video content with the founders’ team for internal and investor communication.",
+    outcome: "Info-Ent Content - Indirect Brand promotion",
+    brief: "Wrote and created this info-entertainment style video where we talk about the future of transportation while indirectly promoting eVTOLs and Sarla Aviation.",
     problem: "A high-context aviation team needed progress, data, and technical work shaped into content that felt clear, credible, and watchable.",
     strategy: "Turn technical progress into a visual story: simplify the message, sequence the proof, and use motion to make the update easier to understand.",
     execution: [
@@ -46,7 +46,7 @@ export const caseStudies = [
       "Worked with the founders’ team on annual progress update video.",
       "Created short-form informative content for Futurama media page.",
     ],
-    tags: ["News research", "Reddit", "YouTube", "Info-ent content"],
+    tags: ["Motion graphics", "Info-ent content", "Branding", "Aviation"],
     image:
       "https://images.pexels.com/photos/31622947/pexels-photo-31622947.jpeg?auto=compress&cs=tinysrgb&w=1100",
     accent: "#5C5C5C",
@@ -66,7 +66,7 @@ export const caseStudies = [
       role: "Content Strategy + Production",
       source: "Multiple news articles, Reddit, YouTube",
       snapshotTitle: "Case Snapshot",
-      snapshotLines: ["Complex progress → clear human narrative", "Multiple news articles / Reddit / YouTube / Aviation"],
+      snapshotLines: ["Info-Ent Content - Indirect Brand promotion"],
     },
     pdfFrames: Array.from({ length: 4 }, (_, index) => `/case-assets/sarla-transport-pdf/frame-${String(index + 1).padStart(2, "0")}.jpg`),
     pdfUrl: "/case-assets/sarla-transport-pdf/sarla-transport.pdf",
