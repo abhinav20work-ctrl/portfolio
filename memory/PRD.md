@@ -426,3 +426,10 @@ Create a portfolio for a content strategist, Abhinav Sharma with white backgroun
 - Replaced the handwritten Caveat font on the yellow “I experiment a lot” note with the cleaner Cabinet Grotesk / Outfit stack.
 - Removed forced uppercase and reduced sizing so the phrase fits on one line without clipping.
 - Verified via browser smoke test: font is Cabinet Grotesk, text fits within card width, and the note looks cleaner.
+
+
+## Implemented — 2026-06-28 Sitewide Handwritten Font Removal
+- Removed the Caveat handwritten font import from `index.css`.
+- Replaced every remaining `Caveat` / `cursive` usage in `App.css` with the cleaner Cabinet Grotesk / Outfit font stack.
+- Updated affected areas including section labels, case numbers, process labels/numbers, project open labels, footer links, and philosophy highlight styling.
+- Verified via browser smoke test: experiment note, case number, process number, and footer link now all use Cabinet Grotesk / Outfit; no Caveat/cursive references remain in CSS.
