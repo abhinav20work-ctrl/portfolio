@@ -46,7 +46,7 @@ export const caseStudies = [
       "Worked with the founders’ team on annual progress update video.",
       "Created short-form informative content for Futurama media page.",
     ],
-    tags: ["Motion graphics", "Info-ent content", "Branding", "Aviation"],
+    tags: ["Motion graphics", "Strategy Content", "Branding", "Aviation", "Info-Entertainment"],
     image:
       "https://images.pexels.com/photos/31622947/pexels-photo-31622947.jpeg?auto=compress&cs=tinysrgb&w=1100",
     accent: "#5C5C5C",

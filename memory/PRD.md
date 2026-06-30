@@ -401,3 +401,9 @@ Create a portfolio for a content strategist, Abhinav Sharma with white backgroun
 - Updated Case Study 2 tags to Motion graphics, Info-ent content, Branding, and Aviation.
 - Updated Case Study 2 popup Case Snapshot to only show “Info-Ent Content - Indirect Brand promotion.”
 - Verified via browser smoke test: card outcome/title/brief/tags and modal snapshot text render correctly.
+
+
+## Implemented — 2026-06-28 Case Study 2 Tag Update
+- Replaced Case Study 2 tag “Info-ent content” with “Strategy Content.”
+- Added an additional Case Study 2 tag: “Info-Entertainment.”
+- Verified via browser smoke test: Case Study 2 card tags now render as Motion graphics, Strategy Content, Branding, Aviation, and Info-Entertainment.
