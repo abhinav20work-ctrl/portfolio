@@ -407,3 +407,10 @@ Create a portfolio for a content strategist, Abhinav Sharma with white backgroun
 - Replaced Case Study 2 tag “Info-ent content” with “Strategy Content.”
 - Added an additional Case Study 2 tag: “Info-Entertainment.”
 - Verified via browser smoke test: Case Study 2 card tags now render as Motion graphics, Strategy Content, Branding, Aviation, and Info-Entertainment.
+
+
+## Implemented — 2026-06-28 Case Study 3 Monochrome Palette + Tags
+- Applied the same black/white/gray palette direction to Case Study 3 card and popup, removing warm/colored accent styling.
+- Updated Case Study 3 tags to: Nostalgic Content, Script Writing, Motion Graphics, Creative Direction.
+- Updated Case Study 3 popup metadata to Format: Case Study and a monochrome sidebar/content treatment.
+- Verified via browser smoke test: tags render correctly, card styling is monochrome, popup sidebar is black/gray, content is white, and Format shows Case Study.
