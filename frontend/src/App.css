@@ -2069,6 +2069,34 @@ button {
     column-fill: balance;
 }
 
+.featured-reel-row {
+    width: min(980px, 100%);
+    margin: 0 auto clamp(12px, 1.2vw, 18px);
+}
+
+.project-tile.featured-reel {
+    width: 100%;
+    display: block;
+    margin: 0;
+    border-width: 2px;
+    border-radius: 14px;
+    box-shadow: 0 28px 70px rgba(15, 23, 42, 0.18);
+}
+
+.project-tile.featured-reel .project-overlay {
+    inset: auto 14px 14px 14px;
+    padding: 12px 14px;
+}
+
+.project-tile.featured-reel .project-title {
+    font-size: clamp(1rem, 1.25vw, 1.25rem);
+}
+
+.project-tile.featured-reel .project-play {
+    width: 42px;
+    height: 42px;
+}
+
 .project-tile,
 .experiment-note {
     width: 100%;

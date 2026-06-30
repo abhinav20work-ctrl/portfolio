@@ -364,3 +364,10 @@ Create a portfolio for a content strategist, Abhinav Sharma with white backgroun
 - Reduced the “I experiment a lot” experiment-note font size and wrapped the main phrase in a nowrap span.
 - Adjusted mobile and desktop font clamps so the phrase fits on one line inside the masonry note tile without clipping.
 - Verified via browser smoke test: desktop text width 223px within 272px parent, `white-space: nowrap`, and no clipping.
+
+
+## Implemented — 2026-06-28 Reel Removal + Featured Video 02
+- Removed reel numbers 01, 09, 14, 15, and 22 from the visible Reels / Motion Shelf.
+- Promoted reel number 02 into a larger featured tile above the masonry grid while retaining its original 1.773 wide aspect ratio.
+- Preserved original numbering for visible tiles so remaining reels keep their prior reel-number labels.
+- Verified via browser smoke test: hidden reel cards count is 0 for 01/09/14/15/22, reel 02 is a 980×553 featured tile, and masonry items retain true portrait/wide aspect ratios.
